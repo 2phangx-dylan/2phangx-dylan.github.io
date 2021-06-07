@@ -1,0 +1,755 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="robots" content="noodp" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+        <title>Hugo Blog - Tech &amp; Posts</title><meta name="Description" content=""><meta property="og:title" content="Hugo Blog" />
+<meta property="og:description" content="Hugo是由Go语言实现的静态网站生成工具，同时Hugo提供了海量的主题，结合GitHub/Gitee的免费页面，可以用于个人静态博客的构筑。" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://2phangx-dylan.github.io/posts/hugo_blog/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2021-06-07T00:00:00&#43;00:00" />
+<meta property="article:modified_time" content="2021-06-07T00:00:00&#43;00:00" />
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Hugo Blog"/>
+<meta name="twitter:description" content="Hugo是由Go语言实现的静态网站生成工具，同时Hugo提供了海量的主题，结合GitHub/Gitee的免费页面，可以用于个人静态博客的构筑。"/>
+<meta name="application-name" content="MyBlog">
+<meta name="apple-mobile-web-app-title" content="MyBlog"><link rel="icon" href="/code-slash.svg"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="https://2phangx-dylan.github.io/posts/hugo_blog/" /><link rel="prev" href="https://2phangx-dylan.github.io/posts/jwt_tutorial/" /><link rel="stylesheet" href="/lib/normalize/normalize.min.css"><link rel="stylesheet" href="/css/style.min.css"><link rel="stylesheet" href="/lib/fontawesome-free/all.min.css"><link rel="stylesheet" href="/lib/animate/animate.min.css"><script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "BlogPosting",
+        "headline": "Hugo Blog",
+        "inLanguage": "en",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https:\/\/2phangx-dylan.github.io\/posts\/hugo_blog\/"
+        },"genre": "posts","keywords": "Hugo","wordcount":  1045 ,
+        "url": "https:\/\/2phangx-dylan.github.io\/posts\/hugo_blog\/","datePublished": "2021-06-07T00:00:00+00:00","dateModified": "2021-06-07T00:00:00+00:00","publisher": {
+            "@type": "Organization",
+            "name": "2phangx-dylan"},"author": {
+                "@type": "Person",
+                "name": "2phangx-dylan"
+            },"description": ""
+    }
+    </script></head>
+    <body header-desktop="fixed" header-mobile="auto"><script type="text/javascript">(window.localStorage && localStorage.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : '' === 'dark')) && document.body.setAttribute('theme', 'dark');</script>
+
+        <div id="mask"></div><div class="wrapper"><header class="desktop" id="header-desktop">
+    <div class="header-wrapper">
+        <div class="header-title">
+            <a href="/" title="Tech &amp; Posts"><span class="header-title-pre"><div style='font-family: My Cascadia Code; display: inline-block;'></span>Tech &amp; Posts<span class="header-title-post"></div></span></a>
+        </div>
+        <div class="menu">
+            <div class="menu-inner"><a class="menu-item" href="/posts/"> Posts </a><a class="menu-item" href="/tags/"> Tags </a><a class="menu-item" href="/categories/"> Categories </a><span class="menu-item delimiter"></span><a href="javascript:void(0);" class="menu-item theme-switch" title="切换主题">
+                    <i class="fas fa-adjust fa-fw"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+</header><header class="mobile" id="header-mobile">
+    <div class="header-container">
+        <div class="header-wrapper">
+            <div class="header-title">
+                <a href="/" title="Tech &amp; Posts"><span class="header-title-pre"><div style='font-family: My Cascadia Code; display: inline-block;'></span>Tech &amp; Posts<span class="header-title-post"></div></span></a>
+            </div>
+            <div class="menu-toggle" id="menu-toggle-mobile">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+        <div class="menu" id="menu-mobile"><a class="menu-item" href="/posts/" title="">Posts</a><a class="menu-item" href="/tags/" title="">Tags</a><a class="menu-item" href="/categories/" title="">Categories</a><a href="javascript:void(0);" class="menu-item theme-switch" title="切换主题">
+                <i class="fas fa-adjust fa-fw"></i>
+            </a></div>
+    </div>
+</header>
+<div class="search-dropdown desktop">
+    <div id="search-dropdown-desktop"></div>
+</div>
+<div class="search-dropdown mobile">
+    <div id="search-dropdown-mobile"></div>
+</div>
+<main class="main">
+                <div class="container"><div class="toc" id="toc-auto">
+            <h2 class="toc-title">目录</h2>
+            <div class="toc-content" id="toc-content-auto"></div>
+        </div><article class="page single"><h1 class="single-title animated flipInX">Hugo Blog</h1><div class="post-meta">
+            <div class="post-meta-line"><span class="post-author"><a href="/" title="Author" rel=" author" class="author"><i class="fas fa-user-circle fa-fw"></i>2phangx-dylan</a></span>&nbsp;<span class="post-category">收录于 <a href="/categories/system/"><i class="far fa-folder fa-fw"></i>System</a></span></div>
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2021-06-07">2021-06-07</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;约 1045 字&nbsp;
+                <i class="far fa-clock fa-fw"></i>&nbsp;预计阅读 5 分钟&nbsp;</div>
+        </div><div class="details toc" id="toc-static"  kept="">
+                <div class="details-summary toc-title">
+                    <span>目录</span>
+                    <span><i class="details-icon fas fa-angle-right"></i></span>
+                </div>
+                <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
+  <ul>
+    <li><a href="#什么是静态网站">什么是静态网站？</a></li>
+    <li><a href="#静态网站生成工具">静态网站生成工具</a></li>
+    <li><a href="#hugo简介">Hugo简介</a>
+      <ul>
+        <li><a href="#a-工具下载">a. 工具下载</a></li>
+        <li><a href="#b-基本配置与主题配置">b. 基本配置与主题配置</a></li>
+      </ul>
+    </li>
+    <li><a href="#hugo网站部署">Hugo网站部署</a>
+      <ul>
+        <li><a href="#a-创建博文">a. 创建博文</a></li>
+        <li><a href="#b-本地部署">b. 本地部署</a></li>
+        <li><a href="#c-远程部署">c. 远程部署</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav></div>
+            </div><div class="content" id="content"><h2 id="什么是静态网站">什么是静态网站？</h2>
+<p>静态网站，是指内容全部由<strong>HTML</strong>、<strong>CSS</strong>、<strong>JavaScript</strong>等语言组成的网站，其非常适合专注于内容的网站，例如个人博客。静态完整与动态网站相比，具有以下的好处：</p>
+<ol>
+<li>占用资源小，速度快。静态网站不需要使用解析器、不需要与数据库进行交互等等特征，使其加载速度天然快于动态网站；</li>
+<li>安全。静态网址简洁的特性，也使其可以免疫许多的<strong>web</strong>攻击方式；</li>
+<li>服务端配置简单，仅需要提供<strong>web</strong>服务器（如：<strong>apache</strong>、<strong>nginx</strong>）即可；如果选择挂到<strong>GitHub</strong>上，则只需要生成静态网站的目录即可；</li>
+<li>容易维护。由于静态网站架构的复杂程度要远远小于动态网站架构，也使其维护程度大大降低。</li>
+</ol>
+<div class="details admonition tip open">
+        <div class="details-summary admonition-title">
+            <i class="icon fas fa-lightbulb fa-fw"></i>Tip<i class="details-icon fas fa-angle-right fa-fw"></i>
+        </div>
+        <div class="details-content">
+            <div class="admonition-content">简而言之，静态网站就是用于展示的<strong>HTML</strong>网页。在静态网站种种优势的加持下，使其十分适用于个人博客平台的构建。</div>
+        </div>
+    </div>
+<hr>
+<h2 id="静态网站生成工具">静态网站生成工具</h2>
+<p>静态网站多数情况下，是用于内容的展示上，而究其本质，静态网站是一个部署在<strong>web</strong>服务器上的目录，该目录中放置了所有网站运行所必须的静态资源，如：<strong>HTML</strong>页面、<strong>CSS</strong>文件、<strong>JavaScript</strong>文件、图片、音频、视频等等。</p>
+<p>如果你是一个前端开发者，可以很轻松地使用前端语言与相关网页构筑工具，开发出一个静态网站。但如果你并不是一个前端开发者，或是对前端语言没有十分熟悉，那么你可以借助流行的静态网站生成工具来构筑属于你的静态网站。</p>
+<div class="details admonition info open">
+        <div class="details-summary admonition-title">
+            <i class="icon fas fa-info-circle fa-fw"></i>Info<i class="details-icon fas fa-angle-right fa-fw"></i>
+        </div>
+        <div class="details-content">
+            <div class="admonition-content">市面上有许多流行的静态网站生成工具，常见的有<strong>Jekyll</strong>、<strong>Octopress</strong>、<strong>Hugo</strong>、<strong>DocPad</strong>、<strong>Hexo</strong>等等。本文将采用<strong>Hugo</strong>静态网站生成工具，来搭建一个静态的博客。</div>
+        </div>
+    </div>
+<hr>
+<h2 id="hugo简介">Hugo简介</h2>
+<p><strong>Hugo</strong>是由<strong>Go</strong>语言实现的静态网站生成工具，同时<strong>Hugo</strong>提供了海量的主题，结合<strong>GitHub</strong>/<strong>Gitee</strong>的免费页面，可以用于个人静态博客的构筑。</p>
+<div class="details admonition tip open">
+        <div class="details-summary admonition-title">
+            <i class="icon fas fa-lightbulb fa-fw"></i>Tip<i class="details-icon fas fa-angle-right fa-fw"></i>
+        </div>
+        <div class="details-content">
+            <div class="admonition-content">简而言之，<strong>Hugo</strong>是用于生成静态网站资源目录的工具，其程序的体量十分小，可以运行在多个平台。使用<strong>Hugo</strong>的目的，仅仅是为了生成静态网站的资源目录，及使用其海量的主题对博客进行美化。</div>
+        </div>
+    </div>
+<h3 id="a-工具下载">a. 工具下载</h3>
+<p><strong>Hugo</strong>是个开源的项目，其项目的<strong>Releases</strong>地址为：</p>
+<p><a href="https://github.com/gohugoio/hugo/releases" target="_blank" rel="noopener noreffer">Releases · gohugoio/hugo (github.com)</a></p>
+<h4 id="1-版本说明">1. 版本说明</h4>
+<p>以操作系统<strong>Windows-64bit</strong>为例，可以看到<strong>Hugo</strong>的<strong>Releases</strong>列表中，有两个版本均可用于<strong>Windows-64bit</strong>操作系统，其分别是：</p>
+<ul>
+<li><a href="https://github.com/gohugoio/hugo/releases/download/v0.83.1/hugo_0.83.1_Windows-64bit.zip" target="_blank" rel="noopener noreffer">hugo_0.83.1_Windows-64bit.zip</a></li>
+<li><a href="https://github.com/gohugoio/hugo/releases/download/v0.83.1/hugo_extended_0.83.1_Windows-64bit.zip" target="_blank" rel="noopener noreffer">hugo_extended_0.83.1_Windows-64bit.zip</a></li>
+</ul>
+<p>其中，<strong>hugo_extended</strong>版本允许对既定的主题进行修改，而普通的<strong>hugo</strong>版本是不允许对主题进行修改的。</p>
+<p>自行根据个人需求进行下载，本文将采用<strong>hugo_extended</strong>版本作为演示。</p>
+<h4 id="2-下载解压">2. 下载解压</h4>
+<p>在<strong>Releases</strong>列表中，选择<strong>hugo_extended_0.83.1_Windows-64bit</strong>版本，下载并解压，可以得到以下结构的目录：</p>
+<p><strong>| &ndash; hugo_extended_0.83.1_Windows-64bit</strong></p>
+<p>​	<strong>| &ndash; hugo.exe</strong></p>
+<p>​	<strong>| &ndash; LICENSE</strong></p>
+<p>​	<strong>| &ndash; README.md</strong></p>
+<figure><a class="lightgallery" href="/images/Hugo_Blog.images/Snipaste_2021-06-08_04-22-04.png" title="/images/Hugo_Blog.images/Snipaste_2021-06-08_04-22-04.png" data-thumbnail="/images/Hugo_Blog.images/Snipaste_2021-06-08_04-22-04.png" data-sub-html="<h2>hugo_extended_0.83.1_Windows-64bit</h2>">
+        <img
+            class="lazyload"
+            src="/svg/loading.min.svg"
+            data-src="/images/Hugo_Blog.images/Snipaste_2021-06-08_04-22-04.png"
+            data-srcset="/images/Hugo_Blog.images/Snipaste_2021-06-08_04-22-04.png, /images/Hugo_Blog.images/Snipaste_2021-06-08_04-22-04.png 1.5x, /images/Hugo_Blog.images/Snipaste_2021-06-08_04-22-04.png 2x"
+            data-sizes="auto"
+            alt="/images/Hugo_Blog.images/Snipaste_2021-06-08_04-22-04.png" />
+    </a><figcaption class="image-caption"><strong>hugo_extended_0.83.1_Windows-64bit</strong></figcaption>
+    </figure>
+<p>进入该目录后，打开命令行工具<strong>Windows Terminal</strong>/<strong>cmd.exe</strong>，运行以下命令：</p>
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">hugo new site MyBlog
+</code></pre></div><figure><a class="lightgallery" href="/images/Hugo_Blog.images/Snipaste_2021-06-08_04-30-02.png" title="/images/Hugo_Blog.images/Snipaste_2021-06-08_04-30-02.png" data-thumbnail="/images/Hugo_Blog.images/Snipaste_2021-06-08_04-30-02.png" data-sub-html="<h2>Windows Terminal</h2>">
+        <img
+            class="lazyload"
+            src="/svg/loading.min.svg"
+            data-src="/images/Hugo_Blog.images/Snipaste_2021-06-08_04-30-02.png"
+            data-srcset="/images/Hugo_Blog.images/Snipaste_2021-06-08_04-30-02.png, /images/Hugo_Blog.images/Snipaste_2021-06-08_04-30-02.png 1.5x, /images/Hugo_Blog.images/Snipaste_2021-06-08_04-30-02.png 2x"
+            data-sizes="auto"
+            alt="/images/Hugo_Blog.images/Snipaste_2021-06-08_04-30-02.png" />
+    </a><figcaption class="image-caption"><strong>Windows Terminal</strong></figcaption>
+    </figure>
+<p><strong>Hugo</strong>便会在当前的目录下，生成一个名为<strong>MyBlog</strong>的网站目录：</p>
+<figure><a class="lightgallery" href="/images/Hugo_Blog.images/Snipaste_2021-06-08_04-30-25.png" title="/images/Hugo_Blog.images/Snipaste_2021-06-08_04-30-25.png" data-thumbnail="/images/Hugo_Blog.images/Snipaste_2021-06-08_04-30-25.png" data-sub-html="<h2>hugo_extended_0.83.1_Windows-64bit</h2>">
+        <img
+            class="lazyload"
+            src="/svg/loading.min.svg"
+            data-src="/images/Hugo_Blog.images/Snipaste_2021-06-08_04-30-25.png"
+            data-srcset="/images/Hugo_Blog.images/Snipaste_2021-06-08_04-30-25.png, /images/Hugo_Blog.images/Snipaste_2021-06-08_04-30-25.png 1.5x, /images/Hugo_Blog.images/Snipaste_2021-06-08_04-30-25.png 2x"
+            data-sizes="auto"
+            alt="/images/Hugo_Blog.images/Snipaste_2021-06-08_04-30-25.png" />
+    </a><figcaption class="image-caption"><strong>hugo_extended_0.83.1_Windows-64bit</strong></figcaption>
+    </figure>
+<p><strong>MyBlog</strong>目录的初始结构如下：</p>
+<p><strong>| &ndash; MyBlog</strong></p>
+<p>​	<strong>| &ndash; archetypes</strong></p>
+<p>​	<strong>| &ndash; content</strong></p>
+<p>​	<strong>| &ndash; data</strong></p>
+<p>​	<strong>| &ndash; layouts</strong></p>
+<p>​	<strong>| &ndash; static</strong></p>
+<p>​	<strong>| &ndash; themes</strong></p>
+<p>​	<strong>| &ndash; config.toml</strong></p>
+<figure><a class="lightgallery" href="/images/Hugo_Blog.images/Snipaste_2021-06-08_04-36-24.png" title="/images/Hugo_Blog.images/Snipaste_2021-06-08_04-36-24.png" data-thumbnail="/images/Hugo_Blog.images/Snipaste_2021-06-08_04-36-24.png" data-sub-html="<h2>MyBlog</h2>">
+        <img
+            class="lazyload"
+            src="/svg/loading.min.svg"
+            data-src="/images/Hugo_Blog.images/Snipaste_2021-06-08_04-36-24.png"
+            data-srcset="/images/Hugo_Blog.images/Snipaste_2021-06-08_04-36-24.png, /images/Hugo_Blog.images/Snipaste_2021-06-08_04-36-24.png 1.5x, /images/Hugo_Blog.images/Snipaste_2021-06-08_04-36-24.png 2x"
+            data-sizes="auto"
+            alt="/images/Hugo_Blog.images/Snipaste_2021-06-08_04-36-24.png" />
+    </a><figcaption class="image-caption"><strong>MyBlog</strong></figcaption>
+    </figure>
+<div class="details admonition tip open">
+        <div class="details-summary admonition-title">
+            <i class="icon fas fa-lightbulb fa-fw"></i>Tip<i class="details-icon fas fa-angle-right fa-fw"></i>
+        </div>
+        <div class="details-content">
+            <div class="admonition-content">需要注意，此时创建得到的<strong>MyBlog</strong>目录，还不是静态网站资源目录，该资源目录需要在配置完成之后，使用<strong>hugo.exe</strong>命令生成。</div>
+        </div>
+    </div>
+<p>命令<strong>hugo.exe</strong>主要有两个用途：</p>
+<ol>
+<li>在本地部署静态网站；</li>
+<li>生成静态网站资源目录，用于部署在<strong>web</strong>服务器或免费页面。</li>
+</ol>
+<p>完成这两个目的的前提，是需要进入到网站目录中去调用<strong>hugo.exe</strong>命令。</p>
+<p>受限于<strong>Windows</strong>添加环境变量的复杂程度，这里选择直接将<strong>hugo.exe</strong>拷贝到<strong>MyBlog</strong>网站目录中，为后续在本地部署静态网站和生成静态网站资源目录作准备。</p>
+<p>将命令<strong>hugo.exe</strong>拷贝到<strong>MyBlog</strong>目录后，<strong>MyBlog</strong>目录的最终结构如下：</p>
+<p><strong>| &ndash; MyBlog</strong></p>
+<p>​	<strong>| &ndash; archetypes</strong></p>
+<p>​	<strong>| &ndash; content</strong></p>
+<p>​	<strong>| &ndash; data</strong></p>
+<p>​	<strong>| &ndash; layouts</strong></p>
+<p>​	<strong>| &ndash; static</strong></p>
+<p>​	<strong>| &ndash; themes</strong></p>
+<p>​	<strong>| &ndash; config.toml</strong></p>
+<p>​	<strong>| &ndash; hugo.exe</strong></p>
+<figure><a class="lightgallery" href="/images/Hugo_Blog.images/Snipaste_2021-06-08_04-40-35.png" title="/images/Hugo_Blog.images/Snipaste_2021-06-08_04-40-35.png" data-thumbnail="/images/Hugo_Blog.images/Snipaste_2021-06-08_04-40-35.png" data-sub-html="<h2>MyBlog</h2>">
+        <img
+            class="lazyload"
+            src="/svg/loading.min.svg"
+            data-src="/images/Hugo_Blog.images/Snipaste_2021-06-08_04-40-35.png"
+            data-srcset="/images/Hugo_Blog.images/Snipaste_2021-06-08_04-40-35.png, /images/Hugo_Blog.images/Snipaste_2021-06-08_04-40-35.png 1.5x, /images/Hugo_Blog.images/Snipaste_2021-06-08_04-40-35.png 2x"
+            data-sizes="auto"
+            alt="/images/Hugo_Blog.images/Snipaste_2021-06-08_04-40-35.png" />
+    </a><figcaption class="image-caption"><strong>MyBlog</strong></figcaption>
+    </figure>
+<h3 id="b-基本配置与主题配置">b. 基本配置与主题配置</h3>
+<p>在本地部署静态网站之前，还需要进行基本配置和主题配置。基本配置可以视为修改<strong>config.toml</strong>；主题配置则稍微复杂，需要首先获取到主题目录，而后再对主题目录中的相关文件进行适当的修改。</p>
+<div class="details admonition warning open">
+        <div class="details-summary admonition-title">
+            <i class="icon fas fa-exclamation-triangle fa-fw"></i>Warning<i class="details-icon fas fa-angle-right fa-fw"></i>
+        </div>
+        <div class="details-content">
+            <div class="admonition-content">配置文件<strong>config.toml</strong>中的大部分配置，是直接与主题<strong>themes</strong>挂钩的。如果静态网站更换了主题，那么对应地也需要修改<strong>config.toml</strong>文件。</div>
+        </div>
+    </div>
+<h4 id="1-configtoml">1. config.toml</h4>
+<p>网站主题选用<a href="https://github.com/dillonzq/LoveIt" target="_blank" rel="noopener noreffer"><strong>LoveIt</strong></a>，针对该主题的一个较为完整的<strong>config.toml</strong>配置如下，可以复制并修改使用：</p>
+<div class="highlight"><pre class="chroma"><code class="language-toml" data-lang="toml"><span class="c"># ---------------- PartA - Global Setting ---------------- </span>
+
+<span class="c"># [en, zh-cn, fr, ...] determines default content language, display language</span>
+<span class="nx">defaultContentLanguage</span> <span class="p">=</span> <span class="s2">&#34;zh-cn&#34;</span>
+<span class="c"># Language code, ps: unknow usage</span>
+<span class="nx">languageCode</span> <span class="p">=</span> <span class="s2">&#34;en&#34;</span>
+<span class="c"># This title will show on the brower&#39;s tab</span>
+<span class="nx">title</span><span class="p">=</span><span class="s2">&#34;~ Welcome ~&#34;</span>
+
+<span class="c"># True means allow use emoji in your markdown file</span>
+<span class="nx">enableEmoji</span> <span class="p">=</span> <span class="kc">true</span>
+
+<span class="c"># when building the site with Hugo, baseURL is the GitHub/Gitee address which can access your static website</span>
+<span class="nx">baseURL</span> <span class="p">=</span> <span class="s2">&#34;https://xxxx.github.io&#34;</span>
+<span class="c"># Change the default theme to be use when building the site with Hugo</span>
+<span class="nx">theme</span> <span class="p">=</span> <span class="s2">&#34;LoveIt&#34;</span>
+
+<span class="c"># ---------------- PartB - User-defined Setting ---------------- </span>
+
+<span class="p">[</span><span class="nx">params</span><span class="p">]</span>
+  <span class="c"># LoveIt theme version</span>
+  <span class="nx">version</span> <span class="p">=</span> <span class="s2">&#34;0.2.X&#34;</span>
+
+  <span class="p">[</span><span class="nx">params</span><span class="p">.</span><span class="nx">app</span><span class="p">]</span>
+  	<span class="c"># When add as app, this name will be the app&#39;s name</span>
+  	<span class="nx">title</span> <span class="p">=</span> <span class="s2">&#34;MyBlog&#34;</span>
+  	<span class="c"># Your website&#39;s icon</span>
+  	<span class="nx">svgFavicon</span> <span class="p">=</span> <span class="s2">&#34;/moon-stars.svg&#34;</span>
+  
+  <span class="p">[</span><span class="nx">params</span><span class="p">.</span><span class="nx">header</span><span class="p">]</span>
+    <span class="c"># Desktop navigation bar&#39;s mode (&#34;fixed&#34;, &#34;normal&#34;, &#34;auto&#34;)</span>
+    <span class="nx">desktopMode</span> <span class="p">=</span> <span class="s2">&#34;fixed&#34;</span>
+    <span class="c"># Mobile navigation bar&#39;s mode (&#34;fixed&#34;, &#34;normal&#34;, &#34;auto&#34;)</span>
+    <span class="nx">mobileMode</span> <span class="p">=</span> <span class="s2">&#34;auto&#34;</span>
+
+    <span class="c"># Navigation bar&#39;s setting</span>
+    <span class="p">[</span><span class="nx">params</span><span class="p">.</span><span class="nx">header</span><span class="p">.</span><span class="nx">title</span><span class="p">]</span>
+      <span class="c"># Navigation bar&#39;s logo</span>
+      <span class="nx">logo</span> <span class="p">=</span> <span class="s2">&#34;&#34;</span>
+      <span class="c"># Navigation bar&#39;s name</span>
+      <span class="nx">name</span> <span class="p">=</span> <span class="s2">&#34;Nav Title&#34;</span>
+      <span class="c"># Information before name, you can use HTML format</span>
+      <span class="nx">pre</span> <span class="p">=</span> <span class="s2">&#34;&lt;div style=&#39;font-family: My Cascadia Code; display: inline-block;&#39;&gt;&#34;</span>
+      <span class="c"># Information after name, you can use HTML format</span>
+      <span class="nx">post</span> <span class="p">=</span> <span class="s2">&#34;&lt;/div&gt;&#34;</span>
+      <span class="c"># Typing animation</span>
+      <span class="nx">typeit</span> <span class="p">=</span> <span class="kc">true</span>
+
+  <span class="p">[</span><span class="nx">params</span><span class="p">.</span><span class="nx">footer</span><span class="p">]</span>
+  	<span class="c"># Enable footer or not</span>
+    <span class="nx">enable</span> <span class="p">=</span> <span class="kc">true</span>
+    <span class="c"># User-defined content, HTML format is supported</span>
+    <span class="nx">custom</span> <span class="p">=</span> <span class="s1">&#39;&#39;</span>
+    <span class="c"># Choose to show hugo copyright and theme info or not</span>
+    <span class="nx">hugo</span> <span class="p">=</span> <span class="kc">false</span>
+    <span class="c"># Choose to show copyright or not</span>
+    <span class="nx">copyright</span> <span class="p">=</span> <span class="kc">true</span>
+    <span class="c"># Choose to show author name or not, need variable [author] supported</span>
+    <span class="nx">author</span> <span class="p">=</span> <span class="kc">true</span>
+    <span class="c"># Year that this website built</span>
+    <span class="nx">since</span> <span class="p">=</span> <span class="mi">2019</span>
+    <span class="c"># ICP info</span>
+    <span class="nx">icp</span> <span class="p">=</span> <span class="s2">&#34;&#34;</span>
+    <span class="c"># License, HTML format is supported</span>
+    <span class="nx">license</span> <span class="p">=</span> <span class="s1">&#39;&lt;a rel=&#34;license external nofollow noopener noreffer&#34; href=&#34;https://creativecommons.org/licenses/by-nc/4.0/&#34; target=&#34;_blank&#34;&gt;CC BY-NC 4.0&lt;/a&gt;&#39;</span>
+  
+  <span class="c"># Posts card setting</span>
+  <span class="p">[</span><span class="nx">params</span><span class="p">.</span><span class="nx">section</span><span class="p">]</span>
+    <span class="c"># Articles that each page showing</span>
+    <span class="nx">paginate</span> <span class="p">=</span> <span class="mi">20</span>
+    <span class="c"># Date format</span>
+    <span class="nx">dateFormat</span> <span class="p">=</span> <span class="s2">&#34;01-02&#34;</span>
+    <span class="c"># Amount of RSS</span>
+    <span class="nx">rss</span> <span class="p">=</span> <span class="mi">10</span>
+
+  <span class="c"># Tags or Categories card setting</span>
+  <span class="p">[</span><span class="nx">params</span><span class="p">.</span><span class="nx">list</span><span class="p">]</span>
+    <span class="c"># Articles that each page showing</span>
+    <span class="nx">paginate</span> <span class="p">=</span> <span class="mi">20</span>
+    <span class="c"># Date format</span>
+    <span class="nx">dateFormat</span> <span class="p">=</span> <span class="s2">&#34;01-02&#34;</span>
+    <span class="c"># Amount of RSS</span>
+    <span class="nx">rss</span> <span class="p">=</span> <span class="mi">10</span>
+
+  <span class="c"># Theme setting</span>
+  <span class="p">[</span><span class="nx">params</span><span class="p">.</span><span class="nx">home</span><span class="p">]</span>
+
+    <span class="c"># Personal profile</span>
+    <span class="p">[</span><span class="nx">params</span><span class="p">.</span><span class="nx">home</span><span class="p">.</span><span class="nx">profile</span><span class="p">]</span>
+      <span class="nx">enable</span> <span class="p">=</span> <span class="kc">true</span>
+      <span class="c"># Front page avatar</span>
+      <span class="nx">avatarURL</span> <span class="p">=</span> <span class="s2">&#34;/avatar.gif&#34;</span>
+      <span class="c"># Front page avatar&#39;s title</span>
+      <span class="nx">title</span> <span class="p">=</span> <span class="s2">&#34;Aloha, I&#39;m dylan. Nice to know u.&#34;</span>
+      <span class="c"># Front page avatar&#39;s subtitle</span>
+      <span class="nx">subtitle</span> <span class="p">=</span> <span class="s2">&#34;keep coding, keep breathing.&#34;</span>
+      <span class="c"># Typing animation support subtitle</span>
+      <span class="nx">typeit</span> <span class="p">=</span> <span class="kc">true</span>
+      <span class="c"># Choose to show your social account, need variable [params.social] support</span>
+      <span class="nx">social</span> <span class="p">=</span> <span class="kc">true</span>
+      <span class="c"># Disclaimer info, HTML format supported</span>
+      <span class="nx">disclaimer</span> <span class="p">=</span> <span class="s2">&#34;&#34;</span>
+
+    <span class="c"># Front page article</span>
+    <span class="p">[</span><span class="nx">params</span><span class="p">.</span><span class="nx">home</span><span class="p">.</span><span class="nx">posts</span><span class="p">]</span>
+      <span class="nx">enable</span> <span class="p">=</span> <span class="kc">true</span>
+      <span class="c"># Amount of front page articles</span>
+      <span class="nx">paginate</span> <span class="p">=</span> <span class="mi">6</span>
+
+  <span class="c"># Social information, program will auto concatenated address</span>
+  <span class="p">[</span><span class="nx">params</span><span class="p">.</span><span class="nx">social</span><span class="p">]</span>
+    <span class="nx">GitHub</span> <span class="p">=</span> <span class="s2">&#34;&#34;</span>
+    <span class="nx">Stackoverflow</span> <span class="p">=</span> <span class="s2">&#34;&#34;</span>
+    <span class="nx">Steam</span> <span class="p">=</span> <span class="s2">&#34;&#34;</span>
+    <span class="nx">Email</span> <span class="p">=</span> <span class="s2">&#34;&#34;</span>
+
+<span class="c"># ---------------- PartC - Menu Setting ----------------</span>
+
+<span class="p">[</span><span class="nx">menu</span><span class="p">]</span>
+  <span class="p">[[</span><span class="nx">menu</span><span class="p">.</span><span class="nx">main</span><span class="p">]]</span>
+    <span class="nx">identifier</span> <span class="p">=</span> <span class="s2">&#34;posts&#34;</span>
+    <span class="c"># you can add extra information before the name (HTML format is supported), such as icons</span>
+    <span class="nx">pre</span> <span class="p">=</span> <span class="s2">&#34;&#34;</span>
+    <span class="c"># you can add extra information after the name (HTML format is supported), such as icons</span>
+    <span class="nx">post</span> <span class="p">=</span> <span class="s2">&#34;&#34;</span>
+    <span class="nx">name</span> <span class="p">=</span> <span class="s2">&#34;Posts&#34;</span>
+    <span class="nx">url</span> <span class="p">=</span> <span class="s2">&#34;/posts/&#34;</span>
+    <span class="c"># title will be shown when you hover on this menu link</span>
+    <span class="nx">title</span> <span class="p">=</span> <span class="s2">&#34;&#34;</span>
+    <span class="nx">weight</span> <span class="p">=</span> <span class="mi">1</span>
+  <span class="p">[[</span><span class="nx">menu</span><span class="p">.</span><span class="nx">main</span><span class="p">]]</span>
+    <span class="nx">identifier</span> <span class="p">=</span> <span class="s2">&#34;tags&#34;</span>
+    <span class="nx">pre</span> <span class="p">=</span> <span class="s2">&#34;&#34;</span>
+    <span class="nx">post</span> <span class="p">=</span> <span class="s2">&#34;&#34;</span>
+    <span class="nx">name</span> <span class="p">=</span> <span class="s2">&#34;Tags&#34;</span>
+    <span class="nx">url</span> <span class="p">=</span> <span class="s2">&#34;/tags/&#34;</span>
+    <span class="nx">title</span> <span class="p">=</span> <span class="s2">&#34;&#34;</span>
+    <span class="nx">weight</span> <span class="p">=</span> <span class="mi">2</span>
+  <span class="p">[[</span><span class="nx">menu</span><span class="p">.</span><span class="nx">main</span><span class="p">]]</span>
+    <span class="nx">identifier</span> <span class="p">=</span> <span class="s2">&#34;categories&#34;</span>
+    <span class="nx">pre</span> <span class="p">=</span> <span class="s2">&#34;&#34;</span>
+    <span class="nx">post</span> <span class="p">=</span> <span class="s2">&#34;&#34;</span>
+    <span class="nx">name</span> <span class="p">=</span> <span class="s2">&#34;Categories&#34;</span>
+    <span class="nx">url</span> <span class="p">=</span> <span class="s2">&#34;/categories/&#34;</span>
+    <span class="nx">title</span> <span class="p">=</span> <span class="s2">&#34;&#34;</span>
+    <span class="nx">weight</span> <span class="p">=</span> <span class="mi">3</span>
+
+<span class="c"># ---------------- Below is other setting ----------------</span>
+<span class="c"># Author setting</span>
+<span class="p">[</span><span class="nx">author</span><span class="p">]</span>
+  <span class="nx">name</span> <span class="p">=</span> <span class="s2">&#34;You&#34;</span>
+  <span class="nx">email</span> <span class="p">=</span> <span class="s2">&#34;&#34;</span>
+  <span class="nx">link</span> <span class="p">=</span> <span class="s2">&#34;&#34;</span>
+
+<span class="c"># Markup related configuration in Hugo</span>
+<span class="p">[</span><span class="nx">markup</span><span class="p">]</span>
+  <span class="c"># Syntax Highlighting (https://gohugo.io/content-management/syntax-highlighting)</span>
+  <span class="p">[</span><span class="nx">markup</span><span class="p">.</span><span class="nx">highlight</span><span class="p">]</span>
+    <span class="c"># false is a necessary configuration (https://github.com/dillonzq/LoveIt/issues/158)</span>
+    <span class="nx">noClasses</span> <span class="p">=</span> <span class="kc">false</span>
+</code></pre></div><p>以下仅针对其中一些参数作一些说明：</p>
+<ul>
+<li><strong>params.app.svgFavicon</strong>：该资源位于<strong>static</strong>目录下；</li>
+<li><strong>params.home.profile.avatarURL</strong>：该资源位于<strong>static</strong>目录下；</li>
+<li><strong>menu.main.url</strong>：该资源位于<strong>content</strong>目录下。</li>
+</ul>
+<figure><a class="lightgallery" href="/images/Hugo_Blog.images/Snipaste_2021-06-08_05-00-09.png" title="/images/Hugo_Blog.images/Snipaste_2021-06-08_05-00-09.png" data-thumbnail="/images/Hugo_Blog.images/Snipaste_2021-06-08_05-00-09.png" data-sub-html="<h2>/Myblog/static/</h2>">
+        <img
+            class="lazyload"
+            src="/svg/loading.min.svg"
+            data-src="/images/Hugo_Blog.images/Snipaste_2021-06-08_05-00-09.png"
+            data-srcset="/images/Hugo_Blog.images/Snipaste_2021-06-08_05-00-09.png, /images/Hugo_Blog.images/Snipaste_2021-06-08_05-00-09.png 1.5x, /images/Hugo_Blog.images/Snipaste_2021-06-08_05-00-09.png 2x"
+            data-sizes="auto"
+            alt="/images/Hugo_Blog.images/Snipaste_2021-06-08_05-00-09.png" />
+    </a><figcaption class="image-caption">/<strong>Myblog</strong>/<strong>static</strong>/</figcaption>
+    </figure>
+<h4 id="2-themesloveit">2. themes/LoveIt</h4>
+<p><strong>Hugo</strong>拥有海量的主题，本例子采用的主题为<a href="https://github.com/dillonzq/LoveIt" target="_blank" rel="noopener noreffer"><strong>LoveIt</strong></a>，下载该主题目录，置于<strong>themes</strong>目录中即可。</p>
+<figure><a class="lightgallery" href="/images/Hugo_Blog.images/Snipaste_2021-06-08_04-42-39.png" title="/images/Hugo_Blog.images/Snipaste_2021-06-08_04-42-39.png" data-thumbnail="/images/Hugo_Blog.images/Snipaste_2021-06-08_04-42-39.png" data-sub-html="<h2>/themes/LoveIt</h2>">
+        <img
+            class="lazyload"
+            src="/svg/loading.min.svg"
+            data-src="/images/Hugo_Blog.images/Snipaste_2021-06-08_04-42-39.png"
+            data-srcset="/images/Hugo_Blog.images/Snipaste_2021-06-08_04-42-39.png, /images/Hugo_Blog.images/Snipaste_2021-06-08_04-42-39.png 1.5x, /images/Hugo_Blog.images/Snipaste_2021-06-08_04-42-39.png 2x"
+            data-sizes="auto"
+            alt="/images/Hugo_Blog.images/Snipaste_2021-06-08_04-42-39.png" />
+    </a><figcaption class="image-caption">/<strong>themes</strong>/<strong>LoveIt</strong></figcaption>
+    </figure>
+<p><strong>LoveIt</strong>主题：<a href="https://github.com/dillonzq/LoveIt/archive/refs/tags/v0.2.10.zip" target="_blank" rel="noopener noreffer">LoveIt 0.2.10</a></p>
+<div class="details admonition warning open">
+        <div class="details-summary admonition-title">
+            <i class="icon fas fa-exclamation-triangle fa-fw"></i>Warning<i class="details-icon fas fa-angle-right fa-fw"></i>
+        </div>
+        <div class="details-content">
+            <div class="admonition-content">配置文件<strong>config.toml</strong>内的全局配置里，有用于主题配置的属性：<strong>theme = &ldquo;LoveIt&rdquo;</strong>。此时，<strong>Hugo</strong>将会在<strong>themes</strong>目录下，寻找相匹配的名为<strong>LoveIt</strong>的主题目录。如果目录名称不一致，程序将会报错，因此务必要保证主题目录的名称与<strong>config.toml</strong>中的主题配置的值一致。</div>
+        </div>
+    </div>
+<p>此前说过，<strong>hugo_extended</strong>版本可以对主题进行自定义的修改，这种修改主要针对/<strong>LoveIt</strong>/<strong>assets</strong>/<strong>css</strong>/目录下的两个文件：</p>
+<ul>
+<li><strong>_custom.scss</strong>：该文件中可以自定义<strong>Css</strong>样式；</li>
+<li><strong>_override.scss</strong>：该文件中可以覆盖变量。</li>
+</ul>
+<figure><a class="lightgallery" href="/images/Hugo_Blog.images/Snipaste_2021-06-08_04-44-22.png" title="/images/Hugo_Blog.images/Snipaste_2021-06-08_04-44-22.png" data-thumbnail="/images/Hugo_Blog.images/Snipaste_2021-06-08_04-44-22.png" data-sub-html="<h2>/themes/LoveIt/assets/css/</h2>">
+        <img
+            class="lazyload"
+            src="/svg/loading.min.svg"
+            data-src="/images/Hugo_Blog.images/Snipaste_2021-06-08_04-44-22.png"
+            data-srcset="/images/Hugo_Blog.images/Snipaste_2021-06-08_04-44-22.png, /images/Hugo_Blog.images/Snipaste_2021-06-08_04-44-22.png 1.5x, /images/Hugo_Blog.images/Snipaste_2021-06-08_04-44-22.png 2x"
+            data-sizes="auto"
+            alt="/images/Hugo_Blog.images/Snipaste_2021-06-08_04-44-22.png" />
+    </a><figcaption class="image-caption">/<strong>themes</strong>/<strong>LoveIt</strong>/<strong>assets</strong>/<strong>css</strong>/</figcaption>
+    </figure>
+<p>以下提供示例的样式文件：</p>
+<ul>
+<li><strong>_custom.scss</strong>配置如下：</li>
+</ul>
+<div class="highlight"><pre class="chroma"><code class="language-scss" data-lang="scss"><span class="nc">.single</span> <span class="nc">.content</span> <span class="nt">figure</span> <span class="nt">img</span> <span class="p">{</span>
+    <span class="nt">width</span><span class="nd">:</span> <span class="nt">100</span><span class="err">%</span> <span class="o">!</span><span class="nt">important</span><span class="p">;</span> <span class="c1">// 用于调整img的宽度为页面宽度的100%
+</span><span class="c1"></span><span class="p">}</span>
+</code></pre></div><ul>
+<li><strong>_override.scss</strong>配置如下：</li>
+</ul>
+<div class="highlight"><pre class="chroma"><code class="language-scss" data-lang="scss"><span class="c1">// 引用本地字体文件
+</span><span class="c1"></span><span class="k">@font-face</span> <span class="p">{</span>
+	<span class="nt">font-family</span><span class="nd">:</span> <span class="nt">My</span> <span class="nt">Cascadia</span> <span class="nt">Code</span><span class="p">;</span>
+	<span class="nt">src</span><span class="nd">:</span> <span class="nt">url</span><span class="o">(</span><span class="s2">&#34;../lib/webfonts/CascadiaCode.svg&#34;</span><span class="o">),</span> <span class="nt">url</span><span class="o">(</span><span class="s2">&#34;../lib/webfonts/CascadiaCode.ttf&#34;</span><span class="o">)</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="c1">// 覆盖变量
+</span><span class="c1"></span><span class="nv">$global-font-family</span><span class="o">:</span> <span class="n">My</span> <span class="n">Cascadia</span> <span class="n">Code</span><span class="o">,</span> <span class="n">Microsoft</span> <span class="n">YaHei</span> <span class="n">UI</span><span class="o">,</span> <span class="n">system-ui</span><span class="o">,</span> <span class="o">-</span><span class="n">apple-system</span><span class="o">,</span> <span class="n">BlinkMacSystemFont</span><span class="o">,</span> <span class="n">PingFang</span> <span class="n">SC</span><span class="o">,</span> <span class="n">Segoe</span> <span class="n">UI</span><span class="o">,</span> <span class="n">Roboto</span><span class="o">,</span> <span class="n">Oxygen</span><span class="o">,</span> <span class="n">Ubuntu</span><span class="o">,</span> <span class="n">Cantarell</span><span class="o">,</span> <span class="n">Fira</span> <span class="n">Sans</span><span class="o">,</span> <span class="n">Droid</span> <span class="n">Sans</span><span class="o">,</span> <span class="n">Helvetica</span> <span class="n">Neue</span><span class="o">,</span> <span class="n">Helvetica</span><span class="o">,</span> <span class="n">Arial</span><span class="o">,</span> <span class="no">sans-serif</span><span class="p">;</span>
+<span class="nv">$code-font-family</span><span class="o">:</span> <span class="n">My</span> <span class="n">Cascadia</span> <span class="n">Code</span><span class="o">,</span> <span class="n">Microsoft</span> <span class="n">YaHei</span> <span class="n">UI</span><span class="o">,</span> <span class="n">Source</span> <span class="n">Code</span> <span class="n">Pro</span><span class="o">,</span> <span class="n">Menlo</span><span class="o">,</span> <span class="n">Consolas</span><span class="o">,</span> <span class="n">Monaco</span><span class="o">,</span> <span class="no">monospace</span><span class="o">,</span> <span class="nv">$global-font-family</span><span class="p">;</span>
+</code></pre></div><div class="details admonition warning open">
+        <div class="details-summary admonition-title">
+            <i class="icon fas fa-exclamation-triangle fa-fw"></i>Warning<i class="details-icon fas fa-angle-right fa-fw"></i>
+        </div>
+        <div class="details-content">
+            <div class="admonition-content"><strong>_override.scss</strong>中@<strong>font-face</strong>规则的<strong>src</strong>属性，其指示<strong>CascadiaCode.svg</strong>、<strong>CascadiaCode.ttf</strong>字体文件，需要被置于/<strong>LoveIt</strong>/<strong>static</strong>/<strong>lib</strong>/<strong>webfonts</strong>/目录下，此时本地字体<strong>My Cascadia Code</strong>才会生效。</div>
+        </div>
+    </div>
+<figure><a class="lightgallery" href="/images/Hugo_Blog.images/Snipaste_2021-06-08_04-46-43.png" title="/images/Hugo_Blog.images/Snipaste_2021-06-08_04-46-43.png" data-thumbnail="/images/Hugo_Blog.images/Snipaste_2021-06-08_04-46-43.png" data-sub-html="<h2>/themes/LoveIt/static/lib/webfonts/</h2>">
+        <img
+            class="lazyload"
+            src="/svg/loading.min.svg"
+            data-src="/images/Hugo_Blog.images/Snipaste_2021-06-08_04-46-43.png"
+            data-srcset="/images/Hugo_Blog.images/Snipaste_2021-06-08_04-46-43.png, /images/Hugo_Blog.images/Snipaste_2021-06-08_04-46-43.png 1.5x, /images/Hugo_Blog.images/Snipaste_2021-06-08_04-46-43.png 2x"
+            data-sizes="auto"
+            alt="/images/Hugo_Blog.images/Snipaste_2021-06-08_04-46-43.png" />
+    </a><figcaption class="image-caption">/<strong>themes</strong>/<strong>LoveIt</strong>/<strong>static</strong>/<strong>lib</strong>/<strong>webfonts</strong>/</figcaption>
+    </figure>
+<p><strong>CascadiaCode</strong>字体：<a href="https://github.com/microsoft/cascadia-code/releases/download/v2105.24/CascadiaCode-2105.24.zip" target="_blank" rel="noopener noreffer">CascadiaCode-2105.24.zip</a></p>
+<p><strong>TTF</strong>文件转换<strong>SVG</strong>文件：<a href="https://www.aconvert.com/cn/image/ttf-to-svg/" target="_blank" rel="noopener noreffer">.ttf文件转.svg文件</a></p>
+<h2 id="hugo网站部署">Hugo网站部署</h2>
+<p>本节将介绍<strong>Hugo</strong>的两种用途：</p>
+<ol>
+<li>在本地部署静态网站；</li>
+<li>生成静态网站资源目录，用于部署在<strong>web</strong>服务器或免费页面。</li>
+</ol>
+<div class="details admonition tip open">
+        <div class="details-summary admonition-title">
+            <i class="icon fas fa-lightbulb fa-fw"></i>Tip<i class="details-icon fas fa-angle-right fa-fw"></i>
+        </div>
+        <div class="details-content">
+            <div class="admonition-content"><strong>Hugo</strong>本地部署的网站，拥有一个十分出色的优点：在网站部署的过程中，你可以动态地改变配置文件或<strong>markdown</strong>文件，网页会随着任意改动的保存，而进行即刻的刷新操作。</div>
+        </div>
+    </div>
+<h3 id="a-创建博文">a. 创建博文</h3>
+<p><strong>Hugo</strong>网站要求在进行部署之前，必须至少拥有一篇博文。切换到网站的根目录下，使用以下命令新建一篇<strong>markdown</strong>博文：</p>
+<pre><code>hugo new posts/first_post.md
+</code></pre><p>命令运行后，可以看到在<strong>content</strong>目录下，新增了一个名为<strong>posts</strong>的目录，且该目录下拥有一个名为<strong>first_post.md</strong>的文件：</p>
+<figure><a class="lightgallery" href="/images/Hugo_Blog.images/Snipaste_2021-06-08_04-49-59.png" title="/images/Hugo_Blog.images/Snipaste_2021-06-08_04-49-59.png" data-thumbnail="/images/Hugo_Blog.images/Snipaste_2021-06-08_04-49-59.png" data-sub-html="<h2>/MyBlog/content/posts/first_post.md</h2>">
+        <img
+            class="lazyload"
+            src="/svg/loading.min.svg"
+            data-src="/images/Hugo_Blog.images/Snipaste_2021-06-08_04-49-59.png"
+            data-srcset="/images/Hugo_Blog.images/Snipaste_2021-06-08_04-49-59.png, /images/Hugo_Blog.images/Snipaste_2021-06-08_04-49-59.png 1.5x, /images/Hugo_Blog.images/Snipaste_2021-06-08_04-49-59.png 2x"
+            data-sizes="auto"
+            alt="/images/Hugo_Blog.images/Snipaste_2021-06-08_04-49-59.png" />
+    </a><figcaption class="image-caption">/MyBlog/content/posts/first_post.md</figcaption>
+    </figure>
+<p>其中<strong>first_post.md</strong>内容如下：</p>
+<div class="highlight"><pre class="chroma"><code class="language-markdown" data-lang="markdown">---
+title: &#34;First_post&#34;
+date: 2021-06-08T04:49:30+08:00
+draft: true
+---
+</code></pre></div><p><strong>Hugo</strong>允许你在文章内容前面添加<strong>yaml</strong>、<strong>toml</strong>或者<strong>json</strong>格式的前置参数。可以看到新建<strong>first_post.md</strong>中，有三个默认的前置参数，说明如下：</p>
+<ol>
+<li><strong>title</strong>：文章显示的标题；</li>
+<li><strong>data</strong>：文章显示的创建日期；</li>
+<li><strong>draft</strong>：是否为草稿。在正常的本地部署或生成静态资源目录时，此选项为<strong>true</strong>的文章，不会被展示在网站上。</li>
+</ol>
+<p>关于<strong>Hugo</strong>中更多<strong>markdown</strong>前置参数的说明，请参阅：<a href="https://hugoloveit.com/zh-cn/theme-documentation-content/#front-matter" target="_blank" rel="noopener noreffer">Front Matter</a></p>
+<div class="details admonition tip open">
+        <div class="details-summary admonition-title">
+            <i class="icon fas fa-lightbulb fa-fw"></i>Tip<i class="details-icon fas fa-angle-right fa-fw"></i>
+        </div>
+        <div class="details-content">
+            <div class="admonition-content">对于命令<strong>hugo new xxxx</strong>来说，其本质是在<strong>content</strong>目录下创建名为<strong>xxxx</strong>的<strong>markdown</strong>文件。其中<strong>markdown</strong>文件模板来自于<strong>archetypes</strong>/<strong>default.md</strong>。</div>
+        </div>
+    </div>
+<p>常用的前置参数如下：</p>
+<div class="highlight"><pre class="chroma"><code class="language-markdown" data-lang="markdown">---
+title: &#34;Title&#34;
+summary: &#34;Front page description.&#34;
+date: yyyy-MM-dd
+draft: false
+tags: [&#34;tagsA&#34;, &#34;tagsB&#34;]
+categories: [&#34;categoriesA&#34;, &#34;categoriesB&#34;]
+lightgallery: true
+---
+</code></pre></div><p>在本地部署网站前，我们修改<strong>first_post.md</strong>的内容，并在其中添加一些段落与文字，如下：</p>
+<div class="highlight"><pre class="chroma"><code class="language-markdown" data-lang="markdown">---
+title: &#34;First_post&#34;
+date: 2021-06-08T04:49:30+08:00
+draft: false
+summary: &#34;Front page description.&#34;
+tags: [&#34;tagsA&#34;]
+categories: [&#34;categoriesB&#34;]
+---
+
+<span class="gu">## 标题吖
+</span><span class="gu"></span>
+你好吗？
+</code></pre></div><h3 id="b-本地部署">b. 本地部署</h3>
+<p>现在，你可以使用<strong>hugo</strong>命令行，将静态网站部署在本地了。回到<strong>MyBlog</strong>目录，打开终端并运行以下命令：</p>
+<pre><code>hugo server
+</code></pre><p>程序将自动把网站部署在本地的<strong>1313</strong>端口：</p>
+<figure><a class="lightgallery" href="/images/Hugo_Blog.images/Snipaste_2021-06-08_05-11-42.png" title="/images/Hugo_Blog.images/Snipaste_2021-06-08_05-11-42.png" data-thumbnail="/images/Hugo_Blog.images/Snipaste_2021-06-08_05-11-42.png" data-sub-html="<h2>网站部署期间，不可关闭终端</h2>">
+        <img
+            class="lazyload"
+            src="/svg/loading.min.svg"
+            data-src="/images/Hugo_Blog.images/Snipaste_2021-06-08_05-11-42.png"
+            data-srcset="/images/Hugo_Blog.images/Snipaste_2021-06-08_05-11-42.png, /images/Hugo_Blog.images/Snipaste_2021-06-08_05-11-42.png 1.5x, /images/Hugo_Blog.images/Snipaste_2021-06-08_05-11-42.png 2x"
+            data-sizes="auto"
+            alt="/images/Hugo_Blog.images/Snipaste_2021-06-08_05-11-42.png" />
+    </a><figcaption class="image-caption"><strong>网站部署期间，不可关闭终端</strong></figcaption>
+    </figure>
+<p>通过访问<strong>http://localhost:1313</strong>网址，可以看到<strong>hugo</strong>部署在本地的网站：</p>
+<figure><a class="lightgallery" href="/images/Hugo_Blog.images/Snipaste_2021-06-08_05-12-38.png" title="/images/Hugo_Blog.images/Snipaste_2021-06-08_05-12-38.png" data-thumbnail="/images/Hugo_Blog.images/Snipaste_2021-06-08_05-12-38.png" data-sub-html="<h2>Homepage</h2>">
+        <img
+            class="lazyload"
+            src="/svg/loading.min.svg"
+            data-src="/images/Hugo_Blog.images/Snipaste_2021-06-08_05-12-38.png"
+            data-srcset="/images/Hugo_Blog.images/Snipaste_2021-06-08_05-12-38.png, /images/Hugo_Blog.images/Snipaste_2021-06-08_05-12-38.png 1.5x, /images/Hugo_Blog.images/Snipaste_2021-06-08_05-12-38.png 2x"
+            data-sizes="auto"
+            alt="/images/Hugo_Blog.images/Snipaste_2021-06-08_05-12-38.png" />
+    </a><figcaption class="image-caption"><strong>Homepage</strong></figcaption>
+    </figure>
+<figure><a class="lightgallery" href="/images/Hugo_Blog.images/Snipaste_2021-06-08_05-12-51.png" title="/images/Hugo_Blog.images/Snipaste_2021-06-08_05-12-51.png" data-thumbnail="/images/Hugo_Blog.images/Snipaste_2021-06-08_05-12-51.png" data-sub-html="<h2>first_post.md</h2>">
+        <img
+            class="lazyload"
+            src="/svg/loading.min.svg"
+            data-src="/images/Hugo_Blog.images/Snipaste_2021-06-08_05-12-51.png"
+            data-srcset="/images/Hugo_Blog.images/Snipaste_2021-06-08_05-12-51.png, /images/Hugo_Blog.images/Snipaste_2021-06-08_05-12-51.png 1.5x, /images/Hugo_Blog.images/Snipaste_2021-06-08_05-12-51.png 2x"
+            data-sizes="auto"
+            alt="/images/Hugo_Blog.images/Snipaste_2021-06-08_05-12-51.png" />
+    </a><figcaption class="image-caption"><strong>first_post.md</strong></figcaption>
+    </figure>
+<h3 id="c-远程部署">c. 远程部署</h3>
+<p>本节将介绍如何将<strong>Hugo</strong>生成的静态网站资源目录，部署到<strong>GitHub</strong>的免费页面上。关于<strong>GitHub Pages</strong>的介绍，可以参考：</p>
+<p><a href="https://pages.github.com/" target="_blank" rel="noopener noreffer">GitHub Pages | Websites for you and your projects.</a></p>
+<div class="details admonition tip open">
+        <div class="details-summary admonition-title">
+            <i class="icon fas fa-lightbulb fa-fw"></i>Tip<i class="details-icon fas fa-angle-right fa-fw"></i>
+        </div>
+        <div class="details-content">
+            <div class="admonition-content">远程部署实际可以区分为：<strong>web</strong>服务器部署和<strong>GitHub</strong>/<strong>Gitee</strong>免费页面的部署。其中，前者无非是将生成的静态网站资源目录放置在服务器上，通过<strong>nginx</strong>或<strong>tomcat</strong>等<strong>web</strong>服务器实现外网的访问，此处不再赘述。</div>
+        </div>
+    </div>
+<h4 id="1-创建github仓库">1. 创建GitHub仓库</h4>
+<p>在<strong>GitHub</strong>上创建一个名称格式为username.github.io的远程仓库：</p>
+<figure><a class="lightgallery" href="/images/Hugo_Blog.images/Snipaste_2021-06-08_05-49-35.png" title="/images/Hugo_Blog.images/Snipaste_2021-06-08_05-49-35.png" data-thumbnail="/images/Hugo_Blog.images/Snipaste_2021-06-08_05-49-35.png" data-sub-html="<h2>new repository</h2>">
+        <img
+            class="lazyload"
+            src="/svg/loading.min.svg"
+            data-src="/images/Hugo_Blog.images/Snipaste_2021-06-08_05-49-35.png"
+            data-srcset="/images/Hugo_Blog.images/Snipaste_2021-06-08_05-49-35.png, /images/Hugo_Blog.images/Snipaste_2021-06-08_05-49-35.png 1.5x, /images/Hugo_Blog.images/Snipaste_2021-06-08_05-49-35.png 2x"
+            data-sizes="auto"
+            alt="/images/Hugo_Blog.images/Snipaste_2021-06-08_05-49-35.png" />
+    </a><figcaption class="image-caption"><strong>new repository</strong></figcaption>
+    </figure>
+<p>关于远程仓库的连接，可选使用<strong>HTTPS</strong>或<strong>SSH</strong>连接。</p>
+<ol>
+<li><strong>HTTPS</strong>连接需要提供<strong>GitHub</strong>的登录密码；</li>
+<li><strong>SSH</strong>连接则需要上传公钥到<strong>GitHub</strong>上，在连接时提供私钥进行认证：</li>
+</ol>
+<figure><a class="lightgallery" href="/images/Hugo_Blog.images/Snipaste_2021-06-08_05-50-43.png" title="/images/Hugo_Blog.images/Snipaste_2021-06-08_05-50-43.png" data-thumbnail="/images/Hugo_Blog.images/Snipaste_2021-06-08_05-50-43.png" data-sub-html="<h2>2phangx-dylan/2phangx-dylan.github.io</h2>">
+        <img
+            class="lazyload"
+            src="/svg/loading.min.svg"
+            data-src="/images/Hugo_Blog.images/Snipaste_2021-06-08_05-50-43.png"
+            data-srcset="/images/Hugo_Blog.images/Snipaste_2021-06-08_05-50-43.png, /images/Hugo_Blog.images/Snipaste_2021-06-08_05-50-43.png 1.5x, /images/Hugo_Blog.images/Snipaste_2021-06-08_05-50-43.png 2x"
+            data-sizes="auto"
+            alt="/images/Hugo_Blog.images/Snipaste_2021-06-08_05-50-43.png" />
+    </a><figcaption class="image-caption"><strong>2phangx-dylan</strong>/<strong>2phangx-dylan.github.io</strong></figcaption>
+    </figure>
+<h4 id="2-生成静态网站资源目录">2. 生成静态网站资源目录</h4>
+<p>在MyBlog目录下，运行以下命令，以生成静态网站资源目录：</p>
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">hugo --baseURL https://2phangx-dylan.github.io
+</code></pre></div><div class="details admonition tip open">
+        <div class="details-summary admonition-title">
+            <i class="icon fas fa-lightbulb fa-fw"></i>Tip<i class="details-icon fas fa-angle-right fa-fw"></i>
+        </div>
+        <div class="details-content">
+            <div class="admonition-content">如果你不希望在每次生成静态网站资源目录时，添加<strong>baseURL</strong>参数，可以选择将该参数配置在<strong>config.toml</strong>文件中。</div>
+        </div>
+    </div>
+<p>命令运行后，MyBlog目录下会出现一个名为public的静态网站资源目录：</p>
+<figure><a class="lightgallery" href="/images/Hugo_Blog.images/Snipaste_2021-06-08_05-44-27.png" title="/images/Hugo_Blog.images/Snipaste_2021-06-08_05-44-27.png" data-thumbnail="/images/Hugo_Blog.images/Snipaste_2021-06-08_05-44-27.png" data-sub-html="<h2>Windows Terminal</h2>">
+        <img
+            class="lazyload"
+            src="/svg/loading.min.svg"
+            data-src="/images/Hugo_Blog.images/Snipaste_2021-06-08_05-44-27.png"
+            data-srcset="/images/Hugo_Blog.images/Snipaste_2021-06-08_05-44-27.png, /images/Hugo_Blog.images/Snipaste_2021-06-08_05-44-27.png 1.5x, /images/Hugo_Blog.images/Snipaste_2021-06-08_05-44-27.png 2x"
+            data-sizes="auto"
+            alt="/images/Hugo_Blog.images/Snipaste_2021-06-08_05-44-27.png" />
+    </a><figcaption class="image-caption"><strong>Windows Terminal</strong></figcaption>
+    </figure>
+<figure><a class="lightgallery" href="/images/Hugo_Blog.images/Snipaste_2021-06-08_05-44-39.png" title="/images/Hugo_Blog.images/Snipaste_2021-06-08_05-44-39.png" data-thumbnail="/images/Hugo_Blog.images/Snipaste_2021-06-08_05-44-39.png" data-sub-html="<h2>public</h2>">
+        <img
+            class="lazyload"
+            src="/svg/loading.min.svg"
+            data-src="/images/Hugo_Blog.images/Snipaste_2021-06-08_05-44-39.png"
+            data-srcset="/images/Hugo_Blog.images/Snipaste_2021-06-08_05-44-39.png, /images/Hugo_Blog.images/Snipaste_2021-06-08_05-44-39.png 1.5x, /images/Hugo_Blog.images/Snipaste_2021-06-08_05-44-39.png 2x"
+            data-sizes="auto"
+            alt="/images/Hugo_Blog.images/Snipaste_2021-06-08_05-44-39.png" />
+    </a><figcaption class="image-caption"><strong>public</strong></figcaption>
+    </figure>
+<h4 id="3-上传项目">3. 上传项目</h4>
+<p>进入<strong>public</strong>目录，进行项目的上传，此时需要使用到<strong>Git Bash</strong>，命令如下：</p>
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">git init
+git add .
+git commit -m <span class="s2">&#34;update.&#34;</span>
+git branch -M main
+git remote add origin https://github.com/2phangx-dylan/2phangx-dylan.github.io.git
+git push -u origin main
+</code></pre></div><p>待项目上传完毕后，<strong>GitHub</strong>中会出现该资源目录：</p>
+<figure><a class="lightgallery" href="/images/Hugo_Blog.images/Snipaste_2021-06-08_06-10-12.png" title="/images/Hugo_Blog.images/Snipaste_2021-06-08_06-10-12.png" data-thumbnail="/images/Hugo_Blog.images/Snipaste_2021-06-08_06-10-12.png" data-sub-html="<h2>repository</h2>">
+        <img
+            class="lazyload"
+            src="/svg/loading.min.svg"
+            data-src="/images/Hugo_Blog.images/Snipaste_2021-06-08_06-10-12.png"
+            data-srcset="/images/Hugo_Blog.images/Snipaste_2021-06-08_06-10-12.png, /images/Hugo_Blog.images/Snipaste_2021-06-08_06-10-12.png 1.5x, /images/Hugo_Blog.images/Snipaste_2021-06-08_06-10-12.png 2x"
+            data-sizes="auto"
+            alt="/images/Hugo_Blog.images/Snipaste_2021-06-08_06-10-12.png" />
+    </a><figcaption class="image-caption"><strong>repository</strong></figcaption>
+    </figure>
+<h4 id="4-访问博客">4. 访问博客</h4>
+<p>此时即可通过https://2phangx-dylan.github.io/访问该博客：</p>
+<figure><a class="lightgallery" href="/images/Hugo_Blog.images/Snipaste_2021-06-08_06-10-39.png" title="/images/Hugo_Blog.images/Snipaste_2021-06-08_06-10-39.png" data-thumbnail="/images/Hugo_Blog.images/Snipaste_2021-06-08_06-10-39.png" data-sub-html="<h2>2phangx-dylan.github.io</h2>">
+        <img
+            class="lazyload"
+            src="/svg/loading.min.svg"
+            data-src="/images/Hugo_Blog.images/Snipaste_2021-06-08_06-10-39.png"
+            data-srcset="/images/Hugo_Blog.images/Snipaste_2021-06-08_06-10-39.png, /images/Hugo_Blog.images/Snipaste_2021-06-08_06-10-39.png 1.5x, /images/Hugo_Blog.images/Snipaste_2021-06-08_06-10-39.png 2x"
+            data-sizes="auto"
+            alt="/images/Hugo_Blog.images/Snipaste_2021-06-08_06-10-39.png" />
+    </a><figcaption class="image-caption"><strong>2phangx-dylan.github.io</strong></figcaption>
+    </figure>
+</div><div class="post-footer" id="post-footer">
+    <div class="post-info">
+        <div class="post-info-line">
+            <div class="post-info-mod">
+                <span>更新于 2021-06-07</span>
+            </div>
+            <div class="post-info-license"></div>
+        </div>
+        <div class="post-info-line">
+            <div class="post-info-md"></div>
+            <div class="post-info-share">
+                <span></span>
+            </div>
+        </div>
+    </div>
+
+    <div class="post-info-more">
+        <section class="post-tags"><i class="fas fa-tags fa-fw"></i>&nbsp;<a href="/tags/hugo/">Hugo</a></section>
+        <section>
+            <span><a href="javascript:void(0);" onclick="window.history.back();">返回</a></span>&nbsp;|&nbsp;<span><a href="/">主页</a></span>
+        </section>
+    </div>
+
+    <div class="post-nav"><a href="/posts/jwt_tutorial/" class="prev" rel="prev" title="JWT Tutorial"><i class="fas fa-angle-left fa-fw"></i>JWT Tutorial</a></div>
+</div>
+</article></div>
+            </main><footer class="footer">
+        <div class="footer-container"><div class="footer-line"><i class="far fa-copyright fa-fw"></i><span itemprop="copyrightYear">2019 - 2021</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="/" target="_blank">2phangx-dylan</a></span>&nbsp;|&nbsp;<span class="license"><a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span></div>
+        </div>
+    </footer></div>
+
+        <div id="fixed-buttons"><a href="#" id="back-to-top" class="fixed-button" title="回到顶部">
+                <i class="fas fa-arrow-up fa-fw"></i>
+            </a><a href="#" id="view-comments" class="fixed-button" title="查看评论">
+                <i class="fas fa-comment fa-fw"></i>
+            </a>
+        </div><link rel="stylesheet" href="/lib/lightgallery/lightgallery.min.css"><script type="text/javascript" src="/lib/smooth-scroll/smooth-scroll.min.js"></script><script type="text/javascript" src="/lib/lazysizes/lazysizes.min.js"></script><script type="text/javascript" src="/lib/lightgallery/lightgallery.min.js"></script><script type="text/javascript" src="/lib/lightgallery/lg-thumbnail.min.js"></script><script type="text/javascript" src="/lib/lightgallery/lg-zoom.min.js"></script><script type="text/javascript" src="/lib/clipboard/clipboard.min.js"></script><script type="text/javascript">window.config={"code":{"copyTitle":"复制到剪贴板","maxShownLines":10},"comment":{},"lightGallery":{"actualSize":false,"exThumbImage":"data-thumbnail","hideBarsDelay":2000,"selector":".lightgallery","speed":400,"thumbContHeight":80,"thumbWidth":80,"thumbnail":true}};</script><script type="text/javascript" src="/js/theme.min.js"></script></body>
+</html>

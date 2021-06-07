@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="robots" content="noodp" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+        <title>JWT Tutorial - Tech &amp; Posts</title><meta name="Description" content=""><meta property="og:title" content="JWT Tutorial" />
+<meta property="og:description" content="JWT是JSON Web Token的缩写，它是为了在网络应用环境间传递声明，而执行的一种基于JSON的开放标准RFC7519。" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://2phangx-dylan.github.io/posts/jwt_tutorial/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2020-01-21T00:00:00&#43;00:00" />
+<meta property="article:modified_time" content="2020-01-21T00:00:00&#43;00:00" />
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="JWT Tutorial"/>
+<meta name="twitter:description" content="JWT是JSON Web Token的缩写，它是为了在网络应用环境间传递声明，而执行的一种基于JSON的开放标准RFC7519。"/>
+<meta name="application-name" content="MyBlog">
+<meta name="apple-mobile-web-app-title" content="MyBlog"><link rel="icon" href="/code-slash.svg"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="https://2phangx-dylan.github.io/posts/jwt_tutorial/" /><link rel="next" href="https://2phangx-dylan.github.io/posts/hugo_blog/" /><link rel="stylesheet" href="/lib/normalize/normalize.min.css"><link rel="stylesheet" href="/css/style.min.css"><link rel="stylesheet" href="/lib/fontawesome-free/all.min.css"><link rel="stylesheet" href="/lib/animate/animate.min.css"><script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "BlogPosting",
+        "headline": "JWT Tutorial",
+        "inLanguage": "en",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https:\/\/2phangx-dylan.github.io\/posts\/jwt_tutorial\/"
+        },"genre": "posts","keywords": "Security, JWT","wordcount":  482 ,
+        "url": "https:\/\/2phangx-dylan.github.io\/posts\/jwt_tutorial\/","datePublished": "2020-01-21T00:00:00+00:00","dateModified": "2020-01-21T00:00:00+00:00","publisher": {
+            "@type": "Organization",
+            "name": "2phangx-dylan"},"author": {
+                "@type": "Person",
+                "name": "2phangx-dylan"
+            },"description": ""
+    }
+    </script></head>
+    <body header-desktop="fixed" header-mobile="auto"><script type="text/javascript">(window.localStorage && localStorage.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : '' === 'dark')) && document.body.setAttribute('theme', 'dark');</script>
+
+        <div id="mask"></div><div class="wrapper"><header class="desktop" id="header-desktop">
+    <div class="header-wrapper">
+        <div class="header-title">
+            <a href="/" title="Tech &amp; Posts"><span class="header-title-pre"><div style='font-family: My Cascadia Code; display: inline-block;'></span>Tech &amp; Posts<span class="header-title-post"></div></span></a>
+        </div>
+        <div class="menu">
+            <div class="menu-inner"><a class="menu-item" href="/posts/"> Posts </a><a class="menu-item" href="/tags/"> Tags </a><a class="menu-item" href="/categories/"> Categories </a><span class="menu-item delimiter"></span><a href="javascript:void(0);" class="menu-item theme-switch" title="切换主题">
+                    <i class="fas fa-adjust fa-fw"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+</header><header class="mobile" id="header-mobile">
+    <div class="header-container">
+        <div class="header-wrapper">
+            <div class="header-title">
+                <a href="/" title="Tech &amp; Posts"><span class="header-title-pre"><div style='font-family: My Cascadia Code; display: inline-block;'></span>Tech &amp; Posts<span class="header-title-post"></div></span></a>
+            </div>
+            <div class="menu-toggle" id="menu-toggle-mobile">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+        <div class="menu" id="menu-mobile"><a class="menu-item" href="/posts/" title="">Posts</a><a class="menu-item" href="/tags/" title="">Tags</a><a class="menu-item" href="/categories/" title="">Categories</a><a href="javascript:void(0);" class="menu-item theme-switch" title="切换主题">
+                <i class="fas fa-adjust fa-fw"></i>
+            </a></div>
+    </div>
+</header>
+<div class="search-dropdown desktop">
+    <div id="search-dropdown-desktop"></div>
+</div>
+<div class="search-dropdown mobile">
+    <div id="search-dropdown-mobile"></div>
+</div>
+<main class="main">
+                <div class="container"><div class="toc" id="toc-auto">
+            <h2 class="toc-title">目录</h2>
+            <div class="toc-content" id="toc-content-auto"></div>
+        </div><article class="page single"><h1 class="single-title animated flipInX">JWT Tutorial</h1><div class="post-meta">
+            <div class="post-meta-line"><span class="post-author"><a href="/" title="Author" rel=" author" class="author"><i class="fas fa-user-circle fa-fw"></i>2phangx-dylan</a></span>&nbsp;<span class="post-category">收录于 <a href="/categories/java/"><i class="far fa-folder fa-fw"></i>Java</a></span></div>
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2020-01-21">2020-01-21</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;约 482 字&nbsp;
+                <i class="far fa-clock fa-fw"></i>&nbsp;预计阅读 3 分钟&nbsp;</div>
+        </div><div class="details toc" id="toc-static"  kept="">
+                <div class="details-summary toc-title">
+                    <span>目录</span>
+                    <span><i class="details-icon fas fa-angle-right"></i></span>
+                </div>
+                <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
+  <ul>
+    <li><a href="#什么是jwt">什么是JWT？</a></li>
+    <li><a href="#传统的session认证">传统的Session认证</a></li>
+    <li><a href="#基于session认证的问题">基于Session认证的问题</a>
+      <ul>
+        <li><a href="#a-session">a. Session</a></li>
+        <li><a href="#b-扩展性">b. 扩展性</a></li>
+        <li><a href="#c-csrf">c. CSRF</a></li>
+      </ul>
+    </li>
+    <li><a href="#基于token的授权机制">基于Token的授权机制</a></li>
+    <li><a href="#jwt的构成">JWT的构成</a>
+      <ul>
+        <li><a href="#a-头部header">a. 头部header</a></li>
+        <li><a href="#b-载荷payload">b. 载荷payload</a></li>
+        <li><a href="#c-签名signature">c. 签名signature</a></li>
+      </ul>
+    </li>
+    <li><a href="#maven实例">Maven实例</a></li>
+    <li><a href="#关于信息安全的建议">关于信息安全的建议</a></li>
+  </ul>
+</nav></div>
+            </div><div class="content" id="content"><h2 id="什么是jwt">什么是JWT？</h2>
+<p><strong>JSON Web Token</strong>是为了在网络应用环境间传递声明而执行的一种基于<strong>JSON</strong>的开放标准<strong>RFC7519</strong>。该<strong>token</strong>被设计为紧凑且安全的，特别适用于分布式站点的单点登录<strong>SSO</strong>场景。</p>
+<p><strong>JWT</strong>的声明一般被用来在身份提供者和服务提供者间传递被认证的用户身份信息，以便于从资源服务器获取资源，也可以增加一些额外的其它业务逻辑所必须的声明信息，该<strong>token</strong>也可直接被用于认证，也可被加密。</p>
+<hr>
+<h2 id="传统的session认证">传统的Session认证</h2>
+<p>我们知道，<strong>http</strong>协议本省是一种无状态的协议，而这就意味着如果用户向我们的应用提供了用户名和密码用作用户认证，那么下一次请求时，用户还要再一次进行用户认证。因为根据<strong>http</strong>协议，我们并不能知道是哪个用户发出的请求。</p>
+<p>因此为了让应用能识别是那个用户发出的请求，我们只能在服务器存储一份用户的登录信息。这份登录信息保存在<strong>Session</strong>中，并通过<strong>Cookie</strong>的方式保存并传递该<strong>Session</strong>的<strong>JSESSIONID</strong>。</p>
+<p>此时已登录的用户会携带键为<strong>JSESSIONID</strong>的<strong>Cookie</strong>进行下一次请求，服务器端只需要检查指定<strong>ID</strong>的<strong>Session</strong>是否包含该用户的成功登录信息即可完成认证<strong>Authentication</strong>。</p>
+<p>以上便是基于<strong>Session</strong>的认证操作。但是这种基于<strong>Session</strong>的认证，使应用本身很难得到扩展，随着不同客户端用户的增加，独立的服务器已经无法承载更多的用户，而这时使用基于<strong>Session</strong>认证的问题就会暴露出来。</p>
+<hr>
+<h2 id="基于session认证的问题">基于Session认证的问题</h2>
+<h3 id="a-session">a. Session</h3>
+<p>每个用户经过应用认证之后，应用都要在服务端做一次记录，以方便用户下次请求的鉴别。通常而言<strong>Session</strong>都是保存在内存中的，而随着认证用户的增多，服务端的开销会明显增大。</p>
+<h3 id="b-扩展性">b. 扩展性</h3>
+<p>用户认证之后，服务端做认证操作。如果认证的记录被保存内存中，这意味着用户下次请求必须要在保存了<strong>Session</strong>的服务器上，这样用户才能成功认证并获得相关的授权资源。这很大程度上影响了应用的扩展，如分布式系统。</p>
+<h3 id="c-csrf">c. CSRF</h3>
+<p><strong>CSRF</strong>跨站请求伪造攻击，因为请求总是基于Cookie来进行用户识别与认证，此时一旦<strong>Cookie</strong>被截获，用户就很容易会受到扩展请求伪造的攻击。</p>
+<hr>
+<h2 id="基于token的授权机制">基于Token的授权机制</h2>
+<p>基于<strong>Token</strong>的授权机制类似于<strong>http</strong>协议一般也是无状态的，它不需要在服务器端中保留用户的认证信息或会话<strong>Session</strong>信息。这就意味着基于<strong>Token</strong>认证机制的应用，不需要考虑用户在哪一台服务器登录，为应用扩展提供了便利。</p>
+<p>其主要流程是：
+<div class="mermaid" id="id-1"></div>
+该<strong>Token</strong>必须要在每次请求时传递给服务器端，它应该被保存在请求头<strong>Request Header</strong>中。另外，服务器端需要指出<strong>CORS</strong>跨域资源共享策略，一般在服务器端配置<strong>Access-Control-Allow-Origin</strong>:*即可。</p>
+<hr>
+<h2 id="jwt的构成">JWT的构成</h2>
+<p><strong>JWT</strong>由三部分构成：</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">Name</th>
+<th style="text-align:center">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">header</td>
+<td style="text-align:center">头部，用于存储两类信息：声明类型、声明加密的算法。</td>
+</tr>
+<tr>
+<td style="text-align:center">payload</td>
+<td style="text-align:center">载荷，用于存放有效信息的部分。通常包含标准中注册的声明、公共的声明和私有的声明。</td>
+</tr>
+<tr>
+<td style="text-align:center">signature</td>
+<td style="text-align:center">签名，header和payload经过BASE64加密后的信息的字符串结合header中声明的加密方式，进一步进行加盐secret组合加密后得到的内容，即为签名部分的信息。</td>
+</tr>
+</tbody>
+</table>
+<p>其中<strong>secret</strong>信息是保存在服务器端的，同时<strong>JWT</strong>的签发也是在服务器端。<strong>secret</strong>相当于服务器端的私钥，该私钥在任何场景下都不应该泄露出去。一旦用户知道该<strong>secret</strong>的值，那意味着客户端可以自行签发<strong>JWT</strong>。</p>
+<h3 id="a-头部header">a. 头部header</h3>
+<p><strong>JWT</strong>的头部一般包含两类信息，即：声明类型、声明加密的算法。一个完整的<strong>header</strong>可以表示为如下形式：</p>
+<div class="highlight"><pre class="chroma"><code class="language-json" data-lang="json"><span class="p">{</span>
+    <span class="err">&#39;typ&#39;:</span> <span class="err">&#39;JWT&#39;,</span>
+    <span class="err">&#39;alg&#39;:</span> <span class="err">&#39;HS256&#39;</span>
+<span class="p">}</span>
+</code></pre></div><p>其中，<strong>typ</strong>表示<strong>type</strong>，即加密类型；<strong>alg</strong>表示<strong>algorithm</strong>，即加密算法。</p>
+<h3 id="b-载荷payload">b. 载荷payload</h3>
+<p><strong>payload</strong>载荷中一般包含标准中注册的声明、公共的声明和私有的声明。一个简单的<strong>payload</strong>可以表示为如下形式：</p>
+<div class="highlight"><pre class="chroma"><code class="language-json" data-lang="json"><span class="p">{</span>
+    <span class="err">&#39;sub&#39;:</span> <span class="err">&#39;PC-77932&#39;,</span>
+    <span class="err">&#39;name&#39;:</span> <span class="err">&#39;dylan&#39;,</span>
+    <span class="err">&#39;admin&#39;:</span> <span class="err">true</span>
+<span class="p">}</span>
+</code></pre></div><h4 id="1-标准中注册的声明建议但不强制使用">1. 标准中注册的声明（建议但不强制使用）</h4>
+<ul>
+<li><strong>iss</strong>：JWT签发者；</li>
+<li><strong>sub</strong>：JWT所面向的用户；</li>
+<li><strong>aud</strong>：接收JWT的一方；</li>
+<li><strong>exp</strong>：JWT的过期时间，这个过期时间必须要大于签发时间；</li>
+<li><strong>nbf</strong>：定义在什么时间之前，该JWT不可用；</li>
+<li><strong>iat</strong>：JWT的签发时间；</li>
+<li><strong>jti</strong>：JWT的唯一身份标识，主要用来作为一次性token，从而回避重放攻击。</li>
+</ul>
+<h4 id="2-公共的声明">2. 公共的声明</h4>
+<p>该声明可以添加任何的信息，一般添加用户的相关信息或其他业务需要的必要信息。但不建议添加敏感信息，如用户密码等，因为该部分在客户端是可以被解密的。</p>
+<h4 id="3-私有的声明">3. 私有的声明</h4>
+<p>该声明是提供者和消费者所共同定义的声明，同样不建议存放敏感信息，该部分也是可以在客户端被解密的。</p>
+<h3 id="c-签名signature">c. 签名signature</h3>
+<p><strong>JWT</strong>的最后一部分为签名<strong>signature</strong>。该部分是通过拼接<strong>header</strong>与<strong>payload</strong>两部分的<strong>Base64</strong>加密字符串，并结合<strong>header</strong>中提供的加密算法及服务器中存储的指定盐<strong>salt</strong>字符串，进行加密而最终得到的密文。</p>
+<hr>
+<h2 id="maven实例">Maven实例</h2>
+<p>入门的代码使用一个简单的<strong>Maven</strong>项目作为演示，需要在<strong>pom.xml</strong>文件中添加<strong>JWT</strong>的相关依赖：</p>
+<div class="highlight"><pre class="chroma"><code class="language-xml" data-lang="xml"><span class="nt">&lt;dependency&gt;</span>
+    <span class="nt">&lt;groupId&gt;</span>com.auth0<span class="nt">&lt;/groupId&gt;</span>
+    <span class="nt">&lt;artifactId&gt;</span>java-jwt<span class="nt">&lt;/artifactId&gt;</span>
+    <span class="nt">&lt;version&gt;</span>3.10.3<span class="nt">&lt;/version&gt;</span>
+<span class="nt">&lt;/dependency&gt;</span>
+</code></pre></div><p>测试类<strong>FirstJwtTest.java</strong>源码如下，采用直接打印的方式输出结果：</p>
+<ol>
+<li>其中包含了<strong>JWT</strong>对象的基本使用；</li>
+<li>同时包含了认证<strong>token</strong>时可能会出现的异常测试。</li>
+</ol>
+<div class="highlight"><pre class="chroma"><code class="language-java" data-lang="java"><span class="kn">package</span> <span class="nn">cn.dylanphang.jwt</span><span class="o">;</span>
+
+<span class="kn">import</span> <span class="nn">com.auth0.jwt.JWT</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">com.auth0.jwt.JWTVerifier</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">com.auth0.jwt.algorithms.Algorithm</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">com.auth0.jwt.exceptions.*</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">com.auth0.jwt.interfaces.DecodedJWT</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">org.junit.Test</span><span class="o">;</span>
+
+<span class="kn">import</span> <span class="nn">java.util.Calendar</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">java.util.Date</span><span class="o">;</span>
+
+<span class="o">/</span>
+ <span class="o">*</span> <span class="nd">@author</span> <span class="n">dylan</span>
+ <span class="o">*</span> <span class="nd">@date</span> <span class="n">2020</span><span class="o">/</span><span class="n">12</span><span class="o">/</span><span class="n">21</span>
+ <span class="o">*/</span>
+<span class="nd">@SuppressWarnings</span><span class="o">(</span><span class="s">&#34;all&#34;</span><span class="o">)</span>
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">FirstJwtTest</span> <span class="o">{</span>
+
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kd">final</span> <span class="n">String</span> <span class="n">SECRET</span> <span class="o">=</span> <span class="s">&#34;DJFOWNERO#@#$&#34;</span><span class="o">;</span>
+
+    <span class="nd">@Test</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">test</span><span class="o">()</span> <span class="o">{</span>
+        <span class="c1">// 0.date对象
+</span><span class="c1"></span>        <span class="kd">final</span> <span class="n">Calendar</span> <span class="n">calendar</span> <span class="o">=</span> <span class="n">Calendar</span><span class="o">.</span><span class="na">getInstance</span><span class="o">();</span>
+        <span class="n">calendar</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="n">Calendar</span><span class="o">.</span><span class="na">SECOND</span><span class="o">,</span> <span class="n">5</span><span class="o">);</span>
+
+        <span class="c1">// 1.签发token
+</span><span class="c1"></span>        <span class="kd">final</span> <span class="n">String</span> <span class="n">token</span> <span class="o">=</span> <span class="n">JWT</span><span class="o">.</span><span class="na">create</span><span class="o">()</span>
+                <span class="o">.</span><span class="na">withClaim</span><span class="o">(</span><span class="s">&#34;username&#34;</span><span class="o">,</span> <span class="s">&#34;dylan&#34;</span><span class="o">)</span>
+                <span class="o">.</span><span class="na">withClaim</span><span class="o">(</span><span class="s">&#34;age&#34;</span><span class="o">,</span> <span class="n">18</span><span class="o">)</span>
+                <span class="o">.</span><span class="na">withExpiresAt</span><span class="o">(</span><span class="n">calendar</span><span class="o">.</span><span class="na">getTime</span><span class="o">())</span>
+                <span class="o">.</span><span class="na">sign</span><span class="o">(</span><span class="n">Algorithm</span><span class="o">.</span><span class="na">HMAC256</span><span class="o">(</span><span class="n">SECRET</span><span class="o">));</span>
+
+        <span class="c1">// 2.验证token
+</span><span class="c1"></span>        <span class="kd">final</span> <span class="n">JWTVerifier</span> <span class="n">verifier</span> <span class="o">=</span> <span class="n">JWT</span><span class="o">.</span><span class="na">require</span><span class="o">(</span><span class="n">Algorithm</span><span class="o">.</span><span class="na">HMAC256</span><span class="o">(</span><span class="n">SECRET</span><span class="o">)).</span><span class="na">build</span><span class="o">();</span>
+        <span class="kd">final</span> <span class="n">DecodedJWT</span> <span class="n">jwt</span> <span class="o">=</span> <span class="n">verifier</span><span class="o">.</span><span class="na">verify</span><span class="o">(</span><span class="n">token</span><span class="o">);</span>
+
+        <span class="c1">// 3.获取token中的信息
+</span><span class="c1"></span>        <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&#34;username: &#34;</span> <span class="o">+</span> <span class="n">jwt</span><span class="o">.</span><span class="na">getClaim</span><span class="o">(</span><span class="s">&#34;username&#34;</span><span class="o">).</span><span class="na">asString</span><span class="o">());</span>
+        <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&#34;age: &#34;</span> <span class="o">+</span> <span class="n">jwt</span><span class="o">.</span><span class="na">getClaim</span><span class="o">(</span><span class="s">&#34;age&#34;</span><span class="o">).</span><span class="na">asInt</span><span class="o">());</span>
+        <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&#34;expireAt: &#34;</span> <span class="o">+</span> <span class="n">jwt</span><span class="o">.</span><span class="na">getExpiresAt</span><span class="o">());</span>
+    <span class="o">}</span>
+
+    <span class="nd">@Test</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">testVerify</span><span class="o">()</span> <span class="kd">throws</span> <span class="n">InterruptedException</span> <span class="o">{</span>
+        <span class="c1">// *.date对象
+</span><span class="c1"></span>        <span class="kd">final</span> <span class="n">Calendar</span> <span class="n">calendar</span> <span class="o">=</span> <span class="n">Calendar</span><span class="o">.</span><span class="na">getInstance</span><span class="o">();</span>
+        <span class="n">calendar</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="n">Calendar</span><span class="o">.</span><span class="na">SECOND</span><span class="o">,</span> <span class="n">5</span><span class="o">);</span>
+        <span class="kd">final</span> <span class="n">Date</span> <span class="n">startTime</span> <span class="o">=</span> <span class="n">calendar</span><span class="o">.</span><span class="na">getTime</span><span class="o">();</span>
+        <span class="n">calendar</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="n">Calendar</span><span class="o">.</span><span class="na">SECOND</span><span class="o">,</span> <span class="n">5</span><span class="o">);</span>
+        <span class="kd">final</span> <span class="n">Date</span> <span class="n">endTime</span> <span class="o">=</span> <span class="n">calendar</span><span class="o">.</span><span class="na">getTime</span><span class="o">();</span>
+
+        <span class="c1">// *.签发token
+</span><span class="c1"></span>        <span class="kd">final</span> <span class="n">String</span> <span class="n">token</span> <span class="o">=</span> <span class="n">JWT</span><span class="o">.</span><span class="na">create</span><span class="o">()</span>
+                <span class="o">.</span><span class="na">withClaim</span><span class="o">(</span><span class="s">&#34;username&#34;</span><span class="o">,</span> <span class="s">&#34;dylan&#34;</span><span class="o">)</span> <span class="c1">// payload中存放的数据
+</span><span class="c1"></span>                <span class="o">.</span><span class="na">withNotBefore</span><span class="o">(</span><span class="n">startTime</span><span class="o">)</span> <span class="c1">// 5秒后启用
+</span><span class="c1"></span>                <span class="o">.</span><span class="na">withExpiresAt</span><span class="o">(</span><span class="n">endTime</span><span class="o">)</span> <span class="c1">// 10秒后启用
+</span><span class="c1"></span>                <span class="o">.</span><span class="na">sign</span><span class="o">(</span><span class="n">Algorithm</span><span class="o">.</span><span class="na">HMAC256</span><span class="o">(</span><span class="n">SECRET</span><span class="o">));</span> <span class="c1">// token采用的加密算法
+</span><span class="c1"></span>
+        <span class="c1">// 1.token未启用，尝试认证，产生InvalidClaimException异常
+</span><span class="c1"></span>        <span class="k">this</span><span class="o">.</span><span class="na">verify</span><span class="o">(</span><span class="n">token</span><span class="o">,</span> <span class="n">Algorithm</span><span class="o">.</span><span class="na">HMAC256</span><span class="o">(</span><span class="n">SECRET</span><span class="o">));</span>
+        <span class="n">Thread</span><span class="o">.</span><span class="na">sleep</span><span class="o">(</span><span class="n">6000</span><span class="o">);</span>
+
+        <span class="c1">// 2.伪造token或提供不一致的盐salt，产生SignatureVerificationException异常
+</span><span class="c1"></span>        <span class="k">this</span><span class="o">.</span><span class="na">verify</span><span class="o">(</span><span class="n">token</span><span class="o">,</span> <span class="n">Algorithm</span><span class="o">.</span><span class="na">HMAC256</span><span class="o">(</span><span class="n">SECRET</span> <span class="o">+</span> <span class="s">&#34;d&#34;</span><span class="o">));</span>
+
+        <span class="c1">// 3.提供非加密的算法，产生AlgorithmMismatchException异常
+</span><span class="c1"></span>        <span class="k">this</span><span class="o">.</span><span class="na">verify</span><span class="o">(</span><span class="n">token</span><span class="o">,</span> <span class="n">Algorithm</span><span class="o">.</span><span class="na">HMAC384</span><span class="o">(</span><span class="n">SECRET</span><span class="o">));</span>
+
+        <span class="c1">// 4.提供非法的token，产生JWTDecodeException异常
+</span><span class="c1"></span>        <span class="kd">final</span> <span class="n">String</span> <span class="n">illegalToken</span> <span class="o">=</span> <span class="n">token</span><span class="o">.</span><span class="na">replace</span><span class="o">(</span><span class="sc">&#39;.&#39;</span><span class="o">,</span> <span class="sc">&#39;#&#39;</span><span class="o">);</span>
+        <span class="k">this</span><span class="o">.</span><span class="na">verify</span><span class="o">(</span><span class="n">illegalToken</span><span class="o">,</span> <span class="n">Algorithm</span><span class="o">.</span><span class="na">HMAC256</span><span class="o">(</span><span class="n">SECRET</span><span class="o">));</span>
+
+        <span class="c1">// 5.等待过期后测试，产生TokenExpiredException异常
+</span><span class="c1"></span>        <span class="n">Thread</span><span class="o">.</span><span class="na">sleep</span><span class="o">(</span><span class="n">6000</span><span class="o">);</span>
+        <span class="k">this</span><span class="o">.</span><span class="na">verify</span><span class="o">(</span><span class="n">token</span><span class="o">,</span> <span class="n">Algorithm</span><span class="o">.</span><span class="na">HMAC256</span><span class="o">(</span><span class="n">SECRET</span><span class="o">));</span>
+    <span class="o">}</span>
+
+    <span class="o">/</span>
+     <span class="o">*</span> <span class="n">认证中会出现的异常</span><span class="err">。</span>
+     <span class="o">*</span>
+     <span class="o">*</span> <span class="nd">@param</span> <span class="n">token</span>     <span class="n">token</span>
+     <span class="o">*</span> <span class="nd">@param</span> <span class="n">algorithm</span> <span class="n">algorithm</span>
+     <span class="o">*/</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">verify</span><span class="o">(</span><span class="n">String</span> <span class="n">token</span><span class="o">,</span> <span class="n">Algorithm</span> <span class="n">algorithm</span><span class="o">)</span> <span class="o">{</span>
+        <span class="kd">final</span> <span class="n">JWTVerifier</span> <span class="n">verifier</span> <span class="o">=</span> <span class="n">JWT</span><span class="o">.</span><span class="na">require</span><span class="o">(</span><span class="n">algorithm</span><span class="o">).</span><span class="na">build</span><span class="o">();</span>
+        <span class="k">try</span> <span class="o">{</span>
+            <span class="kd">final</span> <span class="n">DecodedJWT</span> <span class="n">jwt</span> <span class="o">=</span> <span class="n">verifier</span><span class="o">.</span><span class="na">verify</span><span class="o">(</span><span class="n">token</span><span class="o">);</span>
+        <span class="o">}</span> <span class="k">catch</span> <span class="o">(</span><span class="n">InvalidClaimException</span> <span class="n">e</span><span class="o">)</span> <span class="o">{</span>
+            <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&#34;失效的payload。&#34;</span><span class="o">);</span>
+        <span class="o">}</span> <span class="k">catch</span> <span class="o">(</span><span class="n">SignatureVerificationException</span> <span class="n">e</span><span class="o">)</span> <span class="o">{</span>
+            <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&#34;签名认证失败。&#34;</span><span class="o">);</span>
+        <span class="o">}</span> <span class="k">catch</span> <span class="o">(</span><span class="n">AlgorithmMismatchException</span> <span class="n">e</span><span class="o">)</span> <span class="o">{</span>
+            <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&#34;加密算法不一致。&#34;</span><span class="o">);</span>
+        <span class="o">}</span> <span class="k">catch</span> <span class="o">(</span><span class="n">JWTDecodeException</span> <span class="n">e</span><span class="o">)</span> <span class="o">{</span>
+            <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&#34;非法的Token。&#34;</span><span class="o">);</span>
+        <span class="o">}</span> <span class="k">catch</span> <span class="o">(</span><span class="n">TokenExpiredException</span> <span class="n">e</span><span class="o">)</span> <span class="o">{</span>
+            <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&#34;令牌已过期。&#34;</span><span class="o">);</span>
+        <span class="o">}</span> <span class="k">catch</span> <span class="o">(</span><span class="n">Exception</span> <span class="n">e</span><span class="o">)</span> <span class="o">{</span>
+            <span class="n">e</span><span class="o">.</span><span class="na">printStackTrace</span><span class="o">();</span>
+        <span class="o">}</span>
+
+    <span class="o">}</span>
+<span class="o">}</span>
+</code></pre></div><p>方法<strong>test</strong>()测试输出：</p>
+<figure><a class="lightgallery" href="/images/JWT_Tutorial.images/image-20210102231234418.jpg" title="/images/JWT_Tutorial.images/image-20210102231234418.jpg" data-thumbnail="/images/JWT_Tutorial.images/image-20210102231234418.jpg" data-sub-html="<h2>test()测试输出</h2>">
+        <img
+            class="lazyload"
+            src="/svg/loading.min.svg"
+            data-src="/images/JWT_Tutorial.images/image-20210102231234418.jpg"
+            data-srcset="/images/JWT_Tutorial.images/image-20210102231234418.jpg, /images/JWT_Tutorial.images/image-20210102231234418.jpg 1.5x, /images/JWT_Tutorial.images/image-20210102231234418.jpg 2x"
+            data-sizes="auto"
+            alt="/images/JWT_Tutorial.images/image-20210102231234418.jpg" />
+    </a><figcaption class="image-caption">test()测试输出</figcaption>
+    </figure>
+<p>方法<strong>testVerify</strong>()测试输出：</p>
+<figure><a class="lightgallery" href="/images/JWT_Tutorial.images/image-20210102231332983.jpg" title="/images/JWT_Tutorial.images/image-20210102231332983.jpg" data-thumbnail="/images/JWT_Tutorial.images/image-20210102231332983.jpg" data-sub-html="<h2>testVerify()测试输出</h2>">
+        <img
+            class="lazyload"
+            src="/svg/loading.min.svg"
+            data-src="/images/JWT_Tutorial.images/image-20210102231332983.jpg"
+            data-srcset="/images/JWT_Tutorial.images/image-20210102231332983.jpg, /images/JWT_Tutorial.images/image-20210102231332983.jpg 1.5x, /images/JWT_Tutorial.images/image-20210102231332983.jpg 2x"
+            data-sizes="auto"
+            alt="/images/JWT_Tutorial.images/image-20210102231332983.jpg" />
+    </a><figcaption class="image-caption">testVerify()测试输出</figcaption>
+    </figure>
+<p>关于认证的异常状态说明：</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">Exception Type</th>
+<th style="text-align:center">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">InvalidClaimException</td>
+<td style="text-align:center">服务器端签发token时，可以设置token的启用时间，如果未到启用时间却去认证token，则会出现此异常。</td>
+</tr>
+<tr>
+<td style="text-align:center">SignatureVerificationException</td>
+<td style="text-align:center">签名认证异常，该异常通常发生在token被恶意篡改或认证盐不正确的情况。</td>
+</tr>
+<tr>
+<td style="text-align:center">AlgorithmMismatchException</td>
+<td style="text-align:center">加密算法错误异常，当服务器端使用非加密算法对token进行认证时，会出现此异常。</td>
+</tr>
+<tr>
+<td style="text-align:center">JWTDecodeException</td>
+<td style="text-align:center">此异常通常发生在提供了一个非法token的情况，也就是提供的token不符合相关token的定义格式。</td>
+</tr>
+<tr>
+<td style="text-align:center">TokenExpiredException</td>
+<td style="text-align:center">token过期异常，当服务器端对一个已过期的token进行认证时，将抛出此异常。</td>
+</tr>
+</tbody>
+</table>
+<p>在实际开发中，可以将<strong>JWT</strong>封装为工具类：</p>
+<div class="highlight"><pre class="chroma"><code class="language-java" data-lang="java"><span class="kn">package</span> <span class="nn">cn.dylanphang.util</span><span class="o">;</span>
+
+<span class="kn">import</span> <span class="nn">com.auth0.jwt.JWT</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">com.auth0.jwt.JWTCreator</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">com.auth0.jwt.JWTVerifier</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">com.auth0.jwt.algorithms.Algorithm</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">com.auth0.jwt.interfaces.DecodedJWT</span><span class="o">;</span>
+
+<span class="kn">import</span> <span class="nn">java.util.Calendar</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">java.util.Map</span><span class="o">;</span>
+
+<span class="o">/</span>
+ <span class="o">*</span> <span class="nd">@author</span> <span class="n">dylan</span>
+ <span class="o">*</span> <span class="nd">@date</span> <span class="n">2020</span><span class="o">/</span><span class="n">12</span><span class="o">/</span><span class="n">21</span>
+ <span class="o">*/</span>
+<span class="nd">@SuppressWarnings</span><span class="o">(</span><span class="s">&#34;All&#34;</span><span class="o">)</span>
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">JWTUtils</span> <span class="o">{</span>
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kd">final</span> <span class="n">String</span> <span class="n">SALT</span> <span class="o">=</span> <span class="s">&#34;#&amp;HEO#^$KF(^(@#HN&#34;</span><span class="o">;</span>
+
+    <span class="o">/</span>
+     <span class="o">*</span> <span class="n">方法的形参为payload中的数据</span><span class="err">。</span>
+     <span class="o">*</span>
+     <span class="o">*</span> <span class="nd">@param</span> <span class="n">map</span> <span class="n">map</span>
+     <span class="o">*</span> <span class="nd">@return</span> <span class="n">token</span>
+     <span class="o">*/</span>
+    <span class="kd">public</span> <span class="kd">static</span> <span class="n">String</span> <span class="nf">getToken</span><span class="o">(</span><span class="n">Map</span><span class="o">&lt;</span><span class="n">String</span><span class="o">,</span> <span class="n">String</span><span class="o">&gt;</span> <span class="n">map</span><span class="o">)</span> <span class="o">{</span>
+        <span class="kd">final</span> <span class="n">Calendar</span> <span class="n">calendar</span> <span class="o">=</span> <span class="n">Calendar</span><span class="o">.</span><span class="na">getInstance</span><span class="o">();</span>
+        <span class="n">calendar</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="n">Calendar</span><span class="o">.</span><span class="na">DATE</span><span class="o">,</span> <span class="n">7</span><span class="o">);</span>
+
+        <span class="kd">final</span> <span class="n">JWTCreator</span><span class="o">.</span><span class="na">Builder</span> <span class="n">builder</span> <span class="o">=</span> <span class="n">JWT</span><span class="o">.</span><span class="na">create</span><span class="o">();</span>
+        <span class="n">map</span><span class="o">.</span><span class="na">forEach</span><span class="o">(</span><span class="n">builder</span><span class="o">::</span><span class="n">withClaim</span><span class="o">);</span>
+
+        <span class="k">return</span> <span class="n">builder</span><span class="o">.</span><span class="na">withExpiresAt</span><span class="o">(</span><span class="n">calendar</span><span class="o">.</span><span class="na">getTime</span><span class="o">()).</span><span class="na">sign</span><span class="o">(</span><span class="n">Algorithm</span><span class="o">.</span><span class="na">HMAC256</span><span class="o">(</span><span class="n">SALT</span><span class="o">));</span>
+    <span class="o">}</span>
+
+    <span class="o">/</span>
+     <span class="o">*</span> <span class="n">只检查token合法性</span><span class="err">。</span>
+     <span class="o">*</span>
+     <span class="o">*</span> <span class="nd">@param</span> <span class="n">token</span> <span class="n">token</span>
+     <span class="o">*</span> <span class="nd">@return</span> <span class="kt">boolean</span>
+     <span class="o">*/</span>
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">boolean</span> <span class="nf">verify</span><span class="o">(</span><span class="n">String</span> <span class="n">token</span><span class="o">)</span> <span class="o">{</span>
+        <span class="k">try</span> <span class="o">{</span>
+            <span class="kd">final</span> <span class="n">JWTVerifier</span> <span class="n">verifier</span> <span class="o">=</span> <span class="n">JWT</span><span class="o">.</span><span class="na">require</span><span class="o">(</span><span class="n">Algorithm</span><span class="o">.</span><span class="na">HMAC256</span><span class="o">(</span><span class="n">SALT</span><span class="o">)).</span><span class="na">build</span><span class="o">();</span>
+            <span class="n">verifier</span><span class="o">.</span><span class="na">verify</span><span class="o">(</span><span class="n">token</span><span class="o">);</span>
+        <span class="o">}</span> <span class="k">catch</span> <span class="o">(</span><span class="n">Exception</span> <span class="n">e</span><span class="o">)</span> <span class="o">{</span>
+            <span class="k">return</span> <span class="kc">false</span><span class="o">;</span>
+        <span class="o">}</span>
+        <span class="k">return</span> <span class="kc">true</span><span class="o">;</span>
+    <span class="o">}</span>
+
+    <span class="o">/</span>
+     <span class="o">*</span> <span class="n">使用验证对象验证token合法性同时返回decodedJWT对象</span><span class="err">。</span>
+     <span class="o">*</span>
+     <span class="o">*</span> <span class="nd">@param</span> <span class="n">token</span> <span class="n">token</span>
+     <span class="o">*</span> <span class="nd">@return</span> <span class="n">decodeJWT</span>
+     <span class="o">*/</span>
+    <span class="kd">public</span> <span class="kd">static</span> <span class="n">DecodedJWT</span> <span class="nf">getDecodedJWT</span><span class="o">(</span><span class="n">String</span> <span class="n">token</span><span class="o">)</span> <span class="o">{</span>
+        <span class="k">return</span> <span class="n">JWT</span><span class="o">.</span><span class="na">require</span><span class="o">(</span><span class="n">Algorithm</span><span class="o">.</span><span class="na">HMAC256</span><span class="o">(</span><span class="n">SALT</span><span class="o">)).</span><span class="na">build</span><span class="o">().</span><span class="na">verify</span><span class="o">(</span><span class="n">token</span><span class="o">);</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+</code></pre></div><hr>
+<h2 id="关于信息安全的建议">关于信息安全的建议</h2>
+<ol>
+<li>不应该在<strong>JWT</strong>中的<strong>payload</strong>部分存放敏感信息；</li>
+<li>关于盐加密中的盐<strong>salt</strong>（或<strong>secret</strong>）不能泄露，该密钥只能够保存在服务器端；</li>
+<li>如果可以，尽量使用<strong>https</strong>协议。</li>
+</ol>
+</div><div class="post-footer" id="post-footer">
+    <div class="post-info">
+        <div class="post-info-line">
+            <div class="post-info-mod">
+                <span>更新于 2020-01-21</span>
+            </div>
+            <div class="post-info-license"></div>
+        </div>
+        <div class="post-info-line">
+            <div class="post-info-md"></div>
+            <div class="post-info-share">
+                <span></span>
+            </div>
+        </div>
+    </div>
+
+    <div class="post-info-more">
+        <section class="post-tags"><i class="fas fa-tags fa-fw"></i>&nbsp;<a href="/tags/security/">Security</a>,&nbsp;<a href="/tags/jwt/">JWT</a></section>
+        <section>
+            <span><a href="javascript:void(0);" onclick="window.history.back();">返回</a></span>&nbsp;|&nbsp;<span><a href="/">主页</a></span>
+        </section>
+    </div>
+
+    <div class="post-nav">
+            <a href="/posts/hugo_blog/" class="next" rel="next" title="Hugo Blog">Hugo Blog<i class="fas fa-angle-right fa-fw"></i></a></div>
+</div>
+</article></div>
+            </main><footer class="footer">
+        <div class="footer-container"><div class="footer-line"><i class="far fa-copyright fa-fw"></i><span itemprop="copyrightYear">2019 - 2021</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="/" target="_blank">2phangx-dylan</a></span>&nbsp;|&nbsp;<span class="license"><a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span></div>
+        </div>
+    </footer></div>
+
+        <div id="fixed-buttons"><a href="#" id="back-to-top" class="fixed-button" title="回到顶部">
+                <i class="fas fa-arrow-up fa-fw"></i>
+            </a><a href="#" id="view-comments" class="fixed-button" title="查看评论">
+                <i class="fas fa-comment fa-fw"></i>
+            </a>
+        </div><link rel="stylesheet" href="/lib/lightgallery/lightgallery.min.css"><link rel="stylesheet" href="/lib/mermaid/mermaid.min.css"><script type="text/javascript" src="/lib/smooth-scroll/smooth-scroll.min.js"></script><script type="text/javascript" src="/lib/lazysizes/lazysizes.min.js"></script><script type="text/javascript" src="/lib/lightgallery/lightgallery.min.js"></script><script type="text/javascript" src="/lib/lightgallery/lg-thumbnail.min.js"></script><script type="text/javascript" src="/lib/lightgallery/lg-zoom.min.js"></script><script type="text/javascript" src="/lib/clipboard/clipboard.min.js"></script><script type="text/javascript" src="/lib/mermaid/mermaid.min.js"></script><script type="text/javascript">window.config={"code":{"copyTitle":"复制到剪贴板","maxShownLines":10},"comment":{},"data":{"id-1":"\r\ngraph TB;\r\n    A(客户端请求登录服务器) --\u003e \r\n    B(服务器对用户信息进行校验) --\u003e \r\n    C(校验成功后, 将响应用户一个Token) --\u003e\r\n    D(客户端将存储该Token, 并在之后每次请求的header中携带该Token) --\u003e\r\n    E(服务端会在处理用户请求时, 校验该Token是否合法)\r\n\tE --\u003e|校验成功| F(处理请求)\r\n\tE --\u003e|校验失败| G(拒绝请求)\r"},"lightGallery":{"actualSize":false,"exThumbImage":"data-thumbnail","hideBarsDelay":2000,"selector":".lightgallery","speed":400,"thumbContHeight":80,"thumbWidth":80,"thumbnail":true}};</script><script type="text/javascript" src="/js/theme.min.js"></script></body>
+</html>
