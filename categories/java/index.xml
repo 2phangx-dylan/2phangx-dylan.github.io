@@ -1,14 +1,14 @@
 <rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
     <channel>
-        <title>Java - 分类 - Tech &amp; Posts</title>
+        <title>Java - Category - Tech &amp; Posts</title>
         <link>https://2phangx-dylan.github.io/categories/java/</link>
-        <description>Java - 分类 - Tech &amp; Posts</description>
+        <description>Java - Category - Tech &amp; Posts</description>
         <generator>Hugo -- gohugo.io</generator><language>en</language><managingEditor>2phangx.dylan@gmail.com (2phangx-dylan)</managingEditor>
             <webMaster>2phangx.dylan@gmail.com (2phangx-dylan)</webMaster><lastBuildDate>Tue, 21 Jan 2020 00:00:00 &#43;0000</lastBuildDate><atom:link href="https://2phangx-dylan.github.io/categories/java/" rel="self" type="application/rss+xml" /><item>
     <title>JWT Tutorial</title>
     <link>https://2phangx-dylan.github.io/posts/jwt_tutorial/</link>
     <pubDate>Tue, 21 Jan 2020 00:00:00 &#43;0000</pubDate>
-    <author>作者</author>
+    <author>Author</author>
     <guid>https://2phangx-dylan.github.io/posts/jwt_tutorial/</guid>
     <description><![CDATA[JWT是JSON Web Token的缩写，它是为了在网络应用环境间传递声明，而执行的一种基于JSON的开放标准RFC7519。]]></description>
 </item></channel>
