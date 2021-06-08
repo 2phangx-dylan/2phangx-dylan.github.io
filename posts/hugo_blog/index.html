@@ -25,7 +25,7 @@
         "mainEntityOfPage": {
             "@type": "WebPage",
             "@id": "https:\/\/2phangx-dylan.github.io\/posts\/hugo_blog\/"
-        },"genre": "posts","keywords": "Hugo","wordcount":  1048 ,
+        },"genre": "posts","keywords": "Hugo","wordcount":  1062 ,
         "url": "https:\/\/2phangx-dylan.github.io\/posts\/hugo_blog\/","datePublished": "2021-06-07T00:00:00+00:00","dateModified": "2021-06-07T00:00:00+00:00","publisher": {
             "@type": "Organization",
             "name": "2phangx-dylan"},"author": {
@@ -75,7 +75,7 @@
             <div class="toc-content" id="toc-content-auto"></div>
         </div><article class="page single"><h1 class="single-title animated flipInX">Hugo Blog</h1><div class="post-meta">
             <div class="post-meta-line"><span class="post-author"><a href="/" title="Author" rel=" author" class="author"><i class="fas fa-user-circle fa-fw"></i>2phangx-dylan</a></span>&nbsp;<span class="post-category">included in <a href="/categories/system/"><i class="far fa-folder fa-fw"></i>System</a></span></div>
-            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2021-06-07">2021-06-07</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;1048 words&nbsp;
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2021-06-07">2021-06-07</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;1062 words&nbsp;
                 <i class="far fa-clock fa-fw"></i>&nbsp;5 minutes&nbsp;</div>
         </div><div class="details toc" id="toc-static"  kept="">
                 <div class="details-summary toc-title">
@@ -103,7 +103,7 @@
   </ul>
 </nav></div>
             </div><div class="content" id="content"><h2 id="什么是静态网站">什么是静态网站？</h2>
-<p>静态网站，是指内容全部由<strong>HTML</strong>、<strong>CSS</strong>、<strong>JavaScript</strong>等语言组成的网站，其非常适合专注于内容的网站，例如个人博客。静态完整与动态网站相比，具有以下的好处：</p>
+<p>静态网站，是指内容全部由<strong>HTML</strong>、<strong>CSS</strong>、<strong>JavaScript</strong>等语言组成的网站，其非常适合专注于内容的网站，例如个人博客。静态网站与动态网站相比，具有以下的好处：</p>
 <ol>
 <li>占用资源小，速度快。静态网站不需要使用解析器、不需要与数据库进行交互等等特征，使其加载速度天然快于动态网站；</li>
 <li>安全。静态网址简洁的特性，也使其可以免疫许多的<strong>web</strong>攻击方式；</li>
@@ -144,6 +144,14 @@
 <h3 id="a-工具下载">a. 工具下载</h3>
 <p><strong>Hugo</strong>是个开源的项目，其项目的<strong>Releases</strong>地址为：</p>
 <p><a href="https://github.com/gohugoio/hugo/releases" target="_blank" rel="noopener noreffer">Releases · gohugoio/hugo (github.com)</a></p>
+<div class="details admonition info open">
+        <div class="details-summary admonition-title">
+            <i class="icon fas fa-info-circle fa-fw"></i>Info<i class="details-icon fas fa-angle-right fa-fw"></i>
+        </div>
+        <div class="details-content">
+            <div class="admonition-content">该项目仅在<strong>GitHub</strong>上提供，作者没有在<strong>Gitee</strong>上托管该项目。</div>
+        </div>
+    </div>
 <h4 id="1-版本说明">1. 版本说明</h4>
 <p>以操作系统<strong>Windows-64bit</strong>为例，可以看到<strong>Hugo</strong>的<strong>Releases</strong>列表中，有两个版本均可用于<strong>Windows-64bit</strong>操作系统，其分别是：</p>
 <ul>
@@ -168,7 +176,7 @@
             alt="/images/Hugo_Blog.images/Snipaste_2021-06-08_04-22-04.png" />
     </a><figcaption class="image-caption"><strong>hugo_extended_0.83.1_Windows-64bit</strong></figcaption>
     </figure>
-<p>进入该目录后，打开命令行工具<strong>Windows Terminal</strong>/<strong>cmd.exe</strong>，运行以下命令：</p>
+<p>进入<strong>hugo.exe</strong>所在目录，打开命令行工具<strong>Windows Terminal</strong>/<strong>cmd.exe</strong>，执行命令：</p>
 <div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">hugo new site MyBlog
 </code></pre></div><figure><a class="lightgallery" href="/images/Hugo_Blog.images/Snipaste_2021-06-08_04-30-02.png" title="/images/Hugo_Blog.images/Snipaste_2021-06-08_04-30-02.png" data-thumbnail="/images/Hugo_Blog.images/Snipaste_2021-06-08_04-30-02.png" data-sub-html="<h2>Windows Terminal</h2>">
         <img
@@ -180,7 +188,7 @@
             alt="/images/Hugo_Blog.images/Snipaste_2021-06-08_04-30-02.png" />
     </a><figcaption class="image-caption"><strong>Windows Terminal</strong></figcaption>
     </figure>
-<p><strong>Hugo</strong>便会在当前的目录下，生成一个名为<strong>MyBlog</strong>的网站目录：</p>
+<p><strong>Hugo</strong>会在当前目录下，生成一个名为<strong>MyBlog</strong>的网站目录：</p>
 <figure><a class="lightgallery" href="/images/Hugo_Blog.images/Snipaste_2021-06-08_04-30-25.png" title="/images/Hugo_Blog.images/Snipaste_2021-06-08_04-30-25.png" data-thumbnail="/images/Hugo_Blog.images/Snipaste_2021-06-08_04-30-25.png" data-sub-html="<h2>hugo_extended_0.83.1_Windows-64bit</h2>">
         <img
             class="lazyload"
@@ -215,17 +223,17 @@
             <i class="icon fas fa-lightbulb fa-fw"></i>Tip<i class="details-icon fas fa-angle-right fa-fw"></i>
         </div>
         <div class="details-content">
-            <div class="admonition-content">需要注意，此时创建得到的<strong>MyBlog</strong>目录，还不是静态网站资源目录，该资源目录需要在配置完成之后，使用<strong>hugo.exe</strong>命令生成。</div>
+            <div class="admonition-content">需要注意，<strong>MyBlog</strong>目录还不是所谓的静态网站资源目录。静态网站资源目录需要在完成所有配置之后，使用<strong>hugo.exe</strong>命令生成。</div>
         </div>
     </div>
 <p>命令<strong>hugo.exe</strong>主要有两个用途：</p>
 <ol>
-<li>在本地部署静态网站；</li>
-<li>生成静态网站资源目录，用于部署在<strong>web</strong>服务器或免费页面。</li>
+<li>本地部署：在本地部署静态网站；</li>
+<li>远程部署：生成静态网站资源目录，用于部署在<strong>web</strong>服务器或免费页面。</li>
 </ol>
-<p>完成这两个目的的前提，是需要进入到网站目录中去调用<strong>hugo.exe</strong>命令。</p>
-<p>受限于<strong>Windows</strong>添加环境变量的复杂程度，这里选择直接将<strong>hugo.exe</strong>拷贝到<strong>MyBlog</strong>网站目录中，为后续在本地部署静态网站和生成静态网站资源目录作准备。</p>
-<p>将命令<strong>hugo.exe</strong>拷贝到<strong>MyBlog</strong>目录后，<strong>MyBlog</strong>目录的最终结构如下：</p>
+<p>而完成这两种部署的前提，是需要进入到<strong>MyBlog</strong>网站目录中去调用<strong>hugo.exe</strong>命令。</p>
+<p>但受限于<strong>Windows</strong>添加环境变量的复杂程度，这里选择将<strong>hugo.exe</strong>拷贝到<strong>MyBlog</strong>网站目录中，为后续的网站部署作准备。</p>
+<p>将命令<strong>hugo.exe</strong>拷贝到<strong>MyBlog</strong>目录后，该目录的最终结构如下：</p>
 <p><strong>| &ndash; MyBlog</strong></p>
 <p>​	<strong>| &ndash; archetypes</strong></p>
 <p>​	<strong>| &ndash; content</strong></p>
@@ -246,7 +254,11 @@
     </a><figcaption class="image-caption"><strong>MyBlog</strong></figcaption>
     </figure>
 <h3 id="b-基本配置与主题配置">b. 基本配置与主题配置</h3>
-<p>在本地部署静态网站之前，还需要进行基本配置和主题配置。基本配置可以视为修改<strong>config.toml</strong>；主题配置则稍微复杂，需要首先获取到主题目录，而后再对主题目录中的相关文件进行适当的修改。</p>
+<p>在网站部署之前，需要进行基本配置和主题配置。</p>
+<ol>
+<li>基本配置：可以视为修改<strong>config.toml</strong>；</li>
+<li>主题配置：稍微复杂，需要首先获取到主题目录，而后再对主题目录中的相关文件进行适当的修改。</li>
+</ol>
 <div class="details admonition warning open">
         <div class="details-summary admonition-title">
             <i class="icon fas fa-exclamation-triangle fa-fw"></i>Warning<i class="details-icon fas fa-angle-right fa-fw"></i>
@@ -255,7 +267,7 @@
             <div class="admonition-content">配置文件<strong>config.toml</strong>中的大部分配置，是直接与主题<strong>themes</strong>挂钩的。如果静态网站更换了主题，那么对应地也需要修改<strong>config.toml</strong>文件。</div>
         </div>
     </div>
-<h4 id="1-configtoml">1. config.toml</h4>
+<h4 id="1-基本配置configtoml">1. 基本配置：config.toml</h4>
 <p>网站主题选用<a href="https://github.com/dillonzq/LoveIt" target="_blank" rel="noopener noreffer"><strong>LoveIt</strong></a>，针对该主题的一个较为完整的<strong>config.toml</strong>配置如下，可以复制并修改使用：</p>
 <div class="highlight"><pre class="chroma"><code class="language-toml" data-lang="toml"><span class="c"># ---------------- PartA - Global Setting ---------------- </span>
 
@@ -433,8 +445,8 @@
             alt="/images/Hugo_Blog.images/Snipaste_2021-06-08_05-00-09.png" />
     </a><figcaption class="image-caption">/<strong>Myblog</strong>/<strong>static</strong>/</figcaption>
     </figure>
-<h4 id="2-themesloveit">2. themes/LoveIt</h4>
-<p><strong>Hugo</strong>拥有海量的主题，本例子采用的主题为<a href="https://github.com/dillonzq/LoveIt" target="_blank" rel="noopener noreffer"><strong>LoveIt</strong></a>，下载该主题目录，置于<strong>themes</strong>目录中即可。</p>
+<h4 id="2-主题配置themesloveit">2. 主题配置：themes/LoveIt</h4>
+<p><strong>Hugo</strong>拥有海量的主题，本文采用的<strong>Hugo</strong>提供的<a href="https://github.com/dillonzq/LoveIt" target="_blank" rel="noopener noreffer"><strong>LoveIt</strong></a>主题。下载该主题目录，置于<strong>themes</strong>目录中即可。</p>
 <figure><a class="lightgallery" href="/images/Hugo_Blog.images/Snipaste_2021-06-08_04-42-39.png" title="/images/Hugo_Blog.images/Snipaste_2021-06-08_04-42-39.png" data-thumbnail="/images/Hugo_Blog.images/Snipaste_2021-06-08_04-42-39.png" data-sub-html="<h2>/themes/LoveIt</h2>">
         <img
             class="lazyload"
@@ -445,7 +457,8 @@
             alt="/images/Hugo_Blog.images/Snipaste_2021-06-08_04-42-39.png" />
     </a><figcaption class="image-caption">/<strong>themes</strong>/<strong>LoveIt</strong></figcaption>
     </figure>
-<p><strong>LoveIt</strong>主题：<a href="https://github.com/dillonzq/LoveIt/archive/refs/tags/v0.2.10.zip" target="_blank" rel="noopener noreffer">LoveIt 0.2.10</a></p>
+<p>主题<strong>LoveIt</strong>下载：<a href="https://github.com/dillonzq/LoveIt/archive/refs/tags/v0.2.10.zip" target="_blank" rel="noopener noreffer">LoveIt 0.2.10</a></p>
+<p>更多<strong>Hugo</strong>主题，请参阅：<a href="https://themes.gohugo.io/" target="_blank" rel="noopener noreffer">Hugo Themes (gohugo.io)</a></p>
 <div class="details admonition warning open">
         <div class="details-summary admonition-title">
             <i class="icon fas fa-exclamation-triangle fa-fw"></i>Warning<i class="details-icon fas fa-angle-right fa-fw"></i>
@@ -454,6 +467,7 @@
             <div class="admonition-content">配置文件<strong>config.toml</strong>内的全局配置里，有用于主题配置的属性：<strong>theme = &ldquo;LoveIt&rdquo;</strong>。此时，<strong>Hugo</strong>将会在<strong>themes</strong>目录下，寻找相匹配的名为<strong>LoveIt</strong>的主题目录。如果目录名称不一致，程序将会报错，因此务必要保证主题目录的名称与<strong>config.toml</strong>中的主题配置的值一致。</div>
         </div>
     </div>
+<h4 id="3-自定义样式">3. 自定义样式</h4>
 <p>此前说过，<strong>hugo_extended</strong>版本可以对主题进行自定义的修改，这种修改主要针对/<strong>LoveIt</strong>/<strong>assets</strong>/<strong>css</strong>/目录下的两个文件：</p>
 <ul>
 <li><strong>_custom.scss</strong>：该文件中可以自定义<strong>Css</strong>样式；</li>
@@ -469,15 +483,15 @@
             alt="/images/Hugo_Blog.images/Snipaste_2021-06-08_04-44-22.png" />
     </a><figcaption class="image-caption">/<strong>themes</strong>/<strong>LoveIt</strong>/<strong>assets</strong>/<strong>css</strong>/</figcaption>
     </figure>
-<p>以下提供示例的样式文件：</p>
+<p>对于样式的修改因人而异，以下仅提供本博客的示例样式文件作为参考：</p>
 <ul>
-<li><strong>_custom.scss</strong>配置如下：</li>
+<li><strong>_custom.scss</strong>文件配置如下：</li>
 </ul>
 <div class="highlight"><pre class="chroma"><code class="language-scss" data-lang="scss"><span class="nc">.single</span> <span class="nc">.content</span> <span class="nt">figure</span> <span class="nt">img</span> <span class="p">{</span>
     <span class="nt">width</span><span class="nd">:</span> <span class="nt">100</span><span class="err">%</span> <span class="o">!</span><span class="nt">important</span><span class="p">;</span> <span class="c1">// 用于调整img的宽度为页面宽度的100%
 </span><span class="c1"></span><span class="p">}</span>
 </code></pre></div><ul>
-<li><strong>_override.scss</strong>配置如下：</li>
+<li><strong>_override.scss</strong>文件配置如下：</li>
 </ul>
 <div class="highlight"><pre class="chroma"><code class="language-scss" data-lang="scss"><span class="c1">// 引用本地字体文件
 </span><span class="c1"></span><span class="k">@font-face</span> <span class="p">{</span>
@@ -508,6 +522,7 @@
     </figure>
 <p><strong>CascadiaCode</strong>字体：<a href="https://github.com/microsoft/cascadia-code/releases/download/v2105.24/CascadiaCode-2105.24.zip" target="_blank" rel="noopener noreffer">CascadiaCode-2105.24.zip</a></p>
 <p><strong>TTF</strong>文件转换<strong>SVG</strong>文件：<a href="https://www.aconvert.com/cn/image/ttf-to-svg/" target="_blank" rel="noopener noreffer">.ttf文件转.svg文件</a></p>
+<hr>
 <h2 id="hugo网站部署">Hugo网站部署</h2>
 <p>本节将介绍<strong>Hugo</strong>的两种用途：</p>
 <ol>
@@ -519,13 +534,21 @@
             <i class="icon fas fa-lightbulb fa-fw"></i>Tip<i class="details-icon fas fa-angle-right fa-fw"></i>
         </div>
         <div class="details-content">
-            <div class="admonition-content"><strong>Hugo</strong>本地部署的网站，拥有一个十分出色的优点：在网站部署的过程中，你可以动态地改变配置文件或<strong>markdown</strong>文件，网页会随着任意改动的保存，而进行即刻的刷新操作。</div>
+            <div class="admonition-content"><strong>Hugo</strong>本地部署的网站，拥有一个十分突出的优势：在静态网站部署完毕且在运行中时，你可以任意动态地改变配置、文档或图片。网站会随着任意改动的保存，进行即刻的刷新操作，保证网站上展示的内容总是与真实的文档内容一致。</div>
         </div>
     </div>
 <h3 id="a-创建博文">a. 创建博文</h3>
-<p><strong>Hugo</strong>网站要求在进行部署之前，必须至少拥有一篇博文。切换到网站的根目录下，使用以下命令新建一篇<strong>markdown</strong>博文：</p>
+<p><strong>Hugo</strong>要求在部署网站之前，站内必须拥有至少一篇博文。切换到网站的根目录下，使用以下命令新建一篇<strong>markdown</strong>博文：</p>
 <pre><code>hugo new posts/first_post.md
-</code></pre><p>命令运行后，可以看到在<strong>content</strong>目录下，新增了一个名为<strong>posts</strong>的目录，且该目录下拥有一个名为<strong>first_post.md</strong>的文件：</p>
+</code></pre><div class="details admonition tip open">
+        <div class="details-summary admonition-title">
+            <i class="icon fas fa-lightbulb fa-fw"></i>Tip<i class="details-icon fas fa-angle-right fa-fw"></i>
+        </div>
+        <div class="details-content">
+            <div class="admonition-content">对于命令<strong>hugo new xxxx</strong>来说，其本质是在<strong>content</strong>目录下创建名为<strong>xxxx</strong>的<strong>markdown</strong>文件。其中<strong>markdown</strong>文件模板来自于<strong>archetypes</strong>/<strong>default.md</strong>。</div>
+        </div>
+    </div>
+<p>命令运行后，可以看到在<strong>content</strong>目录下，新增了一个名为<strong>posts</strong>的目录，且该目录下拥有一个名为<strong>first_post.md</strong>的文件：</p>
 <figure><a class="lightgallery" href="/images/Hugo_Blog.images/Snipaste_2021-06-08_04-49-59.png" title="/images/Hugo_Blog.images/Snipaste_2021-06-08_04-49-59.png" data-thumbnail="/images/Hugo_Blog.images/Snipaste_2021-06-08_04-49-59.png" data-sub-html="<h2>/MyBlog/content/posts/first_post.md</h2>">
         <img
             class="lazyload"
@@ -536,28 +559,20 @@
             alt="/images/Hugo_Blog.images/Snipaste_2021-06-08_04-49-59.png" />
     </a><figcaption class="image-caption">/MyBlog/content/posts/first_post.md</figcaption>
     </figure>
-<p>其中<strong>first_post.md</strong>内容如下：</p>
+<p>其中，<strong>first_post.md</strong>内容如下：</p>
 <div class="highlight"><pre class="chroma"><code class="language-markdown" data-lang="markdown">---
 title: &#34;First_post&#34;
 date: 2021-06-08T04:49:30+08:00
 draft: true
 ---
-</code></pre></div><p><strong>Hugo</strong>允许你在文章内容前面添加<strong>yaml</strong>、<strong>toml</strong>或者<strong>json</strong>格式的前置参数。可以看到新建<strong>first_post.md</strong>中，有三个默认的前置参数，说明如下：</p>
+</code></pre></div><p><strong>Hugo</strong>允许你在文章内容前面添加<strong>yaml</strong>、<strong>toml</strong>或者<strong>json</strong>格式的前置参数。新建的<strong>first_post.md</strong>中，三个默认前置参数的说明如下：</p>
 <ol>
 <li><strong>title</strong>：文章显示的标题；</li>
 <li><strong>data</strong>：文章显示的创建日期；</li>
 <li><strong>draft</strong>：是否为草稿。在正常的本地部署或生成静态资源目录时，此选项为<strong>true</strong>的文章，不会被展示在网站上。</li>
 </ol>
 <p>关于<strong>Hugo</strong>中更多<strong>markdown</strong>前置参数的说明，请参阅：<a href="https://hugoloveit.com/zh-cn/theme-documentation-content/#front-matter" target="_blank" rel="noopener noreffer">Front Matter</a></p>
-<div class="details admonition tip open">
-        <div class="details-summary admonition-title">
-            <i class="icon fas fa-lightbulb fa-fw"></i>Tip<i class="details-icon fas fa-angle-right fa-fw"></i>
-        </div>
-        <div class="details-content">
-            <div class="admonition-content">对于命令<strong>hugo new xxxx</strong>来说，其本质是在<strong>content</strong>目录下创建名为<strong>xxxx</strong>的<strong>markdown</strong>文件。其中<strong>markdown</strong>文件模板来自于<strong>archetypes</strong>/<strong>default.md</strong>。</div>
-        </div>
-    </div>
-<p>常用的前置参数如下：</p>
+<p>以下是本博客常用的前置参数，示例如下：</p>
 <div class="highlight"><pre class="chroma"><code class="language-markdown" data-lang="markdown">---
 title: &#34;Title&#34;
 summary: &#34;Front page description.&#34;
@@ -567,7 +582,7 @@ tags: [&#34;tagsA&#34;, &#34;tagsB&#34;]
 categories: [&#34;categoriesA&#34;, &#34;categoriesB&#34;]
 lightgallery: true
 ---
-</code></pre></div><p>在本地部署网站前，我们修改<strong>first_post.md</strong>的内容，并在其中添加一些段落与文字，如下：</p>
+</code></pre></div><p>在本地部署网站前，我们修改<strong>first_post.md</strong>的前置参数，并添加一些段落与文字，方便后期展示。如下：</p>
 <div class="highlight"><pre class="chroma"><code class="language-markdown" data-lang="markdown">---
 title: &#34;First_post&#34;
 date: 2021-06-08T04:49:30+08:00
@@ -581,9 +596,9 @@ categories: [&#34;categoriesB&#34;]
 </span><span class="gu"></span>
 你好吗？
 </code></pre></div><h3 id="b-本地部署">b. 本地部署</h3>
-<p>现在，你可以使用<strong>hugo</strong>命令行，将静态网站部署在本地了。回到<strong>MyBlog</strong>目录，打开终端并运行以下命令：</p>
+<p>现在，你可以使用<strong>hugo</strong>命令行，将静态网站部署到本地了。进入<strong>MyBlog</strong>目录，打开终端并运行以下命令：</p>
 <pre><code>hugo server
-</code></pre><p>程序将自动把网站部署在本地的<strong>1313</strong>端口：</p>
+</code></pre><p>以上命令，会自动将网站部署在本地的<strong>1313</strong>端口：</p>
 <figure><a class="lightgallery" href="/images/Hugo_Blog.images/Snipaste_2021-06-08_05-11-42.png" title="/images/Hugo_Blog.images/Snipaste_2021-06-08_05-11-42.png" data-thumbnail="/images/Hugo_Blog.images/Snipaste_2021-06-08_05-11-42.png" data-sub-html="<h2>网站部署期间，不可关闭终端</h2>">
         <img
             class="lazyload"
@@ -594,7 +609,7 @@ categories: [&#34;categoriesB&#34;]
             alt="/images/Hugo_Blog.images/Snipaste_2021-06-08_05-11-42.png" />
     </a><figcaption class="image-caption"><strong>网站部署期间，不可关闭终端</strong></figcaption>
     </figure>
-<p>通过访问<strong>http://localhost:1313</strong>网址，可以看到<strong>hugo</strong>部署在本地的网站：</p>
+<p>通过访问<strong>http://localhost:1313</strong>，可以看到<strong>hugo</strong>部署在本地的网站：</p>
 <figure><a class="lightgallery" href="/images/Hugo_Blog.images/Snipaste_2021-06-08_05-12-38.png" title="/images/Hugo_Blog.images/Snipaste_2021-06-08_05-12-38.png" data-thumbnail="/images/Hugo_Blog.images/Snipaste_2021-06-08_05-12-38.png" data-sub-html="<h2>Homepage</h2>">
         <img
             class="lazyload"
@@ -616,7 +631,7 @@ categories: [&#34;categoriesB&#34;]
     </a><figcaption class="image-caption"><strong>first_post.md</strong></figcaption>
     </figure>
 <h3 id="c-远程部署">c. 远程部署</h3>
-<p>本节将介绍如何将<strong>Hugo</strong>生成的静态网站资源目录，部署到<strong>GitHub</strong>的免费页面上。关于<strong>GitHub Pages</strong>的介绍，可以参考：</p>
+<p>本节将介绍如何将<strong>Hugo</strong>生成的静态网站资源目录，部署到<strong>GitHub</strong>的免费页面上。关于<strong>GitHub Pages</strong>简介，可以参考以下链接：</p>
 <p><a href="https://pages.github.com/" target="_blank" rel="noopener noreffer">GitHub Pages | Websites for you and your projects.</a></p>
 <div class="details admonition tip open">
         <div class="details-summary admonition-title">
@@ -627,7 +642,7 @@ categories: [&#34;categoriesB&#34;]
         </div>
     </div>
 <h4 id="1-创建github仓库">1. 创建GitHub仓库</h4>
-<p>在<strong>GitHub</strong>上创建一个名称格式为username.github.io的远程仓库：</p>
+<p>登录<strong>GitHub</strong>，并创建一个名称格式为<strong>username.github.io</strong>的远程仓库：</p>
 <figure><a class="lightgallery" href="/images/Hugo_Blog.images/Snipaste_2021-06-08_05-49-35.png" title="/images/Hugo_Blog.images/Snipaste_2021-06-08_05-49-35.png" data-thumbnail="/images/Hugo_Blog.images/Snipaste_2021-06-08_05-49-35.png" data-sub-html="<h2>new repository</h2>">
         <img
             class="lazyload"
@@ -654,17 +669,17 @@ categories: [&#34;categoriesB&#34;]
     </a><figcaption class="image-caption"><strong>2phangx-dylan</strong>/<strong>2phangx-dylan.github.io</strong></figcaption>
     </figure>
 <h4 id="2-生成静态网站资源目录">2. 生成静态网站资源目录</h4>
-<p>在MyBlog目录下，运行以下命令，以生成静态网站资源目录：</p>
+<p>进入<strong>MyBlog</strong>目录，运行以下命令，以生成静态网站资源目录：</p>
 <div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">hugo --baseURL https://2phangx-dylan.github.io
 </code></pre></div><div class="details admonition tip open">
         <div class="details-summary admonition-title">
             <i class="icon fas fa-lightbulb fa-fw"></i>Tip<i class="details-icon fas fa-angle-right fa-fw"></i>
         </div>
         <div class="details-content">
-            <div class="admonition-content">如果你不希望在每次生成静态网站资源目录时，添加<strong>baseURL</strong>参数，可以选择将该参数配置在<strong>config.toml</strong>文件中。</div>
+            <div class="admonition-content">如果你不希望在每次生成静态网站资源目录时，添加<strong>baseURL</strong>参数，可以选择将该参数配置在<strong>config.toml</strong>文件中，如：<strong>baseURL = <strong>&quot;</strong><a href="javascrip:void%280%29;" rel="">https://xxxx.github.io</a><strong>&quot;</strong></strong>。</div>
         </div>
     </div>
-<p>命令运行后，MyBlog目录下会出现一个名为public的静态网站资源目录：</p>
+<p>命令运行后，<strong>MyBlog</strong>目录下会出现一个名为<strong>public</strong>的静态网站资源目录：</p>
 <figure><a class="lightgallery" href="/images/Hugo_Blog.images/Snipaste_2021-06-08_05-44-27.png" title="/images/Hugo_Blog.images/Snipaste_2021-06-08_05-44-27.png" data-thumbnail="/images/Hugo_Blog.images/Snipaste_2021-06-08_05-44-27.png" data-sub-html="<h2>Windows Terminal</h2>">
         <img
             class="lazyload"
@@ -685,8 +700,8 @@ categories: [&#34;categoriesB&#34;]
             alt="/images/Hugo_Blog.images/Snipaste_2021-06-08_05-44-39.png" />
     </a><figcaption class="image-caption"><strong>public</strong></figcaption>
     </figure>
-<h4 id="3-上传项目">3. 上传项目</h4>
-<p>进入<strong>public</strong>目录，进行项目的上传，此时需要使用到<strong>Git Bash</strong>，命令如下：</p>
+<h4 id="3-托管项目">3. 托管项目</h4>
+<p>进入<strong>public</strong>目录，将当前目录的内容上传到<strong>GitHub</strong>中，此时需要使用到<strong>Git Bash</strong>，相关命令如下：</p>
 <div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">git init
 git add .
 git commit -m <span class="s2">&#34;update.&#34;</span>
@@ -705,7 +720,7 @@ git push -u origin main
     </a><figcaption class="image-caption"><strong>repository</strong></figcaption>
     </figure>
 <h4 id="4-访问博客">4. 访问博客</h4>
-<p>此时即可通过<a href="https://2phangx-dylan.github.io/" target="_blank" rel="noopener noreffer"><strong>https://2phangx-dylan.github.io</strong></a>，访问该博客：</p>
+<p>项目上传完毕后，即可通过<a href="https://2phangx-dylan.github.io/" target="_blank" rel="noopener noreffer"><strong>https://2phangx-dylan.github.io</strong></a>，访问该博客：</p>
 <figure><a class="lightgallery" href="/images/Hugo_Blog.images/Snipaste_2021-06-08_06-10-39.png" title="/images/Hugo_Blog.images/Snipaste_2021-06-08_06-10-39.png" data-thumbnail="/images/Hugo_Blog.images/Snipaste_2021-06-08_06-10-39.png" data-sub-html="<h2>2phangx-dylan.github.io</h2>">
         <img
             class="lazyload"
@@ -716,8 +731,16 @@ git push -u origin main
             alt="/images/Hugo_Blog.images/Snipaste_2021-06-08_06-10-39.png" />
     </a><figcaption class="image-caption"><strong>2phangx-dylan.github.io</strong></figcaption>
     </figure>
+<div class="details admonition tip open">
+        <div class="details-summary admonition-title">
+            <i class="icon fas fa-lightbulb fa-fw"></i>Tip<i class="details-icon fas fa-angle-right fa-fw"></i>
+        </div>
+        <div class="details-content">
+            <div class="admonition-content"><strong>GitHub Pages</strong>的部署需要时间，往往项目上传完毕之后，打开对应的<strong>GitHub Pages</strong>是无法立即看到网页效果的，此时等待几分钟再重新访问即可。</div>
+        </div>
+    </div>
 <h2 id="资料参阅">资料参阅</h2>
-<p>关于<strong>LoveIt</strong>主题的更多资料，请参阅：<a href="https://hugoloveit.com/zh-cn/" target="_blank" rel="noopener noreffer">LoveIt (hugoloveit.com)</a></p>
+<p>以上仅是<strong>Hugo</strong>框架的基本使用与部署步骤，如需获取更多内容，请参阅：<a href="https://gohugo.io/" target="_blank" rel="noopener noreffer">Hugo</a>，关于<strong>Hugo</strong>主题<strong>LoveIt</strong>的更多内容，请参阅：<a href="https://hugoloveit.com/zh-cn/" target="_blank" rel="noopener noreffer">LoveIt</a>。</p>
 </div><div class="post-footer" id="post-footer">
     <div class="post-info">
         <div class="post-info-line">

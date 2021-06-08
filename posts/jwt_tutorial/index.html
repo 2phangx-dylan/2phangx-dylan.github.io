@@ -25,7 +25,7 @@
         "mainEntityOfPage": {
             "@type": "WebPage",
             "@id": "https:\/\/2phangx-dylan.github.io\/posts\/jwt_tutorial\/"
-        },"genre": "posts","keywords": "Security, JWT","wordcount":  482 ,
+        },"genre": "posts","keywords": "Security, JWT","wordcount":  487 ,
         "url": "https:\/\/2phangx-dylan.github.io\/posts\/jwt_tutorial\/","datePublished": "2020-01-21T00:00:00+00:00","dateModified": "2020-01-21T00:00:00+00:00","publisher": {
             "@type": "Organization",
             "name": "2phangx-dylan"},"author": {
@@ -75,7 +75,7 @@
             <div class="toc-content" id="toc-content-auto"></div>
         </div><article class="page single"><h1 class="single-title animated flipInX">JWT Tutorial</h1><div class="post-meta">
             <div class="post-meta-line"><span class="post-author"><a href="/" title="Author" rel=" author" class="author"><i class="fas fa-user-circle fa-fw"></i>2phangx-dylan</a></span>&nbsp;<span class="post-category">included in <a href="/categories/java/"><i class="far fa-folder fa-fw"></i>Java</a></span></div>
-            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2020-01-21">2020-01-21</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;482 words&nbsp;
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2020-01-21">2020-01-21</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;487 words&nbsp;
                 <i class="far fa-clock fa-fw"></i>&nbsp;3 minutes&nbsp;</div>
         </div><div class="details toc" id="toc-static"  kept="">
                 <div class="details-summary toc-title">
@@ -110,10 +110,10 @@
 <p><strong>JWT</strong>的声明一般被用来在身份提供者和服务提供者间传递被认证的用户身份信息，以便于从资源服务器获取资源，也可以增加一些额外的其它业务逻辑所必须的声明信息，该<strong>token</strong>也可直接被用于认证，也可被加密。</p>
 <hr>
 <h2 id="传统的session认证">传统的Session认证</h2>
-<p>我们知道，<strong>http</strong>协议本省是一种无状态的协议，而这就意味着如果用户向我们的应用提供了用户名和密码用作用户认证，那么下一次请求时，用户还要再一次进行用户认证。因为根据<strong>http</strong>协议，我们并不能知道是哪个用户发出的请求。</p>
-<p>因此为了让应用能识别是那个用户发出的请求，我们只能在服务器存储一份用户的登录信息。这份登录信息保存在<strong>Session</strong>中，并通过<strong>Cookie</strong>的方式保存并传递该<strong>Session</strong>的<strong>JSESSIONID</strong>。</p>
-<p>此时已登录的用户会携带键为<strong>JSESSIONID</strong>的<strong>Cookie</strong>进行下一次请求，服务器端只需要检查指定<strong>ID</strong>的<strong>Session</strong>是否包含该用户的成功登录信息即可完成认证<strong>Authentication</strong>。</p>
-<p>以上便是基于<strong>Session</strong>的认证操作。但是这种基于<strong>Session</strong>的认证，使应用本身很难得到扩展，随着不同客户端用户的增加，独立的服务器已经无法承载更多的用户，而这时使用基于<strong>Session</strong>认证的问题就会暴露出来。</p>
+<p>我们知道，<strong>http</strong>协议本身是一种无状态的协议，这意味着如果用户向我们的应用提供了用户名和密码用作用户认证，那么在下一次请求时，用户扔需要再一次进行用户认证。因为根据<strong>http</strong>协议，我们并不能知道是哪个用户发出的请求。</p>
+<p>因此，为了让应用能识别是哪个用户发出的请求，我们只能在服务器存储一份用户的登录信息。这份登录信息保存在<strong>Session</strong>中，并通过<strong>Cookie</strong>的方式记录并传递该<strong>Session</strong>的<strong>JSESSIONID</strong>。</p>
+<p>此时，已登录的用户会携带键为<strong>JSESSIONID</strong>的<strong>Cookie</strong>进行下一次请求，服务器端只需要检查指定<strong>ID</strong>的<strong>Session</strong>是否包含该用户的成功登录信息，即可完成用户的认证<strong>Authentication</strong>。</p>
+<p>以上便是基于<strong>Session</strong>的认证操作。基于<strong>Session</strong>的认证，使应用本身很难得到扩展，随着不同客户端用户的增加，独立的服务器已经无法承载更多的用户，而这时使用基于<strong>Session</strong>认证的问题就会暴露出来。</p>
 <hr>
 <h2 id="基于session认证的问题">基于Session认证的问题</h2>
 <h3 id="a-session">a. Session</h3>
@@ -121,16 +121,23 @@
 <h3 id="b-扩展性">b. 扩展性</h3>
 <p>用户认证之后，服务端做认证操作。如果认证的记录被保存内存中，这意味着用户下次请求必须要在保存了<strong>Session</strong>的服务器上，这样用户才能成功认证并获得相关的授权资源。这很大程度上影响了应用的扩展，如分布式系统。</p>
 <h3 id="c-csrf">c. CSRF</h3>
-<p><strong>CSRF</strong>跨站请求伪造攻击，因为请求总是基于Cookie来进行用户识别与认证，此时一旦<strong>Cookie</strong>被截获，用户就很容易会受到扩展请求伪造的攻击。</p>
+<p><strong>CSRF</strong>跨站请求伪造攻击，因为请求总是基于<strong>Cookie</strong>来进行用户识别与认证，此时一旦<strong>Cookie</strong>被截获，用户就很容易会受到扩展请求伪造的攻击。</p>
 <hr>
 <h2 id="基于token的授权机制">基于Token的授权机制</h2>
-<p>基于<strong>Token</strong>的授权机制类似于<strong>http</strong>协议一般也是无状态的，它不需要在服务器端中保留用户的认证信息或会话<strong>Session</strong>信息。这就意味着基于<strong>Token</strong>认证机制的应用，不需要考虑用户在哪一台服务器登录，为应用扩展提供了便利。</p>
-<p>其主要流程是：
-<div class="mermaid" id="id-1"></div>
-该<strong>Token</strong>必须要在每次请求时传递给服务器端，它应该被保存在请求头<strong>Request Header</strong>中。另外，服务器端需要指出<strong>CORS</strong>跨域资源共享策略，一般在服务器端配置<strong>Access-Control-Allow-Origin</strong>:*即可。</p>
+<p>基于<strong>Token</strong>的授权机制，类似于<strong>http</strong>协议，虽然也是无状态的，但它不需要在服务器端中保留用户的认证信息或会话<strong>Session</strong>信息。这就意味着基于<strong>Token</strong>认证机制的应用，不需要考虑用户在哪一台服务器登录，为应用扩展提供了便利。</p>
+<p>基于<strong>Token</strong>的授权的主要流程如下：
+<div class="mermaid" id="id-1"></div></p>
+<div class="details admonition tip open">
+        <div class="details-summary admonition-title">
+            <i class="icon fas fa-lightbulb fa-fw"></i>Tip<i class="details-icon fas fa-angle-right fa-fw"></i>
+        </div>
+        <div class="details-content">
+            <div class="admonition-content">该<strong>Token</strong>必须要在每次请求时传递给服务器端，它应该被保存在请求头<strong>Request Header</strong>中。另外，服务器端需要指出<strong>CORS</strong>跨域资源共享策略，一般在服务器端配置<strong>Access-Control-Allow-Origin</strong>:*即可。</div>
+        </div>
+    </div>
 <hr>
 <h2 id="jwt的构成">JWT的构成</h2>
-<p><strong>JWT</strong>由三部分构成：</p>
+<p><strong>JWT</strong>由三部分构成，如下表所示：</p>
 <table>
 <thead>
 <tr>
@@ -140,29 +147,55 @@
 </thead>
 <tbody>
 <tr>
-<td style="text-align:center">header</td>
+<td style="text-align:center"><strong>header</strong></td>
 <td style="text-align:center">头部，用于存储两类信息：声明类型、声明加密的算法。</td>
 </tr>
 <tr>
-<td style="text-align:center">payload</td>
+<td style="text-align:center"><strong>payload</strong></td>
 <td style="text-align:center">载荷，用于存放有效信息的部分。通常包含标准中注册的声明、公共的声明和私有的声明。</td>
 </tr>
 <tr>
-<td style="text-align:center">signature</td>
-<td style="text-align:center">签名，header和payload经过BASE64加密后的信息的字符串结合header中声明的加密方式，进一步进行加盐secret组合加密后得到的内容，即为签名部分的信息。</td>
+<td style="text-align:center"><strong>signature</strong></td>
+<td style="text-align:center">签名，<strong>header</strong>和<strong>payload</strong>经过<strong>BASE64</strong>加密后的信息的字符串结合<strong>header</strong>中声明的加密方式，进一步进行加盐<strong>secret</strong>组合加密后得到的内容。</td>
 </tr>
 </tbody>
 </table>
-<p>其中<strong>secret</strong>信息是保存在服务器端的，同时<strong>JWT</strong>的签发也是在服务器端。<strong>secret</strong>相当于服务器端的私钥，该私钥在任何场景下都不应该泄露出去。一旦用户知道该<strong>secret</strong>的值，那意味着客户端可以自行签发<strong>JWT</strong>。</p>
+<p>其中，<strong>secret</strong>信息是保存在服务器端的，同时<strong>JWT</strong>的签发也是在服务器端。</p>
+<div class="details admonition warning open">
+        <div class="details-summary admonition-title">
+            <i class="icon fas fa-exclamation-triangle fa-fw"></i>Warning<i class="details-icon fas fa-angle-right fa-fw"></i>
+        </div>
+        <div class="details-content">
+            <div class="admonition-content"><strong>secret</strong>相当于服务器端的私钥，该私钥在任何场景下都不应该泄露出去。一旦用户知道该<strong>secret</strong>的值，那意味着客户端可以自行签发<strong>JWT</strong>。</div>
+        </div>
+    </div>
 <h3 id="a-头部header">a. 头部header</h3>
-<p><strong>JWT</strong>的头部一般包含两类信息，即：声明类型、声明加密的算法。一个完整的<strong>header</strong>可以表示为如下形式：</p>
+<p><strong>JWT</strong>的头部一般包含两类信息：</p>
+<ol>
+<li>声明加密类型；</li>
+<li>声明加密算法。</li>
+</ol>
+<p>一个完整的<strong>header</strong>，可以表示为如下形式：</p>
 <div class="highlight"><pre class="chroma"><code class="language-json" data-lang="json"><span class="p">{</span>
     <span class="err">&#39;typ&#39;:</span> <span class="err">&#39;JWT&#39;,</span>
     <span class="err">&#39;alg&#39;:</span> <span class="err">&#39;HS256&#39;</span>
-<span class="p">}</span>
-</code></pre></div><p>其中，<strong>typ</strong>表示<strong>type</strong>，即加密类型；<strong>alg</strong>表示<strong>algorithm</strong>，即加密算法。</p>
+<span class="p">}</span><span class="err">。</span>
+</code></pre></div><div class="details admonition tip open">
+        <div class="details-summary admonition-title">
+            <i class="icon fas fa-lightbulb fa-fw"></i>Tip<i class="details-icon fas fa-angle-right fa-fw"></i>
+        </div>
+        <div class="details-content">
+            <div class="admonition-content"><strong>typ</strong>表示<strong>type</strong>，即加密类型；<strong>alg</strong>表示<strong>algorithm</strong>，即加密算法。</div>
+        </div>
+    </div>
 <h3 id="b-载荷payload">b. 载荷payload</h3>
-<p><strong>payload</strong>载荷中一般包含标准中注册的声明、公共的声明和私有的声明。一个简单的<strong>payload</strong>可以表示为如下形式：</p>
+<p><strong>payload</strong>载荷中，一般可包含三种声明：</p>
+<ol>
+<li>标准中注册的声明；</li>
+<li>公共的声明；</li>
+<li>私有的声明。</li>
+</ol>
+<p>一个简单的<strong>payload</strong>，可以表示为如下形式：</p>
 <div class="highlight"><pre class="chroma"><code class="language-json" data-lang="json"><span class="p">{</span>
     <span class="err">&#39;sub&#39;:</span> <span class="err">&#39;PC-77932&#39;,</span>
     <span class="err">&#39;name&#39;:</span> <span class="err">&#39;dylan&#39;,</span>
@@ -170,13 +203,13 @@
 <span class="p">}</span>
 </code></pre></div><h4 id="1-标准中注册的声明建议但不强制使用">1. 标准中注册的声明（建议但不强制使用）</h4>
 <ul>
-<li><strong>iss</strong>：JWT签发者；</li>
-<li><strong>sub</strong>：JWT所面向的用户；</li>
-<li><strong>aud</strong>：接收JWT的一方；</li>
-<li><strong>exp</strong>：JWT的过期时间，这个过期时间必须要大于签发时间；</li>
-<li><strong>nbf</strong>：定义在什么时间之前，该JWT不可用；</li>
-<li><strong>iat</strong>：JWT的签发时间；</li>
-<li><strong>jti</strong>：JWT的唯一身份标识，主要用来作为一次性token，从而回避重放攻击。</li>
+<li><strong>iss</strong>：<strong>JWT</strong>签发者；</li>
+<li><strong>sub</strong>：<strong>JWT</strong>所面向的用户；</li>
+<li><strong>aud</strong>：接收<strong>JWT</strong>的一方；</li>
+<li><strong>exp</strong>：<strong>JWT</strong>的过期时间，这个过期时间必须要大于签发时间；</li>
+<li><strong>nbf</strong>：定义在什么时间之前，该<strong>JWT</strong>不可用；</li>
+<li><strong>iat</strong>：<strong>JWT</strong>的签发时间；</li>
+<li><strong>jti</strong>：<strong>JWT</strong>的唯一身份标识，主要用来作为一次性<strong>token</strong>，从而回避重放攻击。</li>
 </ul>
 <h4 id="2-公共的声明">2. 公共的声明</h4>
 <p>该声明可以添加任何的信息，一般添加用户的相关信息或其他业务需要的必要信息。但不建议添加敏感信息，如用户密码等，因为该部分在客户端是可以被解密的。</p>
@@ -186,7 +219,7 @@
 <p><strong>JWT</strong>的最后一部分为签名<strong>signature</strong>。该部分是通过拼接<strong>header</strong>与<strong>payload</strong>两部分的<strong>Base64</strong>加密字符串，并结合<strong>header</strong>中提供的加密算法及服务器中存储的指定盐<strong>salt</strong>字符串，进行加密而最终得到的密文。</p>
 <hr>
 <h2 id="maven实例">Maven实例</h2>
-<p>入门的代码使用一个简单的<strong>Maven</strong>项目作为演示，需要在<strong>pom.xml</strong>文件中添加<strong>JWT</strong>的相关依赖：</p>
+<p>入门代码采用一个简单的<strong>Maven</strong>项目作为演示，需要在<strong>pom.xml</strong>文件中添加<strong>JWT</strong>的相关依赖：</p>
 <div class="highlight"><pre class="chroma"><code class="language-xml" data-lang="xml"><span class="nt">&lt;dependency&gt;</span>
     <span class="nt">&lt;groupId&gt;</span>com.auth0<span class="nt">&lt;/groupId&gt;</span>
     <span class="nt">&lt;artifactId&gt;</span>java-jwt<span class="nt">&lt;/artifactId&gt;</span>
@@ -211,7 +244,6 @@
 
 <span class="o">/</span>
  <span class="o">*</span> <span class="nd">@author</span> <span class="n">dylan</span>
- <span class="o">*</span> <span class="nd">@date</span> <span class="n">2020</span><span class="o">/</span><span class="n">12</span><span class="o">/</span><span class="n">21</span>
  <span class="o">*/</span>
 <span class="nd">@SuppressWarnings</span><span class="o">(</span><span class="s">&#34;all&#34;</span><span class="o">)</span>
 <span class="kd">public</span> <span class="kd">class</span> <span class="nc">FirstJwtTest</span> <span class="o">{</span>
@@ -324,7 +356,7 @@
             alt="/images/JWT_Tutorial.images/image-20210102231332983.jpg" />
     </a><figcaption class="image-caption">testVerify()测试输出</figcaption>
     </figure>
-<p>关于认证的异常状态说明：</p>
+<p>关于认证中出现的各种异常状态的说明，如下：</p>
 <table>
 <thead>
 <tr>
@@ -334,24 +366,24 @@
 </thead>
 <tbody>
 <tr>
-<td style="text-align:center">InvalidClaimException</td>
-<td style="text-align:center">服务器端签发token时，可以设置token的启用时间，如果未到启用时间却去认证token，则会出现此异常。</td>
+<td style="text-align:center"><strong>InvalidClaimException</strong></td>
+<td style="text-align:center">服务器端签发<strong>token</strong>时，可以设置<strong>token</strong>的启用时间，如果未到启用时间却去认证<strong>token</strong>，则会出现此异常。</td>
 </tr>
 <tr>
-<td style="text-align:center">SignatureVerificationException</td>
-<td style="text-align:center">签名认证异常，该异常通常发生在token被恶意篡改或认证盐不正确的情况。</td>
+<td style="text-align:center"><strong>SignatureVerificationException</strong></td>
+<td style="text-align:center">签名认证异常，该异常通常发生在<strong>token</strong>被恶意篡改或认证盐不正确的情况。</td>
 </tr>
 <tr>
-<td style="text-align:center">AlgorithmMismatchException</td>
-<td style="text-align:center">加密算法错误异常，当服务器端使用非加密算法对token进行认证时，会出现此异常。</td>
+<td style="text-align:center"><strong>AlgorithmMismatchException</strong></td>
+<td style="text-align:center">加密算法错误异常，当服务器端使用非加密算法对<strong>token</strong>进行认证时，会出现此异常。</td>
 </tr>
 <tr>
-<td style="text-align:center">JWTDecodeException</td>
-<td style="text-align:center">此异常通常发生在提供了一个非法token的情况，也就是提供的token不符合相关token的定义格式。</td>
+<td style="text-align:center"><strong>JWTDecodeException</strong></td>
+<td style="text-align:center">此异常通常发生在提供了一个非法<strong>token</strong>的情况，也就是提供的<strong>token</strong>不符合相关<strong>token</strong>的定义格式。</td>
 </tr>
 <tr>
-<td style="text-align:center">TokenExpiredException</td>
-<td style="text-align:center">token过期异常，当服务器端对一个已过期的token进行认证时，将抛出此异常。</td>
+<td style="text-align:center"><strong>TokenExpiredException</strong></td>
+<td style="text-align:center"><strong>token</strong>过期异常，当服务器端对一个已过期的<strong>token</strong>进行认证时，将抛出此异常。</td>
 </tr>
 </tbody>
 </table>
@@ -369,7 +401,6 @@
 
 <span class="o">/</span>
  <span class="o">*</span> <span class="nd">@author</span> <span class="n">dylan</span>
- <span class="o">*</span> <span class="nd">@date</span> <span class="n">2020</span><span class="o">/</span><span class="n">12</span><span class="o">/</span><span class="n">21</span>
  <span class="o">*/</span>
 <span class="nd">@SuppressWarnings</span><span class="o">(</span><span class="s">&#34;All&#34;</span><span class="o">)</span>
 <span class="kd">public</span> <span class="kd">class</span> <span class="nc">JWTUtils</span> <span class="o">{</span>
