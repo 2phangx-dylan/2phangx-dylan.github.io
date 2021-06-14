@@ -16,7 +16,7 @@
 <meta name="twitter:title" content="JWT Tutorial"/>
 <meta name="twitter:description" content="JWT是JSON Web Token的缩写，它是为了在网络应用环境间传递声明，而执行的一种基于JSON的开放标准RFC7519。"/>
 <meta name="application-name" content="MyBlog">
-<meta name="apple-mobile-web-app-title" content="MyBlog"><link rel="icon" href="/code-slash.svg"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="https://2phangx-dylan.github.io/posts/jwt_tutorial/" /><link rel="next" href="https://2phangx-dylan.github.io/posts/hugo_blog/" /><link rel="stylesheet" href="/lib/normalize/normalize.min.css"><link rel="stylesheet" href="/css/style.min.css"><link rel="stylesheet" href="/lib/fontawesome-free/all.min.css"><link rel="stylesheet" href="/lib/animate/animate.min.css"><script type="application/ld+json">
+<meta name="apple-mobile-web-app-title" content="MyBlog"><link rel="icon" href="/code-slash.svg"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="https://2phangx-dylan.github.io/posts/jwt_tutorial/" /><link rel="prev" href="https://2phangx-dylan.github.io/posts/git/" /><link rel="next" href="https://2phangx-dylan.github.io/posts/hugo_blog/" /><link rel="stylesheet" href="/lib/normalize/normalize.min.css"><link rel="stylesheet" href="/css/style.min.css"><link rel="stylesheet" href="/lib/fontawesome-free/all.min.css"><link rel="stylesheet" href="/lib/animate/animate.min.css"><script type="application/ld+json">
     {
         "@context": "http://schema.org",
         "@type": "BlogPosting",
@@ -25,7 +25,7 @@
         "mainEntityOfPage": {
             "@type": "WebPage",
             "@id": "https:\/\/2phangx-dylan.github.io\/posts\/jwt_tutorial\/"
-        },"genre": "posts","keywords": "Security, JWT","wordcount":  487 ,
+        },"genre": "posts","keywords": "Security, JWT","wordcount":  478 ,
         "url": "https:\/\/2phangx-dylan.github.io\/posts\/jwt_tutorial\/","datePublished": "2020-01-21T00:00:00+00:00","dateModified": "2020-01-21T00:00:00+00:00","publisher": {
             "@type": "Organization",
             "name": "2phangx-dylan"},"author": {
@@ -75,7 +75,7 @@
             <div class="toc-content" id="toc-content-auto"></div>
         </div><article class="page single"><h1 class="single-title animated flipInX">JWT Tutorial</h1><div class="post-meta">
             <div class="post-meta-line"><span class="post-author"><a href="/" title="Author" rel=" author" class="author"><i class="fas fa-user-circle fa-fw"></i>2phangx-dylan</a></span>&nbsp;<span class="post-category">included in <a href="/categories/java/"><i class="far fa-folder fa-fw"></i>Java</a></span></div>
-            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2020-01-21">2020-01-21</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;487 words&nbsp;
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2020-01-21">2020-01-21</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;478 words&nbsp;
                 <i class="far fa-clock fa-fw"></i>&nbsp;3 minutes&nbsp;</div>
         </div><div class="details toc" id="toc-static"  kept="">
                 <div class="details-summary toc-title">
@@ -88,17 +88,17 @@
     <li><a href="#传统的session认证">传统的Session认证</a></li>
     <li><a href="#基于session认证的问题">基于Session认证的问题</a>
       <ul>
-        <li><a href="#a-session">a. Session</a></li>
-        <li><a href="#b-扩展性">b. 扩展性</a></li>
-        <li><a href="#c-csrf">c. CSRF</a></li>
+        <li><a href="#1session">1.Session</a></li>
+        <li><a href="#2扩展性">2.扩展性</a></li>
+        <li><a href="#3csrf">3.CSRF</a></li>
       </ul>
     </li>
     <li><a href="#基于token的授权机制">基于Token的授权机制</a></li>
     <li><a href="#jwt的构成">JWT的构成</a>
       <ul>
-        <li><a href="#a-头部header">a. 头部header</a></li>
-        <li><a href="#b-载荷payload">b. 载荷payload</a></li>
-        <li><a href="#c-签名signature">c. 签名signature</a></li>
+        <li><a href="#1头部header">1.头部header</a></li>
+        <li><a href="#2载荷payload">2.载荷payload</a></li>
+        <li><a href="#3签名signature">3.签名signature</a></li>
       </ul>
     </li>
     <li><a href="#maven实例">Maven实例</a></li>
@@ -110,17 +110,17 @@
 <p><strong>JWT</strong>的声明一般被用来在身份提供者和服务提供者间传递被认证的用户身份信息，以便于从资源服务器获取资源，也可以增加一些额外的其它业务逻辑所必须的声明信息，该<strong>token</strong>也可直接被用于认证，也可被加密。</p>
 <hr>
 <h2 id="传统的session认证">传统的Session认证</h2>
-<p>我们知道，<strong>http</strong>协议本身是一种无状态的协议，这意味着如果用户向我们的应用提供了用户名和密码用作用户认证，那么在下一次请求时，用户扔需要再一次进行用户认证。因为根据<strong>http</strong>协议，我们并不能知道是哪个用户发出的请求。</p>
+<p>我们知道，<strong>http</strong>协议本身是一种无状态的协议，这意味着如果用户向我们的应用提供了用户名和密码用作用户认证，那么在下一次请求时，用户仍需要再一次进行用户认证。因为根据<strong>http</strong>协议，我们并不能知道是哪个用户发出的请求。</p>
 <p>因此，为了让应用能识别是哪个用户发出的请求，我们只能在服务器存储一份用户的登录信息。这份登录信息保存在<strong>Session</strong>中，并通过<strong>Cookie</strong>的方式记录并传递该<strong>Session</strong>的<strong>JSESSIONID</strong>。</p>
 <p>此时，已登录的用户会携带键为<strong>JSESSIONID</strong>的<strong>Cookie</strong>进行下一次请求，服务器端只需要检查指定<strong>ID</strong>的<strong>Session</strong>是否包含该用户的成功登录信息，即可完成用户的认证<strong>Authentication</strong>。</p>
 <p>以上便是基于<strong>Session</strong>的认证操作。基于<strong>Session</strong>的认证，使应用本身很难得到扩展，随着不同客户端用户的增加，独立的服务器已经无法承载更多的用户，而这时使用基于<strong>Session</strong>认证的问题就会暴露出来。</p>
 <hr>
 <h2 id="基于session认证的问题">基于Session认证的问题</h2>
-<h3 id="a-session">a. Session</h3>
+<h3 id="1session">1.Session</h3>
 <p>每个用户经过应用认证之后，应用都要在服务端做一次记录，以方便用户下次请求的鉴别。通常而言<strong>Session</strong>都是保存在内存中的，而随着认证用户的增多，服务端的开销会明显增大。</p>
-<h3 id="b-扩展性">b. 扩展性</h3>
+<h3 id="2扩展性">2.扩展性</h3>
 <p>用户认证之后，服务端做认证操作。如果认证的记录被保存内存中，这意味着用户下次请求必须要在保存了<strong>Session</strong>的服务器上，这样用户才能成功认证并获得相关的授权资源。这很大程度上影响了应用的扩展，如分布式系统。</p>
-<h3 id="c-csrf">c. CSRF</h3>
+<h3 id="3csrf">3.CSRF</h3>
 <p><strong>CSRF</strong>跨站请求伪造攻击，因为请求总是基于<strong>Cookie</strong>来进行用户识别与认证，此时一旦<strong>Cookie</strong>被截获，用户就很容易会受到扩展请求伪造的攻击。</p>
 <hr>
 <h2 id="基于token的授权机制">基于Token的授权机制</h2>
@@ -169,7 +169,7 @@
             <div class="admonition-content"><strong>secret</strong>相当于服务器端的私钥，该私钥在任何场景下都不应该泄露出去。一旦用户知道该<strong>secret</strong>的值，那意味着客户端可以自行签发<strong>JWT</strong>。</div>
         </div>
     </div>
-<h3 id="a-头部header">a. 头部header</h3>
+<h3 id="1头部header">1.头部header</h3>
 <p><strong>JWT</strong>的头部一般包含两类信息：</p>
 <ol>
 <li>声明加密类型；</li>
@@ -188,7 +188,7 @@
             <div class="admonition-content"><strong>typ</strong>表示<strong>type</strong>，即加密类型；<strong>alg</strong>表示<strong>algorithm</strong>，即加密算法。</div>
         </div>
     </div>
-<h3 id="b-载荷payload">b. 载荷payload</h3>
+<h3 id="2载荷payload">2.载荷payload</h3>
 <p><strong>payload</strong>载荷中，一般可包含三种声明：</p>
 <ol>
 <li>标准中注册的声明；</li>
@@ -201,7 +201,7 @@
     <span class="err">&#39;name&#39;:</span> <span class="err">&#39;dylan&#39;,</span>
     <span class="err">&#39;admin&#39;:</span> <span class="err">true</span>
 <span class="p">}</span>
-</code></pre></div><h4 id="1-标准中注册的声明建议但不强制使用">1. 标准中注册的声明（建议但不强制使用）</h4>
+</code></pre></div><h4 id="a标准中注册的声明建议但不强制使用">a.标准中注册的声明（建议但不强制使用）</h4>
 <ul>
 <li><strong>iss</strong>：<strong>JWT</strong>签发者；</li>
 <li><strong>sub</strong>：<strong>JWT</strong>所面向的用户；</li>
@@ -211,11 +211,11 @@
 <li><strong>iat</strong>：<strong>JWT</strong>的签发时间；</li>
 <li><strong>jti</strong>：<strong>JWT</strong>的唯一身份标识，主要用来作为一次性<strong>token</strong>，从而回避重放攻击。</li>
 </ul>
-<h4 id="2-公共的声明">2. 公共的声明</h4>
+<h4 id="b公共的声明">b.公共的声明</h4>
 <p>该声明可以添加任何的信息，一般添加用户的相关信息或其他业务需要的必要信息。但不建议添加敏感信息，如用户密码等，因为该部分在客户端是可以被解密的。</p>
-<h4 id="3-私有的声明">3. 私有的声明</h4>
+<h4 id="c私有的声明">c.私有的声明</h4>
 <p>该声明是提供者和消费者所共同定义的声明，同样不建议存放敏感信息，该部分也是可以在客户端被解密的。</p>
-<h3 id="c-签名signature">c. 签名signature</h3>
+<h3 id="3签名signature">3.签名signature</h3>
 <p><strong>JWT</strong>的最后一部分为签名<strong>signature</strong>。该部分是通过拼接<strong>header</strong>与<strong>payload</strong>两部分的<strong>Base64</strong>加密字符串，并结合<strong>header</strong>中提供的加密算法及服务器中存储的指定盐<strong>salt</strong>字符串，进行加密而最终得到的密文。</p>
 <hr>
 <h2 id="maven实例">Maven实例</h2>
@@ -242,9 +242,9 @@
 <span class="kn">import</span> <span class="nn">java.util.Calendar</span><span class="o">;</span>
 <span class="kn">import</span> <span class="nn">java.util.Date</span><span class="o">;</span>
 
-<span class="o">/</span>
- <span class="o">*</span> <span class="nd">@author</span> <span class="n">dylan</span>
- <span class="o">*/</span>
+<span class="cm">/**
+</span><span class="cm"> * @author dylan
+</span><span class="cm"> */</span>
 <span class="nd">@SuppressWarnings</span><span class="o">(</span><span class="s">&#34;all&#34;</span><span class="o">)</span>
 <span class="kd">public</span> <span class="kd">class</span> <span class="nc">FirstJwtTest</span> <span class="o">{</span>
 
@@ -308,12 +308,12 @@
         <span class="k">this</span><span class="o">.</span><span class="na">verify</span><span class="o">(</span><span class="n">token</span><span class="o">,</span> <span class="n">Algorithm</span><span class="o">.</span><span class="na">HMAC256</span><span class="o">(</span><span class="n">SECRET</span><span class="o">));</span>
     <span class="o">}</span>
 
-    <span class="o">/</span>
-     <span class="o">*</span> <span class="n">认证中会出现的异常</span><span class="err">。</span>
-     <span class="o">*</span>
-     <span class="o">*</span> <span class="nd">@param</span> <span class="n">token</span>     <span class="n">token</span>
-     <span class="o">*</span> <span class="nd">@param</span> <span class="n">algorithm</span> <span class="n">algorithm</span>
-     <span class="o">*/</span>
+    <span class="cm">/**
+</span><span class="cm">     * 认证中会出现的异常。
+</span><span class="cm">     *
+</span><span class="cm">     * @param token     token
+</span><span class="cm">     * @param algorithm algorithm
+</span><span class="cm">     */</span>
     <span class="kd">public</span> <span class="kt">void</span> <span class="nf">verify</span><span class="o">(</span><span class="n">String</span> <span class="n">token</span><span class="o">,</span> <span class="n">Algorithm</span> <span class="n">algorithm</span><span class="o">)</span> <span class="o">{</span>
         <span class="kd">final</span> <span class="n">JWTVerifier</span> <span class="n">verifier</span> <span class="o">=</span> <span class="n">JWT</span><span class="o">.</span><span class="na">require</span><span class="o">(</span><span class="n">algorithm</span><span class="o">).</span><span class="na">build</span><span class="o">();</span>
         <span class="k">try</span> <span class="o">{</span>
@@ -399,19 +399,19 @@
 <span class="kn">import</span> <span class="nn">java.util.Calendar</span><span class="o">;</span>
 <span class="kn">import</span> <span class="nn">java.util.Map</span><span class="o">;</span>
 
-<span class="o">/</span>
- <span class="o">*</span> <span class="nd">@author</span> <span class="n">dylan</span>
- <span class="o">*/</span>
+<span class="cm">/**
+</span><span class="cm"> * @author dylan
+</span><span class="cm"> */</span>
 <span class="nd">@SuppressWarnings</span><span class="o">(</span><span class="s">&#34;All&#34;</span><span class="o">)</span>
 <span class="kd">public</span> <span class="kd">class</span> <span class="nc">JWTUtils</span> <span class="o">{</span>
     <span class="kd">public</span> <span class="kd">static</span> <span class="kd">final</span> <span class="n">String</span> <span class="n">SALT</span> <span class="o">=</span> <span class="s">&#34;#&amp;HEO#^$KF(^(@#HN&#34;</span><span class="o">;</span>
 
-    <span class="o">/</span>
-     <span class="o">*</span> <span class="n">方法的形参为payload中的数据</span><span class="err">。</span>
-     <span class="o">*</span>
-     <span class="o">*</span> <span class="nd">@param</span> <span class="n">map</span> <span class="n">map</span>
-     <span class="o">*</span> <span class="nd">@return</span> <span class="n">token</span>
-     <span class="o">*/</span>
+    <span class="cm">/**
+</span><span class="cm">     * 方法的形参为payload中的数据。
+</span><span class="cm">     *
+</span><span class="cm">     * @param map map
+</span><span class="cm">     * @return token
+</span><span class="cm">     */</span>
     <span class="kd">public</span> <span class="kd">static</span> <span class="n">String</span> <span class="nf">getToken</span><span class="o">(</span><span class="n">Map</span><span class="o">&lt;</span><span class="n">String</span><span class="o">,</span> <span class="n">String</span><span class="o">&gt;</span> <span class="n">map</span><span class="o">)</span> <span class="o">{</span>
         <span class="kd">final</span> <span class="n">Calendar</span> <span class="n">calendar</span> <span class="o">=</span> <span class="n">Calendar</span><span class="o">.</span><span class="na">getInstance</span><span class="o">();</span>
         <span class="n">calendar</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="n">Calendar</span><span class="o">.</span><span class="na">DATE</span><span class="o">,</span> <span class="n">7</span><span class="o">);</span>
@@ -422,12 +422,12 @@
         <span class="k">return</span> <span class="n">builder</span><span class="o">.</span><span class="na">withExpiresAt</span><span class="o">(</span><span class="n">calendar</span><span class="o">.</span><span class="na">getTime</span><span class="o">()).</span><span class="na">sign</span><span class="o">(</span><span class="n">Algorithm</span><span class="o">.</span><span class="na">HMAC256</span><span class="o">(</span><span class="n">SALT</span><span class="o">));</span>
     <span class="o">}</span>
 
-    <span class="o">/</span>
-     <span class="o">*</span> <span class="n">只检查token合法性</span><span class="err">。</span>
-     <span class="o">*</span>
-     <span class="o">*</span> <span class="nd">@param</span> <span class="n">token</span> <span class="n">token</span>
-     <span class="o">*</span> <span class="nd">@return</span> <span class="kt">boolean</span>
-     <span class="o">*/</span>
+    <span class="cm">/**
+</span><span class="cm">     * 只检查token合法性。
+</span><span class="cm">     *
+</span><span class="cm">     * @param token token
+</span><span class="cm">     * @return boolean
+</span><span class="cm">     */</span>
     <span class="kd">public</span> <span class="kd">static</span> <span class="kt">boolean</span> <span class="nf">verify</span><span class="o">(</span><span class="n">String</span> <span class="n">token</span><span class="o">)</span> <span class="o">{</span>
         <span class="k">try</span> <span class="o">{</span>
             <span class="kd">final</span> <span class="n">JWTVerifier</span> <span class="n">verifier</span> <span class="o">=</span> <span class="n">JWT</span><span class="o">.</span><span class="na">require</span><span class="o">(</span><span class="n">Algorithm</span><span class="o">.</span><span class="na">HMAC256</span><span class="o">(</span><span class="n">SALT</span><span class="o">)).</span><span class="na">build</span><span class="o">();</span>
@@ -438,12 +438,12 @@
         <span class="k">return</span> <span class="kc">true</span><span class="o">;</span>
     <span class="o">}</span>
 
-    <span class="o">/</span>
-     <span class="o">*</span> <span class="n">使用验证对象验证token合法性同时返回decodedJWT对象</span><span class="err">。</span>
-     <span class="o">*</span>
-     <span class="o">*</span> <span class="nd">@param</span> <span class="n">token</span> <span class="n">token</span>
-     <span class="o">*</span> <span class="nd">@return</span> <span class="n">decodeJWT</span>
-     <span class="o">*/</span>
+    <span class="cm">/**
+</span><span class="cm">     * 使用验证对象验证token合法性同时返回decodedJWT对象。
+</span><span class="cm">     *
+</span><span class="cm">     * @param token token
+</span><span class="cm">     * @return decodeJWT
+</span><span class="cm">     */</span>
     <span class="kd">public</span> <span class="kd">static</span> <span class="n">DecodedJWT</span> <span class="nf">getDecodedJWT</span><span class="o">(</span><span class="n">String</span> <span class="n">token</span><span class="o">)</span> <span class="o">{</span>
         <span class="k">return</span> <span class="n">JWT</span><span class="o">.</span><span class="na">require</span><span class="o">(</span><span class="n">Algorithm</span><span class="o">.</span><span class="na">HMAC256</span><span class="o">(</span><span class="n">SALT</span><span class="o">)).</span><span class="na">build</span><span class="o">().</span><span class="na">verify</span><span class="o">(</span><span class="n">token</span><span class="o">);</span>
     <span class="o">}</span>
@@ -478,7 +478,7 @@
         </section>
     </div>
 
-    <div class="post-nav">
+    <div class="post-nav"><a href="/posts/git/" class="prev" rel="prev" title="Git Tutorial"><i class="fas fa-angle-left fa-fw"></i>Git Tutorial</a>
             <a href="/posts/hugo_blog/" class="next" rel="next" title="Hugo Blog">Hugo Blog<i class="fas fa-angle-right fa-fw"></i></a></div>
 </div>
 </article></div>

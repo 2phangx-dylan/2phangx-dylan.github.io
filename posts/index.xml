@@ -18,5 +18,12 @@
     <author>Author</author>
     <guid>https://2phangx-dylan.github.io/posts/jwt_tutorial/</guid>
     <description><![CDATA[JWT是JSON Web Token的缩写，它是为了在网络应用环境间传递声明，而执行的一种基于JSON的开放标准RFC7519。]]></description>
+</item><item>
+    <title>Git Tutorial</title>
+    <link>https://2phangx-dylan.github.io/posts/git/</link>
+    <pubDate>Sat, 21 Sep 2019 00:00:00 &#43;0000</pubDate>
+    <author>Author</author>
+    <guid>https://2phangx-dylan.github.io/posts/git/</guid>
+    <description><![CDATA[Git是一个开源的分布式版本控制系统，用于敏捷高效地处理任何或小或大的项目。]]></description>
 </item></channel>
 </rss>
