@@ -232,7 +232,7 @@
             data-src="/images/Git.images/0D32F290-80B0-4EA4-9836-CA58E22569B3.jpg"
             data-srcset="/images/Git.images/0D32F290-80B0-4EA4-9836-CA58E22569B3.jpg, /images/Git.images/0D32F290-80B0-4EA4-9836-CA58E22569B3.jpg 1.5x, /images/Git.images/0D32F290-80B0-4EA4-9836-CA58E22569B3.jpg 2x"
             data-sizes="auto"
-            alt="/images/Git.images/0D32F290-80B0-4EA4-9836-CA58E22569B3.jpg" />
+            alt="/images/Git.images/0D32F290-80B0-4EA4-9836-CA58E22569B3.jpg" width="100%" />
     </a><figcaption class="image-caption"><strong>SVN资源库与Git资源库</strong></figcaption>
     </figure>
 <h2 id="git的特点">Git的特点</h2>
@@ -253,7 +253,7 @@
             data-src="/images/Git.images/deltas.png"
             data-srcset="/images/Git.images/deltas.png, /images/Git.images/deltas.png 1.5x, /images/Git.images/deltas.png 2x"
             data-sizes="auto"
-            alt="/images/Git.images/deltas.png" />
+            alt="/images/Git.images/deltas.png" width="100%" />
     </a><figcaption class="image-caption"><strong>基于差异delta-based的版本控制</strong></figcaption>
     </figure>
 <p><strong>Git</strong>不按照以上方式对待或保存数据。反之，<strong>Git</strong>更像是把数据看作是对小型文件系统的一些列快照。</p>
@@ -265,7 +265,7 @@
             data-src="/images/Git.images/snapshots.png"
             data-srcset="/images/Git.images/snapshots.png, /images/Git.images/snapshots.png 1.5x, /images/Git.images/snapshots.png 2x"
             data-sizes="auto"
-            alt="/images/Git.images/snapshots.png" />
+            alt="/images/Git.images/snapshots.png" width="100%" />
     </a><figcaption class="image-caption"><strong>Git存储项目随时间改变的快照</strong></figcaption>
     </figure>
 <p>每当你提交更新或保存项目状态时，<strong>Git</strong>就会对当时的全部文件创建一个快照并保存这个快照的索引。为了效率，如果文件没有修改，<strong>Git</strong>不在重新存储该文件，而是只保留一个链接指向之前存储的文件。<strong>Git</strong>对待数据更像是一个快照流。</p>
@@ -327,7 +327,7 @@
             data-src="/images/Git.images/local.png"
             data-srcset="/images/Git.images/local.png, /images/Git.images/local.png 1.5x, /images/Git.images/local.png 2x"
             data-sizes="auto"
-            alt="/images/Git.images/local.png" />
+            alt="/images/Git.images/local.png" width="100%" />
     </a><figcaption class="image-caption"><strong>本地版本控制</strong></figcaption>
     </figure>
 <p>其中最流行的一种叫做<strong>RCS</strong>，现今许多计算机系统上都还看得到它的踪影。<strong>RCS</strong>的工作原理是在硬盘上保存补丁集（补丁是指文件修订前后的变化）；通过应用所有的补丁，可以重新计算出各个版本的文件内容。</p>
@@ -342,7 +342,7 @@
             data-src="/images/Git.images/centralized.png"
             data-srcset="/images/Git.images/centralized.png, /images/Git.images/centralized.png 1.5x, /images/Git.images/centralized.png 2x"
             data-sizes="auto"
-            alt="/images/Git.images/centralized.png" />
+            alt="/images/Git.images/centralized.png" width="100%" />
     </a><figcaption class="image-caption"><strong>集中化版本控制</strong></figcaption>
     </figure>
 <p>这种做法带来了许多好处，特别是相较于老式的本地<strong>VCS</strong>来说。现在，每个人都可以在一定程度上看到项目中的其他人正在做些什么。管理员也可以轻松掌控每个开发者的权限，且管理一个<strong>CVCS</strong>要远比在各个客户端上维护本地数据库来得轻松容易。</p>
@@ -359,7 +359,7 @@
             data-src="/images/Git.images/distributed.png"
             data-srcset="/images/Git.images/distributed.png, /images/Git.images/distributed.png 1.5x, /images/Git.images/distributed.png 2x"
             data-sizes="auto"
-            alt="/images/Git.images/distributed.png" />
+            alt="/images/Git.images/distributed.png" width="100%" />
     </a><figcaption class="image-caption"><strong>分布式版本控制</strong></figcaption>
     </figure>
 <p>更进一步，许多这类系统都可以指定和若干不同的远端代码仓库进行交互。籍此，你就可以在同一个项目中，分别和不同工作小组的人相互协作。</p>
@@ -390,7 +390,7 @@
             data-src="/images/Git.images/areas.png"
             data-srcset="/images/Git.images/areas.png, /images/Git.images/areas.png 1.5x, /images/Git.images/areas.png 2x"
             data-sizes="auto"
-            alt="/images/Git.images/areas.png" />
+            alt="/images/Git.images/areas.png" width="100%" />
     </a><figcaption class="image-caption"><strong>工作区、暂存区以及Git目录</strong></figcaption>
     </figure>
 <ol>
@@ -523,7 +523,7 @@ git commit -m <span class="s2">&#34;initial project version&#34;</span>
             data-src="/images/Git.images/lifecycle.png"
             data-srcset="/images/Git.images/lifecycle.png, /images/Git.images/lifecycle.png 1.5x, /images/Git.images/lifecycle.png 2x"
             data-sizes="auto"
-            alt="/images/Git.images/lifecycle.png" />
+            alt="/images/Git.images/lifecycle.png" width="100%" />
     </a><figcaption class="image-caption"><strong>Git下文件的生命周期</strong></figcaption>
     </figure>
 <p><strong>Git</strong>提供查看当前分支下所有文件状态的命令，如下：</p>
@@ -537,7 +537,7 @@ git commit -m <span class="s2">&#34;initial project version&#34;</span>
             data-src="/images/Git.images/Snipaste_2021-06-10_04-43-53.png"
             data-srcset="/images/Git.images/Snipaste_2021-06-10_04-43-53.png, /images/Git.images/Snipaste_2021-06-10_04-43-53.png 1.5x, /images/Git.images/Snipaste_2021-06-10_04-43-53.png 2x"
             data-sizes="auto"
-            alt="/images/Git.images/Snipaste_2021-06-10_04-43-53.png" />
+            alt="/images/Git.images/Snipaste_2021-06-10_04-43-53.png" width="100%" />
     </a><figcaption class="image-caption"><strong>Untracked</strong></figcaption>
     </figure>
 <p>当新建文件添加到暂存区预备提交时，其所处于的状态则为<strong>staged</strong>。<strong>git status</strong>命令会提示该文件准备提交：</p>
@@ -549,7 +549,7 @@ git commit -m <span class="s2">&#34;initial project version&#34;</span>
             data-src="/images/Git.images/Snipaste_2021-06-10_04-46-50.png"
             data-srcset="/images/Git.images/Snipaste_2021-06-10_04-46-50.png, /images/Git.images/Snipaste_2021-06-10_04-46-50.png 1.5x, /images/Git.images/Snipaste_2021-06-10_04-46-50.png 2x"
             data-sizes="auto"
-            alt="/images/Git.images/Snipaste_2021-06-10_04-46-50.png" />
+            alt="/images/Git.images/Snipaste_2021-06-10_04-46-50.png" width="100%" />
     </a><figcaption class="image-caption"><strong>Staged</strong></figcaption>
     </figure>
 <p>暂存区文件被成功提交到本地仓库时，其状态变为<strong>unmodified</strong>。<strong>git status</strong>命令则不会显示已跟踪但未更改的文件：</p>
@@ -561,7 +561,7 @@ git commit -m <span class="s2">&#34;initial project version&#34;</span>
             data-src="/images/Git.images/Snipaste_2021-06-10_04-48-06.png"
             data-srcset="/images/Git.images/Snipaste_2021-06-10_04-48-06.png, /images/Git.images/Snipaste_2021-06-10_04-48-06.png 1.5x, /images/Git.images/Snipaste_2021-06-10_04-48-06.png 2x"
             data-sizes="auto"
-            alt="/images/Git.images/Snipaste_2021-06-10_04-48-06.png" />
+            alt="/images/Git.images/Snipaste_2021-06-10_04-48-06.png" width="100%" />
     </a><figcaption class="image-caption"><strong>Unmodified</strong></figcaption>
     </figure>
 <p>而已跟踪的文件被修改后，其状态变为<strong>modified</strong>。<strong>git status</strong>命令将提示该文件已被修改但未被列入暂存区：</p>
@@ -575,7 +575,7 @@ git status
             data-src="/images/Git.images/Snipaste_2021-06-10_04-54-54.png"
             data-srcset="/images/Git.images/Snipaste_2021-06-10_04-54-54.png, /images/Git.images/Snipaste_2021-06-10_04-54-54.png 1.5x, /images/Git.images/Snipaste_2021-06-10_04-54-54.png 2x"
             data-sizes="auto"
-            alt="/images/Git.images/Snipaste_2021-06-10_04-54-54.png" />
+            alt="/images/Git.images/Snipaste_2021-06-10_04-54-54.png" width="100%" />
     </a><figcaption class="image-caption"><strong>Modified</strong></figcaption>
     </figure>
 <div class="details admonition tip open">
@@ -622,7 +622,7 @@ git clone git@github.com:2phangx-dylan/example.repository.git
             data-src="/images/Git.images/Snipaste_2021-06-10_06-02-42.png"
             data-srcset="/images/Git.images/Snipaste_2021-06-10_06-02-42.png, /images/Git.images/Snipaste_2021-06-10_06-02-42.png 1.5x, /images/Git.images/Snipaste_2021-06-10_06-02-42.png 2x"
             data-sizes="auto"
-            alt="/images/Git.images/Snipaste_2021-06-10_06-02-42.png" />
+            alt="/images/Git.images/Snipaste_2021-06-10_06-02-42.png" width="100%" />
     </a><figcaption class="image-caption"><strong>example.repository</strong></figcaption>
     </figure>
 <p>此时，默认仓库的名称会自动命名为远程仓库的名称。如果希望在克隆仓库的同时，重命名本地仓库的名称，可以在链接之后添加自定义的本地仓库名称参数。</p>
@@ -638,7 +638,7 @@ git clone git@github.com:2phangx-dylan/example.repository.git my.repository
             data-src="/images/Git.images/Snipaste_2021-06-10_06-05-32.png"
             data-srcset="/images/Git.images/Snipaste_2021-06-10_06-05-32.png, /images/Git.images/Snipaste_2021-06-10_06-05-32.png 1.5x, /images/Git.images/Snipaste_2021-06-10_06-05-32.png 2x"
             data-sizes="auto"
-            alt="/images/Git.images/Snipaste_2021-06-10_06-05-32.png" />
+            alt="/images/Git.images/Snipaste_2021-06-10_06-05-32.png" width="100%" />
     </a><figcaption class="image-caption"><strong>my.repository</strong></figcaption>
     </figure>
 <h4 id="b拉取代码">b.拉取代码</h4>
@@ -656,7 +656,7 @@ git merge FETCH_HEAD
             data-src="/images/Git.images/Snipaste_2021-06-13_23-11-31.png"
             data-srcset="/images/Git.images/Snipaste_2021-06-13_23-11-31.png, /images/Git.images/Snipaste_2021-06-13_23-11-31.png 1.5x, /images/Git.images/Snipaste_2021-06-13_23-11-31.png 2x"
             data-sizes="auto"
-            alt="/images/Git.images/Snipaste_2021-06-13_23-11-31.png" />
+            alt="/images/Git.images/Snipaste_2021-06-13_23-11-31.png" width="100%" />
     </a><figcaption class="image-caption"><strong>fetch &amp; merge</strong></figcaption>
     </figure>
 <p>以下命令，可用于查看当前<strong>fetch</strong>的远程仓库分支（<strong>FETCH_HEAD</strong>除外）：</p>
@@ -692,7 +692,7 @@ git pull git@github.com:2phangx-dylan/example.repository.git main
             data-src="/images/Git.images/Snipaste_2021-06-10_06-23-09.png"
             data-srcset="/images/Git.images/Snipaste_2021-06-10_06-23-09.png, /images/Git.images/Snipaste_2021-06-10_06-23-09.png 1.5x, /images/Git.images/Snipaste_2021-06-10_06-23-09.png 2x"
             data-sizes="auto"
-            alt="/images/Git.images/Snipaste_2021-06-10_06-23-09.png" />
+            alt="/images/Git.images/Snipaste_2021-06-10_06-23-09.png" width="100%" />
     </a><figcaption class="image-caption"><strong>pull</strong></figcaption>
     </figure>
 <p>其中，第二行命令，即等同于告诉<strong>Git</strong>当前仓库的<strong>master</strong>分支中的数据，需要从<strong>git@github.com:2phangx-dylan/example.repository.git</strong>中的<strong>main</strong>分支获取。</p>
@@ -714,7 +714,7 @@ git pull git@github.com:2phangx-dylan/example.repository.git main
             data-src="/images/Git.images/Snipaste_2021-06-10_06-40-58.png"
             data-srcset="/images/Git.images/Snipaste_2021-06-10_06-40-58.png, /images/Git.images/Snipaste_2021-06-10_06-40-58.png 1.5x, /images/Git.images/Snipaste_2021-06-10_06-40-58.png 2x"
             data-sizes="auto"
-            alt="/images/Git.images/Snipaste_2021-06-10_06-40-58.png" />
+            alt="/images/Git.images/Snipaste_2021-06-10_06-40-58.png" width="100%" />
     </a><figcaption class="image-caption"><strong>pull</strong></figcaption>
     </figure>
 <p>显然，此时本地仓库中的<strong>master</strong>分支，与远程仓库中的<strong>main</strong>分支都不为空，同时它们的分支祖先并不一致，此时的分支合并操作必然失败。</p>
@@ -729,7 +729,7 @@ git pull git@github.com:2phangx-dylan/example.repository.git main
             data-src="/images/Git.images/Snipaste_2021-06-10_23-33-39.png"
             data-srcset="/images/Git.images/Snipaste_2021-06-10_23-33-39.png, /images/Git.images/Snipaste_2021-06-10_23-33-39.png 1.5x, /images/Git.images/Snipaste_2021-06-10_23-33-39.png 2x"
             data-sizes="auto"
-            alt="/images/Git.images/Snipaste_2021-06-10_23-33-39.png" />
+            alt="/images/Git.images/Snipaste_2021-06-10_23-33-39.png" width="100%" />
     </a><figcaption class="image-caption"><strong>MERGE_MSG</strong></figcaption>
     </figure>
 <p>其中首行即为默认的<strong>log</strong>，你可以更改为自定义信息。</p>
@@ -741,7 +741,7 @@ git pull git@github.com:2phangx-dylan/example.repository.git main
             data-src="/images/Git.images/Snipaste_2021-06-10_23-40-15.png"
             data-srcset="/images/Git.images/Snipaste_2021-06-10_23-40-15.png, /images/Git.images/Snipaste_2021-06-10_23-40-15.png 1.5x, /images/Git.images/Snipaste_2021-06-10_23-40-15.png 2x"
             data-sizes="auto"
-            alt="/images/Git.images/Snipaste_2021-06-10_23-40-15.png" />
+            alt="/images/Git.images/Snipaste_2021-06-10_23-40-15.png" width="100%" />
     </a><figcaption class="image-caption"><strong>MERGE_MSG</strong></figcaption>
     </figure>
 <p>信息输入完毕后，按<strong>ESC</strong>键退出插入模式，并进入命令模式。命令模式下输入<span id="id-6">:wq</span>保存文件即可：</p>
@@ -752,7 +752,7 @@ git pull git@github.com:2phangx-dylan/example.repository.git main
             data-src="/images/Git.images/Snipaste_2021-06-10_23-44-15.png"
             data-srcset="/images/Git.images/Snipaste_2021-06-10_23-44-15.png, /images/Git.images/Snipaste_2021-06-10_23-44-15.png 1.5x, /images/Git.images/Snipaste_2021-06-10_23-44-15.png 2x"
             data-sizes="auto"
-            alt="/images/Git.images/Snipaste_2021-06-10_23-44-15.png" />
+            alt="/images/Git.images/Snipaste_2021-06-10_23-44-15.png" width="100%" />
     </a><figcaption class="image-caption"><strong>MERGE_MSG</strong></figcaption>
     </figure>
 <p>合并信息填写并保存完毕后，非同祖先分支的合并就完成了：</p>
@@ -763,7 +763,7 @@ git pull git@github.com:2phangx-dylan/example.repository.git main
             data-src="/images/Git.images/Snipaste_2021-06-10_23-45-21.png"
             data-srcset="/images/Git.images/Snipaste_2021-06-10_23-45-21.png, /images/Git.images/Snipaste_2021-06-10_23-45-21.png 1.5x, /images/Git.images/Snipaste_2021-06-10_23-45-21.png 2x"
             data-sizes="auto"
-            alt="/images/Git.images/Snipaste_2021-06-10_23-45-21.png" />
+            alt="/images/Git.images/Snipaste_2021-06-10_23-45-21.png" width="100%" />
     </a><figcaption class="image-caption"><strong>merge branches</strong></figcaption>
     </figure>
 <p>但不推荐合并非同祖先的分支，这没有什么意义。</p>
@@ -804,7 +804,7 @@ git pull git@github.com:2phangx-dylan/example.repository.git main
             data-src="/images/Git.images/Snipaste_2021-06-11_04-00-14.png"
             data-srcset="/images/Git.images/Snipaste_2021-06-11_04-00-14.png, /images/Git.images/Snipaste_2021-06-11_04-00-14.png 1.5x, /images/Git.images/Snipaste_2021-06-11_04-00-14.png 2x"
             data-sizes="auto"
-            alt="/images/Git.images/Snipaste_2021-06-11_04-00-14.png" />
+            alt="/images/Git.images/Snipaste_2021-06-11_04-00-14.png" width="100%" />
     </a><figcaption class="image-caption"><strong>git pull</strong></figcaption>
     </figure>
 <p>该报错正是<strong>merge</strong>命令造成的，因为<strong>merge</strong>操作出现合并冲突时，保留的一方必然是已提交的文件。那么显然，对于<strong>modified</strong>已修改、<strong>staged</strong>已暂存的文件来说，<strong>merge</strong>命令无法使用它来进行比较。</p>
@@ -816,7 +816,7 @@ git pull git@github.com:2phangx-dylan/example.repository.git main
             data-src="/images/Git.images/Snipaste_2021-06-11_04-05-15.png"
             data-srcset="/images/Git.images/Snipaste_2021-06-11_04-05-15.png, /images/Git.images/Snipaste_2021-06-11_04-05-15.png 1.5x, /images/Git.images/Snipaste_2021-06-11_04-05-15.png 2x"
             data-sizes="auto"
-            alt="/images/Git.images/Snipaste_2021-06-11_04-05-15.png" />
+            alt="/images/Git.images/Snipaste_2021-06-11_04-05-15.png" width="100%" />
     </a><figcaption class="image-caption"><strong>git pull</strong></figcaption>
     </figure>
 <p><strong>merge</strong>命令还会带来所谓的合并冲突，远程分支与本地分支的合并、本地分支之间的合并，都可以出现合并冲突。</p>
@@ -844,7 +844,7 @@ git add &lt;file_name&gt;
             data-src="/images/Git.images/Snipaste_2021-06-11_04-37-58.png"
             data-srcset="/images/Git.images/Snipaste_2021-06-11_04-37-58.png, /images/Git.images/Snipaste_2021-06-11_04-37-58.png 1.5x, /images/Git.images/Snipaste_2021-06-11_04-37-58.png 2x"
             data-sizes="auto"
-            alt="/images/Git.images/Snipaste_2021-06-11_04-37-58.png" />
+            alt="/images/Git.images/Snipaste_2021-06-11_04-37-58.png" width="100%" />
     </a><figcaption class="image-caption"><strong>COMMIT_EDITMSG</strong></figcaption>
     </figure>
 <p>因此，如果你不希望与<strong>vim</strong>命令打交道，那么最好在<strong>commit</strong>的时候都加上<span id="id-8">-m</span>参数。</p>
@@ -858,7 +858,7 @@ git add &lt;file_name&gt;
             data-src="/images/Git.images/reset-workflow.png"
             data-srcset="/images/Git.images/reset-workflow.png, /images/Git.images/reset-workflow.png 1.5x, /images/Git.images/reset-workflow.png 2x"
             data-sizes="auto"
-            alt="/images/Git.images/reset-workflow.png" />
+            alt="/images/Git.images/reset-workflow.png" width="100%" />
     </a><figcaption class="image-caption"><strong>reset-workflow</strong></figcaption>
     </figure>
 <p><strong>reset</strong>命令看起来是这样的：</p>
@@ -882,7 +882,7 @@ git add &lt;file_name&gt;
             data-src="/images/Git.images/reset-ex1.png"
             data-srcset="/images/Git.images/reset-ex1.png, /images/Git.images/reset-ex1.png 1.5x, /images/Git.images/reset-ex1.png 2x"
             data-sizes="auto"
-            alt="/images/Git.images/reset-ex1.png" />
+            alt="/images/Git.images/reset-ex1.png" width="100%" />
     </a><figcaption class="image-caption"><strong>touch file.txt</strong></figcaption>
     </figure>
 <p>现在我们想要提交这个文件，所以用<strong>git add</strong>来获取工作目录中的内容，并将其复制到索引中：</p>
@@ -893,7 +893,7 @@ git add &lt;file_name&gt;
             data-src="/images/Git.images/reset-ex2.png"
             data-srcset="/images/Git.images/reset-ex2.png, /images/Git.images/reset-ex2.png 1.5x, /images/Git.images/reset-ex2.png 2x"
             data-sizes="auto"
-            alt="/images/Git.images/reset-ex2.png" />
+            alt="/images/Git.images/reset-ex2.png" width="100%" />
     </a><figcaption class="image-caption"><strong>git add file.txt</strong></figcaption>
     </figure>
 <p>接着运行<strong>git commit</strong>，它会取得索引中的内容并将它保存为一个永久的快照，然后创建一个指向该快照的提交对象，最后更新<strong>master</strong>来指向本次提交：</p>
@@ -904,7 +904,7 @@ git add &lt;file_name&gt;
             data-src="/images/Git.images/reset-ex3.png"
             data-srcset="/images/Git.images/reset-ex3.png, /images/Git.images/reset-ex3.png 1.5x, /images/Git.images/reset-ex3.png 2x"
             data-sizes="auto"
-            alt="/images/Git.images/reset-ex3.png" />
+            alt="/images/Git.images/reset-ex3.png" width="100%" />
     </a><figcaption class="image-caption"><strong>git commit</strong></figcaption>
     </figure>
 <p>此时如果我们运行<strong>git status</strong>，会发现没有任何改动，因为现在三棵树完全相同。</p>
@@ -917,7 +917,7 @@ git add &lt;file_name&gt;
             data-src="/images/Git.images/reset-ex4.png"
             data-srcset="/images/Git.images/reset-ex4.png, /images/Git.images/reset-ex4.png 1.5x, /images/Git.images/reset-ex4.png 2x"
             data-sizes="auto"
-            alt="/images/Git.images/reset-ex4.png" />
+            alt="/images/Git.images/reset-ex4.png" width="100%" />
     </a><figcaption class="image-caption"><strong>edit file</strong></figcaption>
     </figure>
 <p>如果现在运行<strong>git status</strong>，我们会看到文件显示在<strong>Changes not staged for commit</strong>下面并被标记为红色，因为该条目在索引与工作目录之间存在不同。</p>
@@ -929,7 +929,7 @@ git add &lt;file_name&gt;
             data-src="/images/Git.images/reset-ex5.png"
             data-srcset="/images/Git.images/reset-ex5.png, /images/Git.images/reset-ex5.png 1.5x, /images/Git.images/reset-ex5.png 2x"
             data-sizes="auto"
-            alt="/images/Git.images/reset-ex5.png" />
+            alt="/images/Git.images/reset-ex5.png" width="100%" />
     </a><figcaption class="image-caption"><strong>git add file.txt v2</strong></figcaption>
     </figure>
 <p>此时，由于索引和<strong>HEAD</strong>不同，若运行<strong>git status</strong>的话就会看到<strong>Changes to be committed</strong>下的该文件变为绿色。也就是说，现在预期的下一次提交与上一次提交不同。</p>
@@ -941,7 +941,7 @@ git add &lt;file_name&gt;
             data-src="/images/Git.images/reset-ex6.png"
             data-srcset="/images/Git.images/reset-ex6.png, /images/Git.images/reset-ex6.png 1.5x, /images/Git.images/reset-ex6.png 2x"
             data-sizes="auto"
-            alt="/images/Git.images/reset-ex6.png" />
+            alt="/images/Git.images/reset-ex6.png" width="100%" />
     </a><figcaption class="image-caption"><strong>git commit</strong></figcaption>
     </figure>
 <p>现在运行<strong>git status</strong>会没有输出，因为三棵树又变得相同了。</p>
@@ -961,7 +961,7 @@ git add &lt;file_name&gt;
             data-src="/images/Git.images/reset-start.png"
             data-srcset="/images/Git.images/reset-start.png, /images/Git.images/reset-start.png 1.5x, /images/Git.images/reset-start.png 2x"
             data-sizes="auto"
-            alt="/images/Git.images/reset-start.png" />
+            alt="/images/Git.images/reset-start.png" width="100%" />
     </a><figcaption class="image-caption"><strong>reset start</strong></figcaption>
     </figure>
 <div class="details admonition tip open">
@@ -983,7 +983,7 @@ git add &lt;file_name&gt;
             data-src="/images/Git.images/reset-soft.png"
             data-srcset="/images/Git.images/reset-soft.png, /images/Git.images/reset-soft.png 1.5x, /images/Git.images/reset-soft.png 2x"
             data-sizes="auto"
-            alt="/images/Git.images/reset-soft.png" />
+            alt="/images/Git.images/reset-soft.png" width="100%" />
     </a><figcaption class="image-caption"><strong>reset soft</strong></figcaption>
     </figure>
 <h4 id="b更新索引--mixed">b.更新索引（&ndash;mixed）</h4>
@@ -1051,7 +1051,7 @@ git add &lt;file_name&gt;
             data-src="/images/Git.images/Snipaste_2021-06-13_13-32-15.png"
             data-srcset="/images/Git.images/Snipaste_2021-06-13_13-32-15.png, /images/Git.images/Snipaste_2021-06-13_13-32-15.png 1.5x, /images/Git.images/Snipaste_2021-06-13_13-32-15.png 2x"
             data-sizes="auto"
-            alt="/images/Git.images/Snipaste_2021-06-13_13-32-15.png" />
+            alt="/images/Git.images/Snipaste_2021-06-13_13-32-15.png" width="100%" />
     </a><figcaption class="image-caption"><strong>.git/config</strong></figcaption>
     </figure>
 <p>添加<strong>remote_alias</strong>后，<strong>config</strong>文件中会生成一个键值对，其中键包含<strong>remote_alias</strong>，值则包含<strong>remote</strong>。</p>
@@ -1064,7 +1064,7 @@ git add &lt;file_name&gt;
             data-src="/images/Git.images/Snipaste_2021-06-13_13-41-56.png"
             data-srcset="/images/Git.images/Snipaste_2021-06-13_13-41-56.png, /images/Git.images/Snipaste_2021-06-13_13-41-56.png 1.5x, /images/Git.images/Snipaste_2021-06-13_13-41-56.png 2x"
             data-sizes="auto"
-            alt="/images/Git.images/Snipaste_2021-06-13_13-41-56.png" />
+            alt="/images/Git.images/Snipaste_2021-06-13_13-41-56.png" width="100%" />
     </a><figcaption class="image-caption"><strong>.git/config</strong></figcaption>
     </figure>
 <p>最后，你可以通过以下命令查看当前的远程仓库别名列表：</p>
@@ -1078,7 +1078,7 @@ git add &lt;file_name&gt;
             data-src="/images/Git.images/Snipaste_2021-06-11_02-12-50.png"
             data-srcset="/images/Git.images/Snipaste_2021-06-11_02-12-50.png, /images/Git.images/Snipaste_2021-06-11_02-12-50.png 1.5x, /images/Git.images/Snipaste_2021-06-11_02-12-50.png 2x"
             data-sizes="auto"
-            alt="/images/Git.images/Snipaste_2021-06-11_02-12-50.png" />
+            alt="/images/Git.images/Snipaste_2021-06-11_02-12-50.png" width="100%" />
     </a><figcaption class="image-caption"><strong>git remote &amp; cat .git/config</strong></figcaption>
     </figure>
 <h3 id="2push默认远程分支">2.push默认远程分支</h3>
@@ -1131,7 +1131,7 @@ git mv &lt;oldfile-name&gt; &lt;newfile-name&gt; <span class="c1"># 将表现为
             data-src="/images/Git.images/git.jpg"
             data-srcset="/images/Git.images/git.jpg, /images/Git.images/git.jpg 1.5x, /images/Git.images/git.jpg 2x"
             data-sizes="auto"
-            alt="/images/Git.images/git.jpg" />
+            alt="/images/Git.images/git.jpg" width="100%" />
     </a><figcaption class="image-caption"><strong>Git状态转换图解</strong></figcaption>
     </figure>
 <h2 id="git分支">Git分支</h2>
@@ -1146,7 +1146,7 @@ git mv &lt;oldfile-name&gt; &lt;newfile-name&gt; <span class="c1"># 将表现为
             data-src="/images/Git.images/Snipaste_2021-06-10_02-55-19.png"
             data-srcset="/images/Git.images/Snipaste_2021-06-10_02-55-19.png, /images/Git.images/Snipaste_2021-06-10_02-55-19.png 1.5x, /images/Git.images/Snipaste_2021-06-10_02-55-19.png 2x"
             data-sizes="auto"
-            alt="/images/Git.images/Snipaste_2021-06-10_02-55-19.png" />
+            alt="/images/Git.images/Snipaste_2021-06-10_02-55-19.png" width="100%" />
     </a><figcaption class="image-caption"><strong>Git Bash</strong></figcaption>
     </figure>
 <p>本地仓库初始化完毕之后，就可以开始对分支进行操作了。</p>
@@ -1169,7 +1169,7 @@ git mv &lt;oldfile-name&gt; &lt;newfile-name&gt; <span class="c1"># 将表现为
             data-src="/images/Git.images/Snipaste_2021-06-10_03-01-41.png"
             data-srcset="/images/Git.images/Snipaste_2021-06-10_03-01-41.png, /images/Git.images/Snipaste_2021-06-10_03-01-41.png 1.5x, /images/Git.images/Snipaste_2021-06-10_03-01-41.png 2x"
             data-sizes="auto"
-            alt="/images/Git.images/Snipaste_2021-06-10_03-01-41.png" />
+            alt="/images/Git.images/Snipaste_2021-06-10_03-01-41.png" width="100%" />
     </a><figcaption class="image-caption"><strong>Git Bash</strong></figcaption>
     </figure>
 <p>该命令显示当前<strong>Git</strong>仓库中不存在任何的分支。为什么呢？</p>
@@ -1186,7 +1186,7 @@ git branch
             data-src="/images/Git.images/Snipaste_2021-06-10_03-07-47.png"
             data-srcset="/images/Git.images/Snipaste_2021-06-10_03-07-47.png, /images/Git.images/Snipaste_2021-06-10_03-07-47.png 1.5x, /images/Git.images/Snipaste_2021-06-10_03-07-47.png 2x"
             data-sizes="auto"
-            alt="/images/Git.images/Snipaste_2021-06-10_03-07-47.png" />
+            alt="/images/Git.images/Snipaste_2021-06-10_03-07-47.png" width="100%" />
     </a><figcaption class="image-caption"><strong>Git Bash</strong></figcaption>
     </figure>
 <p>命令运行后，<strong>master</strong>分支出现在了分支列表中。</p>
@@ -1211,7 +1211,7 @@ git branch --list
             data-src="/images/Git.images/Snipaste_2021-06-10_03-36-49.png"
             data-srcset="/images/Git.images/Snipaste_2021-06-10_03-36-49.png, /images/Git.images/Snipaste_2021-06-10_03-36-49.png 1.5x, /images/Git.images/Snipaste_2021-06-10_03-36-49.png 2x"
             data-sizes="auto"
-            alt="/images/Git.images/Snipaste_2021-06-10_03-36-49.png" />
+            alt="/images/Git.images/Snipaste_2021-06-10_03-36-49.png" width="100%" />
     </a><figcaption class="image-caption"><strong>Git Bash</strong></figcaption>
     </figure>
 <p>可以看到，分支列表中多了一个名为<strong>main</strong>的分支。注意，分支列表中<strong>master</strong>分支被高亮显示，同时该分支前使用了*号进行标记，这表示了当前所处的分支是<strong>master</strong>分支。</p>
@@ -1233,7 +1233,7 @@ git branch --list
             data-src="/images/Git.images/Snipaste_2021-06-10_03-44-26.png"
             data-srcset="/images/Git.images/Snipaste_2021-06-10_03-44-26.png, /images/Git.images/Snipaste_2021-06-10_03-44-26.png 1.5x, /images/Git.images/Snipaste_2021-06-10_03-44-26.png 2x"
             data-sizes="auto"
-            alt="/images/Git.images/Snipaste_2021-06-10_03-44-26.png" />
+            alt="/images/Git.images/Snipaste_2021-06-10_03-44-26.png" width="100%" />
     </a><figcaption class="image-caption"><strong>Git Bash</strong></figcaption>
     </figure>
 <p>显然，当前所在分支已经成功从<strong>master</strong>切换为<strong>main</strong>了。</p>
@@ -1247,7 +1247,7 @@ git branch --list
             data-src="/images/Git.images/image-20201016225447943.png"
             data-srcset="/images/Git.images/image-20201016225447943.png, /images/Git.images/image-20201016225447943.png 1.5x, /images/Git.images/image-20201016225447943.png 2x"
             data-sizes="auto"
-            alt="/images/Git.images/image-20201016225447943.png" />
+            alt="/images/Git.images/image-20201016225447943.png" width="100%" />
     </a><figcaption class="image-caption"><strong>master &amp; dev</strong></figcaption>
     </figure></p>
 <ol>
@@ -1266,7 +1266,7 @@ git merge dev <span class="c1"># 将dev分支合并到当前master分支</span>
             data-src="/images/Git.images/image-20201016225925053.png"
             data-srcset="/images/Git.images/image-20201016225925053.png, /images/Git.images/image-20201016225925053.png 1.5x, /images/Git.images/image-20201016225925053.png 2x"
             data-sizes="auto"
-            alt="/images/Git.images/image-20201016225925053.png" />
+            alt="/images/Git.images/image-20201016225925053.png" width="100%" />
     </a><figcaption class="image-caption"><strong>master &amp; dev</strong></figcaption>
     </figure>
 <p>现在，<strong>A</strong>、<strong>B</strong>、<strong>C</strong>、<strong>D</strong>、<strong>E</strong>、<strong>F</strong>、<strong>G</strong>都属于<strong>master</strong>节点，<strong>G</strong>是一次合并后的最终结果，是将<strong>E</strong>和<strong>F</strong>的代码合并后的结果。</p>
@@ -1286,7 +1286,7 @@ git merge dev <span class="c1"># 将dev分支合并到当前master分支</span>
             data-src="/images/Git.images/image-20201016230535782.png"
             data-srcset="/images/Git.images/image-20201016230535782.png, /images/Git.images/image-20201016230535782.png 1.5x, /images/Git.images/image-20201016230535782.png 2x"
             data-sizes="auto"
-            alt="/images/Git.images/image-20201016230535782.png" />
+            alt="/images/Git.images/image-20201016230535782.png" width="100%" />
     </a><figcaption class="image-caption"><strong>master &amp; dev</strong></figcaption>
     </figure>
 <h3 id="3合并冲突">3.合并冲突</h3>

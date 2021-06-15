@@ -16,7 +16,7 @@
 <meta name="twitter:title" content="Hugo Post Encrypted"/>
 <meta name="twitter:description" content="本篇将介绍如何对Hugo文章进行简单加密。"/>
 <meta name="application-name" content="MyBlog">
-<meta name="apple-mobile-web-app-title" content="MyBlog"><link rel="icon" href="/code-slash.svg"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="https://2phangx-dylan.github.io/posts/hugo_post_encrypted/" /><link rel="prev" href="https://2phangx-dylan.github.io/posts/hugo_blog/" /><link rel="stylesheet" href="/lib/normalize/normalize.min.css"><link rel="stylesheet" href="/css/style.min.css"><link rel="stylesheet" href="/lib/fontawesome-free/all.min.css"><link rel="stylesheet" href="/lib/animate/animate.min.css"><script type="application/ld+json">
+<meta name="apple-mobile-web-app-title" content="MyBlog"><link rel="icon" href="/code-slash.svg"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="https://2phangx-dylan.github.io/posts/hugo_post_encrypted/" /><link rel="prev" href="https://2phangx-dylan.github.io/posts/hugo_blog/" /><link rel="next" href="https://2phangx-dylan.github.io/posts/clash/" /><link rel="stylesheet" href="/lib/normalize/normalize.min.css"><link rel="stylesheet" href="/css/style.min.css"><link rel="stylesheet" href="/lib/fontawesome-free/all.min.css"><link rel="stylesheet" href="/lib/animate/animate.min.css"><script type="application/ld+json">
     {
         "@context": "http://schema.org",
         "@type": "BlogPosting",
@@ -25,7 +25,7 @@
         "mainEntityOfPage": {
             "@type": "WebPage",
             "@id": "https:\/\/2phangx-dylan.github.io\/posts\/hugo_post_encrypted\/"
-        },"genre": "posts","keywords": "Security","wordcount":  911 ,
+        },"genre": "posts","keywords": "Security","wordcount":  921 ,
         "url": "https:\/\/2phangx-dylan.github.io\/posts\/hugo_post_encrypted\/","datePublished": "2021-06-15T00:00:00+00:00","dateModified": "2021-06-15T00:00:00+00:00","publisher": {
             "@type": "Organization",
             "name": "2phangx-dylan"},"author": {
@@ -51,8 +51,8 @@
 	
 	<script>
 		(function(){
-			if('dylan0217-AZ'){
-				if (prompt('Please enter password.') !== 'dylan0217-AZ'){
+			if(''){
+				if (prompt('Please enter password.') !== ''){
 					window.stop();
 					alert('Sorry! Password wrong.');
 					history.back();
@@ -87,7 +87,7 @@
             <div class="toc-content" id="toc-content-auto"></div>
         </div><article class="page single"><h1 class="single-title animated flipInX">Hugo Post Encrypted</h1><div class="post-meta">
             <div class="post-meta-line"><span class="post-author"><a href="/" title="Author" rel=" author" class="author"><i class="fas fa-user-circle fa-fw"></i>2phangx-dylan</a></span>&nbsp;<span class="post-category">included in <a href="/categories/system/"><i class="far fa-folder fa-fw"></i>System</a></span></div>
-            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2021-06-15">2021-06-15</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;911 words&nbsp;
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2021-06-15">2021-06-15</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;921 words&nbsp;
                 <i class="far fa-clock fa-fw"></i>&nbsp;5 minutes&nbsp;</div>
         </div><div class="details toc" id="toc-static"  kept="">
                 <div class="details-summary toc-title">
@@ -100,6 +100,7 @@
     <li><a href="#自定义前置参数">自定义前置参数</a></li>
     <li><a href="#页面的动态生成">页面的动态生成</a></li>
     <li><a href="#效果测试">效果测试</a></li>
+    <li><a href="#安全性">安全性</a></li>
   </ul>
 </nav></div>
             </div><div class="content" id="content"><h2 id="post加密原理">Post加密原理</h2>
@@ -355,7 +356,7 @@ Testing passcode.
             data-src="/images/Hugo_Post_Encrypted.images/Snipaste_2021-06-15_17-04-29.png"
             data-srcset="/images/Hugo_Post_Encrypted.images/Snipaste_2021-06-15_17-04-29.png, /images/Hugo_Post_Encrypted.images/Snipaste_2021-06-15_17-04-29.png 1.5x, /images/Hugo_Post_Encrypted.images/Snipaste_2021-06-15_17-04-29.png 2x"
             data-sizes="auto"
-            alt="/images/Hugo_Post_Encrypted.images/Snipaste_2021-06-15_17-04-29.png" />
+            alt="/images/Hugo_Post_Encrypted.images/Snipaste_2021-06-15_17-04-29.png" width="100%" />
     </a><figcaption class="image-caption"><strong>Password needed</strong></figcaption>
     </figure>
 <p>密码输入正确后，即可访问文章内容：</p>
@@ -366,7 +367,7 @@ Testing passcode.
             data-src="/images/Hugo_Post_Encrypted.images/Snipaste_2021-06-15_17-05-50.png"
             data-srcset="/images/Hugo_Post_Encrypted.images/Snipaste_2021-06-15_17-05-50.png, /images/Hugo_Post_Encrypted.images/Snipaste_2021-06-15_17-05-50.png 1.5x, /images/Hugo_Post_Encrypted.images/Snipaste_2021-06-15_17-05-50.png 2x"
             data-sizes="auto"
-            alt="/images/Hugo_Post_Encrypted.images/Snipaste_2021-06-15_17-05-50.png" />
+            alt="/images/Hugo_Post_Encrypted.images/Snipaste_2021-06-15_17-05-50.png" width="100%" />
     </a><figcaption class="image-caption"><strong>Enter password</strong></figcaption>
     </figure>
 <figure><a class="lightgallery" href="/images/Hugo_Post_Encrypted.images/Snipaste_2021-06-15_17-05-22.png" title="/images/Hugo_Post_Encrypted.images/Snipaste_2021-06-15_17-05-22.png" data-thumbnail="/images/Hugo_Post_Encrypted.images/Snipaste_2021-06-15_17-05-22.png" data-sub-html="<h2>Access successful</h2>">
@@ -376,12 +377,17 @@ Testing passcode.
             data-src="/images/Hugo_Post_Encrypted.images/Snipaste_2021-06-15_17-05-22.png"
             data-srcset="/images/Hugo_Post_Encrypted.images/Snipaste_2021-06-15_17-05-22.png, /images/Hugo_Post_Encrypted.images/Snipaste_2021-06-15_17-05-22.png 1.5x, /images/Hugo_Post_Encrypted.images/Snipaste_2021-06-15_17-05-22.png 2x"
             data-sizes="auto"
-            alt="/images/Hugo_Post_Encrypted.images/Snipaste_2021-06-15_17-05-22.png" />
+            alt="/images/Hugo_Post_Encrypted.images/Snipaste_2021-06-15_17-05-22.png" width="100%" />
     </a><figcaption class="image-caption"><strong>Access successful</strong></figcaption>
     </figure>
-<h1 id="安全性">安全性</h1>
-<p>通过<strong>JavaScript</strong>的简单加密，本身是不够安全的。其主要原因是：代码无法保证在何时加载该<strong>JS</strong>，也许网页具体内容在加载该<strong>JS</strong>前就被加载完毕了。</p>
-<p>此时，通过一定的手段，是可以查看到加密网页源码的，加密也就形同虚设。</p>
+<h2 id="安全性">安全性</h2>
+<p>通过<strong>JavaScript</strong>的简单加密，本身是不够安全的。</p>
+<p>其主要原因有两个：</p>
+<ol>
+<li>代码无法保证在何时加载该<strong>JS</strong>，也许网页具体内容在加载该<strong>JS</strong>前就被加载完毕了；</li>
+<li>对于部署在免费页面的静态网站，实际所有页面的源码是公开的。</li>
+</ol>
+<p>针对原因1，通过一定的手段，可以查看到加密网页源码。</p>
 <div class="details admonition tip open">
         <div class="details-summary admonition-title">
             <i class="icon fas fa-lightbulb fa-fw"></i>Tip<i class="details-icon fas fa-angle-right fa-fw"></i>
@@ -390,10 +396,21 @@ Testing passcode.
             <div class="admonition-content"><p>破解步骤：</p>
 <ol>
 <li>在不输入任何密码的情况下，点击取消按钮，此时会提示密码错误；</li>
-<li>在关闭该密码错误弹窗的瞬间，按下ESC键阻止页面继续加载。</li>
+<li>在关闭该密码错误弹窗的瞬间，按下<strong>ESC</strong>键阻止页面继续加载。</li>
 </ol>
 <p>此时，极有几率可以看到加密页面的所有内容。</p>
+<p>注意，即使<strong>JS</strong>中使用了<strong>window.stop()</strong>，也无法保证代码的加载顺序。</p>
 </div>
+        </div>
+    </div>
+<p>针对原因2，显然如果是通过<strong>GitHub Page</strong>免费页面进行的静态网站部署，其源码实际上存在于公共的<strong>GitHub</strong>仓库内。</p>
+<p>此时，加密的网页其本质上是公开状态的，那么加密已经失去了意义。</p>
+<div class="details admonition tip open">
+        <div class="details-summary admonition-title">
+            <i class="icon fas fa-lightbulb fa-fw"></i>Tip<i class="details-icon fas fa-angle-right fa-fw"></i>
+        </div>
+        <div class="details-content">
+            <div class="admonition-content"><strong>GitHub Page</strong>允许部署<strong>private</strong>仓库中的静态网站，但需要付费。</div>
         </div>
     </div>
 </div><div class="post-footer" id="post-footer">
@@ -419,7 +436,8 @@ Testing passcode.
         </section>
     </div>
 
-    <div class="post-nav"><a href="/posts/hugo_blog/" class="prev" rel="prev" title="Hugo Blog"><i class="fas fa-angle-left fa-fw"></i>Hugo Blog</a></div>
+    <div class="post-nav"><a href="/posts/hugo_blog/" class="prev" rel="prev" title="Hugo Blog"><i class="fas fa-angle-left fa-fw"></i>Hugo Blog</a>
+            <a href="/posts/clash/" class="next" rel="next" title="Clash for Window">Clash for Window<i class="fas fa-angle-right fa-fw"></i></a></div>
 </div>
 </article></div>
             </main><footer class="footer">
