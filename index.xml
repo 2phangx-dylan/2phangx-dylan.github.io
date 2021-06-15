@@ -4,9 +4,16 @@
         <link>https://2phangx-dylan.github.io/</link>
         <description>Tech &amp; Posts</description>
         <generator>Hugo -- gohugo.io</generator><language>en</language><managingEditor>2phangx.dylan@gmail.com (2phangx-dylan)</managingEditor>
-            <webMaster>2phangx.dylan@gmail.com (2phangx-dylan)</webMaster><lastBuildDate>Mon, 07 Jun 2021 00:00:00 &#43;0000</lastBuildDate>
+            <webMaster>2phangx.dylan@gmail.com (2phangx-dylan)</webMaster><lastBuildDate>Tue, 15 Jun 2021 00:00:00 &#43;0000</lastBuildDate>
             <atom:link href="https://2phangx-dylan.github.io/index.xml" rel="self" type="application/rss+xml" />
         <item>
+    <title>Hugo Post Encrypted</title>
+    <link>https://2phangx-dylan.github.io/posts/hugo_post_encrypted/</link>
+    <pubDate>Tue, 15 Jun 2021 00:00:00 &#43;0000</pubDate>
+    <author>Author</author>
+    <guid>https://2phangx-dylan.github.io/posts/hugo_post_encrypted/</guid>
+    <description><![CDATA[本篇将介绍如何对Hugo文章进行简单加密。]]></description>
+</item><item>
     <title>Hugo Blog</title>
     <link>https://2phangx-dylan.github.io/posts/hugo_blog/</link>
     <pubDate>Mon, 07 Jun 2021 00:00:00 &#43;0000</pubDate>

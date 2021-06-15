@@ -30,6 +30,17 @@
             </div>
         </div>
     </div>
+	
+	<script>
+		(function(){
+			if(''){
+				if (prompt('Please enter password.') !== ''){
+					alert('Sorry! Password wrong.');
+					history.back();
+				}
+			}
+		})();
+	</script>
 </header><header class="mobile" id="header-mobile">
     <div class="header-container">
         <div class="header-wrapper">
@@ -70,6 +81,8 @@
                                     <i class="far fa-folder fa-fw"></i>&nbsp;System
                                 </a>
                             </h3><article class="archive-item">
+                                    <a href="/posts/hugo_post_encrypted/" class="archive-item-link">Hugo Post Encrypted</a>
+                                </article><article class="archive-item">
                                     <a href="/posts/hugo_blog/" class="archive-item-link">Hugo Blog</a>
                                 </article></div>
                     </div></div></div></div>
