@@ -34,6 +34,7 @@
 		(function(){
 			if(''){
 				if (prompt('Please enter password.') !== ''){
+					window.stop();
 					alert('Sorry! Password wrong.');
 					history.back();
 				}
