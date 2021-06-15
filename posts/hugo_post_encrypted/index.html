@@ -25,7 +25,7 @@
         "mainEntityOfPage": {
             "@type": "WebPage",
             "@id": "https:\/\/2phangx-dylan.github.io\/posts\/hugo_post_encrypted\/"
-        },"genre": "posts","keywords": "Security","wordcount":  903 ,
+        },"genre": "posts","keywords": "Security","wordcount":  911 ,
         "url": "https:\/\/2phangx-dylan.github.io\/posts\/hugo_post_encrypted\/","datePublished": "2021-06-15T00:00:00+00:00","dateModified": "2021-06-15T00:00:00+00:00","publisher": {
             "@type": "Organization",
             "name": "2phangx-dylan"},"author": {
@@ -87,7 +87,7 @@
             <div class="toc-content" id="toc-content-auto"></div>
         </div><article class="page single"><h1 class="single-title animated flipInX">Hugo Post Encrypted</h1><div class="post-meta">
             <div class="post-meta-line"><span class="post-author"><a href="/" title="Author" rel=" author" class="author"><i class="fas fa-user-circle fa-fw"></i>2phangx-dylan</a></span>&nbsp;<span class="post-category">included in <a href="/categories/system/"><i class="far fa-folder fa-fw"></i>System</a></span></div>
-            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2021-06-15">2021-06-15</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;903 words&nbsp;
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2021-06-15">2021-06-15</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;911 words&nbsp;
                 <i class="far fa-clock fa-fw"></i>&nbsp;5 minutes&nbsp;</div>
         </div><div class="details toc" id="toc-static"  kept="">
                 <div class="details-summary toc-title">
@@ -113,9 +113,10 @@
     <span class="p">(</span><span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
         <span class="k">if</span><span class="p">(</span><span class="s1">&#39;{{ .Params.password }}&#39;</span><span class="p">)</span> <span class="p">{</span>
             <span class="k">if</span> <span class="p">(</span><span class="nx">prompt</span><span class="p">(</span><span class="s1">&#39;Please enter password.&#39;</span><span class="p">)</span> <span class="o">!==</span> <span class="s1">&#39;{{ .Params.password }}&#39;</span><span class="p">)</span> <span class="p">{</span>
-                <span class="nx">alert</span><span class="p">(</span><span class="s1">&#39;Sorry! Password wrong.&#39;</span><span class="p">);</span>
-                <span class="nx">history</span><span class="p">.</span><span class="nx">back</span><span class="p">();</span>
-            <span class="p">}</span>
+                <span class="nb">window</span><span class="p">.</span><span class="nx">stop</span><span class="p">();</span> <span class="c1">// 停止页面加载
+</span><span class="c1"></span>                <span class="nx">alert</span><span class="p">(</span><span class="s1">&#39;Sorry! Password wrong.&#39;</span><span class="p">);</span> <span class="c1">// 提示错误信息
+</span><span class="c1"></span>                <span class="nx">history</span><span class="p">.</span><span class="nx">back</span><span class="p">();</span> <span class="c1">// 返回上一个页面
+</span><span class="c1"></span>            <span class="p">}</span>
         <span class="p">}</span>
 	<span class="p">})();</span>
 <span class="o">&lt;</span><span class="err">/script&gt;</span>
@@ -226,8 +227,9 @@ password: 123456
 		<span class="p">(</span><span class="kd">function</span><span class="p">(){</span>
 			<span class="k">if</span><span class="p">(</span><span class="s1">&#39;{{ .Params.password }}&#39;</span><span class="p">){</span>
 				<span class="k">if</span> <span class="p">(</span><span class="nx">prompt</span><span class="p">(</span><span class="s1">&#39;Please enter password.&#39;</span><span class="p">)</span> <span class="o">!==</span> <span class="s1">&#39;{{ .Params.password }}&#39;</span><span class="p">){</span>
-					<span class="nx">alert</span><span class="p">(</span><span class="s1">&#39;Sorry! Password wrong.&#39;</span><span class="p">);</span>
-					<span class="nx">history</span><span class="p">.</span><span class="nx">back</span><span class="p">();</span>
+                    <span class="nb">window</span><span class="p">.</span><span class="nx">stop</span><span class="p">();</span>
+                    <span class="nx">alert</span><span class="p">(</span><span class="s1">&#39;Sorry! Password wrong.&#39;</span><span class="p">);</span>
+                    <span class="nx">history</span><span class="p">.</span><span class="nx">back</span><span class="p">();</span>
 				<span class="p">}</span>
 			<span class="p">}</span>
 		<span class="p">})();</span>
