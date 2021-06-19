@@ -164,7 +164,7 @@
             <div class="admonition-content">该项目仅在<strong>GitHub</strong>上提供，作者没有在<strong>Gitee</strong>上托管该项目。</div>
         </div>
     </div>
-<h4 id="a版本说明">a.版本说明</h4>
+<span id="id-1">1|a.版本说明</span>
 <p>以操作系统<strong>Windows-64bit</strong>为例，可以看到<strong>Hugo</strong>的<strong>Releases</strong>列表中，有两个版本均可用于<strong>Windows-64bit</strong>操作系统，其分别是：</p>
 <ul>
 <li><a href="/resources/Hugo_Blog.resources/hugo_0.83.1_Windows-64bit.zip" rel="">hugo_0.83.1_Windows-64bit.zip</a></li>
@@ -172,7 +172,7 @@
 </ul>
 <p>其中，<strong>hugo_extended</strong>版本允许对既定的主题进行修改，而普通的<strong>hugo</strong>版本是不允许对主题进行修改的。</p>
 <p>自行根据个人需求进行下载，本文将采用<strong>hugo_extended</strong>版本作为演示。</p>
-<h4 id="b下载解压">b.下载解压</h4>
+<span id="id-2">1|b.下载解压</span>
 <p>在<strong>Releases</strong>列表中，选择<strong>hugo_extended_0.83.1_Windows-64bit</strong>版本，下载并解压，可以得到以下结构的目录：</p>
 <p><strong>| &ndash; hugo_extended_0.83.1_Windows-64bit</strong></p>
 <p>​	<strong>| &ndash; hugo.exe</strong></p>
@@ -279,7 +279,7 @@
             <div class="admonition-content">配置文件<strong>config.toml</strong>中的大部分配置，是直接与主题<strong>themes</strong>挂钩的。如果静态网站更换了主题，那么对应地也需要修改<strong>config.toml</strong>文件。</div>
         </div>
     </div>
-<h4 id="a基本配置configtoml">a.基本配置：config.toml</h4>
+<span id="id-3">2|a.基本配置：config.toml</span>
 <p>网站主题选用<a href="https://github.com/dillonzq/LoveIt" target="_blank" rel="noopener noreffer"><strong>LoveIt</strong></a>，针对该主题的一个较为完整的<strong>config.toml</strong>配置如下，可以复制并修改使用：</p>
 <div class="highlight"><pre class="chroma"><code class="language-toml" data-lang="toml"><span class="c"># ---------------- PartA - Global Setting ---------------- </span>
 
@@ -457,7 +457,7 @@
             alt="/images/Hugo_Blog.images/Snipaste_2021-06-08_05-00-09.png" width="100%" />
     </a><figcaption class="image-caption">/<strong>Myblog</strong>/<strong>static</strong>/</figcaption>
     </figure>
-<h4 id="b主题配置themesloveit">b.主题配置：themes/LoveIt</h4>
+<span id="id-4">2|b.主题配置：themes/LoveIt</span>
 <p><strong>Hugo</strong>拥有海量的主题，本文采用的<strong>Hugo</strong>提供的<a href="https://github.com/dillonzq/LoveIt" target="_blank" rel="noopener noreffer"><strong>LoveIt</strong></a>主题。下载该主题目录，置于<strong>themes</strong>目录中即可。</p>
 <figure><a class="lightgallery" href="/images/Hugo_Blog.images/Snipaste_2021-06-08_04-42-39.png" title="/images/Hugo_Blog.images/Snipaste_2021-06-08_04-42-39.png" data-thumbnail="/images/Hugo_Blog.images/Snipaste_2021-06-08_04-42-39.png" data-sub-html="<h2>/themes/LoveIt</h2>">
         <img
@@ -479,7 +479,7 @@
             <div class="admonition-content">配置文件<strong>config.toml</strong>内的全局配置里，有用于主题配置的属性：<strong>theme = &ldquo;LoveIt&rdquo;</strong>。此时，<strong>Hugo</strong>将会在<strong>themes</strong>目录下，寻找相匹配的名为<strong>LoveIt</strong>的主题目录。如果目录名称不一致，程序将会报错，因此务必要保证主题目录的名称与<strong>config.toml</strong>中的主题配置的值一致。</div>
         </div>
     </div>
-<h4 id="c自定义样式">c.自定义样式</h4>
+<span id="id-5">2|c.自定义样式</span>
 <p>此前说过，<strong>hugo_extended</strong>版本可以对主题进行自定义的修改，这种修改主要针对/<strong>LoveIt</strong>/<strong>assets</strong>/<strong>css</strong>/目录下的两个文件：</p>
 <ul>
 <li><strong>_custom.scss</strong>：该文件中可以自定义<strong>Css</strong>样式；</li>
@@ -653,7 +653,7 @@ categories: [&#34;categoriesB&#34;]
             <div class="admonition-content">远程部署实际可以区分为：<strong>web</strong>服务器部署和<strong>GitHub</strong>/<strong>Gitee</strong>免费页面的部署。其中，前者无非是将生成的静态网站资源目录放置在服务器上，通过<strong>nginx</strong>或<strong>tomcat</strong>等<strong>web</strong>服务器实现外网的访问，此处不再赘述。</div>
         </div>
     </div>
-<h4 id="a创建github仓库">a.创建GitHub仓库</h4>
+<span id="id-6">3|a.创建GitHub仓库</span>
 <p>登录<strong>GitHub</strong>，并创建一个名称格式为<strong>username.github.io</strong>的远程仓库：</p>
 <figure><a class="lightgallery" href="/images/Hugo_Blog.images/Snipaste_2021-06-08_05-49-35.png" title="/images/Hugo_Blog.images/Snipaste_2021-06-08_05-49-35.png" data-thumbnail="/images/Hugo_Blog.images/Snipaste_2021-06-08_05-49-35.png" data-sub-html="<h2>new repository</h2>">
         <img
@@ -680,7 +680,7 @@ categories: [&#34;categoriesB&#34;]
             alt="/images/Hugo_Blog.images/Snipaste_2021-06-08_05-50-43.png" width="100%" />
     </a><figcaption class="image-caption"><strong>2phangx-dylan</strong>/<strong>2phangx-dylan.github.io</strong></figcaption>
     </figure>
-<h4 id="b生成静态网站资源目录">b.生成静态网站资源目录</h4>
+<span id="id-7">3|b.生成静态网站资源目录</span>
 <p>进入<strong>MyBlog</strong>目录，运行以下命令，以生成静态网站资源目录：</p>
 <div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">hugo --baseURL https://2phangx-dylan.github.io
 </code></pre></div><div class="details admonition tip open">
@@ -712,7 +712,7 @@ categories: [&#34;categoriesB&#34;]
             alt="/images/Hugo_Blog.images/Snipaste_2021-06-08_05-44-39.png" width="100%" />
     </a><figcaption class="image-caption"><strong>public</strong></figcaption>
     </figure>
-<h4 id="c托管项目">c.托管项目</h4>
+<span id="id-8">3|c.托管项目</span>
 <p>进入<strong>public</strong>目录，将当前目录的内容上传到<strong>GitHub</strong>中，此时需要使用到<strong>Git Bash</strong>，相关命令如下：</p>
 <div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">git init
 git add .
@@ -731,7 +731,7 @@ git push -u origin main
             alt="/images/Hugo_Blog.images/Snipaste_2021-06-08_06-10-12.png" width="100%" />
     </a><figcaption class="image-caption"><strong>repository</strong></figcaption>
     </figure>
-<h4 id="d访问博客">d.访问博客</h4>
+<span id="id-9">3|d.访问博客</span>
 <p>项目上传完毕后，即可通过<strong>https://2phangx-dylan.github.io</strong>，访问该博客：</p>
 <figure><a class="lightgallery" href="/images/Hugo_Blog.images/Snipaste_2021-06-08_06-10-39.png" title="/images/Hugo_Blog.images/Snipaste_2021-06-08_06-10-39.png" data-thumbnail="/images/Hugo_Blog.images/Snipaste_2021-06-08_06-10-39.png" data-sub-html="<h2>2phangx-dylan.github.io</h2>">
         <img
@@ -790,5 +790,5 @@ git push -u origin main
             </a><a href="#" id="view-comments" class="fixed-button" title="View Comments">
                 <i class="fas fa-comment fa-fw"></i>
             </a>
-        </div><link rel="stylesheet" href="/lib/lightgallery/lightgallery.min.css"><script type="text/javascript" src="/lib/smooth-scroll/smooth-scroll.min.js"></script><script type="text/javascript" src="/lib/lazysizes/lazysizes.min.js"></script><script type="text/javascript" src="/lib/lightgallery/lightgallery.min.js"></script><script type="text/javascript" src="/lib/lightgallery/lg-thumbnail.min.js"></script><script type="text/javascript" src="/lib/lightgallery/lg-zoom.min.js"></script><script type="text/javascript" src="/lib/clipboard/clipboard.min.js"></script><script type="text/javascript">window.config={"code":{"copyTitle":"Copy to clipboard","maxShownLines":10},"comment":{},"lightGallery":{"actualSize":false,"exThumbImage":"data-thumbnail","hideBarsDelay":2000,"selector":".lightgallery","speed":400,"thumbContHeight":80,"thumbWidth":80,"thumbnail":true}};</script><script type="text/javascript" src="/js/theme.min.js"></script></body>
+        </div><link rel="stylesheet" href="/lib/lightgallery/lightgallery.min.css"><link rel="stylesheet" href="/css/cf6cf7.min.css"><script type="text/javascript" src="/lib/smooth-scroll/smooth-scroll.min.js"></script><script type="text/javascript" src="/lib/lazysizes/lazysizes.min.js"></script><script type="text/javascript" src="/lib/lightgallery/lightgallery.min.js"></script><script type="text/javascript" src="/lib/lightgallery/lg-thumbnail.min.js"></script><script type="text/javascript" src="/lib/lightgallery/lg-zoom.min.js"></script><script type="text/javascript" src="/lib/clipboard/clipboard.min.js"></script><script type="text/javascript">window.config={"code":{"copyTitle":"Copy to clipboard","maxShownLines":10},"comment":{},"lightGallery":{"actualSize":false,"exThumbImage":"data-thumbnail","hideBarsDelay":2000,"selector":".lightgallery","speed":400,"thumbContHeight":80,"thumbWidth":80,"thumbnail":true}};</script><script type="text/javascript" src="/js/theme.min.js"></script></body>
 </html>

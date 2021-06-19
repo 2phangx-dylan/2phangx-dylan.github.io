@@ -213,7 +213,7 @@
     <span class="err">&#39;name&#39;:</span> <span class="err">&#39;dylan&#39;,</span>
     <span class="err">&#39;admin&#39;:</span> <span class="err">true</span>
 <span class="p">}</span>
-</code></pre></div><h4 id="a标准中注册的声明建议但不强制使用">a.标准中注册的声明（建议但不强制使用）</h4>
+</code></pre></div><span id="id-2">2|a.标准中注册的声明（建议但不强制使用）</span>
 <ul>
 <li><strong>iss</strong>：<strong>JWT</strong>签发者；</li>
 <li><strong>sub</strong>：<strong>JWT</strong>所面向的用户；</li>
@@ -223,9 +223,9 @@
 <li><strong>iat</strong>：<strong>JWT</strong>的签发时间；</li>
 <li><strong>jti</strong>：<strong>JWT</strong>的唯一身份标识，主要用来作为一次性<strong>token</strong>，从而回避重放攻击。</li>
 </ul>
-<h4 id="b公共的声明">b.公共的声明</h4>
+<span id="id-3">2|b.公共的声明</span>
 <p>该声明可以添加任何的信息，一般添加用户的相关信息或其他业务需要的必要信息。但不建议添加敏感信息，如用户密码等，因为该部分在客户端是可以被解密的。</p>
-<h4 id="c私有的声明">c.私有的声明</h4>
+<span id="id-4">2|c.私有的声明</span>
 <p>该声明是提供者和消费者所共同定义的声明，同样不建议存放敏感信息，该部分也是可以在客户端被解密的。</p>
 <h3 id="3签名signature">3.签名signature</h3>
 <p><strong>JWT</strong>的最后一部分为签名<strong>signature</strong>。该部分是通过拼接<strong>header</strong>与<strong>payload</strong>两部分的<strong>Base64</strong>加密字符串，并结合<strong>header</strong>中提供的加密算法及服务器中存储的指定盐<strong>salt</strong>字符串，进行加密而最终得到的密文。</p>
@@ -504,5 +504,5 @@
             </a><a href="#" id="view-comments" class="fixed-button" title="View Comments">
                 <i class="fas fa-comment fa-fw"></i>
             </a>
-        </div><link rel="stylesheet" href="/lib/lightgallery/lightgallery.min.css"><link rel="stylesheet" href="/lib/mermaid/mermaid.min.css"><script type="text/javascript" src="/lib/smooth-scroll/smooth-scroll.min.js"></script><script type="text/javascript" src="/lib/lazysizes/lazysizes.min.js"></script><script type="text/javascript" src="/lib/lightgallery/lightgallery.min.js"></script><script type="text/javascript" src="/lib/lightgallery/lg-thumbnail.min.js"></script><script type="text/javascript" src="/lib/lightgallery/lg-zoom.min.js"></script><script type="text/javascript" src="/lib/clipboard/clipboard.min.js"></script><script type="text/javascript" src="/lib/mermaid/mermaid.min.js"></script><script type="text/javascript">window.config={"code":{"copyTitle":"Copy to clipboard","maxShownLines":10},"comment":{},"data":{"id-1":"\r\ngraph TB;\r\n    A(客户端请求登录服务器) --\u003e \r\n    B(服务器对用户信息进行校验) --\u003e \r\n    C(校验成功后, 将响应用户一个Token) --\u003e\r\n    D(客户端将存储该Token, 并在之后每次请求的header中携带该Token) --\u003e\r\n    E(服务端会在处理用户请求时, 校验该Token是否合法)\r\n\tE --\u003e|校验成功| F(处理请求)\r\n\tE --\u003e|校验失败| G(拒绝请求)\r"},"lightGallery":{"actualSize":false,"exThumbImage":"data-thumbnail","hideBarsDelay":2000,"selector":".lightgallery","speed":400,"thumbContHeight":80,"thumbWidth":80,"thumbnail":true}};</script><script type="text/javascript" src="/js/theme.min.js"></script></body>
+        </div><link rel="stylesheet" href="/lib/lightgallery/lightgallery.min.css"><link rel="stylesheet" href="/lib/mermaid/mermaid.min.css"><link rel="stylesheet" href="/css/b3d877.min.css"><script type="text/javascript" src="/lib/smooth-scroll/smooth-scroll.min.js"></script><script type="text/javascript" src="/lib/lazysizes/lazysizes.min.js"></script><script type="text/javascript" src="/lib/lightgallery/lightgallery.min.js"></script><script type="text/javascript" src="/lib/lightgallery/lg-thumbnail.min.js"></script><script type="text/javascript" src="/lib/lightgallery/lg-zoom.min.js"></script><script type="text/javascript" src="/lib/clipboard/clipboard.min.js"></script><script type="text/javascript" src="/lib/mermaid/mermaid.min.js"></script><script type="text/javascript">window.config={"code":{"copyTitle":"Copy to clipboard","maxShownLines":10},"comment":{},"data":{"id-1":"\r\ngraph TB;\r\n    A(客户端请求登录服务器) --\u003e \r\n    B(服务器对用户信息进行校验) --\u003e \r\n    C(校验成功后, 将响应用户一个Token) --\u003e\r\n    D(客户端将存储该Token, 并在之后每次请求的header中携带该Token) --\u003e\r\n    E(服务端会在处理用户请求时, 校验该Token是否合法)\r\n\tE --\u003e|校验成功| F(处理请求)\r\n\tE --\u003e|校验失败| G(拒绝请求)\r"},"lightGallery":{"actualSize":false,"exThumbImage":"data-thumbnail","hideBarsDelay":2000,"selector":".lightgallery","speed":400,"thumbContHeight":80,"thumbWidth":80,"thumbnail":true}};</script><script type="text/javascript" src="/js/theme.min.js"></script></body>
 </html>

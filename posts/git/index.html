@@ -25,7 +25,7 @@
         "mainEntityOfPage": {
             "@type": "WebPage",
             "@id": "https:\/\/2phangx-dylan.github.io\/posts\/git\/"
-        },"genre": "posts","keywords": "Git","wordcount":  1541 ,
+        },"genre": "posts","keywords": "Git","wordcount":  1508 ,
         "url": "https:\/\/2phangx-dylan.github.io\/posts\/git\/","datePublished": "2019-09-21T00:00:00+00:00","dateModified": "2019-09-21T00:00:00+00:00","publisher": {
             "@type": "Organization",
             "name": "2phangx-dylan"},"author": {
@@ -87,7 +87,7 @@
             <div class="toc-content" id="toc-content-auto"></div>
         </div><article class="page single"><h1 class="single-title animated flipInX">Git Tutorial</h1><div class="post-meta">
             <div class="post-meta-line"><span class="post-author"><a href="/" title="Author" rel=" author" class="author"><i class="fas fa-user-circle fa-fw"></i>2phangx-dylan</a></span>&nbsp;<span class="post-category">included in <a href="/categories/java/"><i class="far fa-folder fa-fw"></i>Java</a></span></div>
-            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2019-09-21">2019-09-21</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;1541 words&nbsp;
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2019-09-21">2019-09-21</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;1508 words&nbsp;
                 <i class="far fa-clock fa-fw"></i>&nbsp;8 minutes&nbsp;</div>
         </div><div class="details toc" id="toc-static"  kept="">
                 <div class="details-summary toc-title">
@@ -143,15 +143,16 @@
     </li>
     <li><a href="#git分支">Git分支</a>
       <ul>
-        <li><a href="#1基本操作">1.基本操作</a></li>
-        <li><a href="#2分支合并">2.分支合并</a></li>
-        <li><a href="#3合并冲突">3.合并冲突</a></li>
+        <li><a href="#1本地分支">1.本地分支</a></li>
+        <li><a href="#2远程分支">2.远程分支</a></li>
+        <li><a href="#3分支合并">3.分支合并</a></li>
+        <li><a href="#4合并冲突">4.合并冲突</a></li>
       </ul>
     </li>
-    <li><a href="#关联github项目">关联GitHub项目</a>
+    <li><a href="#git凭证系统">Git凭证系统</a>
       <ul>
-        <li><a href="#1使用https连接">1.使用HTTPS连接</a></li>
-        <li><a href="#2使用ssh连接">2.使用SSH连接</a></li>
+        <li><a href="#1https协议连接">1.HTTP(s)协议连接</a></li>
+        <li><a href="#2ssh协议连接">2.SSH协议连接</a></li>
       </ul>
     </li>
     <li><a href="#git忽略文件规则">Git忽略文件规则</a></li>
@@ -159,8 +160,8 @@
   </ul>
 </nav></div>
             </div><div class="content" id="content"><h2 id="什么是版本控制">什么是版本控制？</h2>
-<p>什么是“版本控制”？我为什么要关心它呢？ 版本控制是一种记录一个或若干文件内容变化，以便将来查阅特定版本修订情况的系统。</p>
-<p>如果你是位图形或网页设计师，可能会需要保存某一幅图片或页面布局文件的所有修订版本（这或许是你非常渴望拥有的功能），采用版本控制系统（<strong>Version Controll System</strong>）是个明智的选择。</p>
+<p>什么是“版本控制”？我为什么要关心它呢？版本控制是一种记录一个或若干文件内容变化，以便将来查阅特定版本修订情况的系统。</p>
+<p>如果你是位图形或网页设计师，可能会需要保存某一幅图片或页面布局文件的所有修订版本（这或许是你非常渴望拥有的功能），采用<strong>Version Controll System</strong>版本控制系统是个明智的选择。</p>
 <p>有了它你就可以将选定的文件回溯到之前的状态，甚至将整个项目都回退到过去某个时间点的状态，你可以比较文件的变化细节，查出最后是谁修改了哪个地方，从而找出导致怪异问题出现的原因，又是谁在何时报告了某个功能缺陷等等。</p>
 <div class="details admonition note open">
         <div class="details-summary admonition-title">
@@ -378,7 +379,9 @@
             <i class="icon fas fa-lightbulb fa-fw"></i>Tip<i class="details-icon fas fa-angle-right fa-fw"></i>
         </div>
         <div class="details-content">
-            <div class="admonition-content">处于<strong>modified</strong>、<strong>staged</strong>、<strong>committed</strong>状态的文件，是指纳入了版本控制的文件。简而言之，就是<strong>Git</strong>已经知道的文件，这些文件被称为已跟踪文件。</div>
+            <div class="admonition-content"><p>处于<strong>modified</strong>、<strong>staged</strong>、<strong>committed</strong>状态的文件，是指纳入了版本控制的文件。简而言之，就是<strong>Git</strong>已经知道的文件，这些文件被统称为<strong>tracked</strong>已跟踪文件。</p>
+<p>而工作区中<strong>Git</strong>所不知道的文件，被统称为<strong>untracked</strong>未跟踪文件。</p>
+</div>
         </div>
     </div>
 <h3 id="2工作阶段">2.工作阶段</h3>
@@ -420,17 +423,17 @@
 </div>
         </div>
     </div>
-<h4 id="aworking-directory工作区">a.working directory（工作区）</h4>
+<span id="id-1">2|a.working directory（工作区）</span>
 <p>工作区是对项目的某个版本独立提取出来的内容。这些从<strong>Git</strong>仓库的压缩数据库中提取出来的文件，放在磁盘上供你使用或修改。</p>
-<h4 id="bstaging-area暂存区">b.staging area（暂存区）</h4>
+<span id="id-2">2|b.staging area（暂存区）</span>
 <p>暂存区是一个文件，文件中保存了下次将要提交的文件列表信息，一般在<strong>Git</strong>仓库目录中。该文件按照<strong>Git</strong>的术语叫做“索引”，不过一般说法还是叫“暂存区”。</p>
 <p>通常需要将<strong>modified</strong>文件转换为<strong>staged</strong>文件，会使用到以下命令：</p>
 <div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">git add &lt;pathspec&gt;
-</code></pre></div><h4 id="crepositorygit-directory本地仓库">c.repository/.git directory（本地仓库）</h4>
+</code></pre></div><span id="id-3">2|c.repository/.git directory（本地仓库）</span>
 <p>本地仓库是<strong>Git</strong>用来保存项目的元数据和对象数据库的地方，这是<strong>Git</strong>中最重要的部分。从其他计算机克隆仓库时，复制的就是这里的数据。</p>
 <p>通常需要将<strong>staged</strong>文件转换为<strong>committed</strong>文件，会使用到以下命令：</p>
 <div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">git commit -m &lt;msg&gt;
-</code></pre></div><h4 id="dremote-repository远程仓库">d.remote repository（远程仓库）</h4>
+</code></pre></div><span id="id-4">2|d.remote repository（远程仓库）</span>
 <p>远程仓库不是<strong>Git</strong>的一部分，但通常情况下，多人协作的项目都会具有远程仓库。使用以下命令，可以将本地仓库中的数据，推送并保存至远程仓库：</p>
 <div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">git push &lt;remote&gt; &lt;branch&gt;
 </code></pre></div><div class="details admonition tip open">
@@ -485,7 +488,7 @@ git commit -m <span class="s2">&#34;initial project version&#34;</span>
             <div class="admonition-content">在<strong>Git</strong>中，<strong>checkout</strong>命令用于分支的切换。</div>
         </div>
     </div>
-<p>当你执行<strong>git clone</strong>命令的时候，<span id="id-1">默认配置下远程<strong>Git</strong>仓库中的每一个文件的每一个版本都将被拉取下来。</span>事实上，如果你的服务器的磁盘坏掉了，你通常可以使用任何一个克隆下来的用户端来重建服务器上的仓库（虽然可能会丢失某些服务器端的钩子<strong>hook</strong>设置，但是所有版本的数据仍在）。</p>
+<p>当你执行<strong>git clone</strong>命令的时候，<span id="id-5">默认配置下远程<strong>Git</strong>仓库中的每一个文件的每一个版本都将被拉取下来。</span>事实上，如果你的服务器的磁盘坏掉了，你通常可以使用任何一个克隆下来的用户端来重建服务器上的仓库（虽然可能会丢失某些服务器端的钩子<strong>hook</strong>设置，但是所有版本的数据仍在）。</p>
 <p>克隆仓库的命令是<strong>git clone &lt;url&gt;</strong>：</p>
 <div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">git clone https://github.com/libgit2/libgit2
 </code></pre></div><p>这条命令将在当前目录下创建一个名为<strong>libgit2</strong>的目录，并在这个目录下初始化一个.<strong>git</strong>文件夹，从远程仓库拉取所有数据放入.<strong>git</strong>文件夹，然后从中读取最新版本的文件拷贝。如果你进入这个新建的<strong>libgit2</strong>文件夹，你会发现所有的项目文件已经在里面，并准备就绪等待后续的开发和使用。</p>
@@ -501,9 +504,10 @@ git commit -m <span class="s2">&#34;initial project version&#34;</span>
         </div>
     </div>
 <h2 id="git基本操作">Git基本操作</h2>
-<p>获取<strong>Git</strong>仓库后，在你的<strong>working directory</strong>工作目录（工作区）下，每一个文件都不外乎是两种状态：已跟踪和未跟踪。</p>
-<div class="mermaid" id="id-2"></div>
-<p>已跟踪状态可以进一步区分为已修改、已暂存和已提交状态。其中，已提交状态也被视为未修改状态。</p>
+<p>获取<strong>Git</strong>仓库后，在你的<strong>working directory</strong>工作目录（工作区）下，每一个文件都不外乎是两种状态：<strong>Tracked</strong>已跟踪和<strong>Untracked</strong>未跟踪。</p>
+<div class="mermaid" id="id-6"></div>
+<p><strong>Tracked</strong>已跟踪状态可以进一步区分为<strong>Modified</strong>已修改、<strong>Staged</strong>已暂存和<strong>Committed</strong>已提交状态。</p>
+<p>其中，<strong>Committed</strong>已提交状态也被视为<strong>Unmodified</strong>未修改状态。</p>
 <div class="details admonition info">
         <div class="details-summary admonition-title">
             <i class="icon fas fa-info-circle fa-fw"></i>Tracked &amp; Untracked<i class="details-icon fas fa-angle-right fa-fw"></i>
@@ -514,8 +518,8 @@ git commit -m <span class="s2">&#34;initial project version&#34;</span>
 </div>
         </div>
     </div>
-<span id="id-3">初次克隆某个仓库的时候，工作目录中的所有文件都属于已跟踪文件，并处于未修改状态，因为<strong>Git</strong>刚刚检出了它们，而你尚未编辑过它们。</span>
-<p>编辑过某些文件之后，由于自上次提交后你对它们做了修改，<strong>Git</strong>将它们标记为已修改文件。在工作时，你可以选择性地将这些修改过的文件放入暂存区，然后提交所有已暂存的修改，如此反复。</p>
+<span id="id-7">初次克隆某个仓库的时候，工作目录中的所有文件都属于<strong>Tracked</strong>已跟踪文件，并处于<strong>Unmodified</strong>未修改状态，因为<strong>Git</strong>刚刚检出了它们，而你尚未编辑过它们。</span>
+<p>编辑过某些文件之后，由于自上次提交后你对它们做了修改，<strong>Git</strong>将它们标记为<strong>Modified</strong>已修改文件。在工作时，你可以选择性地将这些修改过的文件放入<strong>stage area</strong>暂存区，然后提交所有<strong>Staged</strong>已暂存的修改，如此反复。</p>
 <figure><a class="lightgallery" href="/images/Git.images/lifecycle.png" title="/images/Git.images/lifecycle.png" data-thumbnail="/images/Git.images/lifecycle.png" data-sub-html="<h2>Git下文件的生命周期</h2>">
         <img
             class="lazyload"
@@ -593,6 +597,17 @@ git status
 <li>将暂存区中的代码提交到本地仓库；</li>
 <li>将本地仓库中的代码推送到远程仓库。</li>
 </ol>
+<p>下图是<strong>Git</strong>基本命令作用于各种状态之后的转换图解：</p>
+<figure><a class="lightgallery" href="/images/Git.images/git.jpg" title="/images/Git.images/git.jpg" data-thumbnail="/images/Git.images/git.jpg" data-sub-html="<h2>Git状态转换图解</h2>">
+        <img
+            class="lazyload"
+            src="/svg/loading.min.svg"
+            data-src="/images/Git.images/git.jpg"
+            data-srcset="/images/Git.images/git.jpg, /images/Git.images/git.jpg 1.5x, /images/Git.images/git.jpg 2x"
+            data-sizes="auto"
+            alt="/images/Git.images/git.jpg" width="100%" />
+    </a><figcaption class="image-caption"><strong>Git状态转换图解</strong></figcaption>
+    </figure>
 <h3 id="1clone--pull">1.clone &amp; pull</h3>
 <p>从远程仓库中获取数据，可能会涉及到<strong>clone</strong>命令或<strong>pull</strong>命令。</p>
 <div class="details admonition tip open">
@@ -600,13 +615,13 @@ git status
             <i class="icon fas fa-lightbulb fa-fw"></i>Tip<i class="details-icon fas fa-angle-right fa-fw"></i>
         </div>
         <div class="details-content">
-            <div class="admonition-content"><p>无论是<strong>clone、pull/fetch</strong>命令，还是后续提及的<strong>push</strong>命令，它们的使用都需要提供远程仓库的连接地址，该地址可以是<strong>https</strong>或<strong>SSH</strong>等等协议的链接。</p>
-<p>但有所不同的是，只有使用<strong>push</strong>命令时，需要提供相应的凭证进行服务器认证。该凭证可以是登录密码，也可以是<strong>SSH</strong>私钥。</p>
-<p>简而言之，当你需要向远程仓库中推送数据时，需要提供对应的凭证进行身份的认证，因为远程仓库总不能无限制地接收任意的数据推送。</p>
+            <div class="admonition-content"><p>无论是<strong>clone、pull/fetch</strong>命令，还是后续提及的<strong>push</strong>命令，使用它们都需要提供远程仓库的连接地址，该地址可以是<strong>http</strong>(<strong>s</strong>)或<strong>SSH</strong>等协议的链接。</p>
+<p>对于公共仓库来说，只有使用<strong>push</strong>命令时，需要提供相应的凭证进行服务器认证；对于私有仓库来说，使用<strong>clone</strong>、<strong>pull/fetch</strong>、<strong>push</strong>命令都需要提供相应的凭证。</p>
+<p>而这里凭证，既可以是登录密码，也可以是<strong>SSH</strong>私钥。</p>
 </div>
         </div>
     </div>
-<h4 id="a克隆仓库">a.克隆仓库</h4>
+<span id="id-8">1|a.克隆仓库</span>
 <p><a href="/posts/git/#2%E5%85%8B%E9%9A%86%E7%8E%B0%E6%9C%89%E4%BB%93%E5%BA%93" rel="">#获取Git仓库-2.克隆现有仓库</a>中，已经讲述了如何进行仓库的克隆，以下将结合简单的例子及示例图片再作一次简要说明。</p>
 <p>通常情况下，获取项目代码的第一个步骤，是克隆仓库，而非拉取代码。</p>
 <p>克隆仓库需要提供连接目标仓库的<strong>https</strong>协议或<strong>SSH</strong>协议的连接地址，使用以下命令即可获取到整个项目的仓库：</p>
@@ -641,8 +656,9 @@ git clone git@github.com:2phangx-dylan/example.repository.git my.repository
             alt="/images/Git.images/Snipaste_2021-06-10_06-05-32.png" width="100%" />
     </a><figcaption class="image-caption"><strong>my.repository</strong></figcaption>
     </figure>
-<h4 id="b拉取代码">b.拉取代码</h4>
+<span id="id-9">1|b.拉取代码</span>
 <p>在多人协作的情况下，需要经常进行代码的<strong>pull</strong>操作，以确保工作目录内的文件内容为最新内容。</p>
+<p>使用pull/fetch命令时，需要提供远程仓库的连接凭证，关于：xxxxx。</p>
 <p>但通常情况下，不推荐直接使用<strong>pull</strong>命令，你需要十分确定当前分支是需要进行合并的分支。原因是<strong>pull</strong>命令实际上是<strong>fetch</strong>命令和<strong>merge</strong>命令的整合，以下命令：</p>
 <div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">git pull &lt;remote&gt; &lt;remote_branch&gt;
 </code></pre></div><p>等同于：</p>
@@ -672,7 +688,7 @@ git branch -rd &lt;remote_alias&gt;/&lt;remote_branch&gt;
             <div class="admonition-content"><strong>remote_alias</strong>是<strong>remote</strong>远程仓库的别名，详情可以查看<a href="/posts/git/#1%E8%BF%9C%E7%A8%8B%E4%BB%93%E5%BA%93%E9%93%BE%E6%8E%A5%E5%88%AB%E5%90%8D" rel="">#Git命令简化-1.远程仓库连接别名</a>。</div>
         </div>
     </div>
-<h5 id="初始化仓库拉取代码">初始化仓库拉取代码</h5>
+<span id="id-10">初始化仓库拉取代码</span>
 <p>如果此时你拥有的是一个初始化的仓库，此时需要拉取项目的代码，应该如何操作呢？</p>
 <p>显而易见，需要拉取项目代码，必须拥有连接的地址，从该地址中获取仓库数据。之后应该明确需要获取的远程仓库分支，该远程分支将在本地仓库的当前分支无任何内容的情况下，将覆盖当前分支的内容。</p>
 <p>因此，在使用<strong>pull</strong>的方式首次获取项目数据，其步骤有四个：</p>
@@ -696,7 +712,7 @@ git pull git@github.com:2phangx-dylan/example.repository.git main
     </a><figcaption class="image-caption"><strong>pull</strong></figcaption>
     </figure>
 <p>其中，第二行命令，即等同于告诉<strong>Git</strong>当前仓库的<strong>master</strong>分支中的数据，需要从<strong>git@github.com:2phangx-dylan/example.repository.git</strong>中的<strong>main</strong>分支获取。</p>
-<p><span id="id-4">注意，此时<strong>master</strong>分支实际为空分支</span>。当需要合并两个分支，且其中一个分支为空分支时，那么合并分支必然成功，空分支的内容将被另一个分支的内容所覆盖。</p>
+<p><span id="id-11">注意，此时<strong>master</strong>分支实际为空分支</span>。当需要合并两个分支，且其中一个分支为空分支时，那么合并分支必然成功，空分支的内容将被另一个分支的内容所覆盖。</p>
 <p>那么如果，当前仓库中的<strong>master</strong>分支存在已提交/未修改内容呢？</p>
 <p>尝试在初始化仓库与拉取项目代码之间，插入新建文件、添加并提交文件的代码：</p>
 <div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">git init
@@ -718,7 +734,7 @@ git pull git@github.com:2phangx-dylan/example.repository.git main
     </a><figcaption class="image-caption"><strong>pull</strong></figcaption>
     </figure>
 <p>显然，此时本地仓库中的<strong>master</strong>分支，与远程仓库中的<strong>main</strong>分支都不为空，同时它们的分支祖先并不一致，此时的分支合并操作必然失败。</p>
-<p>对于分支祖先不一致的情况，<strong>Git</strong>提供了一种强制合并的手段，即在拉取代码时添加<span id="id-5">--allow-unrelated-histories</span>参数。</p>
+<p>对于分支祖先不一致的情况，<strong>Git</strong>提供了一种强制合并的手段，即在拉取代码时添加<span id="id-12">--allow-unrelated-histories</span>参数。</p>
 <p>在添加以上参数的情况下，再次拉取项目代码：</p>
 <div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">git pull --allow-unrelated-histories git@github.com:2phangx-dylan/example.repository.git main
 </code></pre></div><p>此时代码将拉取成功，但<strong>Git Bash</strong>对话框会弹出<strong>MERGE_MSG</strong>文档，要求填写此次分支合并的<strong>log</strong>，如下图所示：</p>
@@ -744,7 +760,7 @@ git pull git@github.com:2phangx-dylan/example.repository.git main
             alt="/images/Git.images/Snipaste_2021-06-10_23-40-15.png" width="100%" />
     </a><figcaption class="image-caption"><strong>MERGE_MSG</strong></figcaption>
     </figure>
-<p>信息输入完毕后，按<strong>ESC</strong>键退出插入模式，并进入命令模式。命令模式下输入<span id="id-6">:wq</span>保存文件即可：</p>
+<p>信息输入完毕后，按<strong>ESC</strong>键退出插入模式，并进入命令模式。命令模式下输入<span id="id-13">:wq</span>保存文件即可：</p>
 <figure><a class="lightgallery" href="/images/Git.images/Snipaste_2021-06-10_23-44-15.png" title="/images/Git.images/Snipaste_2021-06-10_23-44-15.png" data-thumbnail="/images/Git.images/Snipaste_2021-06-10_23-44-15.png" data-sub-html="<h2>MERGE_MSG</h2>">
         <img
             class="lazyload"
@@ -777,7 +793,7 @@ git pull git@github.com:2phangx-dylan/example.repository.git main
 </div>
         </div>
     </div>
-<h5 id="普通拉取代码">普通拉取代码</h5>
+<span id="id-14">普通拉取代码</span>
 <p>一般情况下会采用克隆仓库的方式获取项目代码，而日常则采用<strong>pull</strong>来拉取最新的代码。</p>
 <div class="details admonition tip open">
         <div class="details-summary admonition-title">
@@ -829,7 +845,7 @@ git add &lt;file_name&gt;
 <div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">git restore --staged &lt;file_name&gt;
 </code></pre></div><p>对应文件将从<strong>staged</strong>暂存状态恢复到<strong>untracked</strong>未追踪或<strong>modified</strong>已修改状态。</p>
 <h3 id="3commit">3.commit</h3>
-<p>将已暂存的文件提交到本地仓库时，需要使用到<strong>commit</strong>命令。该命令一般配合参数<span id="id-7">-m</span>使用，用于指定提交信息：</p>
+<p>将已暂存的文件提交到本地仓库时，需要使用到<strong>commit</strong>命令。该命令一般配合参数<span id="id-15">-m</span>使用，用于指定提交信息：</p>
 <div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">git commit -m &lt;commit_msg&gt;
 </code></pre></div><p>该命令总是将暂存区的所有文件，提交到本地仓库。</p>
 <p>对于已跟踪的文件来说，如果你对它进行了修改，可以使用以下命令完成该文件的暂存与提交：</p>
@@ -847,9 +863,9 @@ git add &lt;file_name&gt;
             alt="/images/Git.images/Snipaste_2021-06-11_04-37-58.png" width="100%" />
     </a><figcaption class="image-caption"><strong>COMMIT_EDITMSG</strong></figcaption>
     </figure>
-<p>因此，如果你不希望与<strong>vim</strong>命令打交道，那么最好在<strong>commit</strong>的时候都加上<span id="id-8">-m</span>参数。</p>
+<p>因此，如果你不希望与<strong>vim</strong>命令打交道，那么最好在<strong>commit</strong>的时候都加上<span id="id-16">-m</span>参数。</p>
 <p>在了解完如何将暂存区文件提交到本地仓库后，你一定想知道如何从提交错误中恢复。</p>
-<p>此前所说的<strong>Git</strong>工作阶段共有三种，分别是<strong>working directory</strong>（工作区）、<strong>staging area</strong>（暂存区）和<span id="id-9">.git directory</span>（本地仓库）。</p>
+<p>此前所说的<strong>Git</strong>工作阶段共有三种，分别是<strong>working directory</strong>（工作区）、<strong>staging area</strong>（暂存区）和<span id="id-17">.git directory</span>（本地仓库）。</p>
 <p>而<strong>reset</strong>命令中，会将暂存区视为<strong>Index</strong>索引，其中本地仓库始终有一个<strong>HEAD</strong>指向当前分支的最新一次<strong>commit</strong>提交。</p>
 <figure><a class="lightgallery" href="/images/Git.images/reset-workflow.png" title="/images/Git.images/reset-workflow.png" data-thumbnail="/images/Git.images/reset-workflow.png" data-sub-html="<h2>reset-workflow</h2>">
         <img
@@ -972,7 +988,7 @@ git add &lt;file_name&gt;
             <div class="admonition-content"><strong>reset</strong>命令所做的第一件事是移动<strong>HEAD</strong>的指向，这与<strong>checkout</strong>命令改变<strong>HEAD</strong>的指向不同，<strong>reset</strong>移动了<strong>HEAD</strong>指向的分支。</div>
         </div>
     </div>
-<h4 id="a移动head--soft">a.移动HEAD（&ndash;soft）</h4>
+<span id="id-18">3|a.移动HEAD（&ndash;soft）</span>
 <p>如果希望仅撤销上一次的提交，则可以使用以下命令：</p>
 <div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">git reset --soft HEAD~
 </code></pre></div><p>该命令仅撤销上一次提交操作，此时<strong>v3</strong>版本的文件仍存在于暂存区和工作目录。</p>
@@ -986,11 +1002,11 @@ git add &lt;file_name&gt;
             alt="/images/Git.images/reset-soft.png" width="100%" />
     </a><figcaption class="image-caption"><strong>reset soft</strong></figcaption>
     </figure>
-<h4 id="b更新索引--mixed">b.更新索引（&ndash;mixed）</h4>
+<span id="id-19">3|b.更新索引（&ndash;mixed）</span>
 <p>如果想将上一次的<strong>commit</strong>撤销的同时，上一次添加到暂存区的文件也一并<strong>restore</strong>，则需要使用以下命令：</p>
 <div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">git reset <span class="o">[</span>--mixed<span class="o">]</span> HEAD~
 </code></pre></div><p>此时，<strong>v3</strong>版本的文件不仅撤销了提交，也从暂存区移出，此时已修改文件仅存在于工作目录中。</p>
-<h4 id="c更新工作目录--hard">c.更新工作目录（&ndash;hard）</h4>
+<span id="id-20">3|c.更新工作目录（&ndash;hard）</span>
 <p>如果希望做得更加彻底，连同当前版本的更改也不需要保留，则可以使用以下命令：</p>
 <div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">git reset --hard HEAD~
 </code></pre></div><p>该命令将撤销所有上一次的<strong>commit</strong>提交、<strong>add</strong>暂存和<strong>edit file</strong>更改操作。</p>
@@ -1021,14 +1037,15 @@ git add &lt;file_name&gt;
 <div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">git push &lt;remote&gt; &lt;local_branch&gt;:&lt;remote_branch&gt;
 </code></pre></div><p>此时，<strong>local_branch</strong>、<strong>remote_branch</strong>都等于<strong>branch</strong>，需要注意：</p>
 <ol>
-<li>你的远程分支如果没有<strong>remote_branch</strong>，则该<strong>remote_branch</strong>会自动在远程仓库中被新建，之后再与本地仓库的<strong>locat_branch</strong>进行合并。</li>
+<li>你的远程分支如果没有<strong>remote_branch</strong>，则该<strong>remote_branch</strong>会自动在远程仓库中被新建，之后再与本地仓库的<strong>locat_branch</strong>进行合并；</li>
 <li>你的本地分支如果没有<strong>local_branch</strong>，则命令会报错。</li>
 </ol>
-<p>鉴于以上两条细节性问题，需要十分留意<strong>branch</strong>的设定，一般情况下，本地仓库分支名称与其对应的远程仓库分支名称会设置为相同的。重命名当前分支，可以使用以下命令：</p>
+<p>鉴于以上两条细节性问题，需要十分留意<strong>branch</strong>的设定，一般情况下，本地仓库分支名称与其对应的远程仓库分支名称会设置为相同的。</p>
+<p>重命名当前分支，可以使用以下命令：</p>
 <div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">git branch -m &lt;new_branch_name&gt;
 </code></pre></div><p>重命名任意分支，则需要额外添加一个参数：</p>
 <div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">git branch -m &lt;old_branch_name&gt; &lt;new_branch_name&gt;
-</code></pre></div><p>从<strong>git push</strong>命令的格式也可以看出，<strong>Git</strong>允许在任意的分支内，推送另一个本地分支的内容到指定的远程分支上：</p>
+</code></pre></div><p>从<strong>git push</strong>命令的格式也推测出，<strong>Git</strong>允许在任意的分支内，推送另一个本地分支的内容到指定的远程分支上：</p>
 <div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">git push &lt;remote&gt; &lt;other_branch&gt;:&lt;remote_branch&gt;
 </code></pre></div><h2 id="git命令简化">Git命令简化</h2>
 <p><strong>Git</strong>中的某些命令总是会被经常使用到，如<strong>pull</strong>、<strong>push</strong>等。这些命令总是要求提供远程仓库的连接地址与分支名称，使用起来十分麻烦。</p>
@@ -1043,7 +1060,7 @@ git add &lt;file_name&gt;
 <div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">git remote remove &lt;remote_alias&gt;
 </code></pre></div><p>远程仓库别名也可以通过命令进行重命名操作，如下：</p>
 <div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">git remote rename &lt;old_alias&gt; &lt;new_alias&gt;
-</code></pre></div><p>实际上，添加、删除或重命名远程仓库别名，是通过修改本地仓库配置文件<span id="id-10">.git/config</span>实现的，如图所示：</p>
+</code></pre></div><p>实际上，添加、删除或重命名远程仓库别名，是通过修改本地仓库配置文件<span id="id-21">.git/config</span>实现的，如图所示：</p>
 <figure><a class="lightgallery" href="/images/Git.images/Snipaste_2021-06-13_13-32-15.png" title="/images/Git.images/Snipaste_2021-06-13_13-32-15.png" data-thumbnail="/images/Git.images/Snipaste_2021-06-13_13-32-15.png" data-sub-html="<h2>.git/config</h2>">
         <img
             class="lazyload"
@@ -1069,7 +1086,7 @@ git add &lt;file_name&gt;
     </figure>
 <p>最后，你可以通过以下命令查看当前的远程仓库别名列表：</p>
 <div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">git remote
-</code></pre></div><p>也可以直接查看<span id="id-11">.git/config</span>文件，浏览所有已设置别名的远程仓库列表：</p>
+</code></pre></div><p>也可以直接查看<span id="id-22">.git/config</span>文件，浏览所有已设置别名的远程仓库列表：</p>
 <div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">cat .git/config
 </code></pre></div><figure><a class="lightgallery" href="/images/Git.images/Snipaste_2021-06-11_02-12-50.png" title="/images/Git.images/Snipaste_2021-06-11_02-12-50.png" data-thumbnail="/images/Git.images/Snipaste_2021-06-11_02-12-50.png" data-sub-html="<h2>git remote &amp; cat .git/config</h2>">
         <img
@@ -1085,58 +1102,20 @@ git add &lt;file_name&gt;
 <p><strong>Git</strong>中允许设置指定分支的默认推送远程仓库分支，设置需要使用以下命令：</p>
 <div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">git branch -u &lt;remote_alias&gt;/&lt;remote_branch&gt;
 </code></pre></div><p>注意，此时必须使用远程仓库链接的别名<strong>remote_alias</strong>，同时在设置前，应当先将<strong>remote_alias/remote_branch</strong>分支<strong>fetch</strong>到本地。</p>
-<p>因此，使用<strong>git branch</strong>命令为当前分支设置默认<strong>push</strong>远程分支时，完整的流程如下：</p>
+<p>因此，使用<strong>git branch</strong>命令为当前分支设置默认<strong>push</strong>远程分支时，更为完整的流程应当如下：</p>
 <div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">git remote add &lt;remote_alias&gt; &lt;remote&gt;
 git fetch &lt;remote_alias&gt; &lt;remote_branch&gt;
 git branch -u &lt;remote_alias&gt;/&lt;remote_branch&gt;
-</code></pre></div><p>事实上，<strong>git branch</strong>命令还可用于设置任意分支的默认<strong>push</strong>远程分支的。此时需要提供第二个参数，该参数在不提供的情况下，默认值为<strong>HEAD</strong>，<strong>HEAD</strong>即当前分支：</p>
+</code></pre></div><p>事实上，<strong>git branch</strong>命令还可用于设置任意分支在<strong>push</strong>时使用的默认远程分支。</p>
+<p>此时，需要为<strong>git branch -u</strong>提供第二个参数。该参数在不提供的情况下，默认值为<strong>HEAD</strong>，<strong>HEAD</strong>即当前分支：</p>
 <div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">git branch -u &lt;remote_alias&gt;/&lt;remote_branch&gt; <span class="o">[</span>local_branch <span class="p">|</span> HEAD<span class="o">]</span>
-</code></pre></div><p>一种更为惯用的方式，是在<strong>push</strong>时添加<span id="id-12">-u</span>选项，该选项会在<strong>push</strong>命令执行前，将当前远程仓库链接与分支设置为当前本地仓库分支默认的<strong>push</strong>值：</p>
+</code></pre></div><p>一种设置默认<strong>push</strong>分支更为惯用的方式，是在<strong>push</strong>时添加<span id="id-23">-u</span>选项，该选项会在<strong>push</strong>命令执行前，将当前远程仓库链接与分支设置为当前使用的本地仓库分支的默认<strong>push</strong>分支：</p>
 <div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">git push -u &lt;remote_alias&gt; <span class="o">[</span>&lt;local_branch&gt; <span class="p">|</span> HEAD:<span class="o">]</span>&lt;remote_branch&gt;
 </code></pre></div><p>以上命令等同于将<strong>local_branch</strong>或<strong>HEAD</strong>分支与远程仓库分支<strong>remote_alias/remote_branch</strong>进行了一对一的绑定，等同于此前<strong>git branch</strong>操作的集合。</p>
 <p>该命令结束，此后在<strong>local_branch</strong>或<strong>HEAD</strong>分支的每次<strong>git push</strong>操作都可以不添加人任何参数，<strong>Git</strong>会自动选取绑定好的<strong>remote_alias</strong>与<strong>remote_branch</strong>作为默认参数。</p>
-<p>常用的基本命令：</p>
-<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">git add &lt;file<span class="p">|</span>dir&gt; <span class="c1"># 将文件添加到暂存区</span>
-git commit -m <span class="s2">&#34;message that what changes you make.&#34;</span> <span class="c1"># 将文件提交到本地仓库</span>
-git push <span class="o">[</span>&lt;remote&gt; &lt;remote-branch&gt;<span class="o">]</span> <span class="c1"># 将分支提交到远程仓库</span>
-git pull <span class="o">[</span>&lt;remote&gt; &lt;remote-branch&gt;<span class="o">]</span> <span class="c1"># 将分支从远程仓库拉取到工作目录分支</span>
-git fetch <span class="o">[</span>&lt;remote&gt; &lt;remote-branch&gt;<span class="o">]</span> <span class="c1"># 将分支从远程仓库拉取到本地仓库，会创建一个远程分支</span>
-git merge &lt;branch&gt; <span class="c1"># 将branch合并到当前分支</span>
-git rebase &lt;branch&gt; 
-git log <span class="c1"># 查看提交日志</span>
-</code></pre></div><p>其他命令示例：</p>
-<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">git add . <span class="c1"># 将当前目录所有的文件或文件夹添加到暂存区stage</span>
-git add new.txt <span class="c1"># 将文件new.txt添加到暂存区stage</span>
-git status <span class="c1"># 查看当前分支中各个文件的状态</span>
-git restore --staged &lt;file&gt; <span class="c1"># 将已存在暂存区的文件移除</span>
-</code></pre></div><p>相关的创建文件操作：</p>
-<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">touch &lt;file&gt; <span class="c1"># 创建一个文件</span>
-git add &lt;file<span class="p">|</span>dir/&gt; <span class="c1"># 将未跟踪或已修改的文件添加到暂存区</span>
-git commit -m &lt;message that describe the commit&gt; <span class="c1"># 提交暂存区中文件作出的修改</span>
-git push &lt;remote-name&gt; &lt;remote-branch&gt;:&lt;local-branch&gt; <span class="c1"># 将本地仓库同步到远程仓库</span>
-</code></pre></div><p>相关的移除文件操作：</p>
-<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">rm <span class="o">[</span>-rf<span class="o">]</span> &lt;file<span class="p">|</span>directory&gt; <span class="c1"># 可以将文件或目录从硬盘上删除，但不添加删除记录到暂存区</span>
-git rm <span class="o">[</span>-rf<span class="o">]</span> &lt;file<span class="p">|</span>directory&gt; <span class="c1"># 可以将文件或目录从硬盘上删除，同时将删除记录添加到暂存区</span>
-git rm --cached &lt;file<span class="p">|</span>directory&gt; <span class="c1"># 可以将文件或目录从版本管理中移除，目标文件或目录会被标记为未跟踪，同时删除记录被添加到暂存区</span>
-</code></pre></div><p>相关移动文件操作：</p>
-<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">mv &lt;oldfile-name&gt; &lt;newfile-name&gt; <span class="c1"># 将表现为将旧文件删除并添加了一个新文件，均未被写入暂存区</span>
-git mv &lt;oldfile-name&gt; &lt;newfile-name&gt; <span class="c1"># 将表现为修改文件renamed，并会自动写入暂存区</span>
-</code></pre></div><p>对于已跟踪的文件的修改，可以跳过暂存直接提交：</p>
-<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">git commit -a -m <span class="s2">&#34;hey, hello world.&#34;</span> <span class="c1"># -a: commit all change</span>
-</code></pre></div><p>下图是Git基本命令作用于各种状态之后的转换图解：</p>
-<figure><a class="lightgallery" href="/images/Git.images/git.jpg" title="/images/Git.images/git.jpg" data-thumbnail="/images/Git.images/git.jpg" data-sub-html="<h2>Git状态转换图解</h2>">
-        <img
-            class="lazyload"
-            src="/svg/loading.min.svg"
-            data-src="/images/Git.images/git.jpg"
-            data-srcset="/images/Git.images/git.jpg, /images/Git.images/git.jpg 1.5x, /images/Git.images/git.jpg 2x"
-            data-sizes="auto"
-            alt="/images/Git.images/git.jpg" width="100%" />
-    </a><figcaption class="image-caption"><strong>Git状态转换图解</strong></figcaption>
-    </figure>
 <h2 id="git分支">Git分支</h2>
 <p><strong>Git</strong>分支<strong>branch</strong>，是用来标记特定代码的提交，每一个分支通过<strong>SHA1SUM</strong>值来标识，所以对分支的操作是轻量级的，你改变的仅仅是<strong>SHA1SUM</strong>值。在多人协作的项目中，分支的作用尤为重要。</p>
-<h3 id="1基本操作">1.基本操作</h3>
+<h3 id="1本地分支">1.本地分支</h3>
 <p>要了解<strong>branch</strong>的基本操作，首先需要在本地初始化一个仓库，命令如下：</p>
 <div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">git init
 </code></pre></div><figure><a class="lightgallery" href="/images/Git.images/Snipaste_2021-06-10_02-55-19.png" title="/images/Git.images/Snipaste_2021-06-10_02-55-19.png" data-thumbnail="/images/Git.images/Snipaste_2021-06-10_02-55-19.png" data-sub-html="<h2>Git Bash</h2>">
@@ -1158,7 +1137,7 @@ git mv &lt;oldfile-name&gt; &lt;newfile-name&gt; <span class="c1"># 将表现为
             <div class="admonition-content">除了自行初始化仓库之外，你还可以选择克隆仓库。但对于克隆的仓库来说，该仓库可能是已经进行过提交的仓库，那么此时可以直接使用命令查看分支列表，或新建其他的分支。</div>
         </div>
     </div>
-<h4 id="a分支列表">a.分支列表</h4>
+<span id="id-24">1|a.分支列表</span>
 <p><strong>Git Bash</strong>中可以看到，伴随着<strong>Git</strong>仓库的初始化，有一个默认的分支<strong>master</strong>已经被创建了出来。</p>
 <p>使用查看分支列表的命令，查看当前<strong>Git</strong>仓库中的所有分支列表：</p>
 <div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">git branch
@@ -1173,7 +1152,7 @@ git mv &lt;oldfile-name&gt; &lt;newfile-name&gt; <span class="c1"># 将表现为
     </a><figcaption class="image-caption"><strong>Git Bash</strong></figcaption>
     </figure>
 <p>该命令显示当前<strong>Git</strong>仓库中不存在任何的分支。为什么呢？</p>
-<span id="id-13"><strong>Git</strong>中规定，如果当前仓库未进行任何<strong>commit</strong>操作，则当前分支<strong>master</strong>不会被真实地创建，此时也无法新建其他的分支。</span>
+<span id="id-25"><strong>Git</strong>中规定，如果当前仓库未进行任何<strong>commit</strong>操作，则当前分支<strong>master</strong>不会被真实地创建，此时也无法新建其他的分支。</span>
 <p>只有在<strong>master</strong>分支进行了一次<strong>commit</strong>操作后，才可以在分支列表看到该分支，此时新建分支操作才会被允许。</p>
 <p>尝试创建一个新文件，并提交到本地，随后再次查看当前仓库的分支列表：</p>
 <div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">touch file.txt
@@ -1201,9 +1180,10 @@ git branch --list
 </code></pre></div></div>
         </div>
     </div>
-<h4 id="b新建分支">b.新建分支</h4>
-<p>使用以下命令新建一个名为<strong>main</strong>的新分支，同时显示当前目录的分支列表：</p>
-<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">git branch main <span class="o">&amp;&amp;</span> git branch
+<span id="id-26">1|b.新建分支</span>
+<p>使用以下命令新建一个指定<strong>branch_name</strong>的新分支，同时使用命令显示当前目录的分支列表：</p>
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">git branch &lt;branch_name&gt;
+git branch
 </code></pre></div><figure><a class="lightgallery" href="/images/Git.images/Snipaste_2021-06-10_03-36-49.png" title="/images/Git.images/Snipaste_2021-06-10_03-36-49.png" data-thumbnail="/images/Git.images/Snipaste_2021-06-10_03-36-49.png" data-sub-html="<h2>Git Bash</h2>">
         <img
             class="lazyload"
@@ -1223,9 +1203,11 @@ git branch --list
             <div class="admonition-content">如果当前仓库未进行任何的提交，新建分支的操作是不被允许的。</div>
         </div>
     </div>
-<h4 id="c分支切换">c.分支切换</h4>
-<p>使用以下命令，可以切换当前所在的分支到<strong>main</strong>分支中，同时显示当前目录的分支列表：</p>
-<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">git checkout main <span class="o">&amp;&amp;</span> git branch
+<span id="id-27">1|c.分支切换</span>
+<p>分支切换使用的命令是<strong>checkout</strong>，因此也被叫做检出。</p>
+<p>使用以下命令，可以切换当前所在的分支到<strong>main</strong>分支中，同时使用命令显示当前目录的分支列表：</p>
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">git checkout &lt;branch_name&gt;
+git branch
 </code></pre></div><figure><a class="lightgallery" href="/images/Git.images/Snipaste_2021-06-10_03-44-26.png" title="/images/Git.images/Snipaste_2021-06-10_03-44-26.png" data-thumbnail="/images/Git.images/Snipaste_2021-06-10_03-44-26.png" data-sub-html="<h2>Git Bash</h2>">
         <img
             class="lazyload"
@@ -1237,8 +1219,115 @@ git branch --list
     </a><figcaption class="image-caption"><strong>Git Bash</strong></figcaption>
     </figure>
 <p>显然，当前所在分支已经成功从<strong>master</strong>切换为<strong>main</strong>了。</p>
-<h4 id="d删除分支">d.删除分支</h4>
-<h3 id="2分支合并">2.分支合并</h3>
+<p>实际上，<strong>checkout</strong>命令做了两件事情：</p>
+<ol>
+<li>将<strong>HEAD</strong>指向指定的分支；</li>
+<li>将工作目录恢复成指定分支所指向的快照内容。</li>
+</ol>
+<p>因此，具体的分支切换可以分为两种情况：</p>
+<ol>
+<li>从一个分支切换到另一个分支，此时分支的<strong>HEAD</strong>指向不一致；</li>
+<li>从一个分支切换到另一个分支，此时分支的<strong>HEAD</strong>其指向一致。</li>
+</ol>
+<p>情况一是最基本的分支切换情况。如果两个分支当前所指向的提交不一致，那么在进行切换时，必须要保证对任意文件的新建、删除、修改或暂存等操作已经进行了提交，否则强制切换分支会导致数据的丢失。</p>
+<p>情况二则是比较特殊的情况，严格来说此时<strong>HEAD</strong>的指向并没有改变，因此<strong>Git</strong>不会将工作目录恢复成执行分支指向的快照内容。</p>
+<p>假设此时有<strong>main</strong>、<strong>master</strong>分支，其指向同一个提交<strong>c6c162</strong>，如下：</p>
+<figure><a class="lightgallery" href="/images/Git.images/Snipaste_2021-06-18_17-24-55.png" title="/images/Git.images/Snipaste_2021-06-18_17-24-55.png" data-thumbnail="/images/Git.images/Snipaste_2021-06-18_17-24-55.png" data-sub-html="<h2>Git Bash</h2>">
+        <img
+            class="lazyload"
+            src="/svg/loading.min.svg"
+            data-src="/images/Git.images/Snipaste_2021-06-18_17-24-55.png"
+            data-srcset="/images/Git.images/Snipaste_2021-06-18_17-24-55.png, /images/Git.images/Snipaste_2021-06-18_17-24-55.png 1.5x, /images/Git.images/Snipaste_2021-06-18_17-24-55.png 2x"
+            data-sizes="auto"
+            alt="/images/Git.images/Snipaste_2021-06-18_17-24-55.png" width="100%" />
+    </a><figcaption class="image-caption"><strong>Git Bash</strong></figcaption>
+    </figure>
+<p>在不进行任何提交的情况下，此时两个分支表现为共享工作目录、暂存区。</p>
+<p>任意分支中进行的新建、删除、修改或暂存文件等操作，都同于另一个分支进行了同样的操作：</p>
+<figure><a class="lightgallery" href="/images/Git.images/Snipaste_2021-06-18_18-20-49.png" title="/images/Git.images/Snipaste_2021-06-18_18-20-49.png" data-thumbnail="/images/Git.images/Snipaste_2021-06-18_18-20-49.png" data-sub-html="<h2>Git Bash</h2>">
+        <img
+            class="lazyload"
+            src="/svg/loading.min.svg"
+            data-src="/images/Git.images/Snipaste_2021-06-18_18-20-49.png"
+            data-srcset="/images/Git.images/Snipaste_2021-06-18_18-20-49.png, /images/Git.images/Snipaste_2021-06-18_18-20-49.png 1.5x, /images/Git.images/Snipaste_2021-06-18_18-20-49.png 2x"
+            data-sizes="auto"
+            alt="/images/Git.images/Snipaste_2021-06-18_18-20-49.png" width="100%" />
+    </a><figcaption class="image-caption"><strong>Git Bash</strong></figcaption>
+    </figure>
+<p>此时，任意一个分支的提交，都会造成当前分支<strong>HEAD</strong>的移动。</p>
+<p>当<strong>HEAD</strong>发生了移动，两个分支不再指向同一提交，此后的分支切换便等同于普通的分支切换，即情况一：</p>
+<figure><a class="lightgallery" href="/images/Git.images/Snipaste_2021-06-18_18-22-59.png" title="/images/Git.images/Snipaste_2021-06-18_18-22-59.png" data-thumbnail="/images/Git.images/Snipaste_2021-06-18_18-22-59.png" data-sub-html="<h2>Git Bash</h2>">
+        <img
+            class="lazyload"
+            src="/svg/loading.min.svg"
+            data-src="/images/Git.images/Snipaste_2021-06-18_18-22-59.png"
+            data-srcset="/images/Git.images/Snipaste_2021-06-18_18-22-59.png, /images/Git.images/Snipaste_2021-06-18_18-22-59.png 1.5x, /images/Git.images/Snipaste_2021-06-18_18-22-59.png 2x"
+            data-sizes="auto"
+            alt="/images/Git.images/Snipaste_2021-06-18_18-22-59.png" width="100%" />
+    </a><figcaption class="image-caption"><strong>Git Bash</strong></figcaption>
+    </figure>
+<p>以上案例来说，如果修改发生在<strong>main</strong>分支，但提交发生在<strong>master</strong>分支，那么<strong>main</strong>分支的修改数据等同于丢失。</p>
+<p>因此严格来说，情况二也存在所谓的数据丢失的情况。</p>
+<p>总结，分支切换前最重要的一点，是需要保证当前分支的整洁干净。所有未提交的工作，在分支切换后都存在丢失的可能性。</p>
+<div class="details admonition tip open">
+        <div class="details-summary admonition-title">
+            <i class="icon fas fa-lightbulb fa-fw"></i>Tip<i class="details-icon fas fa-angle-right fa-fw"></i>
+        </div>
+        <div class="details-content">
+            <div class="admonition-content"><p>当切换分支需要改变<strong>HEAD</strong>指向，同时当前分支具有未提交数据时，<strong>Git</strong>会阻止分支切换的操作。</p>
+<p>可以使用以下命令，强制进行分支切换：</p>
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">git checkout -f &lt;branch_name&gt;
+</code></pre></div></div>
+        </div>
+    </div>
+<span id="id-28">1|d.删除分支</span>
+<p>删除分支十分简单，使用以下命令即可，同时使用命令显示当前目录的分支列表：</p>
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">git branch -d &lt;branch_name&gt;
+git branch
+</code></pre></div><figure><a class="lightgallery" href="/images/Git.images/Snipaste_2021-06-16_03-12-01.png" title="/images/Git.images/Snipaste_2021-06-16_03-12-01.png" data-thumbnail="/images/Git.images/Snipaste_2021-06-16_03-12-01.png" data-sub-html="<h2>Git Bash</h2>">
+        <img
+            class="lazyload"
+            src="/svg/loading.min.svg"
+            data-src="/images/Git.images/Snipaste_2021-06-16_03-12-01.png"
+            data-srcset="/images/Git.images/Snipaste_2021-06-16_03-12-01.png, /images/Git.images/Snipaste_2021-06-16_03-12-01.png 1.5x, /images/Git.images/Snipaste_2021-06-16_03-12-01.png 2x"
+            data-sizes="auto"
+            alt="/images/Git.images/Snipaste_2021-06-16_03-12-01.png" width="100%" />
+    </a><figcaption class="image-caption"><strong>Git Bash</strong></figcaption>
+    </figure>
+<p>有时候出于各种原因，无法对本地分支进行删除操作，此时可以使用以下命令中的一条，对分支进行强制删除：</p>
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">git branch -D &lt;branch_name&gt;
+git branch -df &lt;branch_name&gt;
+</code></pre></div><p>最后，<strong>Git</strong>无法在当前所处于的分支中，删除当前所处于的分支。</p>
+<h3 id="2远程分支">2.远程分支</h3>
+<p>远程分支，实际上是使用<strong>fetch</strong>命令，拉取到本地的特殊分支。</p>
+<p><strong>git branch</strong>命令在没有任何参数时，只能显示本地分支列表。但你可以使用以下命令，用于显示当前的远程分支列表：</p>
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">git branch -r
+</code></pre></div><p>也可以使用以下命令，显示当前的本地分支与远程分支的列表：</p>
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">git branch -a
+</code></pre></div><figure><a class="lightgallery" href="/images/Git.images/Snipaste_2021-06-16_03-22-27.png" title="/images/Git.images/Snipaste_2021-06-16_03-22-27.png" data-thumbnail="/images/Git.images/Snipaste_2021-06-16_03-22-27.png" data-sub-html="<h2>Git Bash</h2>">
+        <img
+            class="lazyload"
+            src="/svg/loading.min.svg"
+            data-src="/images/Git.images/Snipaste_2021-06-16_03-22-27.png"
+            data-srcset="/images/Git.images/Snipaste_2021-06-16_03-22-27.png, /images/Git.images/Snipaste_2021-06-16_03-22-27.png 1.5x, /images/Git.images/Snipaste_2021-06-16_03-22-27.png 2x"
+            data-sizes="auto"
+            alt="/images/Git.images/Snipaste_2021-06-16_03-22-27.png" width="100%" />
+    </a><figcaption class="image-caption"><strong>Git Bash</strong></figcaption>
+    </figure>
+<p>拉取到本地的远程分支，完成可以当做本地分支来对待。</p>
+<div class="details admonition tip open">
+        <div class="details-summary admonition-title">
+            <i class="icon fas fa-lightbulb fa-fw"></i>Tip<i class="details-icon fas fa-angle-right fa-fw"></i>
+        </div>
+        <div class="details-content">
+            <div class="admonition-content"><p>了解了<strong>fetch</strong>的作用之后，会更加理解本地分支间的合并与远程仓库分支合并到本地的实质是一样的。</p>
+<p>本地分支间的合并，就是普通的分支合并；而<strong>pull</strong>代码，实际就是将远程仓库分支<strong>fetch</strong>到本地成为一个特殊的本地分支，之后再使用<strong>merge</strong>与指定的本地分支进行合并，仅此而已。</p>
+<p>分支合并一旦产生冲突，都是需要手动解决并填写注释信息的，没有例外。</p>
+</div>
+        </div>
+    </div>
+<h3 id="3分支合并">3.分支合并</h3>
+<p>分支合并，可以理解为整合祖先同源分支的工作。对于非同源分支，事实上大多数情况下，并没有合并的需要。</p>
 <p>如下图所示，有两个分支：
 <figure><a class="lightgallery" href="/images/Git.images/image-20201016225447943.png" title="/images/Git.images/image-20201016225447943.png" data-thumbnail="/images/Git.images/image-20201016225447943.png" data-sub-html="<h2>master &amp; dev</h2>">
         <img
@@ -1254,10 +1343,10 @@ git branch --list
 <li><strong>master</strong>分支，其中<strong>A</strong>、<strong>C</strong>、<strong>E</strong>属于该分支；</li>
 <li><strong>dev</strong>分支，其中<strong>A</strong>、<strong>B</strong>、<strong>D</strong>、<strong>F</strong>属于该分支。</li>
 </ol>
-<p>其中，<strong>master</strong>分支和<strong>dev</strong>分支的<strong>head</strong>指针，分别指向<strong>E</strong>和<strong>F</strong>。</p>
+<p>其中，<strong>master</strong>分支和<strong>dev</strong>分支的<strong>HEAD</strong>指针，分别指向<strong>E</strong>和<strong>F</strong>。</p>
 <p>对上述分支进行以下操作：</p>
-<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">git checkout master <span class="c1"># 切换到master分支</span>
-git merge dev <span class="c1"># 将dev分支合并到当前master分支</span>
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">git checkout master
+git merge dev
 </code></pre></div><p>以上命令，<strong>Git</strong>将切换到<strong>master</strong>分支中，并将<strong>dev</strong>分支合并到当前分支<strong>master</strong>中，合并完成后如下所示：</p>
 <figure><a class="lightgallery" href="/images/Git.images/image-20201016225925053.png" title="/images/Git.images/image-20201016225925053.png" data-thumbnail="/images/Git.images/image-20201016225925053.png" data-sub-html="<h2>master &amp; dev</h2>">
         <img
@@ -1278,7 +1367,8 @@ git merge dev <span class="c1"># 将dev分支合并到当前master分支</span>
             <div class="admonition-content">分支合并有可能会产生代码冲突，需要手动解决。例如，<strong>B</strong>和<strong>C</strong>都对<strong>A</strong>中已有的一段代码进行了不同的修改，那么在进行最终合并时，就有可能会产生冲突。</div>
         </div>
     </div>
-<p>分支<strong>dev</strong>中的代码合并到<strong>master</strong>中，仍然可以继续在<strong>dev</strong>的分支上进行开发。因为分支合并发生在<strong>master</strong>分支，此时仅仅是<strong>master</strong>分支的<strong>head</strong>发生了变化，<strong>dev</strong>分支仍然存在且<strong>head</strong>没有变化：</p>
+<p>分支<strong>dev</strong>中的代码合并到<strong>master</strong>中，仍然可以继续在<strong>dev</strong>的分支上进行开发。</p>
+<p>因为分支合并发生在<strong>master</strong>分支，此时仅仅是<strong>master</strong>分支的<strong>HEAD</strong>发生了变化，<strong>dev</strong>分支仍然存在且<strong>HEAD</strong>没有变化：</p>
 <figure><a class="lightgallery" href="/images/Git.images/image-20201016230535782.png" title="/images/Git.images/image-20201016230535782.png" data-thumbnail="/images/Git.images/image-20201016230535782.png" data-sub-html="<h2>master &amp; dev</h2>">
         <img
             class="lazyload"
@@ -1289,294 +1379,428 @@ git merge dev <span class="c1"># 将dev分支合并到当前master分支</span>
             alt="/images/Git.images/image-20201016230535782.png" width="100%" />
     </a><figcaption class="image-caption"><strong>master &amp; dev</strong></figcaption>
     </figure>
-<h3 id="3合并冲突">3.合并冲突</h3>
-<p>待续&hellip;</p>
-<h2 id="关联github项目">关联GitHub项目</h2>
-<p>已知有一个<strong>GitHub</strong>远程仓库，仓库中有一个文件**.gitignore**，**GitHub**中有两个公钥；同时你的电脑上拥有两个SSH密钥对（包含**GitHub**中的两个公钥），但不在默认路径**~/.ssh/**目录下。假如你现在有一个项目（至少拥有一个文件），需要使用此**GitHub**远程仓库，你需要保留本地仓库与远程仓库的内容，请使用代码行完成连接和配置。</p>
-<p><strong>GitHub</strong>远程仓库如下：</p>
-<p><img
-        class="lazyload"
-        src="/svg/loading.min.svg"
-        data-src="images/Git.images/image-20201016211514986.png"
-        data-srcset="images/Git.images/image-20201016211514986.png, images/Git.images/image-20201016211514986.png 1.5x, images/Git.images/image-20201016211514986.png 2x"
-        data-sizes="auto"
-        alt="images/Git.images/image-20201016211514986.png"
-        title="image-20201016211514986" /></p>
-<p><strong>Git</strong>中的基本配置如下：</p>
-<p><img
-        class="lazyload"
-        src="/svg/loading.min.svg"
-        data-src="images/Git.images/image-20201016214146850.png"
-        data-srcset="images/Git.images/image-20201016214146850.png, images/Git.images/image-20201016214146850.png 1.5x, images/Git.images/image-20201016214146850.png 2x"
-        data-sizes="auto"
-        alt="images/Git.images/image-20201016214146850.png"
-        title="image-20201016214146850" /></p>
-<p>运行以下命令，在任意位置创建一个本地仓库**.git**：</p>
-<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">git init
-</code></pre></div><p>如图所示，注意此时<strong>GitHub</strong>上的默认分支只有<strong>main</strong>；<strong>git</strong>创建的本地仓库默认分支为<strong>master</strong>，但只要没有任何文件在此分支上进行<strong>commit</strong>操作，该分支不会被真实创建，因此可以选择直接更换<strong>git</strong>的默认分支名称：</p>
-<p>采用分支重命名的方式，注意在初始化的分支上如果没有任何的<strong>commit</strong>操作，该分支无法被重命名：</p>
-<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">git branch -m &lt;old-branch-name&gt; &lt;new-branch-name&gt;
-</code></pre></div><p><img
-        class="lazyload"
-        src="/svg/loading.min.svg"
-        data-src="images/Git.images/image-20201016222723140.png"
-        data-srcset="images/Git.images/image-20201016222723140.png, images/Git.images/image-20201016222723140.png 1.5x, images/Git.images/image-20201016222723140.png 2x"
-        data-sizes="auto"
-        alt="images/Git.images/image-20201016222723140.png"
-        title="image-20201016222723140" /></p>
-<p>采用创建新分支<strong>main</strong>删除旧分支<strong>master</strong>的方式：</p>
-<p><img
-        class="lazyload"
-        src="/svg/loading.min.svg"
-        data-src="images/Git.images/image-20201016212339387.png"
-        data-srcset="images/Git.images/image-20201016212339387.png, images/Git.images/image-20201016212339387.png 1.5x, images/Git.images/image-20201016212339387.png 2x"
-        data-sizes="auto"
-        alt="images/Git.images/image-20201016212339387.png"
-        title="image-20201016212339387" /></p>
-<p>使用以下命令，可以创建一个新的分支并跳转到该分支上：</p>
-<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">git checkout -b main
-</code></pre></div><p>需要注意的是，初始化的本地仓库，无法使用以下命令创建新分支：</p>
-<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">git branch main
-</code></pre></div><p>而从分支查看命令<strong>git branch -a</strong>中，可以看出初始分支发生<strong>commit</strong>之前，是不会在分支列表中出现的：</p>
-<p><img
-        class="lazyload"
-        src="/svg/loading.min.svg"
-        data-src="images/Git.images/image-20201016213235417.png"
-        data-srcset="images/Git.images/image-20201016213235417.png, images/Git.images/image-20201016213235417.png 1.5x, images/Git.images/image-20201016213235417.png 2x"
-        data-sizes="auto"
-        alt="images/Git.images/image-20201016213235417.png"
-        title="image-20201016213235417" /></p>
-<p>当分支列表中存在分支后，可以正常使用命令<strong>git branch master</strong>创建其他的分支，使用命令<strong>git branch -d master</strong>可以删除对应名称的分支：</p>
-<p><img
-        class="lazyload"
-        src="/svg/loading.min.svg"
-        data-src="images/Git.images/image-20201016213853365.png"
-        data-srcset="images/Git.images/image-20201016213853365.png, images/Git.images/image-20201016213853365.png 1.5x, images/Git.images/image-20201016213853365.png 2x"
-        data-sizes="auto"
-        alt="images/Git.images/image-20201016213853365.png"
-        title="image-20201016213853365" /></p>
-<h3 id="1使用https连接">1.使用HTTPS连接</h3>
-<h4 id="a-使用命令行合并">a. 使用命令行合并</h4>
-<p>需要先为当前本地仓库设置远程仓库的<strong>origin</strong>，使用以下命令可以添加指定的<strong>HTTPS</strong>协议的远程仓库链接：</p>
-<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">git remote add &lt;user-define-origin-name&gt; https://example.com
-</code></pre></div><p>如果添加有误，使用以下命令可以删除<strong>origin</strong>：</p>
-<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">git remote remove &lt;user-define-origin-name&gt;
-</code></pre></div><p>示例如图：</p>
-<p><img
-        class="lazyload"
-        src="/svg/loading.min.svg"
-        data-src="images/Git.images/image-20201016214937056.png"
-        data-srcset="images/Git.images/image-20201016214937056.png, images/Git.images/image-20201016214937056.png 1.5x, images/Git.images/image-20201016214937056.png 2x"
-        data-sizes="auto"
-        alt="images/Git.images/image-20201016214937056.png"
-        title="image-20201016214937056" /></p>
-<p>在这种情况下合并两个分支，相当于两个没有共同祖先的分支的合并操作，可以使用<strong>rebase</strong>，也可以使用带参数**&ndash;allow-unrelated-histories**的**merge**，操作的代码如下：</p>
-<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="c1"># 首先查看文件状态，此前已经创建touch了文件New-File，并对其进行跟踪add、提交commit。</span>
-git status
-<span class="c1"># 添加远程仓库的https地址，后续操作中可能需要输入GitHub的用户名或密码</span>
-git remote add github https://github.com/2phangx-dylan/example-project.git
-<span class="c1"># 查看远程仓库列表</span>
-git remote -v
-<span class="c1"># 两个没有相同祖先的分支（也就是毫无相关的两个仓库），不能直接使用pull来拉取代码</span>
-<span class="c1"># 我们知道使用pull相当于使用fetch将远程仓库代码拉到本地仓库之后，再使用merge把本地仓库代码合并到工作目录</span>
-<span class="c1"># 合并的前提是两个分支需要有关系related，但如果没有共同的主线分支，那么将无法进行merge</span>
-<span class="c1"># 直接使用pull会出现non-fast-forward警告，merge操作将失效，只会进行fetch操作</span>
-git fetch github main
-<span class="c1"># fetch操作会将远程仓库的代码拉到一个remotes/&lt;origin-name&gt;/&lt;branch-name&gt;的远程分支中</span>
-git branch -a
-<span class="c1"># 此时存在于remotes/github/main中的代码仍然没有和本地代码进行合并</span>
-<span class="c1"># 但直接使用merge操作将从远程分支和本地分支进行合并，会出现错误：fatal: refusing to merge unrelated histories</span>
-git merge remotes/github/main
-<span class="c1"># merge操作可以通过添加参数--allow-unrelated-histories强行合并</span>
-<span class="c1"># 也可以使用rebase将两个分支合并，因为它们是毫不相关的两个分支</span>
-git merge remotes/github/main --allow-unrelated-histories
-<span class="c1"># 合并merge或变基rebase之后的所有文件都是已提交状态的，可以直接push到远程仓库</span>
-git push github master:main
-</code></pre></div><p>关于<strong>fetch</strong>操作的更多细节：</p>
-<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="c1"># 显示所有的分支，包括本地分支和远程分支</span>
-$ git branch -a
-* master
-
-<span class="c1"># 使用fetch可以让本机远程访问到远程仓库的分支，会在分支列表中创建一个远程分支</span>
-$ git fetch github main
-From https://github.com/2phangx-dylan/example-project
- * branch            main       -&gt; FETCH_HEAD
- * <span class="o">[</span>new branch<span class="o">]</span>      main       -&gt; github/main
-
-<span class="c1"># remotes/github/main不是一个本地分支，是一个远程分支</span>
-$ git branch -a
-* master
-  remotes/github/main
-
-<span class="c1"># 使用checkout可以根据远程分支创建一个新的本地分支，并跳转到该分支中</span>
-$ git checkout -b main github/main
-Switched to a new branch <span class="s1">&#39;main&#39;</span>
-Branch <span class="s1">&#39;main&#39;</span> <span class="nb">set</span> up to track remote branch <span class="s1">&#39;main&#39;</span> from <span class="s1">&#39;github&#39;</span>.
-
-<span class="c1"># 本地分支main已被创建</span>
-$ git branch -a
-* main
-  master
-  remotes/github/main
-
-<span class="c1"># 使用以下命令可以删除远程分支</span>
-$ git branch -r -d github/main
-Deleted remote-tracking branch github/main <span class="o">(</span>was e2cda2d<span class="o">)</span>.
-
-<span class="c1"># 使用以下命令可以跳转到其他分支或删除本地分支</span>
-$ git checkout master <span class="o">&amp;&amp;</span> git branch -d main
-Switched to branch <span class="s1">&#39;master&#39;</span>
-Deleted branch main <span class="o">(</span>was e2cda2d<span class="o">)</span>.
-
-<span class="c1"># 显示所有的分支，包括本地分支和远程分支</span>
-$ git branch -a
-* master
-</code></pre></div><h4 id="b通过添加文件合并">b.通过添加文件合并</h4>
-<p>合并不相关的项目，最简单的方式是使用git clone的方式，将远程仓库<strong>remote repository</strong>克隆到本地仓库<strong>local repository</strong>，再将该克隆仓库中的所有文件，复制到目标工作目录<strong>workspace directory</strong>中，注意，目标工作目录不应该进行初始化仓库操作。</p>
-<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">git clone git@github.com:2phangx-dylan/example-project.git
-</code></pre></div><p>克隆下来的仓库中默认的配置文件已经存在<strong>remote</strong>和<strong>branch</strong>的配置，此处使用的是<strong>SSH</strong>连接，需要保证在目录**~/.ssh**下拥有相匹配的名为**id_rsa**的私钥文件，才能正常与远程仓库建立连接：</p>
-<p><img
-        class="lazyload"
-        src="/svg/loading.min.svg"
-        data-src="images/Git.images/image-20201017135559294.png"
-        data-srcset="images/Git.images/image-20201017135559294.png, images/Git.images/image-20201017135559294.png 1.5x, images/Git.images/image-20201017135559294.png 2x"
-        data-sizes="auto"
-        alt="images/Git.images/image-20201017135559294.png"
-        title="image-20201017135559294" /></p>
-<h3 id="2使用ssh连接">2.使用SSH连接</h3>
-<h4 id="a生成ssh公钥">a.生成SSH公钥</h4>
-<p><strong>Git</strong>在连接远程仓库时，根据连接协议的不同，需要提供不一样的认证凭证。假设你使用的远程仓库是<strong>GitHub</strong>。</p>
-<p>此时，如果你选择的是以<strong>https</strong>协议的方式，与远程仓库建立连接，那么你可能需要提供的认证凭证是用户密码。</p>
-<p>但如果你选择的是以<strong>SSH</strong>协议与远程仓库建立连接，那么此时的认证凭证不能是用户密码，而应该是对应<strong>SSH</strong>密钥对中的私钥，注意，此时需要保证公钥已经保存在了<strong>GitHub</strong>账户中。</p>
-<p>使用以下命令，可以自动生成<strong>SSH</strong>密钥对，密钥对名称将自动被命名为<strong>pc_username@pc_name</strong>：</p>
-<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">ssh-keygen -o
-</code></pre></div><p>你可以使用以下命令，自定义生成密钥的加密算法及该密钥对的名称<strong><a href="mailto:your_email@example.com">your_email@example.com</a></strong>：</p>
-<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">ssh-keygen -t rsa -C <span class="s2">&#34;your_email@example.com&#34;</span>
+<h3 id="4合并冲突">4.合并冲突</h3>
+<p>分支的合并，往往会产生冲突，该冲突出现在分支比较之下，无法确定同一文件的最终修改内容的情况下。</p>
+<p>例如，有两个分支<strong>main</strong>与<strong>master</strong>，它们都从同一个分支开始自己的历史，分支内最初拥有一个<strong>new.txt</strong>的空文件：</p>
+<figure><a class="lightgallery" href="/images/Git.images/Snipaste_2021-06-16_03-39-28.png" title="/images/Git.images/Snipaste_2021-06-16_03-39-28.png" data-thumbnail="/images/Git.images/Snipaste_2021-06-16_03-39-28.png" data-sub-html="<h2>Git Bash</h2>">
+        <img
+            class="lazyload"
+            src="/svg/loading.min.svg"
+            data-src="/images/Git.images/Snipaste_2021-06-16_03-39-28.png"
+            data-srcset="/images/Git.images/Snipaste_2021-06-16_03-39-28.png, /images/Git.images/Snipaste_2021-06-16_03-39-28.png 1.5x, /images/Git.images/Snipaste_2021-06-16_03-39-28.png 2x"
+            data-sizes="auto"
+            alt="/images/Git.images/Snipaste_2021-06-16_03-39-28.png" width="100%" />
+    </a><figcaption class="image-caption"><strong>Git Bash</strong></figcaption>
+    </figure>
+<p>可以看到，分支<strong>main</strong>、<strong>master</strong>的<strong>HEAD</strong>均指向同一个提交。</p>
+<p>此时，各自在<strong>main</strong>、<strong>master</strong>分支中，对<strong>new.txt</strong>进行不同的修改并提交，如下：</p>
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">git checkout main <span class="o">&amp;&amp;</span> <span class="nb">echo</span> <span class="s2">&#34;main&#34;</span> &gt;&gt; new.txt <span class="o">&amp;&amp;</span> git commit -a -m <span class="s2">&#34;update in main.&#34;</span>
+git checkout master <span class="o">&amp;&amp;</span> <span class="nb">echo</span> <span class="s2">&#34;master&#34;</span> &gt;&gt; new.txt <span class="o">&amp;&amp;</span> git commit -a -m <span class="s2">&#34;update in master&#34;</span>
+</code></pre></div><figure><a class="lightgallery" href="/images/Git.images/Snipaste_2021-06-16_03-47-19.png" title="/images/Git.images/Snipaste_2021-06-16_03-47-19.png" data-thumbnail="/images/Git.images/Snipaste_2021-06-16_03-47-19.png" data-sub-html="<h2>Git Bash</h2>">
+        <img
+            class="lazyload"
+            src="/svg/loading.min.svg"
+            data-src="/images/Git.images/Snipaste_2021-06-16_03-47-19.png"
+            data-srcset="/images/Git.images/Snipaste_2021-06-16_03-47-19.png, /images/Git.images/Snipaste_2021-06-16_03-47-19.png 1.5x, /images/Git.images/Snipaste_2021-06-16_03-47-19.png 2x"
+            data-sizes="auto"
+            alt="/images/Git.images/Snipaste_2021-06-16_03-47-19.png" width="100%" />
+    </a><figcaption class="image-caption"><strong>Git Bash</strong></figcaption>
+    </figure>
+<p>通过在不同分支内查看文件内容，明显文件在各分支内已经拥有了不同版本的修改。</p>
+<p>如果现在切换到<strong>master</strong>分支，并调用分支合并命令，将<strong>main</strong>分支合并到<strong>master</strong>分支中，会发生什么呢？</p>
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">git checkout master
+git merge main
+</code></pre></div><figure><a class="lightgallery" href="/images/Git.images/Snipaste_2021-06-16_03-50-23.png" title="/images/Git.images/Snipaste_2021-06-16_03-50-23.png" data-thumbnail="/images/Git.images/Snipaste_2021-06-16_03-50-23.png" data-sub-html="<h2>Git Bash</h2>">
+        <img
+            class="lazyload"
+            src="/svg/loading.min.svg"
+            data-src="/images/Git.images/Snipaste_2021-06-16_03-50-23.png"
+            data-srcset="/images/Git.images/Snipaste_2021-06-16_03-50-23.png, /images/Git.images/Snipaste_2021-06-16_03-50-23.png 1.5x, /images/Git.images/Snipaste_2021-06-16_03-50-23.png 2x"
+            data-sizes="auto"
+            alt="/images/Git.images/Snipaste_2021-06-16_03-50-23.png" width="100%" />
+    </a><figcaption class="image-caption"><strong>Git Bash</strong></figcaption>
+    </figure>
+<p>分支合并命令出现了冲突<strong>CONFLICT</strong>，此时进入了一个特殊分支<strong>master|MERGING</strong>内，表示出现了合并冲突。</p>
+<p>合并出现冲突，明显是因为<strong>main</strong>、<strong>master</strong>分支，自<strong>new.txt</strong>文件为空的版本开始，各自修改并提交了该文件。导致最终合并时，<strong>Git</strong>无法得知应该保留<strong>main</strong>分支修改的版本，还是<strong>master</strong>分支修改的版本。</p>
+<p>在分支<strong>master|MERGING</strong>下查看<strong>new.txt</strong>文件内容，如下：</p>
+<figure><a class="lightgallery" href="/images/Git.images/Snipaste_2021-06-16_03-53-20.png" title="/images/Git.images/Snipaste_2021-06-16_03-53-20.png" data-thumbnail="/images/Git.images/Snipaste_2021-06-16_03-53-20.png" data-sub-html="<h2>Git Bash</h2>">
+        <img
+            class="lazyload"
+            src="/svg/loading.min.svg"
+            data-src="/images/Git.images/Snipaste_2021-06-16_03-53-20.png"
+            data-srcset="/images/Git.images/Snipaste_2021-06-16_03-53-20.png, /images/Git.images/Snipaste_2021-06-16_03-53-20.png 1.5x, /images/Git.images/Snipaste_2021-06-16_03-53-20.png 2x"
+            data-sizes="auto"
+            alt="/images/Git.images/Snipaste_2021-06-16_03-53-20.png" width="100%" />
+    </a><figcaption class="image-caption"><strong>Git Bash</strong></figcaption>
+    </figure>
+<p>可以发现，文件内容中既包含了<strong>HEAD</strong>分支即当前<strong>master</strong>分支的修改版本，也包含了<strong>main</strong>分支的修改版本，且修改的内容使用了多个<span id="id-29">=</span>进行分割。</p>
+<span id="id-30">处理分支合并冲突的方法，就是手动确认出现冲突的文件，其应该保留的修改是什么。简而言之，手动修改冲突文件至你想要在当前分支保留的版本。</span>
+<p>因此，现在需要手动确认<strong>new.txt</strong>中的实际保留部分是什么。编辑<strong>new.txt</strong>文件，并保留<strong>main</strong>分支的修改，如下：</p>
+<figure><a class="lightgallery" href="/images/Git.images/Snipaste_2021-06-16_04-02-40.png" title="/images/Git.images/Snipaste_2021-06-16_04-02-40.png" data-thumbnail="/images/Git.images/Snipaste_2021-06-16_04-02-40.png" data-sub-html="<h2>Git Bash</h2>">
+        <img
+            class="lazyload"
+            src="/svg/loading.min.svg"
+            data-src="/images/Git.images/Snipaste_2021-06-16_04-02-40.png"
+            data-srcset="/images/Git.images/Snipaste_2021-06-16_04-02-40.png, /images/Git.images/Snipaste_2021-06-16_04-02-40.png 1.5x, /images/Git.images/Snipaste_2021-06-16_04-02-40.png 2x"
+            data-sizes="auto"
+            alt="/images/Git.images/Snipaste_2021-06-16_04-02-40.png" width="100%" />
+    </a><figcaption class="image-caption"><strong>Git Bash</strong></figcaption>
+    </figure>
+<p>确认完成对冲突文件的修改后，只需要再次将该文件添加到暂存区并提交，即可解决合并冲突，完成分支合并操作：</p>
+<figure><a class="lightgallery" href="/images/Git.images/Snipaste_2021-06-16_04-06-55.png" title="/images/Git.images/Snipaste_2021-06-16_04-06-55.png" data-thumbnail="/images/Git.images/Snipaste_2021-06-16_04-06-55.png" data-sub-html="<h2>Git Bash</h2>">
+        <img
+            class="lazyload"
+            src="/svg/loading.min.svg"
+            data-src="/images/Git.images/Snipaste_2021-06-16_04-06-55.png"
+            data-srcset="/images/Git.images/Snipaste_2021-06-16_04-06-55.png, /images/Git.images/Snipaste_2021-06-16_04-06-55.png 1.5x, /images/Git.images/Snipaste_2021-06-16_04-06-55.png 2x"
+            data-sizes="auto"
+            alt="/images/Git.images/Snipaste_2021-06-16_04-06-55.png" width="100%" />
+    </a><figcaption class="image-caption"><strong>Git Bash</strong></figcaption>
+    </figure>
+<p>此时，分支也从<strong>master|MERGING</strong>回到了<strong>master</strong>。</p>
+<h2 id="git凭证系统">Git凭证系统</h2>
+<p>如果希望从本地仓库将数据<strong>push</strong>到远程仓库，需要提供对应的认证凭证。认证凭证根据本地与远程仓库之间的连接协议的不同，而有所不同。</p>
+<p>如果你使用的是<strong>SSH</strong>方式连接远端，并且设置了一个没有口令的密钥，这样就可以在不输入用户名和密码的情况下安全地传输数据。然而，这对<span id="id-31">http(s)</span>协议来说是不可能的。</p>
+<p>对于<span id="id-32">http(s)</span>协议来说，它的每一个连接都是需要用户名密码验证。这在使用双重认证的情况下会更麻烦，因为你需要输入一个随机生成并且毫无规律的<strong>token</strong>作为密码。</p>
+<p>幸运的是，<strong>Git</strong>拥有一个凭证系统来处理这个事情。下面有一些<strong>Git</strong>的选项：</p>
+<ul>
+<li>默认所有都不缓存。每一次连接都会询问你的用户名和密码；</li>
+<li><strong>cache</strong>模式会将凭证存放在内存中一段时间。密码永远不会被存储在磁盘中，并且在<strong>15</strong>分钟后从内存中清除；</li>
+<li><strong>store</strong>模式会将凭证用明文的形式存放在磁盘中，并且永不过期。 这意味着除非你修改了你在<strong>Git</strong>服务器上的密码，否则你永远不需要再次输入你的凭证信息。这种方式的缺点是你的密码是用明文的方式存放在你的<strong>home</strong>目录下；</li>
+<li>如果你使用的是<strong>Mac</strong>，<strong>Git</strong>还有一种<strong>osxkeychain</strong>模式，它会将凭证缓存到你系统用户的钥匙串中。这种方式将凭证存放在磁盘中，并且永不过期，但是是被加密的，这种加密方式与存放<strong>https</strong>凭证以及<strong>Safari</strong>的自动填写是相同的；</li>
+<li>如果你使用的是<strong>Windows</strong>，你可以安装一个叫做<strong>Git Credential Manager for Windows</strong>的辅助工具。这和上面说的<strong>osxkeychain</strong>十分类似，但是是使用<strong>Windows Credential Store</strong>来控制敏感信息。</li>
+</ul>
+<div class="details admonition tip open">
+        <div class="details-summary admonition-title">
+            <i class="icon fas fa-lightbulb fa-fw"></i>Tip<i class="details-icon fas fa-angle-right fa-fw"></i>
+        </div>
+        <div class="details-content">
+            <div class="admonition-content"><p>如果你使用的是<strong>Windows</strong>系统，那往往在安装<strong>Git</strong>程序时，<strong>Git</strong>会询问你是否需要安装<strong>Git Credential Manager</strong>，此时勾选该项即可完成安装，毋需自行下载安装。</p>
+<p>注意，在<strong>Git for Window 2.29</strong>或更高版本的安装中，其安装过程将会询问你是否需要安装<strong>Git Credential Manager Core</strong>，并同时将<strong>Git Credential Manager</strong>标记为<strong>deprecated</strong>。</p>
+<p><strong>GCM</strong>快速下载：<a href="https://github.com/Microsoft/Git-Credential-Manager-for-Windows" target="_blank" rel="noopener noreffer"><strong>Git Credential Manager for Windows</strong></a></p>
+<p><strong>GCM Core</strong>快速下载，及<strong>GCM Core</strong>与<strong>GCM</strong>的差别：<a href="https://github.com/microsoft/Git-Credential-Manager-Core" target="_blank" rel="noopener noreffer"><strong>Git Credential Manager Core</strong></a></p>
+</div>
+        </div>
+    </div>
+<p>快速查看当前<strong>Git</strong>使用的凭证系统模式，使用以下命令：</p>
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">git config credential.helper
+</code></pre></div><div class="details admonition tip">
+        <div class="details-summary admonition-title">
+            <i class="icon fas fa-lightbulb fa-fw"></i>Default Credential.hepler<i class="details-icon fas fa-angle-right fa-fw"></i>
+        </div>
+        <div class="details-content">
+            <div class="admonition-content"><p>在<strong>Windows</strong>系统下，如果安装<strong>Git</strong>的过程中一并选择安装了<strong>GCM Core</strong>或<strong>GCM</strong>，那么<strong>credential.helper</strong>所对应的模式将会是<strong>manager-core</strong>或<strong>manager</strong>。</p>
+<p>该<strong>credential.helper</strong>的配置实际存在于<strong>Git</strong>的系统配置中，可以在系统配置的文件中，查看对应<strong>credential.helper</strong>配置的信息：</p>
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">git config --system -l
+</code></pre></div><p>也可以直接查询系统配置中<strong>credential.helper</strong>值：</p>
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">git config --system credential.helper
+</code></pre></div></div>
+        </div>
+    </div>
+<p>快速设置当前<strong>Git</strong>使用的凭证系统模式，使用以下命令：</p>
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">git config --system credential.helper &lt;credential_mode&gt;
+</code></pre></div><p>快速移除当前<strong>Git</strong>使用的凭证系统模式，使用以下命令：</p>
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">git config --system --unset credential.helper
+</code></pre></div><div class="details admonition tip">
+        <div class="details-summary admonition-title">
+            <i class="icon fas fa-lightbulb fa-fw"></i>Git Configuration File<i class="details-icon fas fa-angle-right fa-fw"></i>
+        </div>
+        <div class="details-content">
+            <div class="admonition-content"><p>命令<strong>git config</strong>中的首位参数，用于指定编辑或查看的配置文件，以<strong>Windows</strong>系统为例，该配置文件存在五种形式：</p>
+<ul>
+<li><strong>--global</strong>：使用全局配置文件，默认不存在全局配置文件，只有手动配置时会新增该配置文件；</li>
+<li><strong>--system</strong>：使用系统配置文件，默认使用的配置文件，所有默认的配置都存在于该配置文件中；</li>
+<li><strong>--local</strong>：使用本地仓库配置文件，随着仓库的克隆或初始化而存在的配置文件；</li>
+<li><strong>--worktree</strong>：使用每个工作树的配置文件，不常用；</li>
+<li><strong>--file &lt;file&gt;, -f</strong>：使用指定的配置文件，不常用。</li>
+</ul>
+<p>其中，配置文件中配置的生效优先级是从小到大的。</p>
+<p>例如，<strong>global</strong>和<strong>local</strong>中均配置了<strong>credential.helper</strong>，前者为<strong>cache</strong>模式，后者为<strong>store</strong>模式。</p>
+<p>此时生效的配置是<strong>local</strong>，因为<strong>local</strong>的优先级大于<strong>global</strong>。</p>
+</div>
+        </div>
+    </div>
+<p>对于一些需要针对系统所有本地仓库的配置，可以将配置新增在<strong>global</strong>全局配置或<strong>system</strong>系统配置中，如用户名、邮箱等；对于一些本地仓库的私有配置，可以将配置新增在<strong>local</strong>本地仓库配置中，如<strong>http</strong>代理。</p>
+<h3 id="1https协议连接">1.HTTP(s)协议连接</h3>
+<p>使用<strong>GitHub</strong>公共仓库作为例子，同时不使用任何的凭证系统，以测试使用<span id="id-33">http(s)</span>协议连接时，输入用户名和密码的情况。</p>
+<p>使用以下命令清空所有凭证系统配置：</p>
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">git config --global --unset credential.helper
+git config --system --unset credential.helper
+git config --local --unset credential.helper
+</code></pre></div><p>此时，本地仓库使用的将会是默认的策略，即每一次连接都会询问连接的用户名和密码。</p>
+<p>有以下<strong>GitHub</strong>远程仓库：</p>
+<figure><a class="lightgallery" href="/images/Git.images/Snipaste_2021-06-18_19-24-35.png" title="/images/Git.images/Snipaste_2021-06-18_19-24-35.png" data-thumbnail="/images/Git.images/Snipaste_2021-06-18_19-24-35.png" data-sub-html="<h2>GitHub Repo</h2>">
+        <img
+            class="lazyload"
+            src="/svg/loading.min.svg"
+            data-src="/images/Git.images/Snipaste_2021-06-18_19-24-35.png"
+            data-srcset="/images/Git.images/Snipaste_2021-06-18_19-24-35.png, /images/Git.images/Snipaste_2021-06-18_19-24-35.png 1.5x, /images/Git.images/Snipaste_2021-06-18_19-24-35.png 2x"
+            data-sizes="auto"
+            alt="/images/Git.images/Snipaste_2021-06-18_19-24-35.png" width="100%" />
+    </a><figcaption class="image-caption"><strong>GitHub Repo</strong></figcaption>
+    </figure>
+<p>该仓库对应的https协议连接地址为：</p>
+<ul>
+<li><span id="id-34">https://github.com/2phangx-dylan/example.repository.git</span></li>
+</ul>
+<p>初始化本地仓库，假设当前分支为<strong>main</strong>，使用以下命令拉取该仓库的数据：</p>
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">git pull https://github.com/2phangx-dylan/example.repository.git main
+</code></pre></div><div class="details admonition tip">
+        <div class="details-summary admonition-title">
+            <i class="icon fas fa-lightbulb fa-fw"></i>Fatal: unable to access<i class="details-icon fas fa-angle-right fa-fw"></i>
+        </div>
+        <div class="details-content">
+            <div class="admonition-content"><p>从<strong>GitHub</strong>中获取某些数据时，总是不会十分顺利，可能出现以下错误：</p>
+<div class="highlight"><pre class="chroma"><code class="language-reStructuredText" data-lang="reStructuredText">OpenSSL SSL_connect: Connection was reset in connection to github.com:443<span class="err">
+</span></code></pre></div><p>此时，需要添加代理服务器，以顺利访问<strong>GitHub</strong>。</p>
+<p>使用以下命令添加代理服务器信息到本地仓库的配置文件中：</p>
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">git config --local http.proxy http://&lt;proxy_ip&gt;:&lt;port&gt;
+</code></pre></div></div>
+        </div>
+    </div>
+<div class="details admonition tip">
+        <div class="details-summary admonition-title">
+            <i class="icon fas fa-lightbulb fa-fw"></i>Default Branch Name<i class="details-icon fas fa-angle-right fa-fw"></i>
+        </div>
+        <div class="details-content">
+            <div class="admonition-content"><p><strong>Git</strong>默认情况下，初始化仓库的默认分支是<strong>master</strong>，使用以下命令，可以改变初始化时的默认分支名为<strong>main</strong>：</p>
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">git config --system init.defaultbranch main
+</code></pre></div></div>
+        </div>
+    </div>
+<p>拉取数据成功后，不作更改，使用以下命令将数据推送到远程仓库：</p>
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">git push https://github.com/2phangx-dylan/example.repository.git main
+</code></pre></div><p><strong>Windows</strong>系统下，会顺序出现以下对话框，要求你输入对应的用户名、密码：</p>
+<figure><a class="lightgallery" href="/images/Git.images/Snipaste_2021-06-20_00-39-23.png" title="/images/Git.images/Snipaste_2021-06-20_00-39-23.png" data-thumbnail="/images/Git.images/Snipaste_2021-06-20_00-39-23.png" data-sub-html="<h2>username</h2>">
+        <img
+            class="lazyload"
+            src="/svg/loading.min.svg"
+            data-src="/images/Git.images/Snipaste_2021-06-20_00-39-23.png"
+            data-srcset="/images/Git.images/Snipaste_2021-06-20_00-39-23.png, /images/Git.images/Snipaste_2021-06-20_00-39-23.png 1.5x, /images/Git.images/Snipaste_2021-06-20_00-39-23.png 2x"
+            data-sizes="auto"
+            alt="/images/Git.images/Snipaste_2021-06-20_00-39-23.png" width="60%" />
+    </a><figcaption class="image-caption"><strong>username</strong></figcaption>
+    </figure>
+<figure><a class="lightgallery" href="/images/Git.images/Snipaste_2021-06-20_00-40-20.png" title="/images/Git.images/Snipaste_2021-06-20_00-40-20.png" data-thumbnail="/images/Git.images/Snipaste_2021-06-20_00-40-20.png" data-sub-html="<h2>password</h2>">
+        <img
+            class="lazyload"
+            src="/svg/loading.min.svg"
+            data-src="/images/Git.images/Snipaste_2021-06-20_00-40-20.png"
+            data-srcset="/images/Git.images/Snipaste_2021-06-20_00-40-20.png, /images/Git.images/Snipaste_2021-06-20_00-40-20.png 1.5x, /images/Git.images/Snipaste_2021-06-20_00-40-20.png 2x"
+            data-sizes="auto"
+            alt="/images/Git.images/Snipaste_2021-06-20_00-40-20.png" width="60%" />
+    </a><figcaption class="image-caption"><strong>password</strong></figcaption>
+    </figure>
+<p>信息验证成功后，数据即可推送到远程仓库。</p>
+<div class="details admonition tip open">
+        <div class="details-summary admonition-title">
+            <i class="icon fas fa-lightbulb fa-fw"></i>Tip<i class="details-icon fas fa-angle-right fa-fw"></i>
+        </div>
+        <div class="details-content">
+            <div class="admonition-content"><p>出现<strong>OpenSSH</strong>对话框时，如果点击<strong>Cancel</strong>取消按钮，则此时窗口关闭，但<strong>Git Bash</strong>中会出现等待信息输入的命令行。</p>
+<p>简而言之，你要么选择在<strong>OpenSSH</strong>对话框中键入必要信息，要么就在取消对话框后，回到<strong>Git Bash</strong>界面中键入必要信息。</p>
+</div>
+        </div>
+    </div>
+<p>最后，对于具备二级验证的<strong>GitHub</strong>来说，连接远程仓库时，所提供的密码需要在设置中生成：</p>
+<figure><a class="lightgallery" href="/images/Git.images/Snipaste_2021-06-20_00-49-48.png" title="/images/Git.images/Snipaste_2021-06-20_00-49-48.png" data-thumbnail="/images/Git.images/Snipaste_2021-06-20_00-49-48.png" data-sub-html="<h2>personal access tokens</h2>">
+        <img
+            class="lazyload"
+            src="/svg/loading.min.svg"
+            data-src="/images/Git.images/Snipaste_2021-06-20_00-49-48.png"
+            data-srcset="/images/Git.images/Snipaste_2021-06-20_00-49-48.png, /images/Git.images/Snipaste_2021-06-20_00-49-48.png 1.5x, /images/Git.images/Snipaste_2021-06-20_00-49-48.png 2x"
+            data-sizes="auto"
+            alt="/images/Git.images/Snipaste_2021-06-20_00-49-48.png" width="100%" />
+    </a><figcaption class="image-caption"><strong>personal access tokens</strong></figcaption>
+    </figure>
+<p>创建个人访问令牌时，<strong>Note</strong>等同于标题，<strong>Select Scopes</strong>根据需求勾选。对于简单的<strong>push</strong>命令，仅勾选<strong>public_repo</strong>域：</p>
+<figure><a class="lightgallery" href="/images/Git.images/Snipaste_2021-06-20_00-58-13.png" title="/images/Git.images/Snipaste_2021-06-20_00-58-13.png" data-thumbnail="/images/Git.images/Snipaste_2021-06-20_00-58-13.png" data-sub-html="<h2>personal access tokens</h2>">
+        <img
+            class="lazyload"
+            src="/svg/loading.min.svg"
+            data-src="/images/Git.images/Snipaste_2021-06-20_00-58-13.png"
+            data-srcset="/images/Git.images/Snipaste_2021-06-20_00-58-13.png, /images/Git.images/Snipaste_2021-06-20_00-58-13.png 1.5x, /images/Git.images/Snipaste_2021-06-20_00-58-13.png 2x"
+            data-sizes="auto"
+            alt="/images/Git.images/Snipaste_2021-06-20_00-58-13.png" width="100%" />
+    </a><figcaption class="image-caption"><strong>personal access tokens</strong></figcaption>
+    </figure>
+<p>成功创建后，务必复制令牌到剪切板另作保存。</p>
+<h3 id="2ssh协议连接">2.SSH协议连接</h3>
+<p><strong>SSH</strong>连接看起来是这样的：</p>
+<div class="highlight"><pre class="chroma"><code class="language-reStructuredText" data-lang="reStructuredText">ssh://[user@]server/project.git<span class="err">
+</span></code></pre></div><p>它可以简写为<strong>scp</strong>式：</p>
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="o">[</span>user@<span class="o">]</span>server:project.git
+</code></pre></div><p>大多数情况下，获取到的<strong>SSH</strong>连接都是<strong>scp</strong>式链接。</p>
+<p>相较于<span id="id-35">http(s)</span>协议，使用<strong>SSH</strong>协议较为简单。只需要保证远程仓库所在平台拥有<strong>SSH</strong>公钥，同时本地目录拥有对应的<strong>SSH</strong>私钥，即可匹配连接。</p>
+<p>使用<strong>SSH</strong>协议连接，有以下三个步骤：</p>
+<ol>
+<li>生成<strong>SSH</strong>密钥对；</li>
+<li>将公钥上传至远程仓库所在的平台；</li>
+<li>将私钥保存至指定的本地目录中。</li>
+</ol>
+<span id="id-36">2|a.生成SSH密钥对</span>
+<p><strong>Git</strong>中自带了<strong>ssh-keygen</strong>命令用于生成<strong>SSH</strong>密钥对，如下：</p>
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">ssh-keygen
 </code></pre></div><p>生成密钥对会出现以下选项，可以自行选择填写：</p>
-<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">&gt; Enter a file in which to save the key <span class="o">(</span>/c/Users/you/.ssh/id_rsa<span class="o">)</span>:<span class="o">[</span>Press enter<span class="o">]</span>
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">&gt; Enter a file in which to save the key <span class="o">(</span>/c/Users/user/.ssh/id_rsa<span class="o">)</span>:<span class="o">[</span>Press enter<span class="o">]</span>
 &gt; Enter passphrase <span class="o">(</span>empty <span class="k">for</span> no passphrase<span class="o">)</span>: <span class="o">[</span>Type a passphrase<span class="o">]</span>
 &gt; Enter same passphrase again: <span class="o">[</span>Type passphrase again<span class="o">]</span>
-</code></pre></div><p>存放密钥的路径，不影响<strong>SSH</strong>自动找寻私钥用于用户认证。</p>
-<h4 id="bgithub中关联ssh公钥">b.GitHub中关联SSH公钥</h4>
-<p>找到目标密钥对目录，找到以**.pub**结尾的**SSH**公钥。</p>
-<p><img
-        class="lazyload"
-        src="/svg/loading.min.svg"
-        data-src="images/Git.images/image-20201016210916807.png"
-        data-srcset="images/Git.images/image-20201016210916807.png, images/Git.images/image-20201016210916807.png 1.5x, images/Git.images/image-20201016210916807.png 2x"
-        data-sizes="auto"
-        alt="images/Git.images/image-20201016210916807.png"
-        title="image-20201016210916807" /></p>
-<p>在<strong>GitHub</strong>设置中配置即可：</p>
-<p><img
-        class="lazyload"
-        src="/svg/loading.min.svg"
-        data-src="images/Git.images/image-20201016211153573.png"
-        data-srcset="images/Git.images/image-20201016211153573.png, images/Git.images/image-20201016211153573.png 1.5x, images/Git.images/image-20201016211153573.png 2x"
-        data-sizes="auto"
-        alt="images/Git.images/image-20201016211153573.png"
-        title="image-20201016211153573" /></p>
-<p>在<strong>GitHub</strong>创建的远程仓库，默认分支<strong>main</strong>是可以更改名称的：</p>
-<p><img
-        class="lazyload"
-        src="/svg/loading.min.svg"
-        data-src="images/Git.images/image-20201016211441835.png"
-        data-srcset="images/Git.images/image-20201016211441835.png, images/Git.images/image-20201016211441835.png 1.5x, images/Git.images/image-20201016211441835.png 2x"
-        data-sizes="auto"
-        alt="images/Git.images/image-20201016211441835.png"
-        title="image-20201016211441835" /></p>
-<p>使用<strong>HTTPS</strong>连接，需要不定时键入<strong>GitHub</strong>等远程仓库的用户名和密码，但如果你的<strong>GitHub</strong>上配置了<strong>SSH</strong>公钥，那么可以通过<strong>SSH</strong>进行远程连接。</p>
-<p>在<strong>Git Bash</strong>下，可以通过以下命令，测试<strong>SSH</strong>的与<strong>GitHub</strong>的连通性：</p>
+</code></pre></div><p>注意，<strong>passphrase</strong>是用来保护你的私钥的密码，如果设置了<strong>passphrase</strong>，则每次使用私钥时都会要求你输入这个密码。</p>
+<p>一般情况下<strong>passphrase</strong>不进行设置，更改<strong>passphrase</strong>可以使用以下命令：</p>
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">ssh-keygen -f &lt;private_key_file&gt; -P passphrase
+</code></pre></div><p><strong>ssh-keygen</strong>命令中，部分选项如下：</p>
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">-t: 指定密钥的加密类型
+-b: 指定密钥长度，默认长度为3072bits
+-f: 指定输出或输入文件
+-C: 添加注释，默认注释是user@host
+-N: 指定新的passphrase
+</code></pre></div><p>推荐使用以下命令，一步创建<strong>SSH</strong>密钥对：</p>
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">ssh-keygen -t rsa -b <span class="m">4096</span> -f ~/.ssh/&lt;file_name&gt; -C &lt;file_name&gt; -N <span class="s2">&#34;&#34;</span>
+</code></pre></div><p><strong>SSH</strong>密钥对将默认被存放在<span id="id-37">~/.ssh/</span>路径下，此时<strong>passphrase</strong>为空，<strong>comment</strong>与文件同名。</p>
+<p><strong>GitHub</strong>在添加<strong>SSH</strong>公钥时，<strong>comment</strong>将会被默认识别为公钥的<strong>Title</strong>。</p>
+<div class="details admonition tip open">
+        <div class="details-summary admonition-title">
+            <i class="icon fas fa-lightbulb fa-fw"></i>Tip<i class="details-icon fas fa-angle-right fa-fw"></i>
+        </div>
+        <div class="details-content">
+            <div class="admonition-content"><p><strong>Windows</strong>系统下的<strong>Home</strong>目录，如果无法清楚知道，可以在<strong>Git Bash</strong>中使用以下命令，打印<strong>Home</strong>目录路径：</p>
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="nb">cd</span> ~ <span class="o">&amp;&amp;</span> <span class="nb">pwd</span> <span class="o">&amp;&amp;</span> <span class="nb">cd</span> <span class="nv">$OLDPWD</span>
+</code></pre></div></div>
+        </div>
+    </div>
+<p>默认存放密钥对的路径之所以为<span id="id-38">~/.ssh/</span>，是因为在使用<strong>SSH</strong>进行连接时，<strong>Git</strong>默认会在该路径下自动寻找相匹配的<strong>SSH</strong>私钥。</p>
+<span id="id-39">2|b.GitHub中关联SSH公钥</span>
+<p>使用以下命令生产密钥对：</p>
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">ssh-keygen -f ~/.ssh/some -C some -N <span class="s2">&#34;&#34;</span>
+</code></pre></div><p>命令结束，默认输出目录<span id="id-40">~/.ssh/</span>中，私钥和公钥已生成：</p>
+<figure><a class="lightgallery" href="/images/Git.images/Snipaste_2021-06-20_03-17-34.png" title="/images/Git.images/Snipaste_2021-06-20_03-17-34.png" data-thumbnail="/images/Git.images/Snipaste_2021-06-20_03-17-34.png" data-sub-html="<h2>ssh keygen</h2>">
+        <img
+            class="lazyload"
+            src="/svg/loading.min.svg"
+            data-src="/images/Git.images/Snipaste_2021-06-20_03-17-34.png"
+            data-srcset="/images/Git.images/Snipaste_2021-06-20_03-17-34.png, /images/Git.images/Snipaste_2021-06-20_03-17-34.png 1.5x, /images/Git.images/Snipaste_2021-06-20_03-17-34.png 2x"
+            data-sizes="auto"
+            alt="/images/Git.images/Snipaste_2021-06-20_03-17-34.png" width="100%" />
+    </a><figcaption class="image-caption"><strong>ssh keygen</strong></figcaption>
+    </figure>
+<p>公钥以<span id="id-41">.pub</span>为后缀。在<strong>GitHub</strong>的设置中，添加该公钥即可：</p>
+<figure><a class="lightgallery" href="/images/Git.images/Snipaste_2021-06-20_03-21-21.png" title="/images/Git.images/Snipaste_2021-06-20_03-21-21.png" data-thumbnail="/images/Git.images/Snipaste_2021-06-20_03-21-21.png" data-sub-html="<h2>public key</h2>">
+        <img
+            class="lazyload"
+            src="/svg/loading.min.svg"
+            data-src="/images/Git.images/Snipaste_2021-06-20_03-21-21.png"
+            data-srcset="/images/Git.images/Snipaste_2021-06-20_03-21-21.png, /images/Git.images/Snipaste_2021-06-20_03-21-21.png 1.5x, /images/Git.images/Snipaste_2021-06-20_03-21-21.png 2x"
+            data-sizes="auto"
+            alt="/images/Git.images/Snipaste_2021-06-20_03-21-21.png" width="100%" />
+    </a><figcaption class="image-caption"><strong>public key</strong></figcaption>
+    </figure>
+<figure><a class="lightgallery" href="/images/Git.images/Snipaste_2021-06-20_03-22-49.png" title="/images/Git.images/Snipaste_2021-06-20_03-22-49.png" data-thumbnail="/images/Git.images/Snipaste_2021-06-20_03-22-49.png" data-sub-html="<h2>public key</h2>">
+        <img
+            class="lazyload"
+            src="/svg/loading.min.svg"
+            data-src="/images/Git.images/Snipaste_2021-06-20_03-22-49.png"
+            data-srcset="/images/Git.images/Snipaste_2021-06-20_03-22-49.png, /images/Git.images/Snipaste_2021-06-20_03-22-49.png 1.5x, /images/Git.images/Snipaste_2021-06-20_03-22-49.png 2x"
+            data-sizes="auto"
+            alt="/images/Git.images/Snipaste_2021-06-20_03-22-49.png" width="100%" />
+    </a><figcaption class="image-caption"><strong>public key</strong></figcaption>
+    </figure>
+<figure><a class="lightgallery" href="/images/Git.images/Snipaste_2021-06-20_03-23-06.png" title="/images/Git.images/Snipaste_2021-06-20_03-23-06.png" data-thumbnail="/images/Git.images/Snipaste_2021-06-20_03-23-06.png" data-sub-html="<h2>public key</h2>">
+        <img
+            class="lazyload"
+            src="/svg/loading.min.svg"
+            data-src="/images/Git.images/Snipaste_2021-06-20_03-23-06.png"
+            data-srcset="/images/Git.images/Snipaste_2021-06-20_03-23-06.png, /images/Git.images/Snipaste_2021-06-20_03-23-06.png 1.5x, /images/Git.images/Snipaste_2021-06-20_03-23-06.png 2x"
+            data-sizes="auto"
+            alt="/images/Git.images/Snipaste_2021-06-20_03-23-06.png" width="100%" />
+    </a><figcaption class="image-caption"><strong>public key</strong></figcaption>
+    </figure>
+<span id="id-42">2|c.将SSH私钥添加到ssh-agent</span>
+<p><strong>ssh-agent</strong>是管理私钥的工具，<strong>Git</strong>在使用<strong>SSH</strong>连接时，会使用已添加到<strong>ssh-agent</strong>中的私钥进行匹配认证。</p>
+<p>使用以下命令，进入<strong>ssh-agent</strong>工具：</p>
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">ssh-agent bash
+</code></pre></div><p>将生成的私钥添加到<strong>ssh-agent</strong>中，使用以下命令：</p>
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">ssh-add ~/.ssh/some
+</code></pre></div><p>查看所有<strong>ssh-agent</strong>管理的私钥，使用以下命令：</p>
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">ssh-add -l
+</code></pre></div><p>将私钥从<strong>ssh-agent</strong>中移除，使用以下命令：</p>
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">ssh-add -d ~/.ssh/some
+</code></pre></div><p>移除所有<strong>ssh-agent</strong>中管理的私钥，使用以下命令：</p>
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">ssh-add -D
+</code></pre></div><p>退出<strong>ssh-agent</strong>，使用以下命令：</p>
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">ssh-agent <span class="nb">exit</span>
+</code></pre></div><span id="id-43">2|d.测试SSH连接</span>
+<p>所有配置完成后，可以使用以下命令测试SSH连接是否成功：</p>
 <div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">ssh -T git@github.com
-</code></pre></div><p>其中<strong><a href="mailto:git@github.com">git@github.com</a></strong>的格式本质上是<strong>user@hostname</strong>，之后的私钥配置文件中，可以使用自定义配置的<strong>host</strong>，达到替换此<strong>url</strong>的目的，从而可以实现在同一个<strong>Git</strong>中建立多个<strong>SSH</strong>连接。</p>
-<h4 id="c默认ssh密钥目录连接">c.默认SSH密钥目录连接</h4>
-<p>在<strong>Git</strong>中进行默认<strong>SSH</strong>连接，需要将对应用于用户认证的私钥放置于默认的私钥目录下**~/.ssh/**。这里的默认的**SSH**连接，指远程连接的**SSH**地址是以**<a href="mailto:git@github.com">git@github.com</a>**作为链接头的时候。</p>
-<p>如果我们获取远程仓库中的文件，并建立远程分支，参考以下命令：</p>
-<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="c1"># 添加远程仓库的SSH链接</span>
-git remote add github git@github.com:2phangx-dylan/example-project.git
-<span class="c1"># 此时如果直接进行fetch，SSH会在默认目录下~/.ssh/中创建known hosts文件，记录目标主机与密钥信息</span>
-<span class="c1"># 同时会在默认目录下，寻找名为id_rsa的私钥文件，注意，文件名只能是id_rsa</span>
-<span class="c1"># 为了实验效果，当前默认~/.ssh/目录下没有任何文件，密钥对均被存储于D:\Git\.ssh\目录下</span>
-<span class="c1"># 因此该命令会出现 git@github.com: Permission denied (publickey).</span>
-git fetch github main
-<span class="c1"># 也可以使用ssh命令测试目标服务器的连通性</span>
-<span class="c1"># 此命令会同样会出现 git@github.com: Permission denied (publickey).</span>
-ssh -T git@github.com
-<span class="c1"># 直接把需要进行身份验证的私钥拷贝到默认目录~/.ssh/下，并重命名为id_rsa</span>
-cp /d/Git/.ssh/id_rsa_work ~/.ssh/id_rsa
-<span class="c1"># 再次运行ssh命令测试连通性，连接成功</span>
-<span class="c1"># 将显示以下消息：You&#39;ve successfully authenticated...</span>
-ssh -T git@github.com
-<span class="c1"># fetch之后，你可以使用命令查看当前远程分支时候存在</span>
-git fetch github main
-git branch -r
-</code></pre></div><p>当与远程仓库建立连接，并成功获取到远程分支之后，其余的合并工作和此前的相同。</p>
-<h4 id="b自定义ssh私钥配置文件">b.自定义SSH私钥配置文件</h4>
-<p>假如我们有如下情况：</p>
+</code></pre></div><p>首次进行连接，<strong>ssh</strong>会把每个访问过的主机公钥记录在<span id="id-44">~/.ssh/known_hosts</span>中。当下次访问相同主机时，<strong>OpenSSH</strong>会核对公钥。如果公钥不同，<strong>OpenSSH</strong>会发出警告，避免你受到<strong>DNS Hijack</strong>之类的攻击。</p>
+<p>测试如果通过，会出现以下提示：</p>
+<div class="highlight"><pre class="chroma"><code class="language-reStructuredText" data-lang="reStructuredText">Hi 2phangx-dylan! You&#39;ve successfully authenticated, but GitHub does not provide shell access.<span class="err">
+</span></code></pre></div><p>如果测试无法通过，请检查你的步骤是否正确。</p>
+<span id="id-45">2|b.自定义SSH私钥配置文件</span>
+<p>如果你不希望将私钥交由<strong>ssh-agent</strong>进行管理，可以通过自定义配置的方式，将私钥关联到指定的<strong>ssh</strong>连接中。</p>
+<p>在目录<span id="id-46">~/.ssh/</span>下，新建<strong>config</strong>文件，内容如下：</p>
+<div class="highlight"><pre class="chroma"><code class="language-reStructuredText" data-lang="reStructuredText">Host github.com<span class="err">
+</span><span class="err"></span>HostName github.com<span class="err">
+</span><span class="err"></span>IdentityFile C:/Users/siyan/.ssh/some<span class="err">
+</span></code></pre></div><p>该配置将所有来自<strong>Host</strong>的<strong>SSH</strong>连接，都映射为<strong>HostName</strong>的<strong>SSH</strong>连接，同时指定了用于验证该连接的私钥的位置。</p>
+<p>以上配置的实际意义，是使用同一个私钥来验证所有来自<strong>github.com</strong>的<strong>SSH</strong>连接。</p>
+<p>举个例子，假如现在需要连接以下仓库：</p>
 <ul>
-<li>本地仓库<strong>project</strong>，远程仓库<strong><a href="mailto:git@github.com">git@github.com</a>:2phangx-dylan/example-project.git</strong>，远程仓库公钥<strong>id_rsa_work.pub</strong>；</li>
-<li>本地仓库<strong>ex</strong>，远程仓库<strong><a href="mailto:git@github.com">git@github.com</a>:dylan/message-chat</strong>，远程仓库公钥<strong>id_rsa_study.pub</strong>。</li>
+<li><span id="id-47">git@github.com:2phangx-dylan/example.repository.git</span></li>
 </ul>
-<p>此时我们需要在同一个<strong>Git</strong>中，创建两个远程分支，该如何操作。</p>
-<p>由于默认<strong>SSH</strong>目录中有且只能有一个<strong>id_rsa</strong>，我们可以通过多次修改默认目录中的<strong>id_rsa</strong>文件，来更改用于验证的私钥，但如果此时的远程仓库不止两个，同时需要验证的<strong>SSH</strong>密钥也不止两个？显然一直进行<strong>cp</strong>的操作是繁琐的。</p>
-<p>我们可以通过在默认**~/.ssh/**目录下配置一个**config**解决单用户多远程仓库的情况，其中默认远程仓库使用的用于用户认证的密钥对是不同的。如果远程仓库使用相同的**SSH**密钥对，就不必要配置**config**了。</p>
-<p>配置文件<strong>config</strong>具体配置内容，远程链接只需要通过使用不同的<strong>Host</strong>，就可实现使用不同的私钥进行用户认证的目的：</p>
-<div class="highlight"><pre class="chroma"><code class="language-yaml" data-lang="yaml"><span class="c"># When using git@github.com:xxx/xxx to access, host fill &#34;github.com&#34;</span><span class="w">
-</span><span class="w"></span><span class="c"># The host name can be filled by other alias</span><span class="w">
-</span><span class="w"></span><span class="l">Host github.com</span><span class="w">
-</span><span class="w"></span><span class="l">HostName github.com</span><span class="w">
-</span><span class="w"></span><span class="l">User git</span><span class="w">
-</span><span class="w"></span><span class="l">IdentityFile D:/Git/.ssh/id_rsa_work</span><span class="w">
-</span><span class="w">
-</span><span class="w"></span><span class="c"># When meet Host (github-x), it will be replaced by User@HostName (git@github.com)</span><span class="w">
-</span><span class="w"></span><span class="l">Host github-x.xom</span><span class="w">
-</span><span class="w"></span><span class="l">HostName github.com</span><span class="w">
-</span><span class="w"></span><span class="l">User git</span><span class="w">
-</span><span class="w"></span><span class="l">IdentityFile D:/Git/.ssh/id_rsa_study</span><span class="w">
-</span></code></pre></div><p>使用<strong>SSH</strong>命令测试<strong>Host</strong>的连通性，键入<strong>Host</strong>会被静默替换为<strong>User@HostName</strong>，所以以下测试针对的其实都是同一个远程服务仓库地址<strong><a href="mailto:git@github.com">git@github.com</a></strong>：</p>
-<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">ssh -T github.com <span class="c1"># 默认测试连通性，通过测试，远程链接可以使用git@github.com</span>
-ssh -T github-x.xom <span class="c1"># 使用Host测试连通性，通过测试</span>
-</code></pre></div><p>此时，只需要对应更改远程仓库的链接即可，其中远程链接中的<strong>git@<strong>可写可不写，因为</strong>config</strong>中已经配置了<strong>User git</strong>条目，不写将自动将<strong>Host</strong>替换为<strong>User@HostName</strong>；如果写了则只会将<strong>Host</strong>部分替换为<strong>HostName</strong>：</p>
-<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">git remote add github git@github.com:2phangx-dylan/example-project.git <span class="c1"># 使用私钥id_rsa_work</span>
-git remote add wow-x git@github-x.xom:dylan/message-chat <span class="c1"># 使用私钥id_rsa_study</span>
-</code></pre></div><p>再次提示，如果远程仓库都使用同样的公钥，那么不需要配置<strong>config</strong>，只需要将用于验证的私钥放置于目录**~/.ssh/**下即可。</p>
+<p>此时，<strong>config</strong>配置文件如下：</p>
+<div class="highlight"><pre class="chroma"><code class="language-reStructuredText" data-lang="reStructuredText">Host wow.com<span class="err">
+</span><span class="err"></span>HostName github.com<span class="err">
+</span><span class="err"></span>IdentityFile C:/Users/siyan/.ssh/some<span class="err">
+</span></code></pre></div><p>如果希望成功从远程仓库中拉取或推送数据，则拉取或推送数据的命令需要改写为：</p>
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">git pull git@wow.com:2phangx-dylan/example.repository.git main
+git push git@wow.com:2phangx-dylan/example.repository.git HEAD:main
+</code></pre></div><p>其中，<strong>wow.com</strong>会被<strong>ssh</strong>自动替换为<strong>github.com</strong>。</p>
+<p><strong>config</strong>配置文件，原本是为了简化<strong>ssh</strong>连接的书写，<strong>config</strong>文件可以接受<strong>User</strong>参数，假如有以下配置：</p>
+<div class="highlight"><pre class="chroma"><code class="language-reStructuredText" data-lang="reStructuredText">Host z<span class="err">
+</span><span class="err"></span>User git<span class="err">
+</span><span class="err"></span>HostName github.com<span class="err">
+</span><span class="err"></span>IdentityFile C:/Users/siyan/.ssh/some<span class="err">
+</span></code></pre></div><p>此时，可以直接使用以下命令进行数据的拉取或推送：</p>
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">git pull z:2phangx-dylan/example.repository.git main
+git push z:2phangx-dylan/example.repository.git HEAD:main
+</code></pre></div><p>连接中的<strong>Host</strong>会被替换成<strong>github.com</strong>，同时由于没有指定的<strong>User</strong>，因此默认<strong>User</strong>会被设置为<strong>git</strong>。</p>
 <h2 id="git忽略文件规则">Git忽略文件规则</h2>
-<p>一般我们总会有些无法纳入<strong>Git</strong>的管理，也不希望它们总是出现在未跟踪文件列表。通常都是些自动生成的文件，比如日志文件，或编译过程中创建的临时文件等。在这种情况下，我们可以创建一个名为**.gitignore**的文件，列出要忽略的文件的模式。</p>
-<p>实际的**.gitignore**例子：</p>
+<p>一般我们总会有些无法纳入<strong>Git</strong>的管理，也不希望它们总是出现在未跟踪文件列表。通常都是些自动生成的文件，比如日志文件，或编译过程中创建的临时文件等。</p>
+<p>在这种情况下，我们可以创建一个名为<span id="id-48">.gitignore</span>的文件，列出要忽略的文件的模式，如下：</p>
 <div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">*.<span class="o">[</span>oa<span class="o">]</span>
 *~
-</code></pre></div><p>第一行告诉<strong>Git</strong>忽略所有以**.o**或**.a**结尾的文件。一般这类对象文件和存档文件都是编译过程中出现的。</p>
-<p>第二行告诉<strong>Git</strong>忽略所有名字以波浪符**~**结尾的文件，许多文本编辑软件如**Emacs**都使用这样的文件名保存副本。</p>
-<p>此外你可能还需要忽略<strong>log</strong>、<strong>tmp</strong>或者<strong>pid</strong>目录，以及自动生成的文档等等。要养成一开始就为你的心仓库设置好**.gitignore**文件的习惯，以免将来误提交这类无用的文件。</p>
-<p>文件**.gitignore**的格式规范如下：</p>
+</code></pre></div><p>第一行告诉<strong>Git</strong>忽略所有以.<strong>o</strong>或.<strong>a</strong>结尾的文件。一般这类对象文件和存档文件都是编译过程中出现的。</p>
+<p>第二行告诉<strong>Git</strong>忽略所有名字以波浪符<span id="id-49">~</span>结尾的文件，许多文本编辑软件如<strong>Emacs</strong>都使用这样的文件名保存副本。</p>
+<p>此外你可能还需要忽略<strong>log</strong>、<strong>tmp</strong>或者<strong>pid</strong>目录，以及自动生成的文档等等。要养成一开始就为你的新仓库设置好<span id="id-50">.gitignore</span>文件的习惯，以免将来误提交这类无用的文件。</p>
+<p>文件<span id="id-51">.gitignore</span>的格式规范如下：</p>
 <ul>
 <li>
-<p>所有空行或者以**#**开头的行都会被Git忽略；</p>
+<p>所有空行或者以<span id="id-52">#</span>开头的行都会被<strong>Git</strong>忽略；</p>
 </li>
 <li>
 <p>可以使用标准的<strong>glob</strong>模式匹配，它会递归地应用到整个工作区中；</p>
 </li>
 <li>
-<p>匹配模式可以以**/**开头返回值递归；</p>
+<p>匹配模式可以以<span id="id-53">/</span>开头返回值递归；</p>
 </li>
 <li>
-<p>匹配模式可以以**/**结尾指定目录；</p>
+<p>匹配模式可以以<span id="id-54">/</span>结尾指定目录；</p>
 </li>
 <li>
-<p>要忽略指定模式以外的文件或目录，可以在模式前加上叹号**!**取反。</p>
+<p>要忽略指定模式以外的文件或目录，可以在模式前加上叹号<span id="id-55">!</span>取反。</p>
 </li>
 <li>
 <p>所谓的<strong>glob</strong>模式是指<strong>shell</strong>所使用的简化了的正则表达式。</p>
 <ul>
-<li>星号*****匹配另个或多个任意字符；</li>
-<li>**[abc]**匹配任何一个列在方括号中的字符；</li>
-<li>问号**?**只匹配一个任意字符；</li>
-<li>如果在方括号中使用短划线风格两个字符，表示所有在这两个字符范围内的都可以匹配，如**[0-9]**表示匹配所有**0~9**之间的数字；</li>
-<li>使用两个星号<strong><strong><strong>表示匹配任意中间目录，如</strong>a/</strong>/z</strong>可以匹配<strong>a/z</strong>、<strong>a/b/z</strong>或<strong>a/b/c/z</strong>等。</li>
+<li>星号<span id="id-56">*</span>匹配零个或多个任意字符；</li>
+<li><span id="id-57">[abc]</span>匹配任何一个列在方括号中的字符；</li>
+<li>问号<span id="id-58">?</span>只匹配一个任意字符；</li>
+<li>如果在方括号中使用短划线风格两个字符，表示所有在这两个字符范围内的都可以匹配，如<span id="id-59">[0-9]</span>表示匹配所有<span id="id-60">0~9</span>之间的数字；</li>
+<li>使用两个星号<span id="id-61">**</span>表示匹配任意中间目录。如<span id="id-62">a//z</span>可以匹配<strong>a/z</strong>、<strong>a/b/z</strong>或<strong>a/b/c/z</strong>等。</li>
 </ul>
 </li>
 </ul>
-<p>以下为例子：</p>
+<p>以下为简单例子：</p>
 <div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="c1"># 忽略所有.a文件</span>
 *.a
 <span class="c1"># 跟踪所有的lib.a，即便你在前面忽略了.a文件</span>
@@ -1628,5 +1852,5 @@ doc/**/*.pdf
             </a><a href="#" id="view-comments" class="fixed-button" title="View Comments">
                 <i class="fas fa-comment fa-fw"></i>
             </a>
-        </div><link rel="stylesheet" href="/lib/lightgallery/lightgallery.min.css"><link rel="stylesheet" href="/lib/mermaid/mermaid.min.css"><link rel="stylesheet" href="/css/f212d6.min.css"><script type="text/javascript" src="/lib/smooth-scroll/smooth-scroll.min.js"></script><script type="text/javascript" src="/lib/lazysizes/lazysizes.min.js"></script><script type="text/javascript" src="/lib/lightgallery/lightgallery.min.js"></script><script type="text/javascript" src="/lib/lightgallery/lg-thumbnail.min.js"></script><script type="text/javascript" src="/lib/lightgallery/lg-zoom.min.js"></script><script type="text/javascript" src="/lib/clipboard/clipboard.min.js"></script><script type="text/javascript" src="/lib/mermaid/mermaid.min.js"></script><script type="text/javascript">window.config={"code":{"copyTitle":"Copy to clipboard","maxShownLines":10},"comment":{},"data":{"id-2":"\r\ngraph LR;\r\n\tA(Working Directory Files) \r\n\tA--\u003e C(Tracked Files)\r\n\tA--\u003e B(Untracked Files)\r\n\tC--\u003e D(Modified)\r\n\tC--\u003e E(Staged)\r\n\tC--\u003e F(Commited/Unmodified)\r"},"lightGallery":{"actualSize":false,"exThumbImage":"data-thumbnail","hideBarsDelay":2000,"selector":".lightgallery","speed":400,"thumbContHeight":80,"thumbWidth":80,"thumbnail":true}};</script><script type="text/javascript" src="/js/theme.min.js"></script></body>
+        </div><link rel="stylesheet" href="/lib/lightgallery/lightgallery.min.css"><link rel="stylesheet" href="/lib/mermaid/mermaid.min.css"><link rel="stylesheet" href="/css/cb583d.min.css"><script type="text/javascript" src="/lib/smooth-scroll/smooth-scroll.min.js"></script><script type="text/javascript" src="/lib/lazysizes/lazysizes.min.js"></script><script type="text/javascript" src="/lib/lightgallery/lightgallery.min.js"></script><script type="text/javascript" src="/lib/lightgallery/lg-thumbnail.min.js"></script><script type="text/javascript" src="/lib/lightgallery/lg-zoom.min.js"></script><script type="text/javascript" src="/lib/clipboard/clipboard.min.js"></script><script type="text/javascript" src="/lib/mermaid/mermaid.min.js"></script><script type="text/javascript">window.config={"code":{"copyTitle":"Copy to clipboard","maxShownLines":10},"comment":{},"data":{"id-6":"\r\ngraph LR;\r\n\tA(Working Directory Files) \r\n\tA--\u003e C(Tracked Files)\r\n\tA--\u003e B(Untracked Files)\r\n\tC--\u003e D(Modified Files)\r\n\tC--\u003e E(Staged Files)\r\n\tC--\u003e F(Commited/Unmodified Files)\r"},"lightGallery":{"actualSize":false,"exThumbImage":"data-thumbnail","hideBarsDelay":2000,"selector":".lightgallery","speed":400,"thumbContHeight":80,"thumbWidth":80,"thumbnail":true}};</script><script type="text/javascript" src="/js/theme.min.js"></script></body>
 </html>
