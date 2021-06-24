@@ -26,6 +26,13 @@
     <guid>https://2phangx-dylan.github.io/posts/hugo_blog/</guid>
     <description><![CDATA[Hugo是由Go语言实现的静态网站生成工具，同时Hugo提供了海量的主题，结合GitHub/Gitee的免费页面，可以用于个人静态博客的构筑。]]></description>
 </item><item>
+    <title>Log</title>
+    <link>https://2phangx-dylan.github.io/posts/log/</link>
+    <pubDate>Sat, 07 Mar 2020 00:00:00 &#43;0000</pubDate>
+    <author>Author</author>
+    <guid>https://2phangx-dylan.github.io/posts/log/</guid>
+    <description><![CDATA[网络设备、系统及服务程序等，在运作时都会产生一个叫log的事件记录，每一行日志都记载着日期、时间、使用者及动作等相关操作的描述。]]></description>
+</item><item>
     <title>JWT Tutorial</title>
     <link>https://2phangx-dylan.github.io/posts/jwt_tutorial/</link>
     <pubDate>Tue, 21 Jan 2020 00:00:00 &#43;0000</pubDate>
@@ -39,5 +46,12 @@
     <author>Author</author>
     <guid>https://2phangx-dylan.github.io/posts/git/</guid>
     <description><![CDATA[Git是一个开源的分布式版本控制系统，用于敏捷高效地处理任何或小或大的项目。]]></description>
+</item><item>
+    <title>SSH Public &amp; Private Key</title>
+    <link>https://2phangx-dylan.github.io/posts/ssh_publicprivate_key/</link>
+    <pubDate>Fri, 20 Sep 2019 00:00:00 &#43;0000</pubDate>
+    <author>Author</author>
+    <guid>https://2phangx-dylan.github.io/posts/ssh_publicprivate_key/</guid>
+    <description><![CDATA[SSH是建立在应用层基础上的安全协议，它是专为远程登录会话和其他网络服务提供安全性的协议。]]></description>
 </item></channel>
 </rss>
