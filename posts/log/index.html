@@ -25,7 +25,7 @@
         "mainEntityOfPage": {
             "@type": "WebPage",
             "@id": "https:\/\/2phangx-dylan.github.io\/posts\/log\/"
-        },"genre": "posts","keywords": "Git","wordcount":  2937 ,
+        },"genre": "posts","keywords": "Git","wordcount":  3041 ,
         "url": "https:\/\/2phangx-dylan.github.io\/posts\/log\/","datePublished": "2020-03-07T00:00:00+00:00","dateModified": "2021-06-24T00:00:00+00:00","publisher": {
             "@type": "Organization",
             "name": "2phangx-dylan"},"author": {
@@ -87,8 +87,8 @@
             <div class="toc-content" id="toc-content-auto"></div>
         </div><article class="page single"><h1 class="single-title animated flipInX">Log</h1><div class="post-meta">
             <div class="post-meta-line"><span class="post-author"><a href="/" title="Author" rel=" author" class="author"><i class="fas fa-user-circle fa-fw"></i>2phangx-dylan</a></span>&nbsp;<span class="post-category">included in <a href="/categories/java/"><i class="far fa-folder fa-fw"></i>Java</a></span></div>
-            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2020-03-07">2020-03-07</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;2937 words&nbsp;
-                <i class="far fa-clock fa-fw"></i>&nbsp;14 minutes&nbsp;</div>
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2020-03-07">2020-03-07</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;3041 words&nbsp;
+                <i class="far fa-clock fa-fw"></i>&nbsp;15 minutes&nbsp;</div>
         </div><div class="details toc" id="toc-static"  kept="">
                 <div class="details-summary toc-title">
                     <span>Contents</span>
@@ -111,49 +111,53 @@
     </li>
     <li><a href="#日志实现log4j">日志实现Log4j</a>
       <ul>
-        <li><a href="#1-入门案例">1. 入门案例</a></li>
-        <li><a href="#2-日志级别">2. 日志级别</a></li>
-        <li><a href="#3-log4j相关组件">3. Log4j相关组件</a></li>
-        <li><a href="#4-自定义配置">4. 自定义配置</a></li>
-        <li><a href="#5-完整的配置文件示例">5. 完整的配置文件示例</a></li>
+        <li><a href="#1入门案例">1.入门案例</a></li>
+        <li><a href="#2日志级别">2.日志级别</a></li>
+        <li><a href="#3相关组件">3.相关组件</a></li>
+        <li><a href="#4自定义配置-1">4.自定义配置</a></li>
+        <li><a href="#5完整的配置文件示例">5.完整的配置文件示例</a></li>
       </ul>
     </li>
-    <li><a href="#jcl日志门面">JCL日志门面</a>
+    <li><a href="#日志门面jcl">日志门面JCL</a>
       <ul>
-        <li><a href="#1-入门案例-1">1. 入门案例</a></li>
+        <li><a href="#1日志级别">1.日志级别</a></li>
+        <li><a href="#2入门案例-1">2.入门案例</a></li>
       </ul>
     </li>
-    <li><a href="#slf4j日志门面">Slf4j日志门面</a>
+    <li><a href="#日志门面slf4j">日志门面Slf4j</a>
       <ul>
-        <li><a href="#1-入门案例-2">1. 入门案例</a></li>
-        <li><a href="#2-绑定日志实现">2. 绑定日志实现</a></li>
-        <li><a href="#3-桥接旧的日志实现">3. 桥接旧的日志实现</a></li>
+        <li><a href="#1日志级别-1">1.日志级别</a></li>
+        <li><a href="#2入门案例-2">2.入门案例</a></li>
+        <li><a href="#3绑定日志实现">3.绑定日志实现</a></li>
+        <li><a href="#4桥接旧的日志实现">4.桥接旧的日志实现</a></li>
       </ul>
     </li>
-    <li><a href="#logback日志实现">Logback日志实现</a>
+    <li><a href="#日志实现logback">日志实现Logback</a>
       <ul>
-        <li><a href="#1-入门案例-3">1. 入门案例</a></li>
-        <li><a href="#2-logback组件">2. logback组件</a></li>
-        <li><a href="#3-配置文件">3. 配置文件</a></li>
-        <li><a href="#4-异步日志">4. 异步日志</a></li>
-        <li><a href="#5-log-access模块">5. log-access模块</a></li>
+        <li><a href="#1日志级别-2">1.日志级别</a></li>
+        <li><a href="#2入门案例-3">2.入门案例</a></li>
+        <li><a href="#3logback组件">3.logback组件</a></li>
+        <li><a href="#4配置文件">4.配置文件</a></li>
+        <li><a href="#5异步日志">5.异步日志</a></li>
+        <li><a href="#6log-access模块">6.log-access模块</a></li>
       </ul>
     </li>
-    <li><a href="#log4j2日志实现">Log4j2日志实现</a>
+    <li><a href="#日志实现log4j2">日志实现Log4j2</a>
       <ul>
-        <li><a href="#1-入门案例-4">1. 入门案例</a></li>
-        <li><a href="#2-配置文件">2. 配置文件</a></li>
-        <li><a href="#3-异步日志">3. 异步日志</a></li>
-        <li><a href="#4-无垃圾记录模式">4. 无垃圾记录模式</a></li>
+        <li><a href="#1日志级别-3">1.日志级别</a></li>
+        <li><a href="#2入门案例-4">2.入门案例</a></li>
+        <li><a href="#3配置文件">3.配置文件</a></li>
+        <li><a href="#4异步日志">4.异步日志</a></li>
+        <li><a href="#5无垃圾记录模式">5.无垃圾记录模式</a></li>
       </ul>
     </li>
     <li><a href="#springboot中的日志实现">SpringBoot中的日志实现</a>
       <ul>
-        <li><a href="#1-入门案例-5">1. 入门案例</a></li>
-        <li><a href="#2-配置文件-1">2. 配置文件</a></li>
-        <li><a href="#3-applicationproperties">3. application.properties</a></li>
-        <li><a href="#4-使用log4j2替换logback">4. 使用log4j2替换logback</a></li>
-        <li><a href="#5-注意事项">5. 注意事项</a></li>
+        <li><a href="#1入门案例-1">1.入门案例</a></li>
+        <li><a href="#2配置文件">2.配置文件</a></li>
+        <li><a href="#3applicationproperties">3.application.properties</a></li>
+        <li><a href="#4使用log4j2替换logback">4.使用log4j2替换logback</a></li>
+        <li><a href="#5注意事项">5.注意事项</a></li>
       </ul>
     </li>
   </ul>
@@ -172,11 +176,11 @@
 </ul>
 <p>常见的日志实现：</p>
 <ul>
-<li><strong>JUL</strong>、<strong>log4j</strong>、<strong>logback</strong>、<strong>log4j2</strong></li>
+<li><strong>JUL</strong>、<strong>log4j</strong>、<strong>slf4j-simple</strong>、<strong>logback</strong>、<strong>log4j2</strong></li>
 </ul>
 <p>日志实现或门面的出现顺序：</p>
 <ul>
-<li><strong>log4j</strong> -&gt; <strong>JUL</strong> -&gt; <strong>JCL</strong> -&gt; <strong>slf4j</strong> -&gt; <strong>logback</strong> -&gt; <strong>log4j2</strong></li>
+<li><strong>log4j</strong> -&gt; <strong>JUL</strong> -&gt; <strong>JCL</strong> -&gt; <strong>slf4j/slf4j-simple</strong> -&gt; <strong>logback</strong> -&gt; <strong>log4j2</strong></li>
 </ul>
 <h2 id="日志实现jul">日志实现JUL</h2>
 <p><strong>JUL</strong>全称<strong>Java Util Logging</strong>，是<strong>Java</strong>原生的日志实现，使用时不需要另外引入第三方类库，相对于其他日志实现来说其特点是使用方便，能够在小型应用中灵活应用。</p>
@@ -713,23 +717,19 @@ cn.xyz.handlers<span class="o">=</span>java.util.logging.ConsoleHandler, java.ut
 cn.xyz.level<span class="o">=</span>INFO
 cn.xyz.useParentHandlers<span class="o">=</span><span class="nb">false</span>
 </code></pre></div><p>关于其他的<strong>Handler</strong>不作演示了，因为实际遇到的情况很少，有需要的时候查阅相关官方资料即可。</p>
-<p>推荐将<strong>Handler</strong>的日志级别设置为<strong>ALL</strong>，然后通过各自的<strong>Logger</strong>对象，进行日志级别的控制。这样在配置文件中，只需要配置特定的<strong>Handler</strong>一次，即可让多个<strong>Logger</strong>对象进行使用。</p>
+<span id="id-9">推荐将<strong>Handler</strong>的日志级别设置为<strong>ALL</strong>，然后通过各自的<strong>Logger</strong>对象，进行日志级别的控制。这样在配置文件中，只需要配置特定的<strong>Handler</strong>一次，即可让多个<strong>Logger</strong>对象进行使用。</span>
 <p>默认情况下，如果不将<strong>useParentHandlers</strong>设置为<strong>false</strong>，那么<strong>Logger</strong>会同时使用<strong>RootLogger</strong>中的<strong>Handler</strong>。</p>
 <h2 id="日志实现log4j">日志实现Log4j</h2>
-<p><strong>Log4j</strong>全称是<strong>Log for Java</strong>，它是<strong>Apache</strong>的一个开源项目，通过使用<strong>Log4j</strong>，我们可以控制日志信息输出的位置是控制台、文件还是<strong>GUI</strong>组件，输出位置甚至可以是套接口服务器、<strong>NT</strong>的事件记录器、<strong>UNIX Syslog</strong>守护进程等；</p>
-<p>使用<strong>Log4j</strong>也可以控制每一条日志的输出格式；通过定义每一条日志信息的级别，我们能够更加细致地控制日志的生成过程。</p>
-<h3 id="1-入门案例">1. 入门案例</h3>
-<ul>
-<li>所使用的项目使用<strong>Maven</strong>构建，需要引入<strong>Log4j</strong>依赖：</li>
-</ul>
+<p><strong>Log4j</strong>全称是<strong>Log for Java</strong>，它是<strong>Apache</strong>的一个开源项目，通过使用<strong>Log4j</strong>，我们可以控制日志信息输出的位置是控制台、文件还是<strong>GUI</strong>组件，输出位置甚至可以是套接口服务器、<strong>NT</strong>的事件记录器、<strong>UNIX Syslog</strong>守护进程等。</p>
+<p>使用<strong>Log4j</strong>也可以控制每一条日志的输出格式，通过定义每一条日志信息的级别，我们能够更加细致地控制日志的生成过程。</p>
+<h3 id="1入门案例">1.入门案例</h3>
+<p>依旧使用<strong>Maven</strong>构建项目，此时需要引入<strong>Log4j</strong>的依赖：</p>
 <div class="highlight"><pre class="chroma"><code class="language-xml" data-lang="xml"><span class="nt">&lt;dependency&gt;</span>
     <span class="nt">&lt;groupId&gt;</span>log4j<span class="nt">&lt;/groupId&gt;</span>
     <span class="nt">&lt;artifactId&gt;</span>log4j<span class="nt">&lt;/artifactId&gt;</span>
     <span class="nt">&lt;version&gt;</span>1.2.17<span class="nt">&lt;/version&gt;</span>
 <span class="nt">&lt;/dependency&gt;</span>
-</code></pre></div><ul>
-<li><strong>Log4j</strong>默认情况下是需要提供配置文件的，如果<strong>resource</strong>目录下不存在<strong>log4j.properties</strong>配置文件，则控制台中会输出相应的警告信息，考虑以下代码：</li>
-</ul>
+</code></pre></div><p><strong>Log4j</strong>日志实现在默认情况下，要求提供配置文件。如果<strong>resource</strong>目录下不存在对应的<strong>log4j.properties</strong>配置文件，则控制台中会输出相应的警告信息。譬如以下代码：</p>
 <div class="highlight"><pre class="chroma"><code class="language-java" data-lang="java"><span class="nd">@Test</span>
 <span class="kd">public</span> <span class="kt">void</span> <span class="nf">test</span><span class="o">()</span> <span class="o">{</span>
 	<span class="c1">// 1.在没有log4j.properties的情况下，获取日志记录器对象Logger
@@ -738,27 +738,22 @@ cn.xyz.useParentHandlers<span class="o">=</span><span class="nb">false</span>
     <span class="c1">// 2.尝试输出日志记录
 </span><span class="c1"></span>    <span class="n">logger</span><span class="o">.</span><span class="na">info</span><span class="o">(</span><span class="s">&#34;Hey, log4j.&#34;</span><span class="o">);</span>
 <span class="o">}</span>
-</code></pre></div><ul>
-<li>此时控制台输出为：</li>
-</ul>
-<p><img
-        class="lazyload"
-        src="/svg/loading.min.svg"
-        data-src="images/Log.images/image-20201230164351490.png"
-        data-srcset="images/Log.images/image-20201230164351490.png, images/Log.images/image-20201230164351490.png 1.5x, images/Log.images/image-20201230164351490.png 2x"
-        data-sizes="auto"
-        alt="images/Log.images/image-20201230164351490.png"
-        title="image-20201230164351490" /></p>
-<ul>
-<li>接触过<strong>JUL</strong>的都知道<strong>RootLogger</strong>的都知道普通的<strong>Logger</strong>如果没有进行额外的配置，默认继承并使用<strong>RootLogger</strong>的配置。</li>
-<li>同样地，<strong>Log4j</strong>中也存在<strong>RootLogger</strong>，但由于默认情况下<strong>RootLogger</strong>不具有任何的<strong>Appender</strong>（即<strong>Handler</strong>）。</li>
-<li>如果代码仅为了测试某项功能，并不想编写复杂的<strong>log4j.properties</strong>，可以使用<strong>Log4j</strong>提供的默认配置，在获取<strong>Logger</strong>前使用以下代码加载默认配置：
-<ul>
-<li><strong>BasicConfigurator.configure();</strong></li>
-</ul>
-</li>
-<li>查看**configure()**方法的源码：</li>
-</ul>
+</code></pre></div><p>此时控制台不会输出对应的日志信息，取而代之仅会输出警告信息：</p>
+<figure><a class="lightgallery" href="/images/Log.images/image-20201230164351490.png" title="/images/Log.images/image-20201230164351490.png" data-thumbnail="/images/Log.images/image-20201230164351490.png" data-sub-html="<h2>Console Output</h2>">
+        <img
+            class="lazyload"
+            src="/svg/loading.min.svg"
+            data-src="/images/Log.images/image-20201230164351490.png"
+            data-srcset="/images/Log.images/image-20201230164351490.png, /images/Log.images/image-20201230164351490.png 1.5x, /images/Log.images/image-20201230164351490.png 2x"
+            data-sizes="auto"
+            alt="/images/Log.images/image-20201230164351490.png" width="100%" />
+    </a><figcaption class="image-caption"><strong>Console Output</strong></figcaption>
+    </figure>
+<p>接触过<strong>JUL</strong>的都知道，普通<strong>JUL</strong>的<strong>Logger</strong>如果没有进行额外的配置，默认是继承并使用<strong>RootLogger</strong>的配置，而不会出现任何警告信息。</p>
+<p>同样地，<strong>Log4j</strong>中也存在<strong>RootLogger</strong>。但由于默认情况下<strong>Log4j</strong>中的<strong>RootLogger</strong>不具有任何的<strong>Appender</strong>（即<strong>Handler</strong>），因此直接使用<strong>Log4j</strong>，会出现警告信息。</p>
+<p>如果代码仅为了测试某项功能，并不想编写复杂的<strong>log4j.properties</strong>，可以考虑使用<strong>Log4j</strong>中提供的默认配置。</p>
+<p>需要加载<strong>Log4j</strong>中的默认<strong>Appender</strong>，只需要在获取<strong>Logger</strong>前使用<span id="id-10">BasicConfigurator.configure()</span>加载默认配置即可。</p>
+<p>以下为<strong>BasicConfigurator</strong>中<span id="id-11">configure()</span>方法的源码：</p>
 <div class="highlight"><pre class="chroma"><code class="language-java" data-lang="java"><span class="cm">/**
 </span><span class="cm">   Add a {@link ConsoleAppender} that uses {@link PatternLayout}
 </span><span class="cm">   using the {@link PatternLayout#TTCC_CONVERSION_PATTERN} and
@@ -770,22 +765,15 @@ cn.xyz.useParentHandlers<span class="o">=</span><span class="nb">false</span>
   <span class="n">root</span><span class="o">.</span><span class="na">addAppender</span><span class="o">(</span><span class="k">new</span> <span class="n">ConsoleAppender</span><span class="o">(</span>
          <span class="k">new</span> <span class="n">PatternLayout</span><span class="o">(</span><span class="n">PatternLayout</span><span class="o">.</span><span class="na">TTCC_CONVERSION_PATTERN</span><span class="o">)));</span>
 <span class="o">}</span>
-</code></pre></div><ul>
-<li>
-<p>古早时期的源码格式有点不太现代，但意义明确：为<strong>RootLogger</strong>对象添加一个<strong>Appender</strong>，其中<strong>Appender</strong>的类型为控制器输出的<strong>ConsoleAppender</strong>，输出的格式使用<strong>PatternLayout.TTCC_CONVERSION_PATTERN</strong>。</p>
-</li>
-<li>
+</code></pre></div><p>古早时期的源码格式有点不太现代，但意义仍旧明确，如下：</p>
+<span id="id-12">为<strong>RootLogger</strong>对象添加一个<strong>Appender</strong>，其中<strong>Appender</strong>的类型为控制器输出的<strong>ConsoleAppender</strong>，输出的格式遵循<strong>PatternLayout.TTCC_CONVERSION_PATTERN</strong>变量。</span>
 <p>以下为<strong>PatternLayout.TTCC_CONVERSION_PATTERN</strong>源码：</p>
-</li>
-</ul>
 <div class="highlight"><pre class="chroma"><code class="language-java" data-lang="java"><span class="cm">/** A conversion pattern equivalent to the TTCCCLayout.
 </span><span class="cm">    Current value is &lt;b&gt;%r [%t] %p %c %x - %m%n&lt;/b&gt;. */</span>
 <span class="kd">public</span> <span class="kd">final</span> <span class="kd">static</span> <span class="n">String</span> <span class="n">TTCC_CONVERSION_PATTERN</span>
                                            <span class="o">=</span> <span class="s">&#34;%r [%t] %p %c %x - %m%n&#34;</span><span class="o">;</span>
-</code></pre></div><ul>
-<li>关于<strong>PatternLayout</strong>的相关格式化规则，后续会列举出来。</li>
-<li>于是，使用以下代码加载默认配置并输出日志：</li>
-</ul>
+</code></pre></div><p>关于<strong>PatternLayout</strong>的相关格式化规则，后续会列举出来。</p>
+<p>于是，使用以下代码在加载默认配置的前提下，尝试输出日志：</p>
 <div class="highlight"><pre class="chroma"><code class="language-java" data-lang="java"><span class="nd">@Test</span>
 <span class="kd">public</span> <span class="kt">void</span> <span class="nf">testQuick</span><span class="o">()</span> <span class="o">{</span>
     <span class="c1">// 1.初始化配置信息，使用默认的配置，如果不加载默认配置同时不具有log4j.properties配置文件，程序将发出警告
@@ -797,31 +785,29 @@ cn.xyz.useParentHandlers<span class="o">=</span><span class="nb">false</span>
     <span class="c1">// 3.日志记录输出
 </span><span class="c1"></span>    <span class="n">logger</span><span class="o">.</span><span class="na">info</span><span class="o">(</span><span class="s">&#34;Hey, log4j.&#34;</span><span class="o">);</span>
 <span class="o">}</span>
-</code></pre></div><ul>
-<li>此时控制台输出为：</li>
-</ul>
-<p><img
-        class="lazyload"
-        src="/svg/loading.min.svg"
-        data-src="images/Log.images/image-20201230170428578.png"
-        data-srcset="images/Log.images/image-20201230170428578.png, images/Log.images/image-20201230170428578.png 1.5x, images/Log.images/image-20201230170428578.png 2x"
-        data-sizes="auto"
-        alt="images/Log.images/image-20201230170428578.png"
-        title="image-20201230170428578" /></p>
-<h3 id="2-日志级别">2. 日志级别</h3>
-<ul>
-<li><strong>Log4j</strong>中的日志级别与<strong>JUL</strong>的不同，一共提供了<strong>6</strong>中日志级别：
+</code></pre></div><p>此时控制台输出为：</p>
+<figure><a class="lightgallery" href="/images/Log.images/image-20201230170428578.png" title="/images/Log.images/image-20201230170428578.png" data-thumbnail="/images/Log.images/image-20201230170428578.png" data-sub-html="<h2>Console Output</h2>">
+        <img
+            class="lazyload"
+            src="/svg/loading.min.svg"
+            data-src="/images/Log.images/image-20201230170428578.png"
+            data-srcset="/images/Log.images/image-20201230170428578.png, /images/Log.images/image-20201230170428578.png 1.5x, /images/Log.images/image-20201230170428578.png 2x"
+            data-sizes="auto"
+            alt="/images/Log.images/image-20201230170428578.png" width="100%" />
+    </a><figcaption class="image-caption"><strong>Console Output</strong></figcaption>
+    </figure>
+<p>日志输出成功。</p>
+<h3 id="2日志级别">2.日志级别</h3>
+<p><strong>Log4j</strong>中的日志级别与<strong>JUL</strong>的不同，<strong>Log4j</strong>一共提供了<strong>6</strong>种日志级别：</p>
 <ol>
 <li><strong>FATAL</strong>：严重错误，一般会造成系统崩溃并终止运行；</li>
 <li><strong>ERROR</strong>：错误信息，不会影响系统运行；</li>
 <li><strong>WARN</strong>：警告信息，可能会发生问题；</li>
 <li><strong>INFO</strong>：运行信息，数据连接、网络连接、<strong>I/O</strong>操作等等；</li>
-<li><strong>DEBUG</strong>：调试信息，一般在开发中使用，记录程序变量参数传递信息等等。默认级别；</li>
+<li><strong>DEBUG</strong>：调试信息，一般在开发中使用，记录程序变量参数传递信息等等。<span id="id-13">默认级别；</span></li>
 <li><strong>TRACE</strong>：追踪信息，记录程序所有的流程信息。</li>
 </ol>
-</li>
-<li>参考以下示例代码：</li>
-</ul>
+<p>参考以下示例代码：</p>
 <div class="highlight"><pre class="chroma"><code class="language-java" data-lang="java"><span class="nd">@Test</span>
 <span class="kd">public</span> <span class="kt">void</span> <span class="nf">testQuick</span><span class="o">()</span> <span class="o">{</span>
     <span class="c1">// 1.初始化配置信息，使用默认的配置，如果不加载默认配置同时不具有log4j.properties配置文件，程序将发出警告
@@ -838,26 +824,23 @@ cn.xyz.useParentHandlers<span class="o">=</span><span class="nb">false</span>
     <span class="n">logger</span><span class="o">.</span><span class="na">debug</span><span class="o">(</span><span class="s">&#34;[DEBUG] 调试信息，一般在开发中使用，记录程序变量参数传递信息等等。默认级别。&#34;</span><span class="o">);</span>
     <span class="n">logger</span><span class="o">.</span><span class="na">trace</span><span class="o">(</span><span class="s">&#34;[TRACE] 追踪信息，记录程序所有的流程信息。&#34;</span><span class="o">);</span>
 <span class="o">}</span>
-</code></pre></div><ul>
-<li>运行输出，得到：</li>
-</ul>
-<p><img
-        class="lazyload"
-        src="/svg/loading.min.svg"
-        data-src="images/Log.images/image-20201230170645463.png"
-        data-srcset="images/Log.images/image-20201230170645463.png, images/Log.images/image-20201230170645463.png 1.5x, images/Log.images/image-20201230170645463.png 2x"
-        data-sizes="auto"
-        alt="images/Log.images/image-20201230170645463.png"
-        title="image-20201230170645463" /></p>
-<ul>
-<li>输出的日志仍然由默认的日志级别所决定，其中默认级别为<strong>DEBUG</strong>。</li>
-<li>为了测试默认日志级别，可以使用以下代码测试<strong>RootLogger</strong>：
+</code></pre></div><p>运行输出，得到：</p>
+<figure><a class="lightgallery" href="/images/Log.images/image-20201230170645463.png" title="/images/Log.images/image-20201230170645463.png" data-thumbnail="/images/Log.images/image-20201230170645463.png" data-sub-html="<h2>Console Output</h2>">
+        <img
+            class="lazyload"
+            src="/svg/loading.min.svg"
+            data-src="/images/Log.images/image-20201230170645463.png"
+            data-srcset="/images/Log.images/image-20201230170645463.png, /images/Log.images/image-20201230170645463.png 1.5x, /images/Log.images/image-20201230170645463.png 2x"
+            data-sizes="auto"
+            alt="/images/Log.images/image-20201230170645463.png" width="100%" />
+    </a><figcaption class="image-caption"><strong>Console Output</strong></figcaption>
+    </figure>
+<p>输出的日志仍然由默认的日志级别所决定，其中默认级别为<strong>DEBUG</strong>。</p>
+<p>为了测试默认日志级别，可以使用以下代码测试<strong>RootLogger</strong>：</p>
 <ol>
-<li>使用<strong>getRootLogger()<strong>获取</strong>RootLogger</strong>对象；</li>
-<li>使用<strong>RootLogger</strong>中的相关方法获取日志对象的日志等级及其关联的<strong>Appender</strong>详情。</li>
+<li>使用<span id="id-14">getRootLogger()</span>获取<strong>RootLogger</strong>对象；</li>
+<li>使用<strong>RootLogger</strong>中的相关方法，获取日志对象的日志等级及其关联的<strong>Appender</strong>详情。</li>
 </ol>
-</li>
-</ul>
 <div class="highlight"><pre class="chroma"><code class="language-java" data-lang="java"><span class="nd">@Test</span>
 <span class="kd">public</span> <span class="kt">void</span> <span class="nf">testDetails</span><span class="o">()</span> <span class="o">{</span>
     <span class="c1">// 1.初始化配置信息，使用默认的配置，如果不加载默认配置，将无法正常运行
@@ -871,48 +854,36 @@ cn.xyz.useParentHandlers<span class="o">=</span><span class="nb">false</span>
     <span class="kd">final</span> <span class="n">Enumeration</span> <span class="n">allAppenders</span> <span class="o">=</span> <span class="n">rootLogger</span><span class="o">.</span><span class="na">getAllAppenders</span><span class="o">();</span>
     <span class="k">while</span> <span class="o">(</span><span class="n">allAppenders</span> <span class="o">!=</span> <span class="kc">null</span> <span class="o">&amp;&amp;</span> <span class="n">allAppenders</span><span class="o">.</span><span class="na">hasMoreElements</span><span class="o">())</span> <span class="o">{</span>
         <span class="kd">final</span> <span class="n">Appender</span> <span class="n">appender</span> <span class="o">=</span> <span class="o">(</span><span class="n">Appender</span><span class="o">)</span> <span class="n">allAppenders</span><span class="o">.</span><span class="na">nextElement</span><span class="o">();</span>
-        <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&#34;Appender is: &#34;</span> <span class="o">+</span><span class="n">appender</span><span class="o">.</span><span class="na">getClass</span><span class="o">().</span><span class="na">getSimpleName</span><span class="o">());</span>
+        <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&#34;Appender is: &#34;</span> <span class="o">+</span> <span class="n">appender</span><span class="o">.</span><span class="na">getClass</span><span class="o">().</span><span class="na">getSimpleName</span><span class="o">());</span>
     <span class="o">}</span>
 <span class="o">}</span>
-</code></pre></div><ul>
-<li>运行输出：</li>
-</ul>
-<p><img
-        class="lazyload"
-        src="/svg/loading.min.svg"
-        data-src="images/Log.images/image-20201230171523635.png"
-        data-srcset="images/Log.images/image-20201230171523635.png, images/Log.images/image-20201230171523635.png 1.5x, images/Log.images/image-20201230171523635.png 2x"
-        data-sizes="auto"
-        alt="images/Log.images/image-20201230171523635.png"
-        title="image-20201230171523635" /></p>
-<ul>
-<li>注意，对于<strong>Log4j</strong>中的<strong>Appender</strong>来说，它们不具有日志等级，只有<strong>Logger</strong>对象具有日志等级。</li>
-</ul>
-<h3 id="3-log4j相关组件">3. Log4j相关组件</h3>
-<ul>
-<li><strong>Log4J</strong>主要由<strong>Loggers <strong>(日志记录器)、<strong>Appenders</strong>（输出端）和</strong>Layout</strong>（日志格式化器）组成：
-<ul>
+</code></pre></div><p>运行输出：</p>
+<figure><a class="lightgallery" href="/images/Log.images/image-20201230171523635.png" title="/images/Log.images/image-20201230171523635.png" data-thumbnail="/images/Log.images/image-20201230171523635.png" data-sub-html="<h2>Console Output</h2>">
+        <img
+            class="lazyload"
+            src="/svg/loading.min.svg"
+            data-src="/images/Log.images/image-20201230171523635.png"
+            data-srcset="/images/Log.images/image-20201230171523635.png, /images/Log.images/image-20201230171523635.png 1.5x, /images/Log.images/image-20201230171523635.png 2x"
+            data-sizes="auto"
+            alt="/images/Log.images/image-20201230171523635.png" width="100%" />
+    </a><figcaption class="image-caption"><strong>Console Output</strong></figcaption>
+    </figure>
+<p>注意，与<strong>JUL</strong>中的<strong>Handler</strong>不一样，对于<strong>Log4j</strong>中的<strong>Appender</strong>来说，它们不具有日志等级。</p>
+<p><strong>Log4j</strong>中只有<strong>Logger</strong>对象具有日志等级。</p>
+<h3 id="3相关组件">3.相关组件</h3>
+<p><strong>Log4j</strong>主要由<strong>Loggers</strong>(日志记录器)、<strong>Appenders</strong>（输出端）和<strong>Layout</strong>（日志格式化器）组成，说明如下：</p>
+<ol>
 <li><strong>Loggers</strong>：控制日志的输出级别与日志是否输出；</li>
 <li><strong>Appenders</strong>：指定日志的输出方式（输出到控制台、文件等）；</li>
 <li><strong>Layout</strong>：控制日志信息的输出格式。</li>
-</ul>
-</li>
-</ul>
-<h4 id="a-logger">a. Logger</h4>
-<ul>
-<li>日志记录器，负责收集处理日志记录，<strong>Logger</strong>的实例命名通常是类的全限定类名。</li>
-<li><strong>Logger</strong>的名字大小写敏感，其命名有继承机制。
-<ul>
-<li>例如：<strong>name</strong>为<strong>org.apache.commons</strong>的<strong>logger</strong>会继承<strong>name</strong>为<strong>org.apache</strong>的<strong>logger</strong>。</li>
-</ul>
-</li>
-<li>自<strong>log4j 1.2</strong>版以来， <strong>Logger</strong>类已经取代了<strong>Category</strong>类。对于熟悉早期版本的<strong>log4j</strong>的人来说，<strong>Logger</strong>类可以被视为<strong>Category</strong>类的别名。</li>
-</ul>
-<h4 id="b-appenders">b. Appenders</h4>
-<ul>
-<li><strong>Appender</strong>用来指定日志输出到哪个地方，可以同时指定日志的输出目的地。</li>
-<li><strong>Log4j</strong>常用的输出目的地有以下几种：</li>
-</ul>
+</ol>
+<span id="id-15">🌟3|a.Logger</span>
+<p>日志记录器，负责收集处理日志记录，<strong>Logger</strong>的实例命名通常是类的全限定类名。<strong>Logger</strong>的名字大小写敏感，其命名有继承机制。</p>
+<p>例如：<strong>name</strong>为<strong>org.apache.commons</strong>的<strong>logger</strong>会继承<strong>name</strong>为<strong>org.apache</strong>的<strong>logger</strong>。</p>
+<p>自<strong>log4j 1.2</strong>版以来， <strong>Logger</strong>类已经取代了<strong>Category</strong>类。对于熟悉早期版本的<strong>log4j</strong>的人来说，<strong>Logger</strong>类可以被视为<strong>Category</strong>类的别名。</p>
+<span id="id-16">🌟3|b.Appenders</span>
+<p><strong>Appender</strong>用来指定日志输出到哪个地方，可以同时指定日志的输出目的地。</p>
+<p><strong>Log4j</strong>常用的输出目的地有以下几种：</p>
 <table>
 <thead>
 <tr>
@@ -943,11 +914,9 @@ cn.xyz.useParentHandlers<span class="o">=</span><span class="nb">false</span>
 </tr>
 </tbody>
 </table>
-<h4 id="c-layouts">c. Layouts</h4>
-<ul>
-<li>布局器<strong>Layouts</strong>用于控制日志输出内容的格式，我们可以使用各种自定义格式输出日志。</li>
-<li><strong>Log4j</strong>常用的<strong>Layouts</strong>有以下几种:</li>
-</ul>
+<span id="id-17">🌟3|c.Layouts</span>
+<p>布局器<strong>Layouts</strong>用于控制日志输出内容的格式，我们可以使用各种自定义格式输出日志。</p>
+<p><strong>Log4j</strong>常用的<strong>Layouts</strong>有以下几种:</p>
 <table>
 <thead>
 <tr>
@@ -970,129 +939,115 @@ cn.xyz.useParentHandlers<span class="o">=</span><span class="nb">false</span>
 </tr>
 </tbody>
 </table>
-<ul>
-<li><strong>PatternLayout</strong>中的格式化规则：</li>
-</ul>
-<div class="highlight"><pre class="chroma"><code class="language-pro" data-lang="pro"><span class="o">*</span> <span class="s">log4j采用类似C语言的printf函数的打印格式格式化日志信息，具体的占位符及其含义如下：</span>
-    <span class="c1">%m 	输出代码中指定的日志信息</span>
-    <span class="c1">%p 	输出优先级，及DEBUG、INFO等</span>
-    <span class="c1">%n 	换行符（Windows平台的换行符为&#34;\n&#34;，Unix平台为&#34;\n&#34;）</span>
-    <span class="c1">%r 	输出自应用启动到输出该 log 信息耗费的毫秒数</span>
-    <span class="c1">%c 	输出打印语句所属的类的全名</span>
-    <span class="c1">%t 	输出产生该日志的线程全名</span>
-    <span class="c1">%d 	输出服务器当前时间，默认为ISO8601，也可以指定格式，如：%d{yyyy年MM月dd日 HH:mm:ss}</span>
-    <span class="c1">%l 	输出日志时间发生的位置，包括类名、线程、及在代码中的行数。如：Test.main(Test.java:10)</span>
-    <span class="c1">%F 	输出日志消息产生时所在的文件名称</span>
-    <span class="c1">%L 	输出代码中的行号</span>
-    <span class="c1">%% 	输出一个&#34;%&#34;字符</span>
+<p><strong>PatternLayout</strong>中的格式化规则：</p>
+<div class="highlight"><pre class="chroma"><code class="language-shell" data-lang="shell">* log4j采用类似C语言的printf函数的打印格式格式化日志信息，具体的占位符及其含义如下：
+    %m 	输出代码中指定的日志信息
+    %p 	输出优先级，及DEBUG、INFO等
+    %n 	换行符（Windows平台的换行符为<span class="s2">&#34;\n&#34;</span>，Unix平台为<span class="s2">&#34;\n&#34;</span>）
+    %r 	输出自应用启动到输出该 log 信息耗费的毫秒数
+    %c 	输出打印语句所属的类的全名
+    %t 	输出产生该日志的线程全名
+    %d 	输出服务器当前时间，默认为ISO8601，也可以指定格式，如：%d<span class="o">{</span>yyyy年MM月dd日 HH:mm:ss<span class="o">}</span>
+    %l 	输出日志时间发生的位置，包括类名、线程、及在代码中的行数。如：Test.main<span class="o">(</span>Test.java:10<span class="o">)</span>
+    %F 	输出日志消息产生时所在的文件名称
+    %L 	输出代码中的行号
+    %% 	输出一个<span class="s2">&#34;%&#34;</span>字符
 
-<span class="o">*</span> <span class="s">可以在</span><span class="c1">%与字符之间加上修饰符来控制最小宽度、最大宽度和文本的对其方式。如：</span>
-    <span class="c1">%5c 	输出category名称，最小宽度是5，category&lt;5，默认的情况下右对齐</span>
-    <span class="c1">%-5c 	输出category名称，最小宽度是5，category&lt;5，&#34;-&#34;号指定左对齐,会有空格</span>
-    <span class="c1">%.5c 	输出category名称，最大宽度是5，category&gt;5，就会将左边多出的字符截掉，&lt;5不会有空格</span>
-    <span class="c1">%20.30c category名称&lt;20补空格，并且右对齐，&gt;30字符，就从左边交远销出的字符截掉</span>
-</code></pre></div><h3 id="4-自定义配置">4. 自定义配置</h3>
-<ul>
-<li>
-<p>使用<strong>Log4j</strong>不需要显式地加载配置文件，对于<strong>Maven</strong>项目来说，程序会自动扫描<strong>resources</strong>目录下的<strong>log4j.properties</strong>配置文件。</p>
-</li>
-<li>
-<p>自定义配置如下：</p>
+* 可以在%与字符之间加上修饰符来控制最小宽度、最大宽度和文本的对其方式。如：
+    %5c 	输出category名称，最小宽度是5，category&lt;5，默认的情况下右对齐
+    %-5c 	输出category名称，最小宽度是5，category&lt;5，<span class="s2">&#34;-&#34;</span>号指定左对齐,会有空格
+    %.5c 	输出category名称，最大宽度是5，category&gt;5，就会将左边多出的字符截掉，&lt;5不会有空格
+    %20.30c category名称&lt;20补空格，并且右对齐，&gt;30字符，就从左边交远销出的字符截掉
+</code></pre></div><h3 id="4自定义配置-1">4.自定义配置</h3>
+<p>使用<strong>Log4j</strong>一般不需要显式地加载配置文件，对于<strong>Maven</strong>项目来说，程序会自动扫描<strong>resources</strong>目录下的<strong>log4j.properties</strong>配置文件。</p>
+<p>一个完整的<strong>log4j.properties</strong>配置文件如下：</p>
+<div class="highlight"><pre class="chroma"><code class="language-shell" data-lang="shell"><span class="c1"># 指定日志的输出级别与输出端</span>
+log4j.rootLogger<span class="o">=</span>INFO, Console, UserDefinedName, logDB
+
+<span class="c1"># 控制台输出配置</span>
+log4j.appender.Console<span class="o">=</span>org.apache.log4j.ConsoleAppender
+log4j.appender.Console.layout<span class="o">=</span>org.apache.log4j.PatternLayout
+log4j.appender.Console.layout.ConversionPattern<span class="o">=</span>%d <span class="o">[</span>%t<span class="o">]</span> %-5p <span class="o">[</span>%c<span class="o">]</span> - %m%n
+
+<span class="c1"># 文件输出配置</span>
+log4j.appender.UserDefinedName<span class="o">=</span>org.apache.log4j.DailyRollingFileAppender
+<span class="c1"># 指定日志的输出路径</span>
+log4j.appender.UserDefinedName.File<span class="o">=</span>log4j.log
+<span class="c1"># 是否以追加日志的形式添加</span>
+log4j.appender.UserDefinedName.Append<span class="o">=</span><span class="nb">true</span>
+<span class="c1"># 使用自定义日志格式化器</span>
+log4j.appender.UserDefinedName.layout<span class="o">=</span>org.apache.log4j.PatternLayout
+<span class="c1"># 指定日志的输出格式</span>
+log4j.appender.UserDefinedName.layout.ConversionPattern<span class="o">=</span>%-d<span class="o">{</span>yyyy-MM-dd HH:mm:ss<span class="o">}</span> <span class="o">[</span>%t:%r<span class="o">]</span> - <span class="o">[</span>%p<span class="o">]</span> %m%n
+<span class="c1"># 指定日志的文件编码</span>
+log4j.appender.UserDefinedName.encoding<span class="o">=</span>UTF-8
+
+<span class="c1"># MySQL输出配置</span>
+log4j.appender.logDB<span class="o">=</span>org.apache.log4j.jdbc.JDBCAppender
+log4j.appender.logDB.layout<span class="o">=</span>org.apache.log4j.PatternLayout
+log4j.appender.logDB.Driver<span class="o">=</span>com.mysql.cj.jdbc.Driver
+log4j.appender.logDB.URL<span class="o">=</span>jdbc:mysql://localhost:3306/test?serverTimezone<span class="o">=</span>GMT%2B8<span class="p">&amp;</span><span class="nv">useAffectedRows</span><span class="o">=</span><span class="nb">true</span>
+log4j.appender.logDB.User<span class="o">=</span>root
+log4j.appender.logDB.Password<span class="o">=</span>root
+log4j.appender.logDB.Sql<span class="o">=</span>INSERT INTO log<span class="o">(</span>project_name, create_date, level, category, file_name, thread_name, line, all_category, message<span class="o">)</span> <span class="se">\
+</span><span class="se"></span>  values<span class="o">(</span><span class="s1">&#39;log4j&#39;</span>, <span class="s1">&#39;%d{yyyy-MM-dd HH:mm:ss}&#39;</span>, <span class="s1">&#39;%p&#39;</span>, <span class="s1">&#39;%c&#39;</span>, <span class="s1">&#39;%F&#39;</span>, <span class="s1">&#39;%t&#39;</span>, <span class="s1">&#39;%L&#39;</span>, <span class="s1">&#39;%l&#39;</span>, <span class="s1">&#39;%m&#39;</span><span class="o">)</span>
+</code></pre></div><p>此时，配置文件中规定了日志输出等级为<strong>INFO</strong>，同时<strong>RootLogger</strong>设置了三个不同的<strong>Appender</strong>，分别是：</p>
 <ol>
-<li>日志输出等级为<strong>INFO</strong>，此时<strong>RootLogger</strong>拥有三个<strong>Appender</strong>：
-<ol>
-<li><strong>ConsoleAppender</strong>：配置中的命名为<strong>Console</strong>；</li>
-<li><strong>DailyRollingFileAppender</strong>：配置中的命名为<strong>UserDefinedName</strong>；</li>
-<li><strong>JDBCAppender</strong>：配置中的命名为<strong>logDB</strong>。</li>
+<li><strong>ConsoleAppender</strong>：配置中被命名为<strong>Console</strong>；</li>
+<li><strong>DailyRollingFileAppender</strong>：配置中被命名为<strong>UserDefinedName</strong>；</li>
+<li><strong>JDBCAppender</strong>：配置中被命名为<strong>logDB</strong>。</li>
 </ol>
-</li>
-<li><strong>RootLogger</strong>的默认输出级别配置在<strong>log4j.rootLogger</strong>的首位，随后紧跟的是关联的<strong>Appender</strong>的名称，表示其默认支持输出的方式有哪些。</li>
-</ol>
-</li>
-</ul>
-<pre><code class="language-properties" data-lang="properties"># 指定日志的输出级别与输出端
-log4j.rootLogger=INFO, Console, UserDefinedName, logDB
-
-# 控制台输出配置
-log4j.appender.Console=org.apache.log4j.ConsoleAppender
-log4j.appender.Console.layout=org.apache.log4j.PatternLayout
-log4j.appender.Console.layout.ConversionPattern=%d [%t] %-5p [%c] - %m%n
-
-# 文件输出配置
-log4j.appender.UserDefinedName=org.apache.log4j.DailyRollingFileAppender
-# 指定日志的输出路径
-log4j.appender.UserDefinedName.File=log4j.log
-# 是否以追加日志的形式添加
-log4j.appender.UserDefinedName.Append=true
-# 使用自定义日志格式化器
-log4j.appender.UserDefinedName.layout=org.apache.log4j.PatternLayout
-# 指定日志的输出格式
-log4j.appender.UserDefinedName.layout.ConversionPattern=%-d{yyyy-MM-dd HH:mm:ss} [%t:%r] - [%p] %m%n
-# 指定日志的文件编码
-log4j.appender.UserDefinedName.encoding=UTF-8
-
-# MySQL输出配置
-log4j.appender.logDB=org.apache.log4j.jdbc.JDBCAppender
-log4j.appender.logDB.layout=org.apache.log4j.PatternLayout
-log4j.appender.logDB.Driver=com.mysql.cj.jdbc.Driver
-log4j.appender.logDB.URL=jdbc:mysql://localhost:3306/test?serverTimezone=GMT%2B8&amp;useAffectedRows=true
-log4j.appender.logDB.User=root
-log4j.appender.logDB.Password=root
-log4j.appender.logDB.Sql=INSERT INTO log(project_name, create_date, level, category, file_name, thread_name, line, all_category, message) \
-  values('log4j', '%d{yyyy-MM-dd HH:mm:ss}', '%p', '%c', '%F', '%t', '%L', '%l', '%m')
-</code></pre><ul>
-<li>配置中包含了<strong>sql</strong>输出日志的方式，<strong>log</strong>表的创建代码为：</li>
-</ul>
-<div class="highlight"><pre class="chroma"><code class="language-sql" data-lang="sql"><span class="k">CREATE</span><span class="w"> </span><span class="k">TABLE</span><span class="w"> </span><span class="o">**</span><span class="n">log</span><span class="o">**</span><span class="w"> </span><span class="p">(</span><span class="w">
-</span><span class="w">	</span><span class="o">**</span><span class="n">log_id</span><span class="o">**</span><span class="w"> </span><span class="nb">INT</span><span class="w"> </span><span class="p">(</span><span class="w"> </span><span class="mi">11</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="k">NOT</span><span class="w"> </span><span class="k">NULL</span><span class="w"> </span><span class="n">AUTO_INCREMENT</span><span class="p">,</span><span class="w">
-</span><span class="w">	</span><span class="o">**</span><span class="n">project_name</span><span class="o">**</span><span class="w"> </span><span class="nb">VARCHAR</span><span class="w"> </span><span class="p">(</span><span class="w"> </span><span class="mi">255</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="k">DEFAULT</span><span class="w"> </span><span class="k">NULL</span><span class="w"> </span><span class="k">COMMENT</span><span class="w"> </span><span class="s1">&#39;项目名称&#39;</span><span class="p">,</span><span class="w">
-</span><span class="w">	</span><span class="o">**</span><span class="n">create_date</span><span class="o">**</span><span class="w"> </span><span class="nb">VARCHAR</span><span class="w"> </span><span class="p">(</span><span class="w"> </span><span class="mi">255</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="k">DEFAULT</span><span class="w"> </span><span class="k">NULL</span><span class="w"> </span><span class="k">COMMENT</span><span class="w"> </span><span class="s1">&#39;创建时间&#39;</span><span class="p">,</span><span class="w">
-</span><span class="w">	</span><span class="o">**</span><span class="k">level</span><span class="o">**</span><span class="w"> </span><span class="nb">VARCHAR</span><span class="w"> </span><span class="p">(</span><span class="w"> </span><span class="mi">255</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="k">DEFAULT</span><span class="w"> </span><span class="k">NULL</span><span class="w"> </span><span class="k">COMMENT</span><span class="w"> </span><span class="s1">&#39;优先级&#39;</span><span class="p">,</span><span class="w">
-</span><span class="w">	</span><span class="o">**</span><span class="n">category</span><span class="o">**</span><span class="w"> </span><span class="nb">VARCHAR</span><span class="w"> </span><span class="p">(</span><span class="w"> </span><span class="mi">255</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="k">DEFAULT</span><span class="w"> </span><span class="k">NULL</span><span class="w"> </span><span class="k">COMMENT</span><span class="w"> </span><span class="s1">&#39;所在类的全名&#39;</span><span class="p">,</span><span class="w">
-</span><span class="w">	</span><span class="o">**</span><span class="n">file_name</span><span class="o">**</span><span class="w"> </span><span class="nb">VARCHAR</span><span class="w"> </span><span class="p">(</span><span class="w"> </span><span class="mi">255</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="k">DEFAULT</span><span class="w"> </span><span class="k">NULL</span><span class="w"> </span><span class="k">COMMENT</span><span class="w"> </span><span class="s1">&#39;输出日志消息产生时所在的文件名称 &#39;</span><span class="p">,</span><span class="w">
-</span><span class="w">	</span><span class="o">**</span><span class="n">thread_name</span><span class="o">**</span><span class="w"> </span><span class="nb">VARCHAR</span><span class="w"> </span><span class="p">(</span><span class="w"> </span><span class="mi">255</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="k">DEFAULT</span><span class="w"> </span><span class="k">NULL</span><span class="w"> </span><span class="k">COMMENT</span><span class="w"> </span><span class="s1">&#39;日志事件的线程名&#39;</span><span class="p">,</span><span class="w">
-</span><span class="w">	</span><span class="o">**</span><span class="n">line</span><span class="o">**</span><span class="w"> </span><span class="nb">VARCHAR</span><span class="w"> </span><span class="p">(</span><span class="w"> </span><span class="mi">255</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="k">DEFAULT</span><span class="w"> </span><span class="k">NULL</span><span class="w"> </span><span class="k">COMMENT</span><span class="w"> </span><span class="s1">&#39;行号&#39;</span><span class="p">,</span><span class="w">
-</span><span class="w">	</span><span class="o">**</span><span class="n">all_category</span><span class="o">**</span><span class="w"> </span><span class="nb">VARCHAR</span><span class="w"> </span><span class="p">(</span><span class="w"> </span><span class="mi">255</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="k">DEFAULT</span><span class="w"> </span><span class="k">NULL</span><span class="w"> </span><span class="k">COMMENT</span><span class="w"> </span><span class="s1">&#39;日志事件的发生位置&#39;</span><span class="p">,</span><span class="w">
-</span><span class="w">	</span><span class="o">**</span><span class="n">message</span><span class="o">**</span><span class="w"> </span><span class="nb">VARCHAR</span><span class="w"> </span><span class="p">(</span><span class="w"> </span><span class="mi">4000</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="k">DEFAULT</span><span class="w"> </span><span class="k">NULL</span><span class="w"> </span><span class="k">COMMENT</span><span class="w"> </span><span class="s1">&#39;输出代码中指定的消息&#39;</span><span class="p">,</span><span class="w">
-</span><span class="w">	</span><span class="k">PRIMARY</span><span class="w"> </span><span class="k">KEY</span><span class="w"> </span><span class="p">(</span><span class="w"> </span><span class="o">**</span><span class="n">log_id</span><span class="o">**</span><span class="w"> </span><span class="p">)</span><span class="w"> 
+<span id="id-18"><p><strong>RootLogger</strong>的默认日志输出级别配置在首行首位，随后紧跟的是相关联的<strong>Appender</strong>的名称，表示其默认支持输出的方式有哪些。</p>
+<p>配置文件中可以配置多个类型可重复的<strong>Appender</strong>，但<strong>Appender</strong>之间的命名则不可重复。</p>
+</span>
+<p>配置中包含了<strong>sql</strong>输出日志的方式，对应的<strong>log</strong>表的创建代码为：</p>
+<div class="highlight"><pre class="chroma"><code class="language-sql" data-lang="sql"><span class="k">CREATE</span><span class="w"> </span><span class="k">TABLE</span><span class="w"> </span><span class="o">`</span><span class="n">log</span><span class="o">`</span><span class="w"> </span><span class="p">(</span><span class="w">
+</span><span class="w">	</span><span class="o">`</span><span class="n">log_id</span><span class="o">`</span><span class="w"> </span><span class="nb">INT</span><span class="w"> </span><span class="p">(</span><span class="w"> </span><span class="mi">11</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="k">NOT</span><span class="w"> </span><span class="k">NULL</span><span class="w"> </span><span class="n">AUTO_INCREMENT</span><span class="p">,</span><span class="w">
+</span><span class="w">	</span><span class="o">`</span><span class="n">project_name</span><span class="o">`</span><span class="w"> </span><span class="nb">VARCHAR</span><span class="w"> </span><span class="p">(</span><span class="w"> </span><span class="mi">255</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="k">DEFAULT</span><span class="w"> </span><span class="k">NULL</span><span class="w"> </span><span class="k">COMMENT</span><span class="w"> </span><span class="s1">&#39;项目名称&#39;</span><span class="p">,</span><span class="w">
+</span><span class="w">	</span><span class="o">`</span><span class="n">create_date</span><span class="o">`</span><span class="w"> </span><span class="nb">VARCHAR</span><span class="w"> </span><span class="p">(</span><span class="w"> </span><span class="mi">255</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="k">DEFAULT</span><span class="w"> </span><span class="k">NULL</span><span class="w"> </span><span class="k">COMMENT</span><span class="w"> </span><span class="s1">&#39;创建时间&#39;</span><span class="p">,</span><span class="w">
+</span><span class="w">	</span><span class="o">`</span><span class="k">level</span><span class="o">`</span><span class="w"> </span><span class="nb">VARCHAR</span><span class="w"> </span><span class="p">(</span><span class="w"> </span><span class="mi">255</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="k">DEFAULT</span><span class="w"> </span><span class="k">NULL</span><span class="w"> </span><span class="k">COMMENT</span><span class="w"> </span><span class="s1">&#39;优先级&#39;</span><span class="p">,</span><span class="w">
+</span><span class="w">	</span><span class="o">`</span><span class="n">category</span><span class="o">`</span><span class="w"> </span><span class="nb">VARCHAR</span><span class="w"> </span><span class="p">(</span><span class="w"> </span><span class="mi">255</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="k">DEFAULT</span><span class="w"> </span><span class="k">NULL</span><span class="w"> </span><span class="k">COMMENT</span><span class="w"> </span><span class="s1">&#39;所在类的全名&#39;</span><span class="p">,</span><span class="w">
+</span><span class="w">	</span><span class="o">`</span><span class="n">file_name</span><span class="o">`</span><span class="w"> </span><span class="nb">VARCHAR</span><span class="w"> </span><span class="p">(</span><span class="w"> </span><span class="mi">255</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="k">DEFAULT</span><span class="w"> </span><span class="k">NULL</span><span class="w"> </span><span class="k">COMMENT</span><span class="w"> </span><span class="s1">&#39;输出日志消息产生时所在的文件名称 &#39;</span><span class="p">,</span><span class="w">
+</span><span class="w">	</span><span class="o">`</span><span class="n">thread_name</span><span class="o">`</span><span class="w"> </span><span class="nb">VARCHAR</span><span class="w"> </span><span class="p">(</span><span class="w"> </span><span class="mi">255</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="k">DEFAULT</span><span class="w"> </span><span class="k">NULL</span><span class="w"> </span><span class="k">COMMENT</span><span class="w"> </span><span class="s1">&#39;日志事件的线程名&#39;</span><span class="p">,</span><span class="w">
+</span><span class="w">	</span><span class="o">`</span><span class="n">line</span><span class="o">`</span><span class="w"> </span><span class="nb">VARCHAR</span><span class="w"> </span><span class="p">(</span><span class="w"> </span><span class="mi">255</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="k">DEFAULT</span><span class="w"> </span><span class="k">NULL</span><span class="w"> </span><span class="k">COMMENT</span><span class="w"> </span><span class="s1">&#39;行号&#39;</span><span class="p">,</span><span class="w">
+</span><span class="w">	</span><span class="o">`</span><span class="n">all_category</span><span class="o">`</span><span class="w"> </span><span class="nb">VARCHAR</span><span class="w"> </span><span class="p">(</span><span class="w"> </span><span class="mi">255</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="k">DEFAULT</span><span class="w"> </span><span class="k">NULL</span><span class="w"> </span><span class="k">COMMENT</span><span class="w"> </span><span class="s1">&#39;日志事件的发生位置&#39;</span><span class="p">,</span><span class="w">
+</span><span class="w">	</span><span class="o">`</span><span class="n">message</span><span class="o">`</span><span class="w"> </span><span class="nb">VARCHAR</span><span class="w"> </span><span class="p">(</span><span class="w"> </span><span class="mi">4000</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="k">DEFAULT</span><span class="w"> </span><span class="k">NULL</span><span class="w"> </span><span class="k">COMMENT</span><span class="w"> </span><span class="s1">&#39;输出代码中指定的消息&#39;</span><span class="p">,</span><span class="w">
+</span><span class="w">	</span><span class="k">PRIMARY</span><span class="w"> </span><span class="k">KEY</span><span class="w"> </span><span class="p">(</span><span class="w"> </span><span class="o">`</span><span class="n">log_id</span><span class="o">`</span><span class="w"> </span><span class="p">)</span><span class="w"> 
 </span><span class="w"></span><span class="p">);</span><span class="w">
-</span></code></pre></div><ul>
-<li>让特定名称的<strong>logger</strong>使用特定的配置：
-<ol>
-<li>一个<strong>log4j.properties</strong>中可以配置多个且可重复的<strong>Appender</strong>，但<strong>Appender</strong>的命名不可重复；</li>
-<li>通过<strong>log4j.logger.{loggerName}<strong>的方式，让指定名为</strong>loggerName</strong>的<strong>logger</strong>使用该配置；</li>
-<li>由于该<strong>logger</strong>仍然是隶属于<strong>rootLogger</strong>，因此输出是累加的形式：
-<ul>
-<li>例：如果<strong>RootLogger</strong>使用了<strong>ConsoleAppender</strong>，同时<strong>Logger</strong>也使用了<strong>ConsoleAppender</strong>，此时控制台将输出两次日志记录，一次为<strong>Logger</strong>继承自<strong>RootLogger</strong>的输出，另一次则为<strong>Logger</strong>自身的输出。</li>
-</ul>
-</li>
-<li>但日志等级<strong>level</strong>则取决于子日志<strong>Logger</strong>与<strong>RootLogger</strong>，以等级高的一方为准。
-<ul>
-<li>例：此时<strong>RootLogger</strong>和<strong>Logger</strong>同时使用了<strong>ConsoleAppender</strong>，但输出等级分别为<strong>INFO</strong>和<strong>WARN</strong>，此时控制台输出的日志等级仅有高于等于<strong>WARN</strong>的记录，即使此时<strong>RootLogger</strong>的等级为<strong>INFO</strong>。</li>
-</ul>
-</li>
-</ol>
-</li>
-<li>有如下<strong>log4j.properties</strong>配置文件：
-<ul>
-<li>其中<strong>RootLogger</strong>和名为<strong>cn.hanna</strong>的<strong>Logger</strong>使用同一个<strong>ConsoleAppender</strong>，但日志等级不一致。</li>
-</ul>
-</li>
-</ul>
-<pre><code class="language-properties" data-lang="properties"># 指定日志的输出级别与输出端
-log4j.rootLogger=INFO, Console
+</span></code></pre></div><p>如果希望让特定名称的<strong>Logger</strong>使用特定的配置，则需要在配置文件中定义以下格式的键名：<strong>log4j.logger.logger_name</strong>。</p>
+<p>其中，<strong>logger_name</strong>就是指定<strong>Logger</strong>的名称，<strong>Log4j</strong>会自动为命名为<strong>logger_name</strong>的<strong>Logger</strong>应用配置。</p>
+<p>但由于<strong>Logger</strong>仍然是隶属于<strong>RootLogger</strong>，因此日志输出默认情况下仍旧是累加的形式。</p>
+<div class="details admonition example open">
+        <div class="details-summary admonition-title">
+            <i class="icon fas fa-list-ol fa-fw"></i>Example<i class="details-icon fas fa-angle-right fa-fw"></i>
+        </div>
+        <div class="details-content">
+            <div class="admonition-content">例如，<strong>RootLogger</strong>使用了<strong>ConsoleAppender</strong>，同时特定名称的<strong>Logger</strong>也使用了<strong>ConsoleAppender</strong>，那么此时控制台将输出两次日志记录，一次为<strong>Logger</strong>继承自<strong>RootLogger</strong>的输出，另一次则为<strong>Logger</strong>自身的输出。</div>
+        </div>
+    </div>
+<p>那么日志输出等级是否也是累加的形式呢？答案是否定的。日志等级取决于<strong>Logger</strong>和<strong>RootLogger</strong>，并以日志等级较高的一方为基准。</p>
+<div class="details admonition example open">
+        <div class="details-summary admonition-title">
+            <i class="icon fas fa-list-ol fa-fw"></i>Example<i class="details-icon fas fa-angle-right fa-fw"></i>
+        </div>
+        <div class="details-content">
+            <div class="admonition-content">例如，<strong>RootLogger</strong>和<strong>Logger</strong>同时使用了<strong>ConsoleAppender</strong>，但输出等级则分别为<strong>INFO</strong>和<strong>WARN</strong>，此时控制台输出的日志等级仅有高于等于<strong>WARN</strong>的记录，即使此时<strong>RootLogger</strong>的等级为<strong>INFO</strong>。</div>
+        </div>
+    </div>
+<p>结合配置文件说明，假如有如下的配置文件：</p>
+<div class="highlight"><pre class="chroma"><code class="language-shell" data-lang="shell"><span class="c1"># 指定日志的输出级别与输出端</span>
+log4j.rootLogger<span class="o">=</span>INFO, Console
 
-# 控制台输出配置
-log4j.appender.Console=org.apache.log4j.ConsoleAppender
-log4j.appender.Console.layout=org.apache.log4j.PatternLayout
-log4j.appender.Console.layout.ConversionPattern=%d [%t] %-5p [%c] - %m%n
+<span class="c1"># 控制台输出配置</span>
+log4j.appender.Console<span class="o">=</span>org.apache.log4j.ConsoleAppender
+log4j.appender.Console.layout<span class="o">=</span>org.apache.log4j.PatternLayout
+log4j.appender.Console.layout.ConversionPattern<span class="o">=</span>%d <span class="o">[</span>%t<span class="o">]</span> %-5p <span class="o">[</span>%c<span class="o">]</span> - %m%n
 
-# 让名为“cn.hanna”的logger使用名为Another的Appender
-# 此时仍会使用rootLogger中的控制台输出，而Level则以两者间较高的为准
-log4j.logger.cn.hanna=WARN, Console
-</code></pre><ul>
-<li>测试代码如下：</li>
-</ul>
+<span class="c1"># 让名为“cn.hanna”的logger使用名为Another的Appender</span>
+<span class="c1"># 此时仍会使用rootLogger中的控制台输出，而Level则以两者间较高的为准</span>
+log4j.logger.cn.hanna<span class="o">=</span>WARN, Console
+</code></pre></div><p>配置表明，<strong>RootLogger</strong>和名为<strong>cn.hanna</strong>的<strong>Logger</strong>使用同一个<strong>ConsoleAppender</strong>，但日志等级不一致。</p>
+<p>测试代码如下：</p>
 <div class="highlight"><pre class="chroma"><code class="language-java" data-lang="java"><span class="nd">@Test</span>
 <span class="kd">public</span> <span class="kt">void</span> <span class="nf">testAnother</span><span class="o">()</span> <span class="o">{</span>
     <span class="c1">// 1.获取日志记录器对象Logger
@@ -1106,135 +1061,153 @@ log4j.logger.cn.hanna=WARN, Console
     <span class="n">logger</span><span class="o">.</span><span class="na">debug</span><span class="o">(</span><span class="s">&#34;[DEBUG] 调试信息，一般在开发中使用，记录程序变量参数传递信息等等。默认级别。&#34;</span><span class="o">);</span>
     <span class="n">logger</span><span class="o">.</span><span class="na">trace</span><span class="o">(</span><span class="s">&#34;[TRACE] 追踪信息，记录程序所有的流程信息。&#34;</span><span class="o">);</span>
 <span class="o">}</span>
-</code></pre></div><ul>
-<li>运行输出：</li>
-</ul>
-<p><img
-        class="lazyload"
-        src="/svg/loading.min.svg"
-        data-src="images/Log.images/image-20201230194119994.png"
-        data-srcset="images/Log.images/image-20201230194119994.png, images/Log.images/image-20201230194119994.png 1.5x, images/Log.images/image-20201230194119994.png 2x"
-        data-sizes="auto"
-        alt="images/Log.images/image-20201230194119994.png"
-        title="image-20201230194119994" /></p>
-<ul>
-<li>输出印证了之前所陈述的观点，不再赘述。</li>
-<li>此时，如果一定需要使用<strong>ConsoleAppender</strong>，但不希望控制台输出两次记录，有两种方式：
+</code></pre></div><p>运行输出：</p>
+<figure><a class="lightgallery" href="/images/Log.images/image-20201230194119994.png" title="/images/Log.images/image-20201230194119994.png" data-thumbnail="/images/Log.images/image-20201230194119994.png" data-sub-html="<h2>Console Output</h2>">
+        <img
+            class="lazyload"
+            src="/svg/loading.min.svg"
+            data-src="/images/Log.images/image-20201230194119994.png"
+            data-srcset="/images/Log.images/image-20201230194119994.png, /images/Log.images/image-20201230194119994.png 1.5x, /images/Log.images/image-20201230194119994.png 2x"
+            data-sizes="auto"
+            alt="/images/Log.images/image-20201230194119994.png" width="100%" />
+    </a><figcaption class="image-caption"><strong>Console Output</strong></figcaption>
+    </figure>
+<p>控制台对日志进行了两次输出，且输出的日志等级都是<strong>WARN</strong>以上的。</p>
+<p>如何让普通的<strong>Logger</strong>不继承使用<strong>RootLogger</strong>中的<strong>Appender</strong>呢？或者说，如何让<strong>Logger</strong>仅进行一次日志输出呢？</p>
+<p>如果一定需要使用<strong>ConsoleAppender</strong>，但不希望控制台输出两次记录，有两种方式：</p>
 <ol>
 <li>摒弃<strong>RootLogger</strong>的输出，即断开指定<strong>Logger</strong>与<strong>RootLogger</strong>的继承关系；</li>
 <li>摒弃<strong>Logger</strong>的输出，即指定名称的<strong>Logger</strong>直接使用<strong>RootLogger</strong>关联的<strong>Appender</strong>，不再额外指定。</li>
 </ol>
-</li>
-<li>如果选择断开指定<strong>Logger</strong>与<strong>RootLogger</strong>的继承关系，需修改配置文件如下：</li>
-</ul>
-<pre><code class="language-properties" data-lang="properties"># 指定日志的输出级别与输出端
-log4j.rootLogger=INFO, Console
+<p>如果选择断开指定<strong>Logger</strong>与<strong>RootLogger</strong>的继承关系，需修改配置文件如下：</p>
+<div class="highlight"><pre class="chroma"><code class="language-shell" data-lang="shell"><span class="c1"># 指定日志的输出级别与输出端</span>
+log4j.rootLogger<span class="o">=</span>INFO, Console
 
-# 控制台输出配置
-log4j.appender.Console=org.apache.log4j.ConsoleAppender
-log4j.appender.Console.layout=org.apache.log4j.PatternLayout
-log4j.appender.Console.layout.ConversionPattern=%d [%t] %-5p [%c] - %m%n
+<span class="c1"># 控制台输出配置</span>
+log4j.appender.Console<span class="o">=</span>org.apache.log4j.ConsoleAppender
+log4j.appender.Console.layout<span class="o">=</span>org.apache.log4j.PatternLayout
+log4j.appender.Console.layout.ConversionPattern<span class="o">=</span>%d <span class="o">[</span>%t<span class="o">]</span> %-5p <span class="o">[</span>%c<span class="o">]</span> - %m%n
 
-# 名为“cn.hanna”的Logger不再继承使用RootLogger中的Appender
-log4j.additivity.cn.hanna=false
-log4j.logger.cn.hanna=WARN, Console
-</code></pre><ul>
-<li>如果选择直接使用<strong>RootLogger</strong>关联的<strong>Appender</strong>，需修改配置文件如下：</li>
-</ul>
-<pre><code class="language-Properties" data-lang="Properties"># 指定日志的输出级别与输出端
-log4j.rootLogger=INFO, Console
+<span class="c1"># 名为“cn.hanna”的Logger不再继承使用RootLogger中的Appender</span>
+log4j.additivity.cn.hanna<span class="o">=</span><span class="nb">false</span>
+log4j.logger.cn.hanna<span class="o">=</span>WARN, Console
+</code></pre></div><p>如果选择直接使用<strong>RootLogger</strong>关联的<strong>Appender</strong>，需修改配置文件如下：</p>
+<div class="highlight"><pre class="chroma"><code class="language-shell" data-lang="shell"><span class="c1"># 指定日志的输出级别与输出端</span>
+log4j.rootLogger<span class="o">=</span>INFO, Console
 
-# 控制台输出配置
-log4j.appender.Console=org.apache.log4j.ConsoleAppender
-log4j.appender.Console.layout=org.apache.log4j.PatternLayout
-log4j.appender.Console.layout.ConversionPattern=%d [%t] %-5p [%c] - %m%n
+<span class="c1"># 控制台输出配置</span>
+log4j.appender.Console<span class="o">=</span>org.apache.log4j.ConsoleAppender
+log4j.appender.Console.layout<span class="o">=</span>org.apache.log4j.PatternLayout
+log4j.appender.Console.layout.ConversionPattern<span class="o">=</span>%d <span class="o">[</span>%t<span class="o">]</span> %-5p <span class="o">[</span>%c<span class="o">]</span> - %m%n
 
-# 对于名称“cn.hanna”的Logger来说，将直接使用RootLogger中关联的Appender，但日志等级由自身决定
-log4j.logger.cn.hanna=WARN
-</code></pre><ul>
-<li>两种方式的测试类运行结果均为：</li>
-</ul>
-<p><img
-        class="lazyload"
-        src="/svg/loading.min.svg"
-        data-src="images/Log.images/image-20201230195600215.png"
-        data-srcset="images/Log.images/image-20201230195600215.png, images/Log.images/image-20201230195600215.png 1.5x, images/Log.images/image-20201230195600215.png 2x"
-        data-sizes="auto"
-        alt="images/Log.images/image-20201230195600215.png"
-        title="image-20201230195600215" /></p>
-<ul>
-<li>实际应用中，应该灵活选择适合与代码的方式，去编写配置文件。</li>
-</ul>
-<h3 id="5-完整的配置文件示例">5. 完整的配置文件示例</h3>
-<ul>
-<li>同样，在此给出一个完整的<strong>log4j</strong>配置文件示例：</li>
-</ul>
-<pre><code class="language-properties" data-lang="properties">log4j.rootLogger=INFO, Console
+<span class="c1"># 对于名称“cn.hanna”的Logger来说，将直接使用RootLogger中关联的Appender，但日志等级由自身决定</span>
+log4j.logger.cn.hanna<span class="o">=</span>WARN
+</code></pre></div><p>使用以上两种方式，测试类运行结果均为：</p>
+<figure><a class="lightgallery" href="/images/Log.images/image-20201230195600215.png" title="/images/Log.images/image-20201230195600215.png" data-thumbnail="/images/Log.images/image-20201230195600215.png" data-sub-html="<h2>Console Output</h2>">
+        <img
+            class="lazyload"
+            src="/svg/loading.min.svg"
+            data-src="/images/Log.images/image-20201230195600215.png"
+            data-srcset="/images/Log.images/image-20201230195600215.png, /images/Log.images/image-20201230195600215.png 1.5x, /images/Log.images/image-20201230195600215.png 2x"
+            data-sizes="auto"
+            alt="/images/Log.images/image-20201230195600215.png" width="100%" />
+    </a><figcaption class="image-caption"><strong>Console Output</strong></figcaption>
+    </figure>
+<p>实际应用中，应该灵活选择适合与代码的方式，去编写配置文件。</p>
+<h3 id="5完整的配置文件示例">5.完整的配置文件示例</h3>
+<p>同样，在此给出一个完整的<strong>log4j.properties</strong>配置文件示例：</p>
+<div class="highlight"><pre class="chroma"><code class="language-shell" data-lang="shell">log4j.rootLogger<span class="o">=</span>INFO, Console
 
-log4j.appender.Console=org.apache.log4j.ConsoleAppender
-log4j.appender.Console.layout=org.apache.log4j.PatternLayout
-log4j.appender.Console.layout.ConversionPattern=%d [%t] %-5p [%c] - %m%n
+log4j.appender.Console<span class="o">=</span>org.apache.log4j.ConsoleAppender
+log4j.appender.Console.layout<span class="o">=</span>org.apache.log4j.PatternLayout
+log4j.appender.Console.layout.ConversionPattern<span class="o">=</span>%d <span class="o">[</span>%t<span class="o">]</span> %-5p <span class="o">[</span>%c<span class="o">]</span> - %m%n
 
-log4j.appender.UserDefinedName=org.apache.log4j.DailyRollingFileAppender
-log4j.appender.UserDefinedName.File=log4j.log
-log4j.appender.UserDefinedName.Append=true
-log4j.appender.UserDefinedName.layout=org.apache.log4j.PatternLayout
-log4j.appender.UserDefinedName.layout.ConversionPattern=%-d{yyyy-MM-dd HH:mm:ss} [%t:%r] - [%p] %m%n
-log4j.appender.UserDefinedName.encoding=UTF-8
+log4j.appender.UserDefinedName<span class="o">=</span>org.apache.log4j.DailyRollingFileAppender
+log4j.appender.UserDefinedName.File<span class="o">=</span>log4j.log
+log4j.appender.UserDefinedName.Append<span class="o">=</span><span class="nb">true</span>
+log4j.appender.UserDefinedName.layout<span class="o">=</span>org.apache.log4j.PatternLayout
+log4j.appender.UserDefinedName.layout.ConversionPattern<span class="o">=</span>%-d<span class="o">{</span>yyyy-MM-dd HH:mm:ss<span class="o">}</span> <span class="o">[</span>%t:%r<span class="o">]</span> - <span class="o">[</span>%p<span class="o">]</span> %m%n
+log4j.appender.UserDefinedName.encoding<span class="o">=</span>UTF-8
 
-log4j.appender.logDB=org.apache.log4j.jdbc.JDBCAppender
-log4j.appender.logDB.layout=org.apache.log4j.PatternLayout
-log4j.appender.logDB.Driver=com.mysql.cj.jdbc.Driver
-log4j.appender.logDB.URL=jdbc:mysql://localhost:3306/test?serverTimezone=GMT%2B8&amp;useAffectedRows=true
-log4j.appender.logDB.User=root
-log4j.appender.logDB.Password=root
-log4j.appender.logDB.Sql=INSERT INTO log(project_name, create_date, level, category, file_name, thread_name, line, all_category, message) \
-  values('log4j', '%d{yyyy-MM-dd HH:mm:ss}', '%p', '%c', '%F', '%t', '%L', '%l', '%m')
+log4j.appender.logDB<span class="o">=</span>org.apache.log4j.jdbc.JDBCAppender
+log4j.appender.logDB.layout<span class="o">=</span>org.apache.log4j.PatternLayout
+log4j.appender.logDB.Driver<span class="o">=</span>com.mysql.cj.jdbc.Driver
+log4j.appender.logDB.URL<span class="o">=</span>jdbc:mysql://localhost:3306/test?serverTimezone<span class="o">=</span>GMT%2B8<span class="p">&amp;</span><span class="nv">useAffectedRows</span><span class="o">=</span><span class="nb">true</span>
+log4j.appender.logDB.User<span class="o">=</span>root
+log4j.appender.logDB.Password<span class="o">=</span>root
+log4j.appender.logDB.Sql<span class="o">=</span>INSERT INTO log<span class="o">(</span>project_name, create_date, level, category, file_name, thread_name, line, all_category, message<span class="o">)</span> <span class="se">\
+</span><span class="se"></span>  values<span class="o">(</span><span class="s1">&#39;log4j&#39;</span>, <span class="s1">&#39;%d{yyyy-MM-dd HH:mm:ss}&#39;</span>, <span class="s1">&#39;%p&#39;</span>, <span class="s1">&#39;%c&#39;</span>, <span class="s1">&#39;%F&#39;</span>, <span class="s1">&#39;%t&#39;</span>, <span class="s1">&#39;%L&#39;</span>, <span class="s1">&#39;%l&#39;</span>, <span class="s1">&#39;%m&#39;</span><span class="o">)</span>
 
-log4j.appender.Another=org.apache.log4j.DailyRollingFileAppender
-log4j.appender.Another.File=hanna.log
-log4j.appender.Another.Append=true
-log4j.appender.Another.layout=org.apache.log4j.PatternLayout
-log4j.appender.Another.layout.ConversionPattern=%-d{yyyy-MM-dd HH:mm:ss} [%t:%r] - [%p] %m%n
-log4j.appender.Another.encoding=UTF-8
+log4j.appender.Another<span class="o">=</span>org.apache.log4j.DailyRollingFileAppender
+log4j.appender.Another.File<span class="o">=</span>hanna.log
+log4j.appender.Another.Append<span class="o">=</span><span class="nb">true</span>
+log4j.appender.Another.layout<span class="o">=</span>org.apache.log4j.PatternLayout
+log4j.appender.Another.layout.ConversionPattern<span class="o">=</span>%-d<span class="o">{</span>yyyy-MM-dd HH:mm:ss<span class="o">}</span> <span class="o">[</span>%t:%r<span class="o">]</span> - <span class="o">[</span>%p<span class="o">]</span> %m%n
+log4j.appender.Another.encoding<span class="o">=</span>UTF-8
 
-log4j.logger.cn.xyz=WARN, Another
-log4j.additivity.cn.xyz=false
-</code></pre><ul>
-<li>说明：其中<strong>log4j.appeder.APPENDER_NAME</strong>中的<strong>APPENDER_NAME</strong>为相应<strong>Appender</strong>的名称，可以自行定义。</li>
-</ul>
-<h2 id="jcl日志门面">JCL日志门面</h2>
-<ul>
-<li><strong>JCL</strong>全称<strong>Jakarta Commons Logging</strong>，是<strong>Apache</strong>提供的一个通用日志<strong>API</strong>。它为“所有的<strong>Java</strong>日志实现”提供了一个统一的接口，其自身也提供一个日志的实现<strong>SimpleLog</strong>，但是功能非常弱。所以一般不会单独使用它。</li>
-</ul>
-<p><img
-        class="lazyload"
-        src="/svg/loading.min.svg"
-        data-src="images/Log.images/image-20201202145208894.png"
-        data-srcset="images/Log.images/image-20201202145208894.png, images/Log.images/image-20201202145208894.png 1.5x, images/Log.images/image-20201202145208894.png 2x"
-        data-sizes="auto"
-        alt="images/Log.images/image-20201202145208894.png"
-        title="image-20201202145208894" /></p>
-<h3 id="1-入门案例-1">1. 入门案例</h3>
-<ul>
-<li>使用<strong>JCL</strong>需要导入依赖：</li>
-</ul>
+log4j.logger.cn.xyz<span class="o">=</span>WARN, Another
+log4j.additivity.cn.xyz<span class="o">=</span><span class="nb">false</span>
+</code></pre></div><p>其中，<strong>log4j.appeder.appender_name</strong>中的<strong>appender_name</strong>为相应<strong>Appender</strong>的名称，该名称可以自行定义。</p>
+<h2 id="日志门面jcl">日志门面JCL</h2>
+<p><strong>JCL</strong>全称<strong>Jakarta Commons Logging</strong>，是<strong>Apache</strong>提供的一个通用日志<strong>API</strong>，它为“所有的<strong>Java</strong>日志实现”提供了一个统一的接口。</p>
+<p><strong>JCL</strong>自身提供了一个简单的日志实现<strong>SimpleLog</strong>，但功能非常弱，一般不会单独使用它。</p>
+<figure><a class="lightgallery" href="/images/Log.images/image-20201202145208894.png" title="/images/Log.images/image-20201202145208894.png" data-thumbnail="/images/Log.images/image-20201202145208894.png" data-sub-html="<h2>JCL Framework</h2>">
+        <img
+            class="lazyload"
+            src="/svg/loading.min.svg"
+            data-src="/images/Log.images/image-20201202145208894.png"
+            data-srcset="/images/Log.images/image-20201202145208894.png, /images/Log.images/image-20201202145208894.png 1.5x, /images/Log.images/image-20201202145208894.png 2x"
+            data-sizes="auto"
+            alt="/images/Log.images/image-20201202145208894.png" width="100%" />
+    </a><figcaption class="image-caption"><strong>JCL Framework</strong></figcaption>
+    </figure>
+<p>在代码中使用<strong>JCL</strong>的代码获取<strong>Log</strong>对象，此时底层日志实现既可以使用<strong>JUL</strong>，也可以使用<strong>Log4j</strong>或<strong>SimpleLog</strong>。</p>
+<h3 id="1日志级别">1.日志级别</h3>
+<p><strong>JCL</strong>日志门面中所支持的日志级别，与<strong>Log4j</strong>中提供的默认日志级别一致。</p>
+<p>即无论你使用的是哪种日志实现，其所提供的日志等级只有六种，回顾一下，分别为：</p>
+<ol>
+<li><strong>FATAL</strong>：严重错误，一般会造成系统崩溃并终止运行；</li>
+<li><strong>ERROR</strong>：错误信息，不会影响系统运行；</li>
+<li><strong>WARN</strong>：警告信息，可能会发生问题；</li>
+<li><strong>INFO</strong>：运行信息，数据连接、网络连接、<strong>I/O</strong>操作等等；</li>
+<li><strong>DEBUG</strong>：调试信息，一般在开发中使用，记录程序变量参数传递信息等等。<span id="id-19">默认级别；</span></li>
+<li><strong>TRACE</strong>：追踪信息，记录程序所有的流程信息。</li>
+</ol>
+<h3 id="2入门案例-1">2.入门案例</h3>
+<p>以<strong>Maven</strong>项目为示例，最基本的情况下，需要导入<strong>JCL</strong>依赖：</p>
 <div class="highlight"><pre class="chroma"><code class="language-xml" data-lang="xml"><span class="nt">&lt;dependency&gt;</span>
     <span class="nt">&lt;groupId&gt;</span>commons-logging<span class="nt">&lt;/groupId&gt;</span>
     <span class="nt">&lt;artifactId&gt;</span>commons-logging<span class="nt">&lt;/artifactId&gt;</span>
     <span class="nt">&lt;version&gt;</span>1.2<span class="nt">&lt;/version&gt;</span>
 <span class="nt">&lt;/dependency&gt;</span>
-</code></pre></div><ul>
-<li><strong>JCL</strong>是一套日志门面，在代码中使用<strong>JCL</strong>的代码获取<strong>Log</strong>对象，此时底层日志实现既可以使用<strong>JUL</strong>，也可以使用<strong>Log4j</strong>。</li>
-<li>使用<strong>JCL</strong>只需要更改获取<strong>Logger</strong>的方式即可，此时需要调用静态方法<strong>LogFactory.getLog()<strong>获取日志记录器</strong>Log</strong>：
-<ol>
-<li><strong>JCL</strong>底层有一个用于存储其所支持的日志实现的全限定类名的数组，一旦按顺序成功创建了某个日志的实现，将不再继续往后创建其他的日志，默认使用当下创建成功的日志实现；</li>
-<li>其中优先级是：<strong>Log4JLogger</strong>&gt;<strong>Jdk14Logger</strong>&gt;<strong>Jdk13LumberjackLogger</strong>&gt;<strong>SimpleLog</strong>；</li>
-<li>创建的规则不是根据是否存在配置文件，而是根据当前环境是否有该日志实现的依赖；例如此时环境中有<strong>Log4j</strong>的依赖，则<strong>JCL</strong>会默认使用<strong>Log4j</strong>，此时如果没有配置文件，就会出现警告，不会因此使用<strong>JUL</strong>日志实现；</li>
-<li>如果希望使用的是<strong>JUL</strong>日志实现，只需要将<strong>Log4j</strong>的依赖从<strong>pom.xml</strong>中剔除并更新即可。</li>
-</ol>
-</li>
-</ul>
+</code></pre></div><p><strong>JCL</strong>使用同一套代码来获取日志记录器<strong>Log</strong>对象，注意，日志记录器不再是<strong>Logger</strong>对象了。</p>
+<p>获取<strong>Log</strong>对象的方法也很简单，只需要使用<strong>JCL</strong>中提供了<strong>LogFactory</strong>类中的静态方法<span id="id-20">getLog()</span>即可。</p>
+<p>那么，<strong>JCL</strong>如何确定底层所使用的日志门面是什么呢？</p>
+<p><strong>JCL</strong>底层有一个用于存储其所支持的日志实现的全限定类名的数组，一旦按顺序成功创建了某个日志的实现，将不再继续往后创建其他的日志，默认使用当下创建成功的日志实现。</p>
+<p><strong>JCL</strong>日志门面支持的日志实现数组：</p>
+<div class="highlight"><pre class="chroma"><code class="language-java" data-lang="java"><span class="kd">private</span> <span class="kd">static</span> <span class="kd">final</span> <span class="n">String</span><span class="o">[]</span> <span class="n">classesToDiscover</span> <span class="o">=</span> 
+    <span class="k">new</span> <span class="n">String</span><span class="o">[]{</span><span class="s">&#34;org.apache.commons.logging.impl.Log4JLogger&#34;</span><span class="o">,</span> 
+                 <span class="s">&#34;org.apache.commons.logging.impl.Jdk14Logger&#34;</span><span class="o">,</span> 
+                 <span class="s">&#34;org.apache.commons.logging.impl.Jdk13LumberjackLogger&#34;</span><span class="o">,</span> 
+                 <span class="s">&#34;org.apache.commons.logging.impl.SimpleLog&#34;</span><span class="o">};</span>
+</code></pre></div><p><strong>JCL</strong>获取具体日志实现的代码：</p>
+<div class="highlight"><pre class="chroma"><code class="language-java" data-lang="java"><span class="k">for</span><span class="o">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="n">0</span><span class="o">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">classesToDiscover</span><span class="o">.</span><span class="na">length</span> <span class="o">&amp;&amp;</span> <span class="n">result</span> <span class="o">==</span> <span class="kc">null</span><span class="o">;</span> <span class="o">++</span><span class="n">i</span><span class="o">)</span> <span class="o">{</span>
+	<span class="n">result</span> <span class="o">=</span> <span class="k">this</span><span class="o">.</span><span class="na">createLogFromClass</span><span class="o">(</span><span class="n">classesToDiscover</span><span class="o">[</span><span class="n">i</span><span class="o">],</span> <span class="n">logCategory</span><span class="o">,</span> <span class="kc">true</span><span class="o">);</span>
+<span class="o">}</span>
+</code></pre></div><p>不难看出，<strong>JCL</strong>将会按照<strong>String[] classesToDiscover</strong>的顺序去创建<strong>Logger</strong>对象，一旦创建成功，则会跳出<strong>for</strong>循环。</p>
+<p>其中日志门面优先级为：<strong>Log4JLogger</strong> &gt; <strong>Jdk14Logger</strong> &gt; <strong>Jdk13LumberjackLogger</strong> &gt; <strong>SimpleLog</strong>。</p>
+<p>注意，此时日志门面的使用规则，并不是根据是否存在配置文件决定，而是根据当前环境是否有指定日志实现的依赖而决定。</p>
+<div class="details admonition example open">
+        <div class="details-summary admonition-title">
+            <i class="icon fas fa-list-ol fa-fw"></i>Example<i class="details-icon fas fa-angle-right fa-fw"></i>
+        </div>
+        <div class="details-content">
+            <div class="admonition-content"><p>例如，环境中拥有<strong>Log4j</strong>的依赖，即便没有<strong>Log4j</strong>配置文件的存在，<strong>JCL</strong>仍然默认使用<strong>Log4j</strong>作为日志实现。显然，此时会出现警告，<strong>JCL</strong>也并不会因为不存在<strong>Log4j</strong>配置文件，而选择使用<strong>JUL</strong>日志实现。</p>
+<p>如果希望使用的是<strong>JUL</strong>日志实现，只需要将<strong>Log4j</strong>的依赖从<strong>pom.xml</strong>中剔除并更新即可。</p>
+</div>
+        </div>
+    </div>
+<p>以下为简单的<strong>JCL</strong>测试代码：</p>
 <div class="highlight"><pre class="chroma"><code class="language-java" data-lang="java"><span class="kn">package</span> <span class="nn">cn.dylanphang.jcl</span><span class="o">;</span>
 
 <span class="kn">import</span> <span class="nn">org.apache.commons.logging.Log</span><span class="o">;</span>
@@ -1243,7 +1216,6 @@ log4j.additivity.cn.xyz=false
 
 <span class="cm">/**
 </span><span class="cm"> * @author dylan
-</span><span class="cm"> * @date 2020/12/02
 </span><span class="cm"> */</span>
 <span class="kd">public</span> <span class="kd">class</span> <span class="nc">JclTest</span> <span class="o">{</span>
 
@@ -1261,40 +1233,30 @@ log4j.additivity.cn.xyz=false
         <span class="n">log</span><span class="o">.</span><span class="na">trace</span><span class="o">(</span><span class="s">&#34;[TRACE] 追踪信息，记录程序所有的流程信息。&#34;</span><span class="o">);</span>
     <span class="o">}</span>
 <span class="o">}</span>
-</code></pre></div><ul>
-<li><strong>JCL</strong>日志门面支持的日志实现数组：</li>
-</ul>
-<div class="highlight"><pre class="chroma"><code class="language-java" data-lang="java"><span class="kd">private</span> <span class="kd">static</span> <span class="kd">final</span> <span class="n">String</span><span class="o">[]</span> <span class="n">classesToDiscover</span> <span class="o">=</span> 
-    <span class="k">new</span> <span class="n">String</span><span class="o">[]{</span><span class="s">&#34;org.apache.commons.logging.impl.Log4JLogger&#34;</span><span class="o">,</span> 
-                 <span class="s">&#34;org.apache.commons.logging.impl.Jdk14Logger&#34;</span><span class="o">,</span> 
-                 <span class="s">&#34;org.apache.commons.logging.impl.Jdk13LumberjackLogger&#34;</span><span class="o">,</span> 
-                 <span class="s">&#34;org.apache.commons.logging.impl.SimpleLog&#34;</span><span class="o">};</span>
-</code></pre></div><ul>
-<li><strong>JCL</strong>获取具体日志实现的代码：</li>
-</ul>
-<div class="highlight"><pre class="chroma"><code class="language-java" data-lang="java"><span class="k">for</span><span class="o">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="n">0</span><span class="o">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">classesToDiscover</span><span class="o">.</span><span class="na">length</span> <span class="o">&amp;&amp;</span> <span class="n">result</span> <span class="o">==</span> <span class="kc">null</span><span class="o">;</span> <span class="o">++</span><span class="n">i</span><span class="o">)</span> <span class="o">{</span>
-	<span class="n">result</span> <span class="o">=</span> <span class="k">this</span><span class="o">.</span><span class="na">createLogFromClass</span><span class="o">(</span><span class="n">classesToDiscover</span><span class="o">[</span><span class="n">i</span><span class="o">],</span> <span class="n">logCategory</span><span class="o">,</span> <span class="kc">true</span><span class="o">);</span>
-<span class="o">}</span>
-</code></pre></div><ul>
-<li>不难看出，<strong>JCL</strong>将会按照<strong>String[] classesToDiscover</strong>的顺序去创建<strong>Logger</strong>对象，一旦创建成功，则跳出<strong>for</strong>循环。</li>
-</ul>
-<h2 id="slf4j日志门面">Slf4j日志门面</h2>
-<ul>
-<li><strong>slf4j</strong>的全称是<strong>Simple Logging Facade for Java</strong>，简单日志门面主要是为了给<strong>Java</strong>日志访问提供一套标准、规范的<strong>API</strong>接口，其主要的意义在于提供接口，具体的实现可以交由其他日志实现，例如<strong>log4j</strong>或<strong>logback</strong>等。</li>
-<li><strong>slf4j</strong>也有提供功能较为简单的日志实现，但一般不用。对于<strong>Java</strong>项目而言，日志实现会选择<strong>sl4j-api</strong>作为门面，再配上具体的日志实现<strong>log4j</strong>、<strong>logback</strong>等，并使用桥接器建立两者的联系。</li>
-<li>为什么要使用<strong>slf4j</strong>作为日志门面？
+</code></pre></div><p><strong>JCL</strong>在选用不同的日志实现时，其差别主要在于不同的日志实现间具有不同的输出效率，及其所支持的输出位置的不同等等。</p>
+<p>至于日志格式，无论是<strong>Log4j</strong>还是<strong>JUL</strong>，它们都是支持根据配置文件来更改日志格式的，几乎没有差别。</p>
+<h2 id="日志门面slf4j">日志门面Slf4j</h2>
+<p><strong>slf4j</strong>的全称是<strong>Simple Logging Facade for Java</strong>，简单日志门面主要是为了给<strong>Java</strong>日志访问提供一套标准、规范的<strong>API</strong>接口，其主要的意义在于提供接口，具体的实现可以交由其他日志实现，例如<strong>log4j</strong>或<strong>logback</strong>等。</p>
+<p><strong>slf4j</strong>也有提供功能较为简单的日志实现，但一般不用。对于<strong>Java</strong>项目而言，日志会选择<strong>sl4j-api</strong>作为日志门面，再配上具体的日志实现<strong>log4j</strong>、<strong>logback</strong>等一起使用，日志门面和日志实现直接需要使用桥接器建立联系。</p>
+<p>为什么在具有<strong>JCL</strong>日志门面的前提下，仍然要使用<strong>slf4j</strong>作为日志门面？</p>
+<p><strong>slf4j</strong>日志门面具有以下优势：</p>
 <ol>
 <li>使用<strong>slf4j</strong>框架，可以在部署时迁移到所需的日志记录框架；</li>
 <li><strong>slf4j</strong>提供了对所有流行的日志实现的绑定，例如<strong>log4j</strong>、<strong>JUL</strong>、<strong>logback</strong>、<strong>log4j2</strong>等；</li>
 <li>无论使用哪种绑定，<strong>slf4j</strong>都支持参数化日志记录消息。由于<strong>slf4j</strong>将应用程序和日志记录框架分离，因此可以轻松编写独立于日志记录框架的应用程序。而无需担心用于编写应用程序的日志记录框架；</li>
 <li><strong>slf4j</strong>提供了一个简单的<strong>Java</strong>工具，称为迁移器。使用此工具，可以迁移现有使用日志实现<strong>JCL</strong>、<strong>Log4j</strong>或<strong>JUL</strong>的项目到<strong>slf4j</strong>。</li>
 </ol>
-</li>
-</ul>
-<h3 id="1-入门案例-2">1. 入门案例</h3>
-<ul>
-<li>将使用<strong>slf4j</strong>中的简单日志实现进行示例，需要引入依赖：</li>
-</ul>
+<h3 id="1日志级别-1">1.日志级别</h3>
+<p><strong>slf4j</strong>日志门面，提供了<strong>5</strong>个不同的基本日志级别，分别是：</p>
+<ol>
+<li><strong>ERROR</strong>：错误信息，不会影响系统运行；</li>
+<li><strong>WARN</strong>：警告信息，可能会发生问题；</li>
+<li><strong>INFO</strong>：运行信息，数据连接、网络连接、<strong>I/O</strong>操作等等；</li>
+<li><strong>DEBUG</strong>：调试信息，一般在开发中使用，记录程序变量参数传递信息等等。<span id="id-21">默认级别；</span></li>
+<li><strong>TRACE</strong>：追踪信息，记录程序所有的流程信息。</li>
+</ol>
+<h3 id="2入门案例-2">2.入门案例</h3>
+<p>案例使用Maven创建，并使用<strong>slf4j</strong>中的简单日志实现进行示例，需要引入<strong>slf4j</strong>的依赖，和其简单日志实现<strong>slf4j-simple</strong>的依赖：</p>
 <div class="highlight"><pre class="chroma"><code class="language-xml" data-lang="xml"><span class="nt">&lt;dependency&gt;</span>
     <span class="nt">&lt;groupId&gt;</span>org.slf4j<span class="nt">&lt;/groupId&gt;</span>
     <span class="nt">&lt;artifactId&gt;</span>slf4j-api<span class="nt">&lt;/artifactId&gt;</span>
@@ -1305,16 +1267,14 @@ log4j.additivity.cn.xyz=false
     <span class="nt">&lt;artifactId&gt;</span>slf4j-simple<span class="nt">&lt;/artifactId&gt;</span>
     <span class="nt">&lt;version&gt;</span>1.7.30<span class="nt">&lt;/version&gt;</span>
 <span class="nt">&lt;/dependency&gt;</span>
-</code></pre></div><ul>
-<li>示例代码：</li>
-</ul>
+</code></pre></div><p><strong>slf4j</strong>作为日志门面时，获取日志记录对象为<strong>Logger</strong>，获取方式是通过<strong>slf4j</strong>中的<strong>LoggerFactory</strong>类提供的静态方法<span id="id-22">getLogger()</span>。</p>
+<p>示例代码：</p>
 <div class="highlight"><pre class="chroma"><code class="language-java" data-lang="java"><span class="kn">import</span> <span class="nn">org.junit.Test</span><span class="o">;</span>
 <span class="kn">import</span> <span class="nn">org.slf4j.Logger</span><span class="o">;</span>
 <span class="kn">import</span> <span class="nn">org.slf4j.LoggerFactory</span><span class="o">;</span>
 
 <span class="cm">/**
 </span><span class="cm"> * @author dylan
-</span><span class="cm"> * @date 2020/12/02
 </span><span class="cm"> */</span>
 <span class="kd">public</span> <span class="kd">class</span> <span class="nc">Slf4jTest</span> <span class="o">{</span>
 
@@ -1342,35 +1302,34 @@ log4j.additivity.cn.xyz=false
         <span class="o">}</span>
     <span class="o">}</span>
 <span class="o">}</span>
-</code></pre></div><h3 id="2-绑定日志实现">2. 绑定日志实现</h3>
-<ul>
-<li>绑定<strong>Binding</strong>日志实现，是针对新开项目而言的，你可能在日后需要从<strong>JUL</strong>转为<strong>log4j</strong>，如果一开始选择使用<strong>slf4j</strong>日志门面，那么未来需要从<strong>JUL</strong>转为<strong>log4j</strong>日志实现时，无须改动代码，只需要更改依赖、添加<strong>log4j.properties</strong>配置文件即可。</li>
-<li>通过日志绑定的方式，<strong>slf4j</strong>支持各种日志实现：
+</code></pre></div><p>输出结果省略。</p>
+<h3 id="3绑定日志实现">3.绑定日志实现</h3>
+<p>绑定日志实现主要是针对新项目而言的，当你需要选择新项目系统构成时，为了便于日后日志实现可能作出的改变，应当选用支持更多日志实现的<strong>slf4j</strong>作为日志门面，使用它提供的<strong>API</strong>来获取日志记录对象。</p>
+<p>即使你可能在日后需要从<strong>JUL</strong>转为<strong>log4j</strong>，如果一开始选择使用<strong>slf4j</strong>日志门面，那么未来需要从<strong>JUL</strong>转为<strong>log4j</strong>日志实现时，也无须改动代码，只需要更改依赖、添加<strong>log4j.properties</strong>配置文件即可。</p>
+<p>通过日志绑定，<strong>slf4j</strong>可以支持各种日志实现。绑定日志实现的步骤如下：</p>
 <ol>
 <li>添加<strong>slf4j-api</strong>的依赖；</li>
 <li>使用<strong>slf4j</strong>的<strong>API</strong>在项目中进行统一的日志记录；</li>
 <li>绑定具体的日志实现框架：
 <ol>
-<li>绑定已经实现了<strong>slf4j</strong>的日志实现，直接添加对应依赖，如<strong>logback</strong>、<strong>slf4j-simple</strong>；</li>
-<li>绑定没有实现<strong>slf4j</strong>的日志实现，先添加日志适配器，再添加实现类的依赖，如<strong>log4j</strong>、<strong>JUL</strong>。</li>
+<li>绑定已经实现了<strong>slf4j</strong>的日志实现，可直接添加对应依赖，如<strong>logback</strong>、<strong>slf4j-simple</strong>；</li>
+<li>绑定没有实现<strong>slf4j</strong>的日志实现，先添加日志适配器，再添加日志实现的依赖，如<strong>log4j</strong>、<strong>JUL</strong>。</li>
 </ol>
 </li>
-<li><strong>slf4j</strong>有且仅有一个日志实现框架的绑定（如果出现多个，则默认使用第一个日志实现依赖）。</li>
 </ol>
-</li>
-</ul>
-<p><img
-        class="lazyload"
-        src="/svg/loading.min.svg"
-        data-src="images/Log.images/concrete-bindings.png"
-        data-srcset="images/Log.images/concrete-bindings.png, images/Log.images/concrete-bindings.png 1.5x, images/Log.images/concrete-bindings.png 2x"
-        data-sizes="auto"
-        alt="images/Log.images/concrete-bindings.png"
-        title="click to enlarge" /></p>
-<ul>
-<li>相关依赖如下引入：</li>
-</ul>
-<div class="highlight"><pre class="chroma"><code class="language-xml" data-lang="xml"><span class="c">&lt;!-- slf4j-api日志门面--&gt;</span>
+<p>注意，<strong>slf4j</strong>有且仅有一个日志实现框架的绑定（如果出现多个，则默认使用第一个日志实现依赖）。</p>
+<figure><a class="lightgallery" href="/images/Log.images/concrete-bindings.png" title="/images/Log.images/concrete-bindings.png" data-thumbnail="/images/Log.images/concrete-bindings.png" data-sub-html="<h2>Concrete Bindings</h2>">
+        <img
+            class="lazyload"
+            src="/svg/loading.min.svg"
+            data-src="/images/Log.images/concrete-bindings.png"
+            data-srcset="/images/Log.images/concrete-bindings.png, /images/Log.images/concrete-bindings.png 1.5x, /images/Log.images/concrete-bindings.png 2x"
+            data-sizes="auto"
+            alt="/images/Log.images/concrete-bindings.png" width="100%" />
+    </a><figcaption class="image-caption"><strong>Concrete Bindings</strong></figcaption>
+    </figure>
+<p>事实上，所谓的绑定等同于引入依赖。对应依赖引入关系如下：</p>
+<div class="highlight"><pre class="chroma"><code class="language-xml" data-lang="xml"><span class="c">&lt;!-- slf4j-api日志门面，需要使用此API获取日志记录对象 --&gt;</span>
 <span class="nt">&lt;dependency&gt;</span>
     <span class="nt">&lt;groupId&gt;</span>org.slf4j<span class="nt">&lt;/groupId&gt;</span>
     <span class="nt">&lt;artifactId&gt;</span>slf4j-api<span class="nt">&lt;/artifactId&gt;</span>
@@ -1426,58 +1385,66 @@ log4j.additivity.cn.xyz=false
     <span class="nt">&lt;artifactId&gt;</span>slf4j-jcl<span class="nt">&lt;/artifactId&gt;</span>
     <span class="nt">&lt;version&gt;</span>1.7.30<span class="nt">&lt;/version&gt;</span>
 <span class="nt">&lt;/dependency&gt;</span>
-</code></pre></div><h3 id="3-桥接旧的日志实现">3. 桥接旧的日志实现</h3>
-<ul>
-<li>桥接<strong>Bridging</strong>则是针对与旧项目而已，旧项目没有选择使用<strong>slf4j</strong>作为日志门面时，那意味着项目使用的要么是<strong>JCL</strong>日志门面，要么则是直接使用了<strong>log4j</strong>日志实现或<strong>JUL</strong>日志实现。</li>
-<li>项目一旦需要使用更为高效的日志实现<strong>logback</strong>或<strong>log4j2</strong>时，在不改动旧代码的情况下，可以使用<strong>slf4j</strong>提供的桥接功能，将<strong>JCL</strong>或<strong>log4j</strong>、<strong>JUL</strong>日志门面或实现桥接到<strong>slf4j-api</strong>中。</li>
-<li>一旦桥接到<strong>slf4j-api</strong>后，就可以使用绑定功能，将日志无缝转换为新的日志实现。此时需要提供新日志实现的配置文件，同时需要保留旧的日志实现配置文件。</li>
-<li>所以，为了防止从旧的日志门面或实现桥接为<strong>slf4j-api</strong>后，又通过绑定功能输出为原本旧的日志门面或实现的情况发生，以下依赖不能同时引入，否则将会造成<strong>Out of Memory</strong>错误：
+</code></pre></div><h3 id="4桥接旧的日志实现">4.桥接旧的日志实现</h3>
+<p>桥接<strong>Bridging</strong>则主要针对旧项目而言，当旧项目没有选择使用<strong>slf4j</strong>作为日志门面时，那意味着项目使用的要么是<strong>JCL</strong>日志门面，要么则是直接使用了<strong>log4j</strong>或<strong>JUL</strong>日志实现。</p>
+<p>项目一旦需要使用更为高效的日志实现<strong>logback</strong>或<strong>log4j2</strong>时，在不改动旧代码的情况下，可以使用<strong>slf4j</strong>提供的<strong>Bridging</strong>桥接功能，将<strong>JCL</strong>或<strong>log4j</strong>、<strong>JUL</strong>日志门面或实现桥接到<strong>slf4j-api</strong>中。</p>
+<p>一旦桥接到<strong>slf4j-api</strong>后，就可以使用绑定功能，将日志无缝转换为新的日志实现。此时需要提供新日志实现的配置文件，同时需要保留旧的日志实现配置文件。</p>
+<p>所以，为了防止从旧的日志门面或实现桥接为<strong>slf4j-api</strong>后，又通过绑定功能输出为原本旧的日志门面或实现的情况发生，以下依赖不能同时引入，否则将会造成<strong>Out of Memory</strong>错误：</p>
 <ol>
-<li><strong>jcl-over-slf4j.jar</strong>和<strong>slf4j-jcl.jar</strong>；</li>
-<li><strong>log4j-over-slf4j.jar</strong>和<strong>slf4j-log4j12.jar</strong>；</li>
-<li><strong>jul-to-slf4j.jar</strong>和<strong>slf4j-jdk14</strong>。</li>
+<li><strong>jcl-over-slf4j</strong> | <strong>slf4j-jcl</strong>；</li>
+<li><strong>log4j-over-slf4j</strong> | <strong>slf4j-log4j12</strong>；</li>
+<li><strong>jul-to-slf4j</strong> | <strong>slf4j-jdk14</strong>；</li>
+<li><strong>log4j-to-slf4j</strong> | <strong>log4j-slf4j-impl</strong>。</li>
 </ol>
-</li>
-<li>桥接解决的是项目中日志遗留问题，当系统中存在之前的<strong>API</strong>，可以通过桥接转换到<strong>slf4j</strong>的实现：
+<div class="details admonition tip open">
+        <div class="details-summary admonition-title">
+            <i class="icon fas fa-lightbulb fa-fw"></i>Tip<i class="details-icon fas fa-angle-right fa-fw"></i>
+        </div>
+        <div class="details-content">
+            <div class="admonition-content">桥接功能仅针对<strong>JCL</strong>、<strong>log4j</strong>、<strong>JUL</strong>、<strong>log4j2</strong>等日志门面或日志实现。因为后续的日志实现<strong>logback</strong>、<strong>slf4j-simple</strong>都默认使用<strong>slf4j</strong>作为日志门面，不存在需要桥接的情况。</div>
+        </div>
+    </div>
+<p>桥接解决的是项目中日志遗留问题，当系统中存在之前的<strong>API</strong>，可以通过桥接转换到<strong>slf4j</strong>的实现：</p>
 <ol>
-<li>先取出之前老的日志实现依赖；</li>
-<li>添加<strong>slf4j</strong>提供的桥接组件；</li>
+<li>先取出之前老的日志实现依赖，即移除老的日志实现依赖；</li>
+<li>添加<strong>slf4j</strong>提供的桥接组件，桥接组件不可以桥接到老的日志实现；</li>
 <li>为项目添加<strong>slf4j</strong>的具体实现。</li>
 </ol>
-</li>
-</ul>
-<p><img
-        class="lazyload"
-        src="/svg/loading.min.svg"
-        data-src="images/Log.images/legacy.png"
-        data-srcset="images/Log.images/legacy.png, images/Log.images/legacy.png 1.5x, images/Log.images/legacy.png 2x"
-        data-sizes="auto"
-        alt="images/Log.images/legacy.png"
-        title="click to enlarge" /></p>
-<ul>
-<li>如果项目使用的是<strong>log4j2</strong>的日志实现，此时需要使用的桥接器是<strong>log4j-to-slf4j.jar</strong>，该桥接器是用于<strong>log4j2</strong>桥接至<strong>slf4j</strong>日志门面的，<strong>log4j-over-slf4j.jar</strong>则是用于<strong>log4j</strong>桥接至<strong>slf4j</strong>日志门面。</li>
-</ul>
-<h2 id="logback日志实现">Logback日志实现</h2>
-<ul>
-<li><strong>logback</strong>是由<strong>log4j</strong>创始人设计的另一个开源日志组件，性能要比<strong>log4j</strong>好。</li>
-<li><strong>logback</strong>主要分为三个模块：
+<figure><a class="lightgallery" href="/images/Log.images/legacy.png" title="/images/Log.images/legacy.png" data-thumbnail="/images/Log.images/legacy.png" data-sub-html="<h2>Legacy</h2>">
+        <img
+            class="lazyload"
+            src="/svg/loading.min.svg"
+            data-src="/images/Log.images/legacy.png"
+            data-srcset="/images/Log.images/legacy.png, /images/Log.images/legacy.png 1.5x, /images/Log.images/legacy.png 2x"
+            data-sizes="auto"
+            alt="/images/Log.images/legacy.png" width="100%" />
+    </a><figcaption class="image-caption"><strong>Legacy</strong></figcaption>
+    </figure>
+<p>注意，如果项目使用的是<strong>log4j2</strong>的日志实现，此时需要使用的桥接器是<strong>log4j-to-slf4j.jar</strong>，该桥接器是用于<strong>log4j2</strong>桥接<strong>slf4j</strong>日志门面的。<strong>log4j-over-slf4j.jar</strong>则是用于<strong>log4j</strong>桥接<strong>slf4j</strong>日志门面。</p>
+<h2 id="日志实现logback">日志实现Logback</h2>
+<p><strong>logback</strong>是由<strong>log4j</strong>创始人设计的另一个开源日志组件，性能要比<strong>log4j</strong>好。</p>
+<p><strong>logback</strong>主要分为三个模块：</p>
 <ol>
 <li><strong>logback-core</strong>：其它两个模块的基础模块；</li>
 <li><strong>logback-classic</strong>：它是<strong>log4j</strong>的一个改良版本，同时它完整实现了<strong>slf4j</strong>的<strong>API</strong>；</li>
 <li><strong>logback-access</strong>：访问模块与<strong>Servlet</strong>容器继承提供通过<strong>Http</strong>来访问日志的功能。</li>
 </ol>
-</li>
-</ul>
-<h3 id="1-入门案例-3">1. 入门案例</h3>
-<ul>
-<li>导入依赖：
+<h3 id="1日志级别-2">1.日志级别</h3>
+<p><strong>logback</strong>默认使用<strong>slf4j</strong>的<strong>API</strong>，因此日志级别与<strong>slf4j</strong>日志门面提供的日志级别一致。</p>
+<p>另外，有<strong>2</strong>种特殊的日志级别，用于开关日志：</p>
 <ol>
-<li>使用<strong>logback</strong>需要依赖于<strong>logback-core</strong>和<strong>logback-classic</strong>，其中<strong>logback-core</strong>已经被自动添加到了项目中；</li>
-<li>可以选择性排除由<strong>logback-classic</strong>引入的<strong>slf4j-api</strong>，由此你也可以指定其实使用使用<strong>logback</strong>仅需要导入一个依赖，之所以显示导入<strong>slf4j-api</strong>看个人喜好，我认为这便于理解。</li>
-<li>关于<strong>logback-access</strong>模块将在章节末进行介绍。</li>
+<li><strong>OFF</strong>：用于关闭日志记录；</li>
+<li><strong>ALL</strong>：用于启用日志记录。</li>
 </ol>
-</li>
-</ul>
+<h3 id="2入门案例-3">2.入门案例</h3>
+<p>同样采用<strong>Maven</strong>项目，导入依赖：</p>
+<div class="highlight"><pre class="chroma"><code class="language-xml" data-lang="xml"><span class="nt">&lt;dependency&gt;</span>
+    <span class="nt">&lt;groupId&gt;</span>ch.qos.logback<span class="nt">&lt;/groupId&gt;</span>
+    <span class="nt">&lt;artifactId&gt;</span>logback-classic<span class="nt">&lt;/artifactId&gt;</span>
+    <span class="nt">&lt;version&gt;</span>1.2.3<span class="nt">&lt;/version&gt;</span>
+<span class="nt">&lt;/dependency&gt;</span>
+</code></pre></div><p>使用<strong>logback</strong>需要导入<strong>logback-core</strong>和<strong>logback-classic</strong>，由于Maven会自动导入依赖，只需要引入<strong>logback-classic</strong>，即可以自动关联<strong>logback-core</strong>依赖了。</p>
+<p><strong>logback</strong>在设计之初就已经是支持<strong>slf4j</strong>日志门面了，可以选择性排除由<strong>logback-classic</strong>引入的<strong>slf4j-api</strong>，使用一个更新的<strong>slf4j</strong>版本。</p>
 <div class="highlight"><pre class="chroma"><code class="language-xml" data-lang="xml"><span class="nt">&lt;dependency&gt;</span>
     <span class="nt">&lt;groupId&gt;</span>org.slf4j<span class="nt">&lt;/groupId&gt;</span>
     <span class="nt">&lt;artifactId&gt;</span>slf4j-api<span class="nt">&lt;/artifactId&gt;</span>
@@ -1494,9 +1461,8 @@ log4j.additivity.cn.xyz=false
         <span class="nt">&lt;/exclusion&gt;</span>
     <span class="nt">&lt;/exclusions&gt;</span>
 <span class="nt">&lt;/dependency&gt;</span>
-</code></pre></div><ul>
-<li>由于都是使用<strong>slf4j</strong>日志门面，因此代码是没有区别的，只有配置文件需要学习：</li>
-</ul>
+</code></pre></div><p>关于<strong>logback-access</strong>模块将在章节末进行介绍。</p>
+<p>由于是使用<strong>slf4j</strong>日志门面，因此获取<strong>Logger</strong>的代码与前一小节一致：</p>
 <div class="highlight"><pre class="chroma"><code class="language-java" data-lang="java"><span class="kn">import</span> <span class="nn">org.junit.Test</span><span class="o">;</span>
 <span class="kn">import</span> <span class="nn">org.slf4j.Logger</span><span class="o">;</span>
 <span class="kn">import</span> <span class="nn">org.slf4j.LoggerFactory</span><span class="o">;</span>
@@ -1530,31 +1496,20 @@ log4j.additivity.cn.xyz=false
         <span class="o">}</span>
     <span class="o">}</span>
 <span class="o">}</span>
-</code></pre></div><h3 id="2-logback组件">2. logback组件</h3>
-<ul>
-<li><strong>Logger</strong>：日志的记录器，把它关联到应用的对应的<strong>context</strong>上后，主要用于存放日志对象，也
-可以定义日志类型、级别。</li>
-<li><strong>Appender</strong>：用于指定日志输出的目的地，目的地可以是控制台、文件、数据库等等。</li>
-<li><strong>Layout</strong>：负责把事件转换成字符串，格式化的日志信息的输出。在<strong>logback</strong>中<strong>Layout</strong>对象被封
-装在<strong>Encoder</strong>中。</li>
-</ul>
-<h3 id="3-配置文件">3. 配置文件</h3>
-<ul>
-<li>
+</code></pre></div><h3 id="3logback组件">3.logback组件</h3>
+<p><strong>Logger</strong>：日志的记录器，把它关联到应用的对应的<strong>context</strong>上后，主要用于存放日志对象，也
+可以定义日志类型、级别。</p>
+<p><strong>Appender</strong>：用于指定日志输出的目的地，目的地可以是控制台、文件、数据库等等。</p>
+<p><strong>Layout</strong>：负责把事件转换成字符串，格式化的日志信息的输出。在<strong>logback</strong>中<strong>Layout</strong>对象被封装在<strong>Encoder</strong>中。</p>
+<h3 id="4配置文件">4.配置文件</h3>
 <p><strong>logback</strong>会根据顺序读取以下配置文件：</p>
 <ol>
 <li><strong>logback-test.xml</strong>；</li>
 <li><strong>logback.groovy</strong>；</li>
 <li><strong>logback.xml</strong>。</li>
 </ol>
-</li>
-<li>
 <p>如果指定名称的配置文件均不存在，则会采用默认配置。</p>
-</li>
-<li>
 <p>日志输出格式：</p>
-</li>
-</ul>
 <table>
 <thead>
 <tr>
@@ -1588,24 +1543,21 @@ log4j.additivity.cn.xyz=false
 <td style="text-align:center">线程名称</td>
 </tr>
 <tr>
-<td style="text-align:center"><strong>%m</strong>或**%msg**</td>
+<td style="text-align:center"><strong>%m</strong> 或 <span id="id-23">%msg</span></td>
 <td style="text-align:center">日志信息</td>
 </tr>
 <tr>
-<td style="text-align:center">%n</td>
+<td style="text-align:center"><strong>%n</strong></td>
 <td style="text-align:center">换行</td>
 </tr>
 </tbody>
 </table>
-<ul>
-<li>以下配置文件包括以下<strong>Appender</strong>：
+<p>以下配置文件包括以下<strong>Appender</strong>：</p>
 <ol>
 <li><strong>ConsoleAppender</strong>：日志将在控制台输出；</li>
 <li><strong>FileAppender</strong>：日志将在文件输出；</li>
 <li><strong>RollingFileAppender</strong>：日志可以根据日志文件大小进行拆分与压缩。</li>
 </ol>
-</li>
-</ul>
 <div class="highlight"><pre class="chroma"><code class="language-xml" data-lang="xml"><span class="cp">&lt;?xml version=&#34;1.0&#34; encoding=&#34;UTF-8&#34;?&gt;</span>
 <span class="nt">&lt;configuration&gt;</span>
 
@@ -1703,22 +1655,10 @@ log4j.additivity.cn.xyz=false
         <span class="nt">&lt;appender-ref</span> <span class="na">ref=</span><span class="s">&#34;rollFile&#34;</span><span class="nt">/&gt;</span>
     <span class="nt">&lt;/root&gt;</span>
 <span class="nt">&lt;/configuration&gt;</span>
-</code></pre></div><ul>
-<li>
-<p>注意：</p>
-<ol>
-<li><strong>logger</strong>与<strong>rootLogger</strong>的日志等级是以较高的为准，但存在特例。
-<ul>
-<li>当<strong>rootLogger</strong>的等级为<strong>OFF</strong>，而<strong>logger</strong>等级为<strong>INFO</strong>时，<strong>logger</strong>的日志输出情况与<strong>rootLogger</strong>的日志等级为<strong>ALL</strong>时一致，即无法通过关闭<strong>rootLogger</strong>的日志去间接关闭<strong>logger</strong>的日志。</li>
-</ul>
-</li>
-<li><strong>levelFilter</strong>的使用，它有且仅作用于一种日志等级。</li>
-</ol>
-</li>
-<li>
-<p>测试代码示例：</p>
-</li>
-</ul>
+</code></pre></div><p>注意，普通<strong>Logger</strong>与<strong>RootLogger</strong>的日志等级是以较高的为准，但存在特例。</p>
+<p>当<strong>RootLogger</strong>的等级为<strong>OFF</strong>，而普通<strong>Logger</strong>等级为<strong>INFO</strong>时，<strong>Logger</strong>的日志输出情况与<strong>RootLogger</strong>的日志等级为<strong>ALL</strong>时一致。即无法通过关闭<strong>RootLogger</strong>的日志去间接关闭<strong>Logger</strong>的日志。</p>
+<p><strong>Filter</strong>标签中的<strong>LevelFilter</strong>，如果进行了配置，则仅支持指定等级的日志输出。</p>
+<p>测试代码：</p>
 <div class="highlight"><pre class="chroma"><code class="language-java" data-lang="java"><span class="kn">import</span> <span class="nn">org.junit.Test</span><span class="o">;</span>
 <span class="kn">import</span> <span class="nn">org.slf4j.Logger</span><span class="o">;</span>
 <span class="kn">import</span> <span class="nn">org.slf4j.LoggerFactory</span><span class="o">;</span>
@@ -1765,11 +1705,9 @@ log4j.additivity.cn.xyz=false
         <span class="n">logger</span><span class="o">.</span><span class="na">trace</span><span class="o">(</span><span class="s">&#34;TRACE&#34;</span><span class="o">);</span>
     <span class="o">}</span>
 <span class="o">}</span>
-</code></pre></div><h3 id="4-异步日志">4. 异步日志</h3>
-<ul>
-<li>此前所有的日志输出都是同步的，使用<strong>logback</strong>提供的异步日志，可以增加日志的输出效率，需要使用<strong>AsyncAppender</strong>将其他的<strong>Appender</strong>设置为异步形式输出日志。</li>
-<li>可以将某一个<strong>appender</strong>设置为异步日志，参考以下配置文件：</li>
-</ul>
+</code></pre></div><h3 id="5异步日志">5.异步日志</h3>
+<p>此前所有的日志输出都是同步的，使用<strong>logback</strong>提供的异步日志，可以增加日志的输出效率，需要使用<strong>AsyncAppender</strong>将其他的<strong>Appender</strong>设置为异步形式输出日志。</p>
+<p>可以将某一个<strong>appender</strong>设置为异步日志，参考以下配置文件：</p>
 <div class="highlight"><pre class="chroma"><code class="language-xml" data-lang="xml"><span class="cp">&lt;?xml version=&#34;1.0&#34; encoding=&#34;UTF-8&#34;?&gt;</span>
 <span class="nt">&lt;configuration&gt;</span>
     <span class="nt">&lt;property</span> <span class="na">name=</span><span class="s">&#34;pattern&#34;</span> <span class="na">value=</span><span class="s">&#34;%d{yyyy-MM-dd HH:mm:ss.SSS} %c [%thread] %-5level %msg%n&#34;</span><span class="nt">/&gt;</span>
@@ -1799,41 +1737,41 @@ log4j.additivity.cn.xyz=false
         <span class="nt">&lt;appender-ref</span> <span class="na">ref=</span><span class="s">&#34;async&#34;</span><span class="nt">/&gt;</span>
     <span class="nt">&lt;/root&gt;</span>
 <span class="nt">&lt;/configuration&gt;</span>
-</code></pre></div><h3 id="5-log-access模块">5. log-access模块</h3>
-<ul>
-<li><strong>logback-access</strong>模块与<strong>Servlet</strong>容器（如<strong>Tomcat</strong>和<strong>Jetty</strong>）集成，以提供<strong>HTTP</strong>访问日志功能。</li>
-<li>我们可以使用<strong>logback-access</strong>模块来替换<strong>tomcat</strong>的访问日志。</li>
-</ul>
-<h2 id="log4j2日志实现">Log4j2日志实现</h2>
-<ul>
-<li><strong>Apache Log4j 2</strong>是对<strong>Log4j</strong>的升级版，参考了<strong>logback</strong>的一些优秀的设计，并且修复了一些问题，带来了一些重大的提升：
+</code></pre></div><h3 id="6log-access模块">6.log-access模块</h3>
+<p><strong>logback-access</strong>模块与<strong>Servlet</strong>容器（如<strong>Tomcat</strong>和<strong>Jetty</strong>）集成，以提供<strong>HTTP</strong>访问日志功能。</p>
+<p>我们可以使用<strong>logback-access</strong>模块来替换<strong>tomcat</strong>的访问日志，作为了解即可。不再赘述。</p>
+<h2 id="日志实现log4j2">日志实现Log4j2</h2>
+<p><strong>Apache Log4j 2</strong>是对<strong>Log4j</strong>的升级版，参考了<strong>logback</strong>的一些优秀的设计，并且修复了一些问题，带来了一些重大的提升：</p>
 <ol>
 <li>异常处理，在<strong>logback</strong>中，<strong>Appender</strong>中的异常不会被应用感知到，但是在<strong>log4j2</strong>中，提供了一些异常处理机制；</li>
 <li>性能提升， <strong>log4j2</strong>相较于<strong>log4j</strong>和<strong>logback</strong>都具有很明显的性能提升；</li>
 <li>自动重载配置，参考了<strong>logback</strong>的设计，当然会提供自动刷新参数配置，最实用的就是我们在生产上可以动态的修改日志的级别而不需要重启应用；</li>
 <li>无垃圾机制，<strong>log4j2</strong>在大部分情况下，都可以使用其设计的一套无垃圾机制，避免频繁的日志收集导致的<strong>jvm gc</strong>。</li>
 </ol>
-</li>
-</ul>
-<h3 id="1-入门案例-4">1. 入门案例</h3>
-<ul>
-<li>单纯仅使用<strong>log4j2</strong>，则添加依赖：</li>
-</ul>
+<h3 id="1日志级别-3">1.日志级别</h3>
+<p><strong>Log4j2</strong>提供了<strong>5</strong>个日志级别，分别是：</p>
+<ol>
+<li><strong>ERROR</strong>：错误信息，不会影响系统运行；</li>
+<li><strong>WARN</strong>：警告信息，可能会发生问题；</li>
+<li><strong>INFO</strong>：运行信息，数据连接、网络连接、<strong>I/O</strong>操作等等；</li>
+<li><strong>DEBUG</strong>：调试信息，一般在开发中使用，记录程序变量参数传递信息等等。<span id="id-24">默认级别；</span></li>
+<li><strong>TRACE</strong>：追踪信息，记录程序所有的流程信息。</li>
+</ol>
+<h3 id="2入门案例-4">2.入门案例</h3>
+<p>使用<strong>Maven</strong>项目作为示例，单纯使用<strong>log4j2</strong>，仅需添加依赖：</p>
 <div class="highlight"><pre class="chroma"><code class="language-xml" data-lang="xml"><span class="nt">&lt;dependency&gt;</span>
     <span class="nt">&lt;groupId&gt;</span>org.apache.logging.log4j<span class="nt">&lt;/groupId&gt;</span>
     <span class="nt">&lt;artifactId&gt;</span>log4j-core<span class="nt">&lt;/artifactId&gt;</span>
     <span class="nt">&lt;version&gt;</span>2.13.3<span class="nt">&lt;/version&gt;</span>
 <span class="nt">&lt;/dependency&gt;</span>
-</code></pre></div><ul>
-<li>测试代码：</li>
-</ul>
+</code></pre></div><p>此时，获取日志记录对象<strong>Logger</strong>的方式，使用的是<strong>log4j2</strong>提供的<strong>API</strong>，调用<strong>LogManager</strong>中的静态方法<span id="id-25">getLogger()</span>即可。</p>
+<p>测试代码：</p>
 <div class="highlight"><pre class="chroma"><code class="language-java" data-lang="java"><span class="kn">import</span> <span class="nn">org.junit.Test</span><span class="o">;</span>
 <span class="kn">import</span> <span class="nn">org.apache.logging.log4j.Logger</span><span class="o">;</span>
 <span class="kn">import</span> <span class="nn">org.apache.logging.log4j.LogManager</span><span class="o">;</span>
 
 <span class="cm">/**
 </span><span class="cm"> * @author dylan
-</span><span class="cm"> * @date 2020/12/03
 </span><span class="cm"> */</span>
 <span class="kd">public</span> <span class="kd">class</span> <span class="nc">Log4j2Test</span> <span class="o">{</span>
 
@@ -1861,14 +1799,13 @@ log4j.additivity.cn.xyz=false
         <span class="o">}</span>
     <span class="o">}</span>
 <span class="o">}</span>
-</code></pre></div><ul>
-<li>但实际上都会使用日志门面<strong>slf4j</strong>配合<strong>log4j2</strong>的形式，使用<strong>slf4j</strong>适配器可以实现连接，依赖如下：</li>
-</ul>
+</code></pre></div><p>但实际上，通常会使用日志门面<strong>slf4j</strong>配合<strong>log4j2</strong>的形式，添加<strong>slf4j</strong>适配器可以实现连接，如下：</p>
 <div class="highlight"><pre class="chroma"><code class="language-xml" data-lang="xml"><span class="nt">&lt;dependency&gt;</span>
     <span class="nt">&lt;groupId&gt;</span>org.slf4j<span class="nt">&lt;/groupId&gt;</span>
     <span class="nt">&lt;artifactId&gt;</span>slf4j-api<span class="nt">&lt;/artifactId&gt;</span>
     <span class="nt">&lt;version&gt;</span>1.7.30<span class="nt">&lt;/version&gt;</span>
 <span class="nt">&lt;/dependency&gt;</span>
+<span class="c">&lt;!-- slf4j绑定log4j2 --&gt;</span>
 <span class="nt">&lt;dependency&gt;</span>
     <span class="nt">&lt;groupId&gt;</span>org.apache.logging.log4j<span class="nt">&lt;/groupId&gt;</span>
     <span class="nt">&lt;artifactId&gt;</span>log4j-slf4j-impl<span class="nt">&lt;/artifactId&gt;</span>
@@ -1879,9 +1816,7 @@ log4j.additivity.cn.xyz=false
     <span class="nt">&lt;artifactId&gt;</span>log4j-core<span class="nt">&lt;/artifactId&gt;</span>
     <span class="nt">&lt;version&gt;</span>2.13.3<span class="nt">&lt;/version&gt;</span>
 <span class="nt">&lt;/dependency&gt;</span>
-</code></pre></div><ul>
-<li>现在可以使用<strong>slf4j</strong>的<strong>API</strong>操作<strong>log4j2</strong>了，示例代码：</li>
-</ul>
+</code></pre></div><p>现在可以使用<strong>slf4j</strong>的<strong>API</strong>操作<strong>log4j2</strong>了，示例代码：</p>
 <div class="highlight"><pre class="chroma"><code class="language-java" data-lang="java"><span class="kn">import</span> <span class="nn">org.junit.Test</span><span class="o">;</span>
 <span class="kn">import</span> <span class="nn">org.slf4j.Logger</span><span class="o">;</span>
 <span class="kn">import</span> <span class="nn">org.slf4j.LoggerFactory</span><span class="o">;</span>
@@ -1916,14 +1851,8 @@ log4j.additivity.cn.xyz=false
         <span class="o">}</span>
     <span class="o">}</span>
 <span class="o">}</span>
-</code></pre></div><h3 id="2-配置文件">2. 配置文件</h3>
-<ul>
-<li>因为<strong>log4j2</strong>是参考<strong>logback</strong>设置的，其中组件基本相同，配置文件也大同小异，如下：
-<ul>
-<li>唯一需要注意的是<strong>ThresholdFilter</strong>，该过滤器是会保留<strong>level</strong>等级及其以上等级的日志信息。</li>
-</ul>
-</li>
-</ul>
+</code></pre></div><h3 id="3配置文件">3.配置文件</h3>
+<p>由于<strong>log4j2</strong>是参考<strong>logback</strong>设置的，因此其中的组件基本相同，配置文件也大同小异。唯一需要注意的是<strong>ThresholdFilter</strong>，该过滤器是会保留<strong>level</strong>等级及其以上等级的日志信息。</p>
 <div class="highlight"><pre class="chroma"><code class="language-xml" data-lang="xml"><span class="cp">&lt;?xml version=&#34;1.0&#34; encoding=&#34;UTF-8&#34;?&gt;</span>
 <span class="c">&lt;!--
 </span><span class="c">    status：日志实现本身的日志输出等级；
@@ -1989,9 +1918,7 @@ log4j.additivity.cn.xyz=false
         <span class="nt">&lt;/logger&gt;</span>
     <span class="nt">&lt;/Loggers&gt;</span>
 <span class="nt">&lt;/Configuration&gt;</span>
-</code></pre></div><ul>
-<li>测试代码如下：</li>
-</ul>
+</code></pre></div><p>测试代码如下：</p>
 <div class="highlight"><pre class="chroma"><code class="language-java" data-lang="java"><span class="kn">import</span> <span class="nn">org.junit.Test</span><span class="o">;</span>
 <span class="kn">import</span> <span class="nn">org.slf4j.Logger</span><span class="o">;</span>
 <span class="kn">import</span> <span class="nn">org.slf4j.LoggerFactory</span><span class="o">;</span>
@@ -2039,39 +1966,31 @@ log4j.additivity.cn.xyz=false
         <span class="n">logger</span><span class="o">.</span><span class="na">trace</span><span class="o">(</span><span class="s">&#34;TRACE&#34;</span><span class="o">);</span>
     <span class="o">}</span>
 <span class="o">}</span>
-</code></pre></div><h3 id="3-异步日志">3. 异步日志</h3>
-<ul>
-<li><strong>log4j2</strong>在异步日志上有较大的提升，主要得益于采用了<strong>AsyncLogger</strong>的方式，大大提高了异步日志的性能。</li>
-</ul>
-<p><img
-        class="lazyload"
-        src="/svg/loading.min.svg"
-        data-src="images/Log.images/async-throughput-comparison.png"
-        data-srcset="images/Log.images/async-throughput-comparison.png, images/Log.images/async-throughput-comparison.png 1.5x, images/Log.images/async-throughput-comparison.png 2x"
-        data-sizes="auto"
-        alt="images/Log.images/async-throughput-comparison.png"
-        title="Peak throughput comparison" /></p>
-<ul>
-<li>
+</code></pre></div><h3 id="4异步日志">4.异步日志</h3>
+<p><strong>log4j2</strong>在异步日志上有较大的提升，主要得益于采用了<strong>AsyncLogger</strong>的方式，大大提高了异步日志的性能。</p>
+<figure><a class="lightgallery" href="/images/Log.images/async-throughput-comparison.png" title="/images/Log.images/async-throughput-comparison.png" data-thumbnail="/images/Log.images/async-throughput-comparison.png" data-sub-html="<h2>Async Throughput Comparison</h2>">
+        <img
+            class="lazyload"
+            src="/svg/loading.min.svg"
+            data-src="/images/Log.images/async-throughput-comparison.png"
+            data-srcset="/images/Log.images/async-throughput-comparison.png, /images/Log.images/async-throughput-comparison.png 1.5x, /images/Log.images/async-throughput-comparison.png 2x"
+            data-sizes="auto"
+            alt="/images/Log.images/async-throughput-comparison.png" width="100%" />
+    </a><figcaption class="image-caption"><strong>Async Throughput Comparison</strong></figcaption>
+    </figure>
 <p><strong>log4j2</strong>支持两种种异步日志的实现，有：</p>
 <ol>
 <li><strong>AsyncAppender</strong>：和<strong>logback</strong>中的异步日志形式一致，采用<strong>appender</strong>异步的方式实现；</li>
 <li><strong>AsyncLogger</strong>：在<strong>logger</strong>层面上实现的异步日志，可以细分为两种：
-<ol>
+<ul>
 <li>全局异步：使所有的<strong>logger</strong>都采用异步的方式进行输出，通过<strong>log4j2.component.properties</strong>配置，不需要更改原配置文件的设置；</li>
 <li>局部异步：使部分<strong>logger</strong>采用异步的方式进行输出，通过修改<strong>log4j2.properties</strong>设置实现。</li>
-</ol>
+</ul>
 </li>
 </ol>
-</li>
-<li>
 <p><strong>AsyncAppender</strong>和<strong>AsyncLogger</strong>同时使用时，性能与单独使用<strong>AsyncAppender</strong>时一致，因此更推荐使用<strong>AsyncLogger</strong>。</p>
-</li>
-</ul>
 <h4 id="a-asyncappender">a. AsyncAppender</h4>
-<ul>
-<li>通过在标签**<!-- raw HTML omitted -->**中添加子标签**<!-- raw HTML omitted -->**可以将以配置的**appender**设置为异步的**appender**：</li>
-</ul>
+<p>通过在标签<span id="id-26">&lt;Appenders&gt;</span>中添加子标签<span id="id-27">&lt;Async&gt;</span>，可以将以配置好的<strong>appender</strong>设置为异步的<strong>appender</strong>：</p>
 <div class="highlight"><pre class="chroma"><code class="language-xml" data-lang="xml"><span class="cp">&lt;?xml version=&#34;1.0&#34; encoding=&#34;UTF-8&#34;?&gt;</span>
 <span class="nt">&lt;Configuration</span> <span class="na">status=</span><span class="s">&#34;OFF&#34;</span> <span class="na">monitorInterval=</span><span class="s">&#34;5&#34;</span><span class="nt">&gt;</span>
     <span class="nt">&lt;properties&gt;</span>
@@ -2108,36 +2027,27 @@ log4j.additivity.cn.xyz=false
     <span class="nt">&lt;/Loggers&gt;</span>
 <span class="nt">&lt;/Configuration&gt;</span>
 </code></pre></div><h4 id="b-全局异步">b. 全局异步</h4>
-<ul>
-<li>采用异步<strong>logger</strong>的形式，需要额外添加一个依赖：</li>
-</ul>
+<p>采用异步<strong>logger</strong>的形式，需要额外添加一个依赖：</p>
 <div class="highlight"><pre class="chroma"><code class="language-xml" data-lang="xml"><span class="nt">&lt;dependency&gt;</span>
     <span class="nt">&lt;groupId&gt;</span>com.lmax<span class="nt">&lt;/groupId&gt;</span>
     <span class="nt">&lt;artifactId&gt;</span>disruptor<span class="nt">&lt;/artifactId&gt;</span>
     <span class="nt">&lt;version&gt;</span>3.3.4<span class="nt">&lt;/version&gt;</span>
 <span class="nt">&lt;/dependency&gt;</span>
-</code></pre></div><ul>
-<li>配置全局异步，不需要改动原本的配置文件，额外添加一个<strong>log4j2.component.properties</strong>的配置文件即可：</li>
-</ul>
+</code></pre></div><p>配置全局异步，不需要改动原本的配置文件，额外添加一个<strong>log4j2.component.properties</strong>的配置文件即可：</p>
 <pre><code class="language-properties" data-lang="properties"># log4j2全局异步配置，当使用局部异步时，此文件不能共存
 Log4jContextSelector=org.apache.logging.log4j.core.async.AsyncLoggerContextSelector
 </code></pre><h4 id="c-局部异步">c. 局部异步</h4>
-<ul>
-<li>多数情况下会使用局部异步的方式，此时全局异步必须关闭，否则局部异步无法生效。</li>
-<li>采用异步<strong>logger</strong>的形式，需要额外添加一个依赖：</li>
-</ul>
+<p>多数情况下会使用局部异步的方式，此时全局异步必须关闭，否则局部异步无法生效。</p>
+<p>采用异步<strong>logger</strong>的形式，需要额外添加一个依赖：</p>
 <div class="highlight"><pre class="chroma"><code class="language-xml" data-lang="xml"><span class="nt">&lt;dependency&gt;</span>
     <span class="nt">&lt;groupId&gt;</span>com.lmax<span class="nt">&lt;/groupId&gt;</span>
     <span class="nt">&lt;artifactId&gt;</span>disruptor<span class="nt">&lt;/artifactId&gt;</span>
     <span class="nt">&lt;version&gt;</span>3.3.4<span class="nt">&lt;/version&gt;</span>
 <span class="nt">&lt;/dependency&gt;</span>
-</code></pre></div><ul>
-<li>通过在标签**<!-- raw HTML omitted -->**中添加子标签**<!-- raw HTML omitted -->**，通过其属性可以将指定名称的**logger**配置成异步**logger**，如下：
+</code></pre></div><p>通过在标签**<!-- raw HTML omitted -->**中添加子标签**<!-- raw HTML omitted -->**，通过其属性可以将指定名称的**logger**配置成异步**logger**，如下：</p>
 <ul>
 <li><strong>includeLocation</strong>：该属性表示是否输出行号，输出行号将降低异步日志器的性能，推荐关闭；</li>
 <li>即使此时<strong>PatternLayout</strong>包括行号**%L**，也不会输出行号信息。</li>
-</ul>
-</li>
 </ul>
 <div class="highlight"><pre class="chroma"><code class="language-xml" data-lang="xml"><span class="cp">&lt;?xml version=&#34;1.0&#34; encoding=&#34;UTF-8&#34;?&gt;</span>
 <span class="nt">&lt;Configuration</span> <span class="na">status=</span><span class="s">&#34;OFF&#34;</span> <span class="na">monitorInterval=</span><span class="s">&#34;5&#34;</span><span class="nt">&gt;</span>
@@ -2169,60 +2079,45 @@ Log4jContextSelector=org.apache.logging.log4j.core.async.AsyncLoggerContextSelec
         <span class="nt">&lt;/AsyncLogger&gt;</span>
     <span class="nt">&lt;/Loggers&gt;</span>
 <span class="nt">&lt;/Configuration&gt;</span>
-</code></pre></div><h3 id="4-无垃圾记录模式">4. 无垃圾记录模式</h3>
-<blockquote>
+</code></pre></div><h3 id="5无垃圾记录模式">5.无垃圾记录模式</h3>
+<p>无垃圾模式，官网中有如下介绍：</p>
 <ul>
 <li>From version 2.6, Log4j runs in &ldquo;garbage free&rdquo; mode by default where objects and buffers are reused and no temporary objects are allocated as much as possible.</li>
 <li>There is also a &ldquo;low garbage&rdquo; mode which is not completely garbage free but does not use ThreadLocal fields. This is the default mode when Log4j detects it is running in a web application.</li>
 <li>Finally, it is possible to switch off all garbage-free logic and run in &ldquo;classic mode&rdquo; instead.</li>
 </ul>
-</blockquote>
+<p>大致意思是，<strong>log4j2</strong>自版本<strong>2.6</strong>之后，将默认开启<strong>garbage free</strong>无垃圾记录模式。在进行异步日志时，该模式有助于性能提升。</p>
+<figure><a class="lightgallery" href="/images/Log.images/ResponseTimeAsyncLogging4Threads@16kEach.png" title="/images/Log.images/ResponseTimeAsyncLogging4Threads@16kEach.png" data-thumbnail="/images/Log.images/ResponseTimeAsyncLogging4Threads@16kEach.png" data-sub-html="<h2>Response Time Async Logging 4 Threads</h2>">
+        <img
+            class="lazyload"
+            src="/svg/loading.min.svg"
+            data-src="/images/Log.images/ResponseTimeAsyncLogging4Threads@16kEach.png"
+            data-srcset="/images/Log.images/ResponseTimeAsyncLogging4Threads@16kEach.png, /images/Log.images/ResponseTimeAsyncLogging4Threads@16kEach.png 1.5x, /images/Log.images/ResponseTimeAsyncLogging4Threads@16kEach.png 2x"
+            data-sizes="auto"
+            alt="/images/Log.images/ResponseTimeAsyncLogging4Threads@16kEach.png" width="100%" />
+    </a><figcaption class="image-caption"><strong>Response Time Async Logging 4 Threads</strong></figcaption>
+    </figure>
+<p>对于无垃圾记录模式了解即可，更多关于性能和无垃圾记录模式，可以访问以下链接：</p>
 <ul>
-<li><strong>log4j2</strong>自版本<strong>2.6</strong>之后默认开启<strong>garbage free</strong>无垃圾记录模式，在进行异步日志时，该模式有助于性能提升。</li>
-</ul>
-<p><img
-        class="lazyload"
-        src="/svg/loading.min.svg"
-        data-src="images/Log.images/ResponseTimeAsyncLogging4Threads@16kEach.png"
-        data-srcset="images/Log.images/ResponseTimeAsyncLogging4Threads@16kEach.png, images/Log.images/ResponseTimeAsyncLogging4Threads@16kEach.png 1.5x, images/Log.images/ResponseTimeAsyncLogging4Threads@16kEach.png 2x"
-        data-sizes="auto"
-        alt="images/Log.images/ResponseTimeAsyncLogging4Threads@16kEach.png"
-        title="img" /></p>
-<ul>
-<li>了解即可，更过的关于性能和无垃圾记录模式，可以访问以下链接：
-<ul>
-<li><a href="https://logging.apache.org/log4j/2.x/performance.html">https://logging.apache.org/log4j/2.x/performance.html</a></li>
-<li><a href="https://logging.apache.org/log4j/2.x/manual/garbagefree.html">https://logging.apache.org/log4j/2.x/manual/garbagefree.html</a></li>
-</ul>
-</li>
+<li><a href="https://logging.apache.org/log4j/2.x/performance.html" target="_blank" rel="noopener noreffer"><strong>Log4j - performance</strong></a></li>
+<li><a href="https://logging.apache.org/log4j/2.x/manual/garbagefree.html" target="_blank" rel="noopener noreffer"><strong>Log4j - garbagefree</strong></a></li>
 </ul>
 <h2 id="springboot中的日志实现">SpringBoot中的日志实现</h2>
-<ul>
-<li><strong>SpringBoot</strong>中使用了模块<strong>spring-boot-starter-logging</strong>用于管理日志，其结构如下：</li>
-</ul>
-<p><img
-        class="lazyload"
-        src="/svg/loading.min.svg"
-        data-src="images/Log.images/image-20201203211515503.png"
-        data-srcset="images/Log.images/image-20201203211515503.png, images/Log.images/image-20201203211515503.png 1.5x, images/Log.images/image-20201203211515503.png 2x"
-        data-sizes="auto"
-        alt="images/Log.images/image-20201203211515503.png"
-        title="image-20201203211515503" /></p>
-<ul>
-<li>
-<p><strong>SpringBoot</strong>使用的日志实现是<strong>logback</strong>，而它默认的日志门面就是<strong>slf4j</strong>。</p>
-</li>
-<li>
-<p><strong>SpringBoot</strong>中也支持使用<strong>JUL</strong>、<strong>Log4j2</strong>获取日志记录器<strong>Logger</strong>，但它们会被转为<strong>slf4j</strong>，并最终使用<strong>logback</strong>输出。</p>
-</li>
-<li>
-<p><strong>SpringBoot</strong>中支持使用<strong>JUL</strong>、<strong>Log4j2</strong>获取日志记录器<strong>Logger</strong>，但它们会被转为<strong>slf4j</strong>，并最终使用<strong>logback</strong>输出。</p>
-</li>
-</ul>
-<h3 id="1-入门案例-5">1. 入门案例</h3>
-<ul>
-<li><strong>SpringBoot</strong>项目的默认依赖就会导入<strong>spring-boot-starter-logging</strong>模块：</li>
-</ul>
+<p><strong>SpringBoot</strong>中使用了模块<strong>spring-boot-starter-logging</strong>用于管理日志，其结构如下：</p>
+<figure><a class="lightgallery" href="/images/Log.images/image-20201203211515503.png" title="/images/Log.images/image-20201203211515503.png" data-thumbnail="/images/Log.images/image-20201203211515503.png" data-sub-html="<h2>SpringBoot Logging Framework</h2>">
+        <img
+            class="lazyload"
+            src="/svg/loading.min.svg"
+            data-src="/images/Log.images/image-20201203211515503.png"
+            data-srcset="/images/Log.images/image-20201203211515503.png, /images/Log.images/image-20201203211515503.png 1.5x, /images/Log.images/image-20201203211515503.png 2x"
+            data-sizes="auto"
+            alt="/images/Log.images/image-20201203211515503.png" width="100%" />
+    </a><figcaption class="image-caption"><strong>SpringBoot Logging Framework</strong></figcaption>
+    </figure>
+<p><strong>SpringBoot</strong>默认的日志门面是<strong>slf4j</strong>，其默认使用的日志实现是<strong>logback</strong>。简而言之，使用<strong>slf4j</strong>获取的日志记录对象，默认使用的是<strong>logback</strong>日志实现。</p>
+<p><strong>SpringBoot</strong>也支持使用<strong>JUL</strong>、<strong>Log4j2</strong>获取日志记录对象<strong>Logger</strong>，但由于<strong>slf4j</strong>桥接器的存在，它们最终使用<strong>logback</strong>的配置进行输出。</p>
+<h3 id="1入门案例-1">1.入门案例</h3>
+<p><strong>SpringBoot</strong>项目的默认依赖就会导入<strong>spring-boot-starter-logging</strong>模块：</p>
 <div class="highlight"><pre class="chroma"><code class="language-xml" data-lang="xml"><span class="nt">&lt;dependency&gt;</span>
     <span class="nt">&lt;groupId&gt;</span>org.springframework.boot<span class="nt">&lt;/groupId&gt;</span>
     <span class="nt">&lt;artifactId&gt;</span>spring-boot-starter<span class="nt">&lt;/artifactId&gt;</span>
@@ -2233,20 +2128,18 @@ Log4jContextSelector=org.apache.logging.log4j.core.async.AsyncLoggerContextSelec
     <span class="nt">&lt;artifactId&gt;</span>spring-boot-starter-test<span class="nt">&lt;/artifactId&gt;</span>
     <span class="nt">&lt;scope&gt;</span>test<span class="nt">&lt;/scope&gt;</span>
 <span class="nt">&lt;/dependency&gt;</span>
-</code></pre></div><ul>
-<li>项目依赖：</li>
-</ul>
-<p><img
-        class="lazyload"
-        src="/svg/loading.min.svg"
-        data-src="images/Log.images/image-20201203213139157.png"
-        data-srcset="images/Log.images/image-20201203213139157.png, images/Log.images/image-20201203213139157.png 1.5x, images/Log.images/image-20201203213139157.png 2x"
-        data-sizes="auto"
-        alt="images/Log.images/image-20201203213139157.png"
-        title="image-20201203213139157" /></p>
-<ul>
-<li>测试代码：</li>
-</ul>
+</code></pre></div><p>项目依赖：</p>
+<figure><a class="lightgallery" href="/images/Log.images/image-20201203213139157.png" title="/images/Log.images/image-20201203213139157.png" data-thumbnail="/images/Log.images/image-20201203213139157.png" data-sub-html="<h2>Dependency</h2>">
+        <img
+            class="lazyload"
+            src="/svg/loading.min.svg"
+            data-src="/images/Log.images/image-20201203213139157.png"
+            data-srcset="/images/Log.images/image-20201203213139157.png, /images/Log.images/image-20201203213139157.png 1.5x, /images/Log.images/image-20201203213139157.png 2x"
+            data-sizes="auto"
+            alt="/images/Log.images/image-20201203213139157.png" width="70%" />
+    </a><figcaption class="image-caption"><strong>Dependency</strong></figcaption>
+    </figure>
+<p>测试代码：</p>
 <div class="highlight"><pre class="chroma"><code class="language-java" data-lang="java"><span class="kn">package</span> <span class="nn">cn.dylanphang.springbootlog</span><span class="o">;</span>
 
 
@@ -2274,46 +2167,42 @@ Log4jContextSelector=org.apache.logging.log4j.core.async.AsyncLoggerContextSelec
         <span class="n">logger</span><span class="o">.</span><span class="na">info</span><span class="o">(</span><span class="s">&#34;Using Logback.&#34;</span><span class="o">);</span>
     <span class="o">}</span>
 <span class="o">}</span>
-</code></pre></div><ul>
-<li>测试方法<strong>testLog4j2</strong>输出结果：</li>
-</ul>
-<p><img
-        class="lazyload"
-        src="/svg/loading.min.svg"
-        data-src="images/Log.images/image-20201203213356777.png"
-        data-srcset="images/Log.images/image-20201203213356777.png, images/Log.images/image-20201203213356777.png 1.5x, images/Log.images/image-20201203213356777.png 2x"
-        data-sizes="auto"
-        alt="images/Log.images/image-20201203213356777.png"
-        title="image-20201203213356777" /></p>
-<ul>
-<li>测试方法<strong>testJul</strong>输出结果：</li>
-</ul>
-<p><img
-        class="lazyload"
-        src="/svg/loading.min.svg"
-        data-src="images/Log.images/image-20201203213416653.png"
-        data-srcset="images/Log.images/image-20201203213416653.png, images/Log.images/image-20201203213416653.png 1.5x, images/Log.images/image-20201203213416653.png 2x"
-        data-sizes="auto"
-        alt="images/Log.images/image-20201203213416653.png"
-        title="image-20201203213416653" /></p>
-<ul>
-<li>测试方法<strong>testLogback</strong>输出结果：</li>
-</ul>
-<p><img
-        class="lazyload"
-        src="/svg/loading.min.svg"
-        data-src="images/Log.images/image-20201203213432965.png"
-        data-srcset="images/Log.images/image-20201203213432965.png, images/Log.images/image-20201203213432965.png 1.5x, images/Log.images/image-20201203213432965.png 2x"
-        data-sizes="auto"
-        alt="images/Log.images/image-20201203213432965.png"
-        title="image-20201203213432965" /></p>
-<ul>
-<li>可见，无论使用哪种日志门面，最终都会以同一种日志形式输出。</li>
-</ul>
-<h3 id="2-配置文件-1">2. 配置文件</h3>
-<ul>
-<li><strong>SpringBoot</strong>可以解析<strong>logback</strong>的配置文件，以下按解析优先度排序：</li>
-</ul>
+</code></pre></div><p><strong>testLog4j2</strong>()输出结果：</p>
+<figure><a class="lightgallery" href="/images/Log.images/image-20201203213356777.png" title="/images/Log.images/image-20201203213356777.png" data-thumbnail="/images/Log.images/image-20201203213356777.png" data-sub-html="<h2>log4j2</h2>">
+        <img
+            class="lazyload"
+            src="/svg/loading.min.svg"
+            data-src="/images/Log.images/image-20201203213356777.png"
+            data-srcset="/images/Log.images/image-20201203213356777.png, /images/Log.images/image-20201203213356777.png 1.5x, /images/Log.images/image-20201203213356777.png 2x"
+            data-sizes="auto"
+            alt="/images/Log.images/image-20201203213356777.png" width="100%" />
+    </a><figcaption class="image-caption"><strong>log4j2</strong></figcaption>
+    </figure>
+<p><strong>testJul</strong>()输出结果：</p>
+<figure><a class="lightgallery" href="/images/Log.images/image-20201203213416653.png" title="/images/Log.images/image-20201203213416653.png" data-thumbnail="/images/Log.images/image-20201203213416653.png" data-sub-html="<h2>JUL</h2>">
+        <img
+            class="lazyload"
+            src="/svg/loading.min.svg"
+            data-src="/images/Log.images/image-20201203213416653.png"
+            data-srcset="/images/Log.images/image-20201203213416653.png, /images/Log.images/image-20201203213416653.png 1.5x, /images/Log.images/image-20201203213416653.png 2x"
+            data-sizes="auto"
+            alt="/images/Log.images/image-20201203213416653.png" width="100%" />
+    </a><figcaption class="image-caption"><strong>JUL</strong></figcaption>
+    </figure>
+<p><strong>testLogback</strong>()输出结果：</p>
+<figure><a class="lightgallery" href="/images/Log.images/image-20201203213432965.png" title="/images/Log.images/image-20201203213432965.png" data-thumbnail="/images/Log.images/image-20201203213432965.png" data-sub-html="<h2>logback</h2>">
+        <img
+            class="lazyload"
+            src="/svg/loading.min.svg"
+            data-src="/images/Log.images/image-20201203213432965.png"
+            data-srcset="/images/Log.images/image-20201203213432965.png, /images/Log.images/image-20201203213432965.png 1.5x, /images/Log.images/image-20201203213432965.png 2x"
+            data-sizes="auto"
+            alt="/images/Log.images/image-20201203213432965.png" width="100%" />
+    </a><figcaption class="image-caption"><strong>logback</strong></figcaption>
+    </figure>
+<p>无论使用哪种日志门面，最终都会以同一种日志形式输出。</p>
+<h3 id="2配置文件">2.配置文件</h3>
+<p><strong>SpringBoot</strong>可以解析<strong>logback</strong>的配置文件，以下按解析优先度排序：</p>
 <table>
 <thead>
 <tr>
@@ -2332,11 +2221,8 @@ Log4jContextSelector=org.apache.logging.log4j.core.async.AsyncLoggerContextSelec
 </tr>
 </tbody>
 </table>
-<ul>
-<li>目前使用的<strong>SpringBoot</strong>版本为<strong>2.4.0</strong>，在<strong>resources</strong>目录下放置<strong>log4j2</strong>或<strong>JUL</strong>的配置文件，<strong>SpringBoot</strong>无法识别。</li>
-<li><strong>logback.xml</strong>和<strong>logback-spring.xml</strong>的区别是后者是支持被<strong>SpringBoot</strong>所解析的，你可以在<strong>application.properties</strong>配置处于特定生产环境所需要加载的特定规则，规则添加在<strong>logback-spring.xml</strong>中。</li>
-<li>例如以下<strong>logback-spring.xml</strong>配置文件：</li>
-</ul>
+<p><strong>logback.xml</strong>和<strong>logback-spring.xml</strong>的区别，在于后者是支持被<strong>SpringBoot</strong>所解析的，你可以在<strong>application.properties</strong>中，配置处于特定生产环境所需要加载的特定规则，而规则分类则添加在<strong>logback-spring.xml</strong>中。</p>
+<p>例如，以下<strong>logback-spring.xml</strong>配置文件：</p>
 <div class="highlight"><pre class="chroma"><code class="language-xml" data-lang="xml"><span class="cp">&lt;?xml version=&#34;1.0&#34; encoding=&#34;UTF-8&#34;?&gt;</span>
 <span class="nt">&lt;configuration&gt;</span>
     <span class="nt">&lt;property</span> <span class="na">name=</span><span class="s">&#34;patternDev&#34;</span> <span class="na">value=</span><span class="s">&#34;%d{yyyy-MM-dd HH:mm:ss.SSS} %c [%thread] %-5level - [dev] %msg%n&#34;</span><span class="nt">/&gt;</span>
@@ -2358,24 +2244,15 @@ Log4jContextSelector=org.apache.logging.log4j.core.async.AsyncLoggerContextSelec
         <span class="nt">&lt;appender-ref</span> <span class="na">ref=</span><span class="s">&#34;console&#34;</span><span class="nt">/&gt;</span>
     <span class="nt">&lt;/root&gt;</span>
 <span class="nt">&lt;/configuration&gt;</span>
-</code></pre></div><ul>
-<li>此时只需要在<strong>application.properties</strong>中配置<strong>spring.profiles.active</strong>属性，即可根据<strong>dev</strong>或<strong>pro</strong>的值加载不同配置。</li>
-<li>使用<strong>pro</strong>环境下的日志格式，则配置如下：</li>
-</ul>
+</code></pre></div><p>此时只需要在<strong>application.properties</strong>中配置<strong>spring.profiles.active</strong>属性，即可根据<strong>dev</strong>或<strong>pro</strong>的值加载不同配置。</p>
+<p>使用<strong>pro</strong>环境下的日志格式，则配置如下：</p>
 <pre><code class="language-properties" data-lang="properties">spring.profiles.active=pro
-</code></pre><ul>
-<li>使用<strong>dev</strong>环境下的日志格式，则配置如下：</li>
-</ul>
+</code></pre><p>使用<strong>dev</strong>环境下的日志格式，则配置如下：</p>
 <pre><code class="language-properties" data-lang="properties">spring.profiles.active=dev
-</code></pre><h3 id="3-applicationproperties">3. application.properties</h3>
-<ul>
-<li><strong>SpringBoot</strong>除了可以使用相关日志实现的配置文件外，也可以在其默认的<strong>application.properties</strong>中自定义日志配置。</li>
-<li>配置文件如下：
-<ul>
-<li><strong>SpringBoot</strong>默认的日志文件为<strong>Spring.log</strong>。</li>
-</ul>
-</li>
-</ul>
+</code></pre><h3 id="3applicationproperties">3.application.properties</h3>
+<p><strong>SpringBoot</strong>除了可以使用相关日志实现的配置文件外，也可以在其默认的<strong>application.properties</strong>中自定义日志配置。</p>
+<p>当选择在<strong>application.properties</strong>中配置日志时，<strong>SpringBoot</strong>默认输出的日志文件名为<strong>Spring.log</strong>。</p>
+<p>假如，<strong>application.properties</strong>中有以下配置：</p>
 <pre><code class="language-properties" data-lang="properties"># 配置控制台输出日志的格式
 logging.pattern.console=%d{yyyy-MM-dd HH:mm:ss.SSS} %c [%thread] %-5level %msg%n
 
@@ -2386,9 +2263,7 @@ logging.charset.file=UTF-8
 
 # 为某些特定名字的logger设置日志等级，但输出的appender仍然是以上两个
 logging.level.cn.hanna=trace
-</code></pre><ul>
-<li>测试代码如下：</li>
-</ul>
+</code></pre><p>测试代码如下：</p>
 <div class="highlight"><pre class="chroma"><code class="language-java" data-lang="java"><span class="kn">package</span> <span class="nn">cn.dylanphang.springbootlog</span><span class="o">;</span>
 
 <span class="kn">import</span> <span class="nn">org.junit.jupiter.api.Test</span><span class="o">;</span>
@@ -2408,10 +2283,8 @@ logging.level.cn.hanna=trace
         <span class="n">logger2</span><span class="o">.</span><span class="na">trace</span><span class="o">(</span><span class="s">&#34;Cn hanna.&#34;</span><span class="o">);</span>
     <span class="o">}</span>
 <span class="o">}</span>
-</code></pre></div><h3 id="4-使用log4j2替换logback">4. 使用log4j2替换logback</h3>
-<ul>
-<li>如果希望<strong>SpringBoot</strong>的底层不使用<strong>logback</strong>，首先需要改变<strong>pom.xml</strong>依赖：</li>
-</ul>
+</code></pre></div><h3 id="4使用log4j2替换logback">4.使用log4j2替换logback</h3>
+<p>如果希望<strong>SpringBoot</strong>的底层不使用<strong>logback</strong>，则需要改变<strong>pom.xml</strong>依赖：</p>
 <div class="highlight"><pre class="chroma"><code class="language-xml" data-lang="xml"><span class="nt">&lt;dependency&gt;</span>
     <span class="nt">&lt;groupId&gt;</span>org.springframework.boot<span class="nt">&lt;/groupId&gt;</span>
     <span class="nt">&lt;artifactId&gt;</span>spring-boot-starter<span class="nt">&lt;/artifactId&gt;</span>
@@ -2428,9 +2301,7 @@ logging.level.cn.hanna=trace
     <span class="nt">&lt;groupId&gt;</span>org.springframework.boot<span class="nt">&lt;/groupId&gt;</span>
     <span class="nt">&lt;artifactId&gt;</span>spring-boot-starter-log4j2<span class="nt">&lt;/artifactId&gt;</span>
 <span class="nt">&lt;/dependency&gt;</span>
-</code></pre></div><ul>
-<li>之后配置文件默认将识别<strong>log4j2.xml</strong>或<strong>log4j2-spring.xml</strong>，以下配置可用于测试：</li>
-</ul>
+</code></pre></div><p>之后配置文件默认将识别<strong>log4j2.xml</strong>或<strong>log4j2-spring.xml</strong>，以下配置可用于测试：</p>
 <div class="highlight"><pre class="chroma"><code class="language-xml" data-lang="xml"><span class="cp">&lt;?xml version=&#34;1.0&#34; encoding=&#34;UTF-8&#34;?&gt;</span>
 <span class="c">&lt;!--
 </span><span class="c">    status：日志实现本身的日志输出等级；
@@ -2456,10 +2327,8 @@ logging.level.cn.hanna=trace
         <span class="nt">&lt;/Root&gt;</span>
     <span class="nt">&lt;/Loggers&gt;</span>
 <span class="nt">&lt;/Configuration&gt;</span>
-</code></pre></div><h3 id="5-注意事项">5. 注意事项</h3>
-<ul>
-<li>当同时存在配置文件<strong>logback.xml</strong>和<strong>application.properties</strong>时，假设存在以下配置：</li>
-</ul>
+</code></pre></div><h3 id="5注意事项">5.注意事项</h3>
+<p>当同时存在配置文件<strong>logback.xml</strong>和<strong>application.properties</strong>时，假设存在以下配置：</p>
 <div class="highlight"><pre class="chroma"><code class="language-XML" data-lang="XML"><span class="cp">&lt;?xml version=&#34;1.0&#34; encoding=&#34;UTF-8&#34;?&gt;</span>
 <span class="nt">&lt;configuration&gt;</span>
     <span class="nt">&lt;property</span> <span class="na">name=</span><span class="s">&#34;pattern&#34;</span> <span class="na">value=</span><span class="s">&#34;%d{yyyy-MM-dd HH:mm:ss.SSS} %c [%thread] %-5level ^ %msg%n&#34;</span><span class="nt">/&gt;</span>
@@ -2486,10 +2355,8 @@ logging.pattern.file=%d{yyyy-MM-dd HH:mm:ss.SSS} %c [%thread] %-5level %msg%n
 logging.charset.file=UTF-8
 
 logging.level.cn.hanna=trace
-</code></pre><ul>
-<li>此时，<strong>appender</strong>的设置会被覆盖，但特定包所配置的特定日志等级<strong>logging.level.cn.hanna=trace</strong>不会被覆盖，即使你在配置文件<strong>logback.xml</strong>中再次指定了<strong>cn.hanna</strong>的日志等级为<strong>INFO</strong>，<strong>SpringBoot</strong>会以<strong>application.properties</strong>为准。</li>
-<li>很多规则可以通过一些简单的测试得到结论，不需要记忆太多。</li>
-</ul>
+</code></pre><p>此时，<strong>application.properties</strong>中的<strong>appender</strong>设置会被覆盖，但特定包的特定日志等级<strong>logging.level.cn.hanna=trace</strong>不会被覆盖，即使你在配置文件<strong>logback.xml</strong>中再次指定了<strong>cn.hanna</strong>的日志等级为<strong>INFO</strong>，<strong>SpringBoot</strong>会以<strong>application.properties</strong>为准。</p>
+<p>很多规则可以通过一些简单的测试得到结论，不需要记忆太多。</p>
 </div><div class="post-footer" id="post-footer">
     <div class="post-info">
         <div class="post-info-line">
@@ -2527,5 +2394,5 @@ logging.level.cn.hanna=trace
             </a><a href="#" id="view-comments" class="fixed-button" title="View Comments">
                 <i class="fas fa-comment fa-fw"></i>
             </a>
-        </div><link rel="stylesheet" href="/lib/lightgallery/lightgallery.min.css"><link rel="stylesheet" href="/css/9f07f6.min.css"><script type="text/javascript" src="/lib/smooth-scroll/smooth-scroll.min.js"></script><script type="text/javascript" src="/lib/lazysizes/lazysizes.min.js"></script><script type="text/javascript" src="/lib/lightgallery/lightgallery.min.js"></script><script type="text/javascript" src="/lib/lightgallery/lg-thumbnail.min.js"></script><script type="text/javascript" src="/lib/lightgallery/lg-zoom.min.js"></script><script type="text/javascript" src="/lib/clipboard/clipboard.min.js"></script><script type="text/javascript">window.config={"code":{"copyTitle":"Copy to clipboard","maxShownLines":10},"comment":{},"lightGallery":{"actualSize":false,"exThumbImage":"data-thumbnail","hideBarsDelay":2000,"selector":".lightgallery","speed":400,"thumbContHeight":80,"thumbWidth":80,"thumbnail":true}};</script><script type="text/javascript" src="/js/theme.min.js"></script></body>
+        </div><link rel="stylesheet" href="/lib/lightgallery/lightgallery.min.css"><link rel="stylesheet" href="/css/fe8bb9.min.css"><script type="text/javascript" src="/lib/smooth-scroll/smooth-scroll.min.js"></script><script type="text/javascript" src="/lib/lazysizes/lazysizes.min.js"></script><script type="text/javascript" src="/lib/lightgallery/lightgallery.min.js"></script><script type="text/javascript" src="/lib/lightgallery/lg-thumbnail.min.js"></script><script type="text/javascript" src="/lib/lightgallery/lg-zoom.min.js"></script><script type="text/javascript" src="/lib/clipboard/clipboard.min.js"></script><script type="text/javascript">window.config={"code":{"copyTitle":"Copy to clipboard","maxShownLines":10},"comment":{},"lightGallery":{"actualSize":false,"exThumbImage":"data-thumbnail","hideBarsDelay":2000,"selector":".lightgallery","speed":400,"thumbContHeight":80,"thumbWidth":80,"thumbnail":true}};</script><script type="text/javascript" src="/js/theme.min.js"></script></body>
 </html>
