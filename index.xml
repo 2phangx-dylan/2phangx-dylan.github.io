@@ -4,9 +4,16 @@
         <link>https://2phangx-dylan.github.io/</link>
         <description>Tech &amp; Posts</description>
         <generator>Hugo -- gohugo.io</generator><language>en</language><managingEditor>2phangx.dylan@gmail.com (2phangx-dylan)</managingEditor>
-            <webMaster>2phangx.dylan@gmail.com (2phangx-dylan)</webMaster><lastBuildDate>Tue, 15 Jun 2021 00:00:00 &#43;0000</lastBuildDate>
+            <webMaster>2phangx.dylan@gmail.com (2phangx-dylan)</webMaster><lastBuildDate>Mon, 28 Jun 2021 00:00:00 &#43;0000</lastBuildDate>
             <atom:link href="https://2phangx-dylan.github.io/index.xml" rel="self" type="application/rss+xml" />
         <item>
+    <title>Listary</title>
+    <link>https://2phangx-dylan.github.io/posts/listary/</link>
+    <pubDate>Mon, 28 Jun 2021 00:00:00 &#43;0000</pubDate>
+    <author>Author</author>
+    <guid>https://2phangx-dylan.github.io/posts/listary/</guid>
+    <description><![CDATA[Listary是一款实用的搜索工具，其主要为Windows提供快速打开指定文件夹/文件的实用功能，能极大提高日常工作效率。]]></description>
+</item><item>
     <title>Clash for Window</title>
     <link>https://2phangx-dylan.github.io/posts/clash/</link>
     <pubDate>Tue, 15 Jun 2021 00:00:00 &#43;0000</pubDate>
