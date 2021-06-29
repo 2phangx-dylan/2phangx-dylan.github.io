@@ -25,7 +25,7 @@
         "mainEntityOfPage": {
             "@type": "WebPage",
             "@id": "https:\/\/2phangx-dylan.github.io\/posts\/log\/"
-        },"genre": "posts","keywords": "Log","wordcount":  3055 ,
+        },"genre": "posts","keywords": "Log","wordcount":  3054 ,
         "url": "https:\/\/2phangx-dylan.github.io\/posts\/log\/","datePublished": "2020-03-07T00:00:00+00:00","dateModified": "2021-06-24T00:00:00+00:00","publisher": {
             "@type": "Organization",
             "name": "2phangx-dylan"},"author": {
@@ -87,7 +87,7 @@
             <div class="toc-content" id="toc-content-auto"></div>
         </div><article class="page single"><h1 class="single-title animated flipInX">Log</h1><div class="post-meta">
             <div class="post-meta-line"><span class="post-author"><a href="/" title="Author" rel=" author" class="author"><i class="fas fa-user-circle fa-fw"></i>2phangx-dylan</a></span>&nbsp;<span class="post-category">included in <a href="/categories/java/"><i class="far fa-folder fa-fw"></i>Java</a></span></div>
-            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2020-03-07">2020-03-07</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;3055 words&nbsp;
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2020-03-07">2020-03-07</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;3054 words&nbsp;
                 <i class="far fa-clock fa-fw"></i>&nbsp;15 minutes&nbsp;</div>
         </div><div class="details toc" id="toc-static"  kept="">
                 <div class="details-summary toc-title">
@@ -2056,7 +2056,7 @@ log4j.additivity.cn.xyz<span class="o">=</span><span class="nb">false</span>
         <span class="nt">&lt;/Logger&gt;</span>
     <span class="nt">&lt;/Loggers&gt;</span>
 <span class="nt">&lt;/Configuration&gt;</span>
-</code></pre></div><span id="id-30">🌟4|b.AsyncLogger 全局异步</span>
+</code></pre></div><span id="id-30">🌟4|b.AsyncLogger/全局异步</span>
 <p>采用异步<strong>logger</strong>的形式，需要额外添加一个依赖：</p>
 <div class="highlight"><pre class="chroma"><code class="language-xml" data-lang="xml"><span class="nt">&lt;dependency&gt;</span>
     <span class="nt">&lt;groupId&gt;</span>com.lmax<span class="nt">&lt;/groupId&gt;</span>
@@ -2066,7 +2066,7 @@ log4j.additivity.cn.xyz<span class="o">=</span><span class="nb">false</span>
 </code></pre></div><p>配置全局异步，不需要改动原本的配置文件，额外添加一个<strong>log4j2.component.properties</strong>的配置文件即可：</p>
 <div class="highlight"><pre class="chroma"><code class="language-shell" data-lang="shell"><span class="c1"># log4j2全局异步配置，当使用局部异步时，此文件不能共存</span>
 <span class="nv">Log4jContextSelector</span><span class="o">=</span>org.apache.logging.log4j.core.async.AsyncLoggerContextSelector
-</code></pre></div><span id="id-31">🌟4|c.AsyncLogger 局部异步</span>
+</code></pre></div><span id="id-31">🌟4|c.AsyncLogger/局部异步</span>
 <p>多数情况下会使用局部异步的方式，此时全局异步必须关闭，否则局部异步无法生效。</p>
 <p>采用异步<strong>logger</strong>的形式，需要额外添加一个依赖：</p>
 <div class="highlight"><pre class="chroma"><code class="language-xml" data-lang="xml"><span class="nt">&lt;dependency&gt;</span>
@@ -2074,10 +2074,10 @@ log4j.additivity.cn.xyz<span class="o">=</span><span class="nb">false</span>
     <span class="nt">&lt;artifactId&gt;</span>disruptor<span class="nt">&lt;/artifactId&gt;</span>
     <span class="nt">&lt;version&gt;</span>3.3.4<span class="nt">&lt;/version&gt;</span>
 <span class="nt">&lt;/dependency&gt;</span>
-</code></pre></div><p>通过在标签**<!-- raw HTML omitted -->**中添加子标签**<!-- raw HTML omitted -->**，通过其属性可以将指定名称的**logger**配置成异步**logger**，如下：</p>
+</code></pre></div><p>通过在标签<span id="id-32">&lt;Loggers&gt;</span>中添加子标签<span id="id-33">&lt;AsyncLogger&gt;</span>，通过其属性可以将指定名称的<strong>logger</strong>配置成异步<strong>logger</strong>，如下：</p>
 <ul>
 <li><strong>includeLocation</strong>：该属性表示是否输出行号，输出行号将降低异步日志器的性能，推荐关闭；</li>
-<li>即使此时<strong>PatternLayout</strong>包括行号**%L**，也不会输出行号信息。</li>
+<li>即使此时<strong>PatternLayout</strong>包括行号<span id="id-34">%L</span>，也不会输出行号信息。</li>
 </ul>
 <div class="highlight"><pre class="chroma"><code class="language-xml" data-lang="xml"><span class="cp">&lt;?xml version=&#34;1.0&#34; encoding=&#34;UTF-8&#34;?&gt;</span>
 <span class="nt">&lt;Configuration</span> <span class="na">status=</span><span class="s">&#34;OFF&#34;</span> <span class="na">monitorInterval=</span><span class="s">&#34;5&#34;</span><span class="nt">&gt;</span>
@@ -2110,13 +2110,19 @@ log4j.additivity.cn.xyz<span class="o">=</span><span class="nb">false</span>
     <span class="nt">&lt;/Loggers&gt;</span>
 <span class="nt">&lt;/Configuration&gt;</span>
 </code></pre></div><h3 id="5无垃圾记录模式">5.无垃圾记录模式</h3>
-<p>无垃圾模式，官网中有如下介绍：</p>
-<ul>
-<li>From version 2.6, Log4j runs in &ldquo;garbage free&rdquo; mode by default where objects and buffers are reused and no temporary objects are allocated as much as possible.</li>
-<li>There is also a &ldquo;low garbage&rdquo; mode which is not completely garbage free but does not use ThreadLocal fields. This is the default mode when Log4j detects it is running in a web application.</li>
-<li>Finally, it is possible to switch off all garbage-free logic and run in &ldquo;classic mode&rdquo; instead.</li>
-</ul>
-<p>大致意思是，<strong>log4j2</strong>自版本<strong>2.6</strong>之后，将默认开启<strong>garbage free</strong>无垃圾记录模式。在进行异步日志时，该模式有助于性能提升。</p>
+<p><strong>log4j2</strong>自版本<strong>2.6</strong>之后，将默认开启<strong>garbage free</strong>无垃圾记录模式。在进行异步日志时，该模式有助于性能提升。</p>
+<div class="details admonition quote open">
+        <div class="details-summary admonition-title">
+            <i class="icon fas fa-quote-right fa-fw"></i>Quote<i class="details-icon fas fa-angle-right fa-fw"></i>
+        </div>
+        <div class="details-content">
+            <div class="admonition-content"><p>无垃圾模式，官网中有如下介绍：</p>
+<p>From version 2.6, Log4j runs in &ldquo;garbage free&rdquo; mode by default where objects and buffers are reused and no temporary objects are allocated as much as possible.</p>
+<p>There is also a &ldquo;low garbage&rdquo; mode which is not completely garbage free but does not use ThreadLocal fields. This is the default mode when Log4j detects it is running in a web application.</p>
+<p>Finally, it is possible to switch off all garbage-free logic and run in &ldquo;classic mode&rdquo; instead.</p>
+</div>
+        </div>
+    </div>
 <figure><a class="lightgallery" href="/images/Log.images/ResponseTimeAsyncLogging4Threads@16kEach.png" title="/images/Log.images/ResponseTimeAsyncLogging4Threads@16kEach.png" data-thumbnail="/images/Log.images/ResponseTimeAsyncLogging4Threads@16kEach.png" data-sub-html="<h2>Response Time Async Logging 4 Threads</h2>">
         <img
             class="lazyload"
@@ -2425,5 +2431,5 @@ logging.level.cn.hanna<span class="o">=</span>trace
             </a><a href="#" id="view-comments" class="fixed-button" title="View Comments">
                 <i class="fas fa-comment fa-fw"></i>
             </a>
-        </div><link rel="stylesheet" href="/lib/lightgallery/lightgallery.min.css"><link rel="stylesheet" href="/lib/mermaid/mermaid.min.css"><link rel="stylesheet" href="/css/408672.min.css"><script type="text/javascript" src="/lib/smooth-scroll/smooth-scroll.min.js"></script><script type="text/javascript" src="/lib/lazysizes/lazysizes.min.js"></script><script type="text/javascript" src="/lib/lightgallery/lightgallery.min.js"></script><script type="text/javascript" src="/lib/lightgallery/lg-thumbnail.min.js"></script><script type="text/javascript" src="/lib/lightgallery/lg-zoom.min.js"></script><script type="text/javascript" src="/lib/clipboard/clipboard.min.js"></script><script type="text/javascript" src="/lib/mermaid/mermaid.min.js"></script><script type="text/javascript">window.config={"code":{"copyTitle":"Copy to clipboard","maxShownLines":10},"comment":{},"data":{"id-1":"\r\ngraph LR;\r\n\tA(log4j) --\u003e B(JUL) --\u003e C(JCL) --\u003e D(slf4j/slf4j-simple) --\u003e E(logback) --\u003e F(log4j2)\r"},"lightGallery":{"actualSize":false,"exThumbImage":"data-thumbnail","hideBarsDelay":2000,"selector":".lightgallery","speed":400,"thumbContHeight":80,"thumbWidth":80,"thumbnail":true}};</script><script type="text/javascript" src="/js/theme.min.js"></script></body>
+        </div><link rel="stylesheet" href="/lib/lightgallery/lightgallery.min.css"><link rel="stylesheet" href="/lib/mermaid/mermaid.min.css"><link rel="stylesheet" href="/css/65cbd2.min.css"><script type="text/javascript" src="/lib/smooth-scroll/smooth-scroll.min.js"></script><script type="text/javascript" src="/lib/lazysizes/lazysizes.min.js"></script><script type="text/javascript" src="/lib/lightgallery/lightgallery.min.js"></script><script type="text/javascript" src="/lib/lightgallery/lg-thumbnail.min.js"></script><script type="text/javascript" src="/lib/lightgallery/lg-zoom.min.js"></script><script type="text/javascript" src="/lib/clipboard/clipboard.min.js"></script><script type="text/javascript" src="/lib/mermaid/mermaid.min.js"></script><script type="text/javascript">window.config={"code":{"copyTitle":"Copy to clipboard","maxShownLines":10},"comment":{},"data":{"id-1":"\r\ngraph LR;\r\n\tA(log4j) --\u003e B(JUL) --\u003e C(JCL) --\u003e D(slf4j/slf4j-simple) --\u003e E(logback) --\u003e F(log4j2)\r"},"lightGallery":{"actualSize":false,"exThumbImage":"data-thumbnail","hideBarsDelay":2000,"selector":".lightgallery","speed":400,"thumbContHeight":80,"thumbWidth":80,"thumbnail":true}};</script><script type="text/javascript" src="/js/theme.min.js"></script></body>
 </html>
