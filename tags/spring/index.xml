@@ -1,0 +1,15 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title>Spring - Tag - Tech &amp; Posts</title>
+        <link>https://2phangx-dylan.github.io/tags/spring/</link>
+        <description>Spring - Tag - Tech &amp; Posts</description>
+        <generator>Hugo -- gohugo.io</generator><language>en</language><managingEditor>2phangx.dylan@gmail.com (2phangx-dylan)</managingEditor>
+            <webMaster>2phangx.dylan@gmail.com (2phangx-dylan)</webMaster><lastBuildDate>Wed, 30 Jun 2021 00:00:00 &#43;0000</lastBuildDate><atom:link href="https://2phangx-dylan.github.io/tags/spring/" rel="self" type="application/rss+xml" /><item>
+    <title>Circular Dependencies(A)</title>
+    <link>https://2phangx-dylan.github.io/posts/spring_ioc_circular_dependencies/</link>
+    <pubDate>Wed, 30 Jun 2021 00:00:00 &#43;0000</pubDate>
+    <author>Author</author>
+    <guid>https://2phangx-dylan.github.io/posts/spring_ioc_circular_dependencies/</guid>
+    <description><![CDATA[在Spring项目中，如果Bean主要通过构造器注入（Constructor-based DI），则可能会创建不可解析的循环依赖场景。]]></description>
+</item></channel>
+</rss>

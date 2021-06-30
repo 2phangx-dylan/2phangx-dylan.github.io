@@ -4,7 +4,14 @@
         <link>https://2phangx-dylan.github.io/categories/java/</link>
         <description>Java - Category - Tech &amp; Posts</description>
         <generator>Hugo -- gohugo.io</generator><language>en</language><managingEditor>2phangx.dylan@gmail.com (2phangx-dylan)</managingEditor>
-            <webMaster>2phangx.dylan@gmail.com (2phangx-dylan)</webMaster><lastBuildDate>Sat, 07 Mar 2020 00:00:00 &#43;0000</lastBuildDate><atom:link href="https://2phangx-dylan.github.io/categories/java/" rel="self" type="application/rss+xml" /><item>
+            <webMaster>2phangx.dylan@gmail.com (2phangx-dylan)</webMaster><lastBuildDate>Wed, 30 Jun 2021 00:00:00 &#43;0000</lastBuildDate><atom:link href="https://2phangx-dylan.github.io/categories/java/" rel="self" type="application/rss+xml" /><item>
+    <title>Circular Dependencies(A)</title>
+    <link>https://2phangx-dylan.github.io/posts/spring_ioc_circular_dependencies/</link>
+    <pubDate>Wed, 30 Jun 2021 00:00:00 &#43;0000</pubDate>
+    <author>Author</author>
+    <guid>https://2phangx-dylan.github.io/posts/spring_ioc_circular_dependencies/</guid>
+    <description><![CDATA[在Spring项目中，如果Bean主要通过构造器注入（Constructor-based DI），则可能会创建不可解析的循环依赖场景。]]></description>
+</item><item>
     <title>Log</title>
     <link>https://2phangx-dylan.github.io/posts/log/</link>
     <pubDate>Sat, 07 Mar 2020 00:00:00 &#43;0000</pubDate>
