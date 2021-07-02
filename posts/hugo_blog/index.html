@@ -25,7 +25,7 @@
         "mainEntityOfPage": {
             "@type": "WebPage",
             "@id": "https:\/\/2phangx-dylan.github.io\/posts\/hugo_blog\/"
-        },"genre": "posts","keywords": "Hugo","wordcount":  1174 ,
+        },"genre": "posts","keywords": "Hugo","wordcount":  1121 ,
         "url": "https:\/\/2phangx-dylan.github.io\/posts\/hugo_blog\/","datePublished": "2021-06-07T00:00:00+00:00","dateModified": "2021-06-20T00:00:00+00:00","publisher": {
             "@type": "Organization",
             "name": "2phangx-dylan"},"author": {
@@ -114,7 +114,7 @@
             <div class="toc-content" id="toc-content-auto"></div>
         </div><article class="page single"><h1 class="single-title animated flipInX">Hugo Blog</h1><div class="post-meta">
             <div class="post-meta-line"><span class="post-author"><a href="/" title="Author" rel=" author" class="author"><i class="fas fa-user-circle fa-fw"></i>2phangx-dylan</a></span>&nbsp;<span class="post-category">included in <a href="/categories/system/"><i class="far fa-folder fa-fw"></i>System</a></span></div>
-            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2021-06-07">2021-06-07</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;1174 words&nbsp;
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2021-06-07">2021-06-07</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;1121 words&nbsp;
                 <i class="far fa-clock fa-fw"></i>&nbsp;6 minutes&nbsp;</div>
         </div><div class="details toc" id="toc-static"  kept="">
                 <div class="details-summary toc-title">
@@ -526,81 +526,40 @@
 <ul>
 <li><strong>_custom.scss</strong>文件配置如下：</li>
 </ul>
-<div class="highlight"><pre class="chroma"><code class="language-scss" data-lang="scss"><span class="nc">.mermaid</span> <span class="o">&gt;</span> <span class="nt">svg</span> <span class="p">{</span>
-	<span class="nt">height</span><span class="nd">:</span> <span class="nt">auto</span><span class="p">;</span> <span class="c1">// 用于调整流程图在移动设备上的高度
-</span><span class="c1"></span><span class="p">}</span>
-
-<span class="k">@media</span> <span class="n">only</span> <span class="n">screen</span> <span class="ow">and</span> <span class="p">(</span><span class="no">min-width</span><span class="o">:</span> <span class="mi">681</span><span class="kt">px</span><span class="p">)</span> <span class="p">{</span>
-
-	<span class="nt">body</span> <span class="p">{</span>
-		<span class="nt">background</span><span class="nd">:</span> <span class="nt">transparent</span> <span class="nt">url</span><span class="o">(</span><span class="s1">&#39;/background.jpg&#39;</span><span class="o">)</span> <span class="nt">center</span><span class="o">/</span><span class="nt">cover</span> <span class="nt">no-repeat</span> <span class="nt">fixed</span><span class="p">;</span>
-
-		<span class="k">&amp;</span><span class="o">[</span><span class="nt">theme</span><span class="o">=</span><span class="nt">dark</span><span class="o">]</span> <span class="p">{</span>
-			<span class="nt">background</span><span class="nd">:</span> <span class="nn">#292a2d</span><span class="p">;</span>
-			<span class="nt">color</span><span class="nd">:</span> <span class="nn">#a9a9b3</span><span class="p">;</span>
-		<span class="p">}</span>
-	<span class="p">}</span>
-
-	<span class="nc">.home</span><span class="o">[</span><span class="nt">posts</span><span class="o">]</span> <span class="nc">.summary</span> <span class="p">{</span>
-		<span class="nt">background</span><span class="nd">:</span> <span class="nn">#fff</span><span class="p">;</span>
-		<span class="nt">margin-bottom</span><span class="nd">:</span> <span class="nt">12px</span><span class="p">;</span>
-		<span class="nt">padding-left</span><span class="nd">:</span> <span class="nt">16px</span><span class="p">;</span>
-		<span class="nt">padding-right</span><span class="nd">:</span> <span class="nt">16px</span><span class="p">;</span>
-		<span class="nt">border-radius</span><span class="nd">:</span> <span class="nt">5px</span><span class="p">;</span>
-		<span class="nt">border-bottom</span><span class="nd">:</span> <span class="nt">none</span><span class="p">;</span>
-
-		<span class="o">[</span><span class="nt">theme</span><span class="o">=</span><span class="nt">dark</span><span class="o">]</span> <span class="k">&amp;</span> <span class="p">{</span>
-			<span class="nt">background</span><span class="nd">:</span> <span class="nt">transparent</span><span class="p">;</span>
-			<span class="nt">border-radius</span><span class="nd">:</span> <span class="nt">0px</span><span class="p">;</span>
-			<span class="nt">border-bottom</span><span class="nd">:</span> <span class="nt">1px</span> <span class="nt">dashed</span> <span class="nn">#363636</span><span class="p">;</span>
-		<span class="p">}</span>
-	<span class="p">}</span>
-
-	<span class="nn">#toc-auto</span> <span class="o">+</span> <span class="nc">.single</span> <span class="p">{</span>
-		<span class="nt">background</span><span class="nd">:</span> <span class="nn">#fff</span><span class="p">;</span>
-		<span class="nt">margin-top</span><span class="nd">:</span> <span class="nt">80px</span><span class="p">;</span>
-		<span class="nt">padding</span><span class="nd">:</span> <span class="nt">2px</span> <span class="nt">24px</span><span class="p">;</span>
-		<span class="nt">border-radius</span><span class="nd">:</span> <span class="nt">5px</span><span class="p">;</span>
-
-		<span class="o">[</span><span class="nt">theme</span><span class="o">=</span><span class="nt">dark</span><span class="o">]</span> <span class="k">&amp;</span> <span class="p">{</span>
-			<span class="nt">background</span><span class="nd">:</span> <span class="nn">#292a2d</span><span class="p">;</span>
-		<span class="p">}</span>
-	<span class="p">}</span>
-
-	<span class="nn">#toc-auto</span> <span class="o">+</span> <span class="nc">.single</span> <span class="nc">.post-nav</span> <span class="p">{</span>
-		<span class="nt">display</span><span class="nd">:</span> <span class="nt">flow-root</span><span class="p">;</span>
-		<span class="nt">padding-bottom</span><span class="nd">:</span> <span class="nt">10px</span><span class="p">;</span>
-
-		<span class="o">[</span><span class="nt">theme</span><span class="o">=</span><span class="nt">dark</span><span class="o">]</span> <span class="k">&amp;</span> <span class="p">{</span>
-			<span class="nt">display</span><span class="nd">:</span> <span class="nt">inline</span><span class="p">;</span>
-		<span class="p">}</span>
-	<span class="p">}</span>
-
-	<span class="nn">#toc-auto</span> <span class="o">+</span> <span class="nc">.single</span> <span class="p">{</span>
-		<span class="o">[</span><span class="nt">header-desktop</span><span class="o">]</span> <span class="k">&amp;</span> <span class="p">{</span>
-			<span class="nt">padding-top</span><span class="nd">:</span> <span class="nt">2px</span><span class="p">;</span>
-		<span class="p">}</span>
-	<span class="p">}</span>
-
-	<span class="nn">#toc-auto</span> <span class="p">{</span>
-		<span class="nt">border-left</span><span class="nd">:</span> <span class="nt">0</span><span class="p">;</span>
-	<span class="p">}</span>
+<div class="highlight"><pre class="chroma"><code class="language-scss" data-lang="scss"><span class="nc">.mermaid</span> <span class="o">&gt;</span> <span class="nt">svg</span> <span class="p">{</span> <span class="c1">// 用于调整流程图在移动设备上的高度
+</span><span class="c1"></span>	<span class="nt">height</span><span class="nd">:</span> <span class="nt">auto</span><span class="p">;</span>
 <span class="p">}</span>
 
-<span class="nc">.single</span> <span class="nc">.post-footer</span> <span class="p">{</span>
-	<span class="nt">margin-top</span><span class="nd">:</span> <span class="nt">0</span><span class="p">;</span>
+<span class="nc">.single</span> <span class="nc">.post-footer</span> <span class="p">{</span> <span class="c1">// 用于清除文章末尾的边距
+</span><span class="c1"></span>	<span class="nt">margin-top</span><span class="nd">:</span> <span class="nt">0</span><span class="p">;</span>
 <span class="p">}</span>
 
-<span class="o">[</span><span class="nt">id</span><span class="o">*=</span><span class="s2">&#34;id-&#34;</span><span class="o">]</span> <span class="p">{</span>
-	<span class="o">[</span><span class="nt">theme</span><span class="o">=</span><span class="nt">dark</span><span class="o">]</span> <span class="k">&amp;</span> <span class="p">{</span>
+<span class="o">[</span><span class="nt">id</span><span class="o">*=</span><span class="s2">&#34;id-&#34;</span><span class="o">]</span> <span class="p">{</span> <span class="c1">// 用于调整暗黑模式下，style shortcodes样式
+</span><span class="c1"></span>	<span class="o">[</span><span class="nt">theme</span><span class="o">=</span><span class="nt">dark</span><span class="o">]</span> <span class="k">&amp;</span> <span class="p">{</span>
 		<span class="nt">color</span><span class="nd">:</span> <span class="nn">#ddd</span><span class="p">;</span>
 	<span class="p">}</span>
 <span class="p">}</span>
 
-<span class="nc">.content</span><span class="o">&gt;[</span><span class="nt">id</span><span class="o">*=</span><span class="s2">&#34;id-&#34;</span><span class="o">]</span> <span class="p">{</span>
-	<span class="o">[</span><span class="nt">theme</span><span class="o">=</span><span class="nt">dark</span><span class="o">]</span> <span class="k">&amp;</span> <span class="p">{</span>
+<span class="nc">.content</span><span class="o">&gt;[</span><span class="nt">id</span><span class="o">*=</span><span class="s2">&#34;id-&#34;</span><span class="o">]</span> <span class="p">{</span> <span class="c1">// 用于调整暗黑模式下，style shortcodes样式
+</span><span class="c1"></span>	<span class="o">[</span><span class="nt">theme</span><span class="o">=</span><span class="nt">dark</span><span class="o">]</span> <span class="k">&amp;</span> <span class="p">{</span>
 		<span class="nt">color</span><span class="nd">:</span> <span class="nn">#a9a9b3</span><span class="p">;</span>
 	<span class="p">}</span>
+<span class="p">}</span>
+
+<span class="nc">.home</span><span class="o">[</span><span class="nt">posts</span><span class="o">]</span> <span class="p">{</span> <span class="c1">// 用于配置首页卡片状文章预览
+</span><span class="c1"></span>  <span class="nc">.summary</span> <span class="p">{</span>
+  	<span class="nt">box-shadow</span><span class="nd">:</span> <span class="nt">1px</span> <span class="nt">1px</span> <span class="nt">5px</span> <span class="nt">0px</span> <span class="nt">rgba</span><span class="o">(</span><span class="nt">0</span><span class="o">,</span> <span class="nt">0</span><span class="o">,</span> <span class="nt">0</span><span class="o">,</span> <span class="nt">0</span><span class="nc">.2</span><span class="o">),</span> <span class="nt">0</span> <span class="nt">0px</span> <span class="nt">0px</span> <span class="nt">1px</span> <span class="nt">rgba</span><span class="o">(</span><span class="nt">0</span><span class="o">,</span> <span class="nt">0</span><span class="o">,</span> <span class="nt">0</span><span class="o">,</span> <span class="nt">0</span><span class="nc">.1</span><span class="o">)</span><span class="p">;</span>
+  	<span class="nt">border-radius</span><span class="nd">:</span> <span class="nt">8px</span><span class="p">;</span>
+    <span class="nt">color</span><span class="nd">:</span> <span class="err">$</span><span class="nt">global-font-color</span><span class="p">;</span>
+    <span class="nt">padding</span><span class="nd">:</span> <span class="nc">.8rem</span><span class="p">;</span>
+    <span class="nt">margin-bottom</span><span class="nd">:</span> <span class="nt">20px</span><span class="p">;</span>
+    <span class="nt">border-bottom</span><span class="nd">:</span> <span class="nt">none</span><span class="p">;</span>
+
+    <span class="o">[</span><span class="nt">theme</span><span class="o">=</span><span class="nt">dark</span><span class="o">]</span> <span class="k">&amp;</span> <span class="p">{</span>
+      <span class="nt">color</span><span class="nd">:</span> <span class="err">$</span><span class="nt">global-font-color-dark</span><span class="p">;</span>
+      <span class="nt">border-bottom</span><span class="nd">:</span> <span class="nt">none</span><span class="p">;</span>
+    <span class="p">}</span>
+  <span class="p">}</span>
 <span class="p">}</span>
 </code></pre></div><ul>
 <li><strong>_override.scss</strong>文件配置如下：</li>
