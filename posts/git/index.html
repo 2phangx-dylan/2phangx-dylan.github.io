@@ -25,7 +25,7 @@
         "mainEntityOfPage": {
             "@type": "WebPage",
             "@id": "https:\/\/2phangx-dylan.github.io\/posts\/git\/"
-        },"genre": "posts","keywords": "Git","wordcount":  1510 ,
+        },"genre": "posts","keywords": "Git","wordcount":  1507 ,
         "url": "https:\/\/2phangx-dylan.github.io\/posts\/git\/","datePublished": "2019-09-21T00:00:00+00:00","dateModified": "2019-09-21T00:00:00+00:00","publisher": {
             "@type": "Organization",
             "name": "2phangx-dylan"},"author": {
@@ -114,7 +114,7 @@
             <div class="toc-content" id="toc-content-auto"></div>
         </div><article class="page single"><h1 class="single-title animated flipInX">Git Tutorial</h1><div class="post-meta">
             <div class="post-meta-line"><span class="post-author"><a href="/" title="Author" rel=" author" class="author"><i class="fas fa-user-circle fa-fw"></i>2phangx-dylan</a></span>&nbsp;<span class="post-category">included in <a href="/categories/java/"><i class="far fa-folder fa-fw"></i>Java</a></span></div>
-            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2019-09-21">2019-09-21</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;1510 words&nbsp;
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2019-09-21">2019-09-21</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;1507 words&nbsp;
                 <i class="far fa-clock fa-fw"></i>&nbsp;8 minutes&nbsp;</div>
         </div><div class="details toc" id="toc-static"  kept="">
                 <div class="details-summary toc-title">
@@ -1765,7 +1765,7 @@ git config --local --unset credential.helper
 </code></pre></div><p>移除所有<strong>ssh-agent</strong>中管理的私钥，使用以下命令：</p>
 <div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">ssh-add -D
 </code></pre></div><p>退出<strong>ssh-agent</strong>，使用以下命令：</p>
-<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">ssh-agent <span class="nb">exit</span>
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"> <span class="nb">exit</span>
 </code></pre></div><div class="details admonition tip open">
         <div class="details-summary admonition-title">
             <i class="icon fas fa-lightbulb fa-fw"></i>Tip<i class="details-icon fas fa-angle-right fa-fw"></i>
@@ -1777,31 +1777,29 @@ git config --local --unset credential.helper
 <span id="id-48">🌟2|d.测试SSH连接</span>
 <p>所有配置完成后，可以使用以下命令测试SSH连接是否成功：</p>
 <div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">ssh -T git@github.com
-</code></pre></div><p>首次进行连接，<strong>ssh</strong>会把每个访问过的主机公钥记录在<span id="id-49">~/.ssh/known_hosts</span>中。当下次访问相同主机时，<strong>OpenSSH</strong>会核对公钥。如果公钥不同，<strong>OpenSSH</strong>会发出警告，避免你受到<strong>DNS Hijack</strong>之类的攻击。</p>
+</code></pre></div><p>首次进行连接时，<strong>ssh</strong>会询问你是否允许将当前访问的主机公钥记录在<span id="id-49">~/.ssh/known_hosts</span>中。在下次访问相同主机时，<strong>OpenSSH</strong>会核对公钥信息。如果公钥不同，<strong>OpenSSH</strong>会发出警告，避免你受到<strong>DNS Hijack</strong>之类的攻击。</p>
 <p>测试如果通过，会出现以下提示：</p>
 <div class="highlight"><pre class="chroma"><code class="language-reStructuredText" data-lang="reStructuredText">Hi 2phangx-dylan! You&#39;ve successfully authenticated, but GitHub does not provide shell access.<span class="err">
 </span></code></pre></div><p>如果测试无法通过，请检查你的步骤是否正确。</p>
 <span id="id-50">🌟2|e.自定义SSH私钥配置文件</span>
 <p>如果你不希望将私钥交由<strong>ssh-agent</strong>进行管理，可以通过自定义配置的方式，将私钥关联到指定的<strong>ssh</strong>连接中。</p>
 <p>在目录<span id="id-51">~/.ssh/</span>下，新建<strong>config</strong>文件，内容如下：</p>
-<div class="highlight"><pre class="chroma"><code class="language-reStructuredText" data-lang="reStructuredText">Host github.com<span class="err">
-</span><span class="err"></span>HostName github.com<span class="err">
+<div class="highlight"><pre class="chroma"><code class="language-reStructuredText" data-lang="reStructuredText">HostName github.com<span class="err">
 </span><span class="err"></span>IdentityFile C:/Users/siyan/.ssh/some<span class="err">
-</span></code></pre></div><p>该配置将所有来自<strong>Host</strong>的<strong>SSH</strong>连接，都映射为<strong>HostName</strong>的<strong>SSH</strong>连接，同时指定了用于验证该连接的私钥的位置。</p>
+</span></code></pre></div><p>该文件中将指定主机名称<strong>HostName</strong>和身份文件<strong>IdentityFile</strong>的详细信息。此时，<strong>SSH</strong>连接中一旦检测到与<strong>HostName</strong>一致的同名<strong>Server</strong>，则都会使用该<strong>HostName</strong>下配置的<strong>IdentityFile</strong>用于验证。</p>
 <p>以上配置的实际意义，是使用同一个私钥来验证所有来自<strong>github.com</strong>的<strong>SSH</strong>连接。</p>
-<p>举个例子，假如现在需要连接以下仓库：</p>
-<ul>
-<li><span id="id-52">git@github.com:2phangx-dylan/example.repository.git</span></li>
-</ul>
-<p>此时，<strong>config</strong>配置文件如下：</p>
+<p>该文件中还支持配置<strong>SSH</strong>连接中<strong>Server</strong>的别名，其键名为<strong>Host</strong>。</p>
 <div class="highlight"><pre class="chroma"><code class="language-reStructuredText" data-lang="reStructuredText">Host wow.com<span class="err">
 </span><span class="err"></span>HostName github.com<span class="err">
 </span><span class="err"></span>IdentityFile C:/Users/siyan/.ssh/some<span class="err">
-</span></code></pre></div><p>如果希望成功从远程仓库中拉取或推送数据，则拉取或推送数据的命令需要改写为：</p>
+</span></code></pre></div><p>举个例子，假如现在需要连接以下仓库：</p>
+<ul>
+<li><span id="id-52">git@github.com:2phangx-dylan/example.repository.git</span></li>
+</ul>
+<p>如果希望成功从远程仓库中拉取或推送数据，则必须使用<strong>config</strong>配置文件中的别名来取代真实连接中的服务器地址，此时拉取或推送数据的命令需要改写为：</p>
 <div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">git pull git@wow.com:2phangx-dylan/example.repository.git main
 git push git@wow.com:2phangx-dylan/example.repository.git HEAD:main
-</code></pre></div><p>其中，<strong>wow.com</strong>会被<strong>ssh</strong>自动替换为<strong>github.com</strong>。</p>
-<p><strong>config</strong>配置文件，原本是为了简化<strong>ssh</strong>连接的书写，<strong>config</strong>文件可以接受<strong>User</strong>参数，假如有以下配置：</p>
+</code></pre></div><p>从别名的使用不难知道<strong>config</strong>配置文件可以用于简化<strong>ssh</strong>连接的书写。除了服务器别名之外，<strong>config</strong>文件还可以配置默认的<strong>User</strong>数据。假如有以下配置：</p>
 <div class="highlight"><pre class="chroma"><code class="language-reStructuredText" data-lang="reStructuredText">Host z<span class="err">
 </span><span class="err"></span>User git<span class="err">
 </span><span class="err"></span>HostName github.com<span class="err">
@@ -1809,7 +1807,7 @@ git push git@wow.com:2phangx-dylan/example.repository.git HEAD:main
 </span></code></pre></div><p>此时，可以直接使用以下命令进行数据的拉取或推送：</p>
 <div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">git pull z:2phangx-dylan/example.repository.git main
 git push z:2phangx-dylan/example.repository.git HEAD:main
-</code></pre></div><p>连接中的<strong>Host</strong>会被替换成<strong>github.com</strong>，同时由于没有指定的<strong>User</strong>，因此默认<strong>User</strong>会被设置为<strong>git</strong>。</p>
+</code></pre></div><p><strong>SSH</strong>连接中的<strong>z</strong>会被替换成<strong>github.com</strong>，同时由于没有指定的<strong>User</strong>，因此默认<strong>User</strong>会被自动设置为<strong>git</strong>。</p>
 <hr>
 <h2 id="git忽略文件规则">Git忽略文件规则</h2>
 <p>一般我们总会有些无法纳入<strong>Git</strong>的管理，也不希望它们总是出现在未跟踪文件列表。通常都是些自动生成的文件，比如日志文件，或编译过程中创建的临时文件等。</p>
@@ -1891,7 +1889,7 @@ doc/**/*.pdf---
 </div>
 </article></div>
             </main><footer class="footer">
-        <div class="footer-container"><div class="footer-line"><i class="far fa-copyright fa-fw"></i><span itemprop="copyrightYear">2019 - 2021</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="/" target="_blank">2phangx-dylan</a></span>&nbsp;|&nbsp;<span class="license"><a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span></div>
+        <div class="footer-container"><div class="footer-line"><i class="far fa-copyright fa-fw"></i><span itemprop="copyrightYear">2019 - 2022</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="/" target="_blank">2phangx-dylan</a></span>&nbsp;|&nbsp;<span class="license"><a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span></div>
         </div>
     </footer></div>
 
