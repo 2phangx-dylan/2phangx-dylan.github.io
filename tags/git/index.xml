@@ -4,7 +4,14 @@
         <link>https://2phangx-dylan.github.io/tags/git/</link>
         <description>Git - Tag - Tech &amp; Posts</description>
         <generator>Hugo -- gohugo.io</generator><language>en</language><managingEditor>2phangx.dylan@gmail.com (2phangx-dylan)</managingEditor>
-            <webMaster>2phangx.dylan@gmail.com (2phangx-dylan)</webMaster><lastBuildDate>Sat, 21 Sep 2019 00:00:00 &#43;0000</lastBuildDate><atom:link href="https://2phangx-dylan.github.io/tags/git/" rel="self" type="application/rss+xml" /><item>
+            <webMaster>2phangx.dylan@gmail.com (2phangx-dylan)</webMaster><lastBuildDate>Thu, 03 Oct 2019 00:00:00 &#43;0000</lastBuildDate><atom:link href="https://2phangx-dylan.github.io/tags/git/" rel="self" type="application/rss+xml" /><item>
+    <title>Git Configuration</title>
+    <link>https://2phangx-dylan.github.io/posts/git-configuration/</link>
+    <pubDate>Thu, 03 Oct 2019 00:00:00 &#43;0000</pubDate>
+    <author>Author</author>
+    <guid>https://2phangx-dylan.github.io/posts/git-configuration/</guid>
+    <description><![CDATA[本章将快速说明关于Git的配置问题。]]></description>
+</item><item>
     <title>Git Tutorial</title>
     <link>https://2phangx-dylan.github.io/posts/git/</link>
     <pubDate>Sat, 21 Sep 2019 00:00:00 &#43;0000</pubDate>
