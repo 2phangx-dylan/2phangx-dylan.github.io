@@ -25,7 +25,7 @@
         "mainEntityOfPage": {
             "@type": "WebPage",
             "@id": "https:\/\/2phangx-dylan.github.io\/posts\/hugo_post_encrypted\/"
-        },"genre": "posts","keywords": "Security","wordcount":  921 ,
+        },"genre": "posts","keywords": "Security","wordcount":  925 ,
         "url": "https:\/\/2phangx-dylan.github.io\/posts\/hugo_post_encrypted\/","datePublished": "2021-06-15T00:00:00+00:00","dateModified": "2021-06-20T00:00:00+00:00","publisher": {
             "@type": "Organization",
             "name": "2phangx-dylan"},"author": {
@@ -114,7 +114,7 @@
             <div class="toc-content" id="toc-content-auto"></div>
         </div><article class="page single"><h1 class="single-title animated flipInX">Hugo Post Encrypted</h1><div class="post-meta">
             <div class="post-meta-line"><span class="post-author"><a href="/" title="Author" rel=" author" class="author"><i class="fas fa-user-circle fa-fw"></i>2phangx-dylan</a></span>&nbsp;<span class="post-category">included in <a href="/categories/encrypted/"><i class="far fa-folder fa-fw"></i>Encrypted</a></span></div>
-            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2021-06-15">2021-06-15</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;921 words&nbsp;
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2021-06-15">2021-06-15</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;925 words&nbsp;
                 <i class="far fa-clock fa-fw"></i>&nbsp;5 minutes&nbsp;</div>
         </div><div class="details toc" id="toc-static"  kept="">
                 <div class="details-summary toc-title">
@@ -123,20 +123,22 @@
                 </div>
                 <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
   <ul>
-    <li><a href="#post加密原理">Post加密原理</a></li>
+    <li><a href="#文章简单加密的原理">文章简单加密的原理</a></li>
     <li><a href="#自定义前置参数">自定义前置参数</a></li>
     <li><a href="#页面的动态生成">页面的动态生成</a></li>
     <li><a href="#效果测试">效果测试</a></li>
     <li><a href="#安全性">安全性</a></li>
+    <li><a href="#破解方式">破解方式</a></li>
   </ul>
 </nav></div>
-            </div><div class="content" id="content"><h2 id="post加密原理">Post加密原理</h2>
-<p><strong>Hugo</strong>文章的简单加密，使用的是<strong>JavaScript</strong>中的<strong>if</strong>判断。此时打开文章页面，会要求输入密码：</p>
-<ol>
+            </div><div class="content" id="content"><h2 id="文章简单加密的原理">文章简单加密的原理</h2>
+<p><strong>Hugo</strong>文章的简单加密，利用的加载加密内容加载前的<strong>JavaScript</strong>代码片段。必须要注意，该简单加密的效果是十分脆弱的。</p>
+<p>简单加密的其效果为：打开文章页面，需要输入密码。而对密码进行判断之后的行为是：</p>
+<ul>
 <li>如果密码正确，则继续加载页面；</li>
 <li>如果密码错误，则返回上一步。</li>
-</ol>
-<p>而实现文章页面加密的<strong>JavaScript</strong>代码也十分简单，如下：</p>
+</ul>
+<p>实现文章页面加密的<strong>JavaScript</strong>代码也十分通俗易懂，如下：</p>
 <div class="highlight"><pre class="chroma"><code class="language-javascript" data-lang="javascript"><span class="o">&lt;</span><span class="nx">script</span><span class="o">&gt;</span>
     <span class="p">(</span><span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
         <span class="k">if</span><span class="p">(</span><span class="s1">&#39;{{ .Params.password }}&#39;</span><span class="p">)</span> <span class="p">{</span>
@@ -148,13 +150,14 @@
         <span class="p">}</span>
 	<span class="p">})();</span>
 <span class="o">&lt;</span><span class="err">/script&gt;</span>
-</code></pre></div><p>其中，关键的问题有两个：</p>
+</code></pre></div><p>仅有两个关键的问题：</p>
 <ol>
 <li>如何配置<span id="id-1">.Params.password</span>变量；</li>
 <li>如何让文章页面在动态生成时，可以在<strong>header</strong>标签中嵌入此段代码。</li>
 </ol>
 <hr>
 <h2 id="自定义前置参数">自定义前置参数</h2>
+<p>对于<strong>Hugo Blog</strong>来说，必须要弄明白在什么地方配置该预设密码。毕竟拥有了预设密码之后，<strong>Hugo</strong>才能够动态地读取到该密码并填充到静态的<strong>html</strong>中。</p>
 <p><strong>Hugo</strong>的每一篇文章都拥有所谓的前置参数，该前置参数会在生成其<strong>HTML</strong>页面的默认模板中，被解析成<strong>JavaScript</strong>的参数。</p>
 <p>假设此时在文章的前置参数中，有如下参数：</p>
 <div class="highlight"><pre class="chroma"><code class="language-markdown" data-lang="markdown">---
@@ -412,38 +415,33 @@ Testing passcode.
     </figure>
 <hr>
 <h2 id="安全性">安全性</h2>
-<p>通过<strong>JavaScript</strong>的简单加密，本身是不够安全的。</p>
-<p>其主要原因有两个：</p>
+<p>通过<strong>JavaScript</strong>的简单加密，本身是不够安全的，因为密码本身存在于<strong>html</strong>代码中，只要能够读取到页面内容，就能够知道密码是什么。</p>
+<p>共有三种方式可以读取到加密页面的源码：</p>
 <ol>
 <li>代码无法保证在何时加载该<strong>JS</strong>，也许网页具体内容在加载该<strong>JS</strong>前就被加载完毕了；</li>
-<li>对于部署在免费页面的静态网站，实际所有页面的源码是公开的。</li>
+<li>对于部署在免费页面的静态网站，实际所有页面的源码是公开的；</li>
+<li>简单粗暴的方式是直接将链接进行下载操作，所有的源码信息都会被下载下来。</li>
 </ol>
-<p>针对原因1，通过一定的手段，可以查看到加密网页源码。</p>
-<div class="details admonition tip open">
-        <div class="details-summary admonition-title">
-            <i class="icon fas fa-lightbulb fa-fw"></i>Tip<i class="details-icon fas fa-angle-right fa-fw"></i>
-        </div>
-        <div class="details-content">
-            <div class="admonition-content"><p>破解步骤：</p>
+<hr>
+<h2 id="破解方式">破解方式</h2>
+<p>针对安全性中的第一种获取页面源码方式，其破解的手段如下：</p>
 <ol>
 <li>在不输入任何密码的情况下，点击取消按钮，此时会提示密码错误；</li>
 <li>在关闭该密码错误弹窗的瞬间，按下<strong>ESC</strong>键阻止页面继续加载。</li>
 </ol>
 <p>此时，极有几率可以看到加密页面的所有内容。</p>
 <p>注意，即使<strong>JS</strong>中使用了<strong>window.stop()</strong>，也无法保证代码的加载顺序。</p>
-</div>
-        </div>
-    </div>
-<p>针对原因2，显然如果是通过<strong>GitHub Page</strong>免费页面进行的静态网站部署，其源码实际上存在于公共的<strong>GitHub</strong>仓库内。</p>
-<p>此时，加密的网页其本质上是公开状态的，那么加密已经失去了意义。</p>
+<p>针对安全性中的第二种方式，其破解方式更为简单：通过<strong>GitHub Page</strong>免费页面进行的静态网站部署，其源码实际上存在于公共的<strong>GitHub</strong>仓库内。</p>
+<p>此时，加密的网页其本质上是公开状态的，实际上加密已经失去了意义。</p>
 <div class="details admonition tip open">
         <div class="details-summary admonition-title">
             <i class="icon fas fa-lightbulb fa-fw"></i>Tip<i class="details-icon fas fa-angle-right fa-fw"></i>
         </div>
         <div class="details-content">
-            <div class="admonition-content"><strong>GitHub Page</strong>允许部署<strong>private</strong>仓库中的静态网站，但需要付费。</div>
+            <div class="admonition-content"><strong>GitHub Page</strong>允许部署<strong>private</strong>仓库中的静态网站，但需要付费。但即使付费，通过下载网页源码的方式仍旧可以攻破简单的<strong>js</strong>加密。</div>
         </div>
     </div>
+<p>针对安全性中的第三种方式，也是最简单直接的方式，即下载网页源码。通过代码编辑器就可以查看到源码内的<strong>js</strong>代码，从而获取密码。</p>
 </div><div class="post-footer" id="post-footer">
     <div class="post-info">
         <div class="post-info-line">
